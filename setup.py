@@ -34,7 +34,11 @@ setup(
     packages=packages,
     author="Romain Sacchi <romain.sacchi@psi.ch>",
     license=open("LICENSE").read(),
-    package_data={"carculator_two_wheeler": package_files(os.path.join("carculator_two_wheeler", "data"))},
+    package_data={
+        "carculator_two_wheeler": package_files(
+            os.path.join("carculator_two_wheeler", "data")
+        )
+    },
     install_requires=[
         "pandas",
         "xarray <0.18",
