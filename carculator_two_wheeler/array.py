@@ -3,7 +3,7 @@ import pandas as pd
 import stats_arrays as sa
 import xarray as xr
 
-from .car_input_parameters import CarInputParameters as c_i_p
+from .two_wheelers_input_parameters import TwoWheelerInputParameters as c_i_p
 
 
 def fill_xarray_from_input_parameters(cip, sensitivity=False, scope=None):
@@ -36,7 +36,7 @@ def fill_xarray_from_input_parameters(cip, sensitivity=False, scope=None):
     # Check whether the argument passed is a cip object
     if not isinstance(cip, c_i_p):
         raise TypeError(
-            "The argument passed is not an object of the CarInputParameter class"
+            "The argument passed is not an object of the TwoWheelersInputParameter class"
         )
 
     if scope is None:
@@ -49,18 +49,6 @@ def fill_xarray_from_input_parameters(cip, sensitivity=False, scope=None):
         if "year" not in scope:
             scope["year"] = cip.years
 
-    # Make sure to include PHEV-e and PHEV-c-p/d if
-    # PHEV-d or PHEV-p are listed
-
-    if "PHEV-p" in scope["powertrain"]:
-        for pt in ["PHEV-e", "PHEV-c-p"]:
-            if pt not in scope["powertrain"]:
-                scope["powertrain"].append(pt)
-
-    if "PHEV-d" in scope["powertrain"]:
-        for pt in ["PHEV-e", "PHEV-c-d"]:
-            if pt not in scope["powertrain"]:
-                scope["powertrain"].append(pt)
 
     if any(s for s in scope["size"] if s not in cip.sizes):
         raise ValueError("One of the size types is not valid.")
@@ -359,7 +347,8 @@ def modify_xarray_from_custom_parameters(fp, array):
                             or np.isnan(val[(y, "maximum")])
                         ):
                             print(
-                                "One or more parameters for the triangular distribution is/are missing for {} in {}.\n The parameter is skipped and default value applies".format(
+                                "One or more parameters for the triangular distribution is/are missing for {} in {}.\n"
+                                "The parameter is skipped and default value applies".format(
                                     param, y
                                 )
                             )
@@ -369,7 +358,8 @@ def modify_xarray_from_custom_parameters(fp, array):
                     if distr == 2:
                         if np.isnan(val[(y, "loc")]) or np.isnan(val[(y, "scale")]):
                             print(
-                                "One or more parameters for the lognormal distribution is/are missing for {} in {}.\n The parameter is skipped and default value applies".format(
+                                "One or more parameters for the lognormal distribution is/are missing for {} in {}.\n"
+                                "The parameter is skipped and default value applies".format(
                                     param, y
                                 )
                             )
@@ -379,7 +369,8 @@ def modify_xarray_from_custom_parameters(fp, array):
                     if distr == 3:
                         if np.isnan(val[(y, "loc")]) or np.isnan(val[(y, "scale")]):
                             print(
-                                "One or more parameters for the normal distribution is/are missing for {} in {}.\n The parameter is skipped and default value applies".format(
+                                "One or more parameters for the normal distribution is/are missing for {} in {}.\n"
+                                "The parameter is skipped and default value applies".format(
                                     param, y
                                 )
                             )
@@ -391,7 +382,8 @@ def modify_xarray_from_custom_parameters(fp, array):
                             val[(y, "maximum")]
                         ):
                             print(
-                                "One or more parameters for the uniform distribution is/are missing for {} in {}.\n The parameter is skipped and default value applies".format(
+                                "One or more parameters for the uniform distribution is/are missing for {} in {}.\n"
+                                "The parameter is skipped and default value applies".format(
                                     param, y
                                 )
                             )

@@ -2,7 +2,7 @@ import numpy as np
 import pytest
 
 from carculator_two_wheeler import (
-    CarInputParameters,
+    TwoWheelerInputParameters,
     fill_xarray_from_input_parameters,
     modify_xarray_from_custom_parameters,
 )
@@ -15,7 +15,7 @@ def test_type_cip():
 
 
 def test_format_array():
-    cip = CarInputParameters()
+    cip = TwoWheelerInputParameters()
     cip.static()
     dcts, array = fill_xarray_from_input_parameters(cip)
 
@@ -26,7 +26,7 @@ def test_format_array():
 
 
 def test_modify_array():
-    cip = CarInputParameters()
+    cip = TwoWheelerInputParameters()
     cip.static()
     _, array = fill_xarray_from_input_parameters(cip)
 
@@ -50,7 +50,7 @@ def test_modify_array():
 
 
 def test_wrong_param_modify_array():
-    cip = CarInputParameters()
+    cip = TwoWheelerInputParameters()
     cip.static()
     _, array = fill_xarray_from_input_parameters(cip)
 
@@ -69,7 +69,7 @@ def test_wrong_param_modify_array():
 
 def test_scope():
     """Test that the use of scope dictionary works as intended"""
-    cip = CarInputParameters()
+    cip = TwoWheelerInputParameters()
     cip.static()
     scope = {"powertrain": ["ICEV-d"], "size": ["Lower medium"]}
     _, array = fill_xarray_from_input_parameters(cip, scope=scope)

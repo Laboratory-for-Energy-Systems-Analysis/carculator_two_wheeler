@@ -1,13 +1,13 @@
 from carculator_two_wheeler import (
-    CarInputParameters,
-    CarModel,
+    TwoWheelerInputParameters,
+    TwoWheelerModel,
     InventoryCalculation,
     fill_xarray_from_input_parameters,
 )
 
 
 def test_monte_carlo():
-    cip = CarInputParameters()
+    cip = TwoWheelerInputParameters()
     cip.stochastic(5)
     dcts, array = fill_xarray_from_input_parameters(
         cip,
@@ -17,7 +17,7 @@ def test_monte_carlo():
             "year": [2020],
         },
     )
-    cm = CarModel(array, cycle="WLTC 3.4")
+    cm = TwoWheelerModel(array, cycle="WLTC 3.4")
     cm.set_all()
     ic = InventoryCalculation(cm.array)
     results = ic.calculate_impacts()

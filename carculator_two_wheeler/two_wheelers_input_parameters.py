@@ -16,7 +16,7 @@ def load_parameters(obj):
         return obj
 
 
-class CarInputParameters(NamedParameters):
+class TwoWheelerInputParameters(NamedParameters):
     """
     A class used to represent vehicles with associated type, size, technology, year and parameters.
 
@@ -25,13 +25,15 @@ class CarInputParameters(NamedParameters):
     default_parameters and format them into an array following the structured described
     in the *klausen* package.
 
-    :ivar sizes: List of string items e.g., ['Large', 'Lower medium', 'Medium', 'Mini', 'SUV', 'Small', 'Van']
+    :ivar sizes: List of string items e.g., ["Kick-scooter", "Bicycle <25km", "Bicycle <45km", "Bicycle cargo",
+                    "Moped <4kW", "Scooter 4kW", "Scooter 4-11kW", "Motorcycle 4-11kW", "Motorcycle 11-35kW",
+                    "Motorcycle >35kW"]
     :vartype sizes: list
-    :ivar powertrains: List of string items e.g., ['BEV', 'FCEV', 'HEV-p', 'ICEV-d', 'ICEV-g', 'ICEV-p', 'PHEV-c', 'PHEV-e']
+    :ivar powertrains: List of string values e.g., ['BEV', 'ICEV-p', 'Human']
     :vartype powertrains: list
     :ivar parameters: List of string items e.g., ['Benzene', 'CH4', 'CNG tank mass intercept',...]
     :vartype parameters: list
-    :ivar years: List of integers e.g., [2000, 2010, 2020, 2040]
+    :ivar years: List of integers e.g., [2000, 2010, 2020, 2030, 2040, 2050]
     :vartype years: list
     :ivar metadata: Dictionary for metadata.
     :vartype metadata: dict

@@ -10,19 +10,18 @@ Submodules
 """
 
 __all__ = (
-    "CarInputParameters",
+    "TwoWheelerInputParameters",
     "fill_xarray_from_input_parameters",
     "modify_xarray_from_custom_parameters",
     "get_standard_driving_cycle",
-    "CarModel",
+    "TwoWheelerModel",
     "NoiseEmissionsModel",
     "HotEmissionsModel",
     "InventoryCalculation",
     "BackgroundSystemModel",
     "ExportInventory",
-    "InternalNoiseModel",
 )
-__version__ = (1, 5, 9)
+__version__ = (0, 0, 1)
 
 from pathlib import Path
 
@@ -34,11 +33,10 @@ from .array import (
     modify_xarray_from_custom_parameters,
 )
 from .background_systems import BackgroundSystemModel
-from .car_input_parameters import CarInputParameters
+from .two_wheelers_input_parameters import TwoWheelerInputParameters
 from .driving_cycles import get_standard_driving_cycle
 from .export import ExportInventory
 from .hot_emissions import HotEmissionsModel
-from .internal_noise import InternalNoiseModel
 from .inventory import InventoryCalculation
-from .model import CarModel
+from .model import TwoWheelerModel
 from .noise_emissions import NoiseEmissionsModel

@@ -2,21 +2,21 @@ import numpy as np
 import pytest
 
 from carculator_two_wheeler import (
-    CarInputParameters,
-    CarModel,
+    TwoWheelerInputParameters,
+    TwoWheelerModel,
     InventoryCalculation,
     fill_xarray_from_input_parameters,
 )
 
 # generate vehicle parameters
-cip = CarInputParameters()
+cip = TwoWheelerInputParameters()
 cip.static()
 
 # fill in array with vehicle parameters
 _, array = fill_xarray_from_input_parameters(cip)
 
 # build CarModel object
-cm = CarModel(array, cycle="WLTC")
+cm = TwoWheelerModel(array, cycle="WLTC")
 # build vehicles
 cm.set_all()
 

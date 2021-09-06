@@ -30,7 +30,7 @@ with open("README.md", "r") as fh:
 
 setup(
     name="carculator_two_wheeler",
-    version="1.5.9",
+    version="0.0.1",
     packages=packages,
     author="Romain Sacchi <romain.sacchi@psi.ch>",
     license=open("LICENSE").read(),
