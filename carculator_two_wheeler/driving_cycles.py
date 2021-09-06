@@ -24,30 +24,34 @@ def get_standard_driving_cycle(size=None):
     # each column corresponds to a size class
     # since the driving cycle is simulated for each size class
 
-    size = size if size is not None else [
-        "Kick-scooter",
-        "Bicycle <25",
-        "Bicycle <45",
-        "Bicycle cargo",
-        "Moped <4kW",
-        "Scooter <4kW",
-        "Scooter 4-11kW",
-        "Motorcycle 4-11kW",
-        "Motorcycle 11-35kW",
-        "Motorcycle >35kW"
-    ]
+    size = (
+        size
+        if size is not None
+        else [
+            "Kick-scooter",
+            "Bicycle <25",
+            "Bicycle <45",
+            "Bicycle cargo",
+            "Moped <4kW",
+            "Scooter <4kW",
+            "Scooter 4-11kW",
+            "Motorcycle 4-11kW",
+            "Motorcycle 11-35kW",
+            "Motorcycle >35kW",
+        ]
+    )
 
     dict_dc_sizes = {
-        "Kick-scooter":1,
-        "Bicycle <25":2,
-        "Bicycle <45":3,
-        "Bicycle cargo":4,
-        "Moped <4kW":5,
-        "Scooter <4kW":6,
-        "Scooter 4-11kW":7,
-        "Motorcycle 4-11kW":8,
-        "Motorcycle 11-35kW":9,
-        "Motorcycle >35kW":10
+        "Kick-scooter": 1,
+        "Bicycle <25": 2,
+        "Bicycle <45": 3,
+        "Bicycle cargo": 4,
+        "Moped <4kW": 5,
+        "Scooter <4kW": 6,
+        "Scooter 4-11kW": 7,
+        "Motorcycle 4-11kW": 8,
+        "Motorcycle 11-35kW": 9,
+        "Motorcycle >35kW": 10,
     }
 
     try:

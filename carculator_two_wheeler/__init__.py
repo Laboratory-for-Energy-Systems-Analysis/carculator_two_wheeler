@@ -33,10 +33,10 @@ from .array import (
     modify_xarray_from_custom_parameters,
 )
 from .background_systems import BackgroundSystemModel
-from .two_wheelers_input_parameters import TwoWheelerInputParameters
 from .driving_cycles import get_standard_driving_cycle
 from .export import ExportInventory
 from .hot_emissions import HotEmissionsModel
 from .inventory import InventoryCalculation
 from .model import TwoWheelerModel
 from .noise_emissions import NoiseEmissionsModel
+from .two_wheelers_input_parameters import TwoWheelerInputParameters

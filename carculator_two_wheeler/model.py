@@ -26,9 +26,7 @@ class TwoWheelerModel:
 
     """
 
-    def __init__(
-        self, array, gradient=None, energy_storage=None
-    ):
+    def __init__(self, array, gradient=None, energy_storage=None):
 
         self.array = array
 
@@ -144,9 +142,9 @@ class TwoWheelerModel:
         self.adjust_cost()
         self.set_range()
         self.set_electricity_consumption()
-        #self.set_costs()
-        #self.set_hot_emissions()
-        #self.set_noise_emissions()
+        # self.set_costs()
+        # self.set_hot_emissions()
+        # self.set_noise_emissions()
 
     def adjust_cost(self):
         """
@@ -169,15 +167,10 @@ class TwoWheelerModel:
             else:
                 cost_factor = np.random.triangular(0.7, 1, 1.3, (n_iterations, 1))
 
-
         # Correction of energy battery system cost, per kWh
         self.array.loc[
             :,
-            [
-                pt
-                for pt in ["BEV"]
-                if pt in self.array.coords["powertrain"].values
-            ],
+            [pt for pt in ["BEV"] if pt in self.array.coords["powertrain"].values],
             "energy battery cost per kWh",
             :,
             :,
@@ -211,7 +204,6 @@ class TwoWheelerModel:
         This method calculates the total electricity consumption for BEV and plugin-hybrid vehicles
         :returns: Does not return anything. Modifies ``self.array`` in place.
         """
-
 
         if "BEV" in self.array.coords["powertrain"].values:
             with self("BEV") as cpm:
@@ -283,33 +275,29 @@ class TwoWheelerModel:
             "Scooter 4-11kW": (0, 600),
             "Motorcycle 4-11kW": (0, 600),
             "Motorcycle 11-35kW": (0, 1200),
-            "Motorcycle >35kW": (0, 1800)
+            "Motorcycle >35kW": (0, 1800),
         }
 
         for b in cycle_boundaries:
             if b in self.array.coords["size"].values:
                 self.energy.loc[
                     dict(
-                        parameter=[
-                            "auxiliary energy"
-                        ],
+                        parameter=["auxiliary energy"],
                         size=b,
                         second=np.arange(
                             cycle_boundaries[b][0], cycle_boundaries[b][1]
                         ),
                     )
-                ] = self["auxiliary power demand"].values[..., None] / 1000
-
+                ] = (
+                    self["auxiliary power demand"].values[..., None] / 1000
+                )
 
         self.energy.loc[
             dict(
                 parameter="auxiliary energy",
                 powertrain=[
                     pt
-                    for pt in [
-                        "ICEV-p",
-                        "BEV"
-                        ]
+                    for pt in ["ICEV-p", "BEV"]
                     if pt in self.array.coords["powertrain"].values
                 ],
             )
@@ -318,10 +306,7 @@ class TwoWheelerModel:
                 parameter="engine efficiency",
                 powertrain=[
                     pt
-                    for pt in [
-                        "ICEV-p",
-                        "BEV"
-                        ]
+                    for pt in ["ICEV-p", "BEV"]
                     if pt in self.array.coords["powertrain"].values
                 ],
             )
@@ -329,14 +314,11 @@ class TwoWheelerModel:
             ..., None
         ]
 
-
         self["auxiliary power demand"] = (
             self.energy.loc[dict(parameter="auxiliary energy")].mean(axis=-1)
             * 1000
             / distance.T
         )
-
-
 
         self.energy.loc[dict(parameter="motive energy")] = (
             self.energy.loc[dict(parameter="motive energy at wheels")]
@@ -348,9 +330,7 @@ class TwoWheelerModel:
             0,
             self["power"].values[..., None],
         )
-        self.energy.loc[dict(parameter="motive energy")] /= self[
-            "engine efficiency"
-        ]
+        self.energy.loc[dict(parameter="motive energy")] /= self["engine efficiency"]
 
         # a round trip from and to the wheels has to be accounted for
         self.energy.loc[dict(parameter="recuperated energy")] = np.clip(
@@ -386,9 +366,9 @@ class TwoWheelerModel:
         ).T
 
         self["TtW efficiency"] = (
-                    self.energy.loc[dict(parameter="transmission efficiency")]
-                    * self.energy.loc[dict(parameter="engine efficiency")]
-                )
+            self.energy.loc[dict(parameter="transmission efficiency")]
+            * self.energy.loc[dict(parameter="engine efficiency")]
+        )
 
     def set_auxiliaries(self):
         """
@@ -403,9 +383,7 @@ class TwoWheelerModel:
             (Cooling demand (dimensionless, between 0 and 1) * Cooling power (W))
 
         """
-        self["auxiliary power demand"] = (
-            self["auxilliary power base demand"]
-        )
+        self["auxiliary power demand"] = self["auxilliary power base demand"]
 
     def set_recuperation(self):
         self["recuperation efficiency"] = (
@@ -421,9 +399,7 @@ class TwoWheelerModel:
         # Number of replacement of battery is rounded *up*
 
         for pt in [
-            pwt
-            for pwt in ["BEV"]
-            if pwt in self.array.coords["powertrain"].values
+            pwt for pwt in ["BEV"] if pwt in self.array.coords["powertrain"].values
         ]:
             with self(pt) as cpm:
                 battery_tech_label = (
@@ -514,12 +490,9 @@ class TwoWheelerModel:
             self["electrical powertrain mass share"] * self["glider base mass"]
         )
 
-
     def set_battery_properties(self):
         pt_list = [
-            pt
-            for pt in ["ICEV-p"]
-            if pt in self.array.coords["powertrain"].values
+            pt for pt in ["ICEV-p"] if pt in self.array.coords["powertrain"].values
         ]
         self.array.loc[:, pt_list, "battery power"] = self.array.loc[
             :, pt_list, "electric power"
@@ -543,9 +516,7 @@ class TwoWheelerModel:
         )
 
         list_pt_el = [
-            pt
-            for pt in ["BEV"]
-            if pt in self.array.coords["powertrain"].values
+            pt for pt in ["BEV"] if pt in self.array.coords["powertrain"].values
         ]
 
         self.array.loc[:, list_pt_el, "battery cell mass"] = (
@@ -560,17 +531,11 @@ class TwoWheelerModel:
     def set_range(self):
 
         list_pt = [
-            pt
-            for pt in [
-                "ICEV-p"
-            ]
-            if pt in self.array.coords["powertrain"].values
+            pt for pt in ["ICEV-p"] if pt in self.array.coords["powertrain"].values
         ]
 
         list_pt_el = [
-            pt
-            for pt in ["BEV"]
-            if pt in self.array.coords["powertrain"].values
+            pt for pt in ["BEV"] if pt in self.array.coords["powertrain"].values
         ]
 
         fuel_mass = self.array.loc[:, list_pt, "fuel mass"]
@@ -592,9 +557,7 @@ class TwoWheelerModel:
     def set_energy_stored_properties(self):
 
         list_combustion = [
-            pt
-            for pt in ["ICEV-p"]
-            if pt in self.array.coords["powertrain"].values
+            pt for pt in ["ICEV-p"] if pt in self.array.coords["powertrain"].values
         ]
 
         self.array.loc[:, list_combustion, "oxidation energy stored"] = (
@@ -607,14 +570,12 @@ class TwoWheelerModel:
             * self.array.loc[:, list_combustion, "fuel tank mass per energy"]
         )
 
-
         if "BEV" in self.array.coords["powertrain"].values:
-                with self("BEV") as cpm:
+            with self("BEV") as cpm:
 
-                    cpm["electric energy stored"] = (
-                        cpm["battery cell mass"] * cpm["battery cell energy density"]
-                    )
-
+                cpm["electric energy stored"] = (
+                    cpm["battery cell mass"] * cpm["battery cell energy density"]
+                )
 
         # kWh electricity/kg battery cell
         self["battery cell production energy electricity share"] = self[

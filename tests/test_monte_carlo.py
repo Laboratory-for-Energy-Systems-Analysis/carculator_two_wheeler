@@ -1,7 +1,7 @@
 from carculator_two_wheeler import (
+    InventoryCalculation,
     TwoWheelerInputParameters,
     TwoWheelerModel,
-    InventoryCalculation,
     fill_xarray_from_input_parameters,
 )
 

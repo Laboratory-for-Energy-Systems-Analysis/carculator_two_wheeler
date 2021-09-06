@@ -7,6 +7,7 @@ np.seterr(divide="ignore", invalid="ignore")
 
 import xarray as xr
 
+
 class EnergyConsumptionModel:
     """
     Calculate energy consumption of a vehicle for a given driving cycle and vehicle parameters.
@@ -37,11 +38,7 @@ class EnergyConsumptionModel:
 
     """
 
-    def __init__(
-        self,
-        size,
-        rho_air=1.204
-    ):
+    def __init__(self, size, rho_air=1.204):
 
         cycle = get_standard_driving_cycle(size=size)
         # retrieve road gradients (in degrees) for each second of the driving cycle selected
@@ -59,7 +56,6 @@ class EnergyConsumptionModel:
         # Zero at first value
         self.acceleration = np.zeros_like(self.velocity)
         self.acceleration[1:-1] = (self.velocity[2:] - self.velocity[:-2]) / 2
-
 
     def motive_energy_per_km(
         self,

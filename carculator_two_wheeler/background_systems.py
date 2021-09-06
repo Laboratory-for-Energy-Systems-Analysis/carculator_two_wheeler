@@ -130,6 +130,7 @@ def get_biofuel_share():
             array.loc[dict(region=r, scenario=s, value=0)] = val
     return array
 
+
 def get_biogasoline_share():
     filename = "share_bio_gasoline.csv"
     filepath = DATA_DIR / filename

@@ -49,7 +49,6 @@ def fill_xarray_from_input_parameters(cip, sensitivity=False, scope=None):
         if "year" not in scope:
             scope["year"] = cip.years
 
-
     if any(s for s in scope["size"] if s not in cip.sizes):
         raise ValueError("One of the size types is not valid.")
 

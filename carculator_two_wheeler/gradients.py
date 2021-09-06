@@ -6,7 +6,8 @@ from . import DATA_DIR
 
 
 def get_gradients(
-    name="Urban delivery", size=[
+    name="Urban delivery",
+    size=[
         "Kick-scooter",
         "Bicycle <25km",
         "Bicycle <45km",
@@ -16,8 +17,8 @@ def get_gradients(
         "Scooter 4-11kW",
         "Motorcycle 4-11kW",
         "Motorcycle 11-35kW",
-        "Motorcycle >35kW"
-    ]
+        "Motorcycle >35kW",
+    ],
 ):
 
     """Get driving cycle data as a Pandas `Series`.
@@ -41,7 +42,7 @@ def get_gradients(
     # each column corresponds to a size class
     # since the driving cycle is simulated for each size class
 
-    dict_dc_sizes = {s:i for i, s in enumerate(size)}
+    dict_dc_sizes = {s: i for i, s in enumerate(size)}
 
     try:
         list_col = [dict_dc_sizes[s] for s in size]
