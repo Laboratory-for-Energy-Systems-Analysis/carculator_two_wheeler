@@ -6,19 +6,7 @@ from . import DATA_DIR
 
 
 def get_gradients(
-    name="Urban delivery",
-    size=[
-        "Kick-scooter",
-        "Bicycle <25km",
-        "Bicycle <45km",
-        "Bicycle cargo",
-        "Moped <4kW",
-        "Scooter 4kW",
-        "Scooter 4-11kW",
-        "Motorcycle 4-11kW",
-        "Motorcycle 11-35kW",
-        "Motorcycle >35kW",
-    ],
+    size=None,
 ):
 
     """Get driving cycle data as a Pandas `Series`.
@@ -42,11 +30,39 @@ def get_gradients(
     # each column corresponds to a size class
     # since the driving cycle is simulated for each size class
 
-    dict_dc_sizes = {s: i for i, s in enumerate(size)}
+    size = (
+        size
+        if size is not None
+        else [
+            "Kick-scooter",
+            "Bicycle <25",
+            "Bicycle <45",
+            "Bicycle cargo",
+            "Moped <4kW",
+            "Scooter <4kW",
+            "Scooter 4-11kW",
+            "Motorcycle 4-11kW",
+            "Motorcycle 11-35kW",
+            "Motorcycle >35kW",
+        ]
+    )
+
+    dict_dc_sizes = {
+        "Kick-scooter": 1,
+        "Bicycle <25": 2,
+        "Bicycle <45": 3,
+        "Bicycle cargo": 4,
+        "Moped <4kW": 5,
+        "Scooter <4kW": 6,
+        "Scooter 4-11kW": 7,
+        "Motorcycle 4-11kW": 8,
+        "Motorcycle 11-35kW": 9,
+        "Motorcycle >35kW": 10,
+    }
 
     try:
         list_col = [dict_dc_sizes[s] for s in size]
-        arr = np.genfromtxt(DATA_DIR / "driving_cycles.csv", delimiter=";")
+        arr = np.genfromtxt(DATA_DIR / "gradients.csv", delimiter=";")
         # we skip the headers
         dc = arr[1:, list_col]
         dc = dc[~np.isnan(dc)]

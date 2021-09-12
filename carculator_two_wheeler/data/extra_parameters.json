@@ -42,7 +42,6 @@
   "noise, octave 3, evening time, urban",
   "noise, octave 4, night time, rural",
   "noise, octave 8, evening time, rural",
-  "fuel cell essential BoP mass",
   "noise, octave 3, day time, suburban",
   "electric powertrain cost",
   "NMVOC direct emissions, urban",
@@ -62,7 +61,6 @@
   "energy battery cost",
   "fuel tank mass",
   "Ammonia direct emissions, suburban",
-  "auxiliary power demand",
   "glider cost",
   "Benzene direct emissions, rural",
   "noise, octave 7, day time, urban",
@@ -233,5 +231,6 @@
   "Mercury direct emissions, rural",
   "Cadmium direct emissions, rural",
   "total cargo mass",
-  "battery cell energy density"
+  "battery cell energy density",
+  "is_available"
 ]

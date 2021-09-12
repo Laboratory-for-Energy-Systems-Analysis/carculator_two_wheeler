@@ -1,0 +1,17 @@
+size;powertrain;tyre;brake;road
+Kick-scooter;BEV;2.92E-06;1.84E-06;3.00E-06
+Bicycle <25;BEV;2.92E-06;1.84E-06;3.00E-06
+Bicycle <45;BEV;2.92E-06;1.84E-06;3.00E-06
+Bicycle cargo;BEV;5.84E-06;3.67E-06;6.00E-06
+Scooter <4kW;BEV;6.39E-06;3.09E-06;6.00E-06
+Scooter 4-11kW;BEV;6.39E-06;3.09E-06;6.00E-06
+Motorcycle 4-11kW;BEV;7.37E-06;4.18E-06;6.00E-06
+Motorcycle 11-35kW;BEV;7.37E-06;4.18E-06;6.00E-06
+Motorcycle >35kW;BEV;7.37E-06;4.18E-06;6.00E-06
+Moped <4kW;ICEV-p;5.84E-06;3.67E-06;6.00E-06
+Scooter <4kW;ICEV-p;6.39E-06;6.18E-06;6.00E-06
+Scooter 4-11kW;ICEV-p;6.39E-06;6.18E-06;6.00E-06
+Motorcycle 4-11kW;ICEV-p;7.37E-06;8.35E-06;6.00E-06
+Motorcycle 11-35kW;ICEV-p;7.37E-06;8.35E-06;6.00E-06
+Motorcycle >35kW;ICEV-p;7.37E-06;8.35E-06;6.00E-06
+Bicycle <25;Human;2.92E-06;1.84E-06;3.00E-06

@@ -118,33 +118,64 @@ class TwoWheelerModel:
 
         """
 
-        diff = 1.0
+        print("Building two-wheelers...")
 
+        diff = 1.0
         while diff > 0.01:
             old_driving_mass = self["driving mass"].sum().values
             self.set_car_masses()
 
             self.set_power_parameters()
             self.set_component_masses()
-
             self.set_battery_properties()
             self.set_battery_replacements()
             self.set_recuperation()
+            self.calculate_ttw_energy()
             self.set_energy_stored_properties()
 
             diff = (self["driving mass"].sum().values - old_driving_mass) / self[
                 "driving mass"
             ].sum()
 
-        self.set_auxiliaries()
-        self.set_ttw_efficiency()
-        self.calculate_ttw_energy()
+
         self.adjust_cost()
         self.set_range()
         self.set_electricity_consumption()
-        # self.set_costs()
-        # self.set_hot_emissions()
-        # self.set_noise_emissions()
+        self.set_costs()
+        self.set_hot_emissions()
+        self.set_noise_emissions()
+
+        # we remove vehicles that are not available for the specified years
+        # we remove all electric vehicles from before 2010
+        self.array.loc[dict(parameter="is_available")] = 1
+        l_years = [y for y in self.array.coords["year"].values if y < 2010]
+        if len(l_years) > 0:
+            self.array.loc[dict(parameter="is_available", year=l_years, powertrain="BEV")] = 0
+
+        self.array.loc[dict(parameter="is_available",
+                            powertrain="Human",
+                            size=[
+                                "Scooter <4kW",
+                                "Moped <4kW",
+                                "Scooter 4-11kW",
+                                "Motorcycle 4-11kW",
+                                "Motorcycle 11-35kW",
+                                "Motorcycle >35kW",
+                            ])] = 0
+
+        self.array.loc[dict(parameter="is_available",
+                            powertrain="BEV",
+                            size=[
+                                "Moped <4kW",
+                            ])] = 0
+
+        self.array.loc[dict(parameter="is_available",
+                            powertrain=["Human", "ICEV-p"],
+                            size=[
+                                "Kick-scooter",
+                            ])] = 0
+
+        print("Done!")
 
     def adjust_cost(self):
         """
@@ -222,7 +253,7 @@ class TwoWheelerModel:
                 (
                     len(self.array.coords["size"]),
                     len(self.array.coords["powertrain"]),
-                    7,
+                    5,
                     len(self.array.coords["year"]),
                     len(self.array.coords["value"]),
                     self.ecm.cycle.shape[0],
@@ -237,8 +268,6 @@ class TwoWheelerModel:
                     "motive energy at wheels",
                     "recuperated energy",
                     "recuperated energy at wheels",
-                    "transmission efficiency",
-                    "engine efficiency",
                 ],
                 self.array.coords["year"],
                 self.array.coords["value"],
@@ -246,6 +275,7 @@ class TwoWheelerModel:
             ],
             dims=["size", "powertrain", "parameter", "year", "value", "second"],
         )
+
 
         motive_power, recuperated_power, distance = self.ecm.motive_energy_per_km(
             driving_mass=self["driving mass"],
@@ -265,72 +295,23 @@ class TwoWheelerModel:
             * -1
         )
 
-        cycle_boundaries = {
-            "Kick-scooter": (0, 1800),
-            "Bicycle <25km": (0, 1800),
-            "Bicycle <45km": (0, 1800),
-            "Bicycle cargo": (0, 1800),
-            "Moped <4kW": (0, 600),
-            "Scooter 4kW": (0, 600),
-            "Scooter 4-11kW": (0, 600),
-            "Motorcycle 4-11kW": (0, 600),
-            "Motorcycle 11-35kW": (0, 1200),
-            "Motorcycle >35kW": (0, 1800),
-        }
+        self.energy.loc[dict(parameter="auxiliary energy")] = np.where(self.energy.loc[dict(
+            parameter="motive energy at wheels")]>0,
+            self.array.sel(parameter="auxiliary power demand").values[..., None] / 1000,
+        0)
 
-        for b in cycle_boundaries:
-            if b in self.array.coords["size"].values:
-                self.energy.loc[
-                    dict(
-                        parameter=["auxiliary energy"],
-                        size=b,
-                        second=np.arange(
-                            cycle_boundaries[b][0], cycle_boundaries[b][1]
-                        ),
-                    )
-                ] = (
-                    self["auxiliary power demand"].values[..., None] / 1000
-                )
-
-        self.energy.loc[
-            dict(
-                parameter="auxiliary energy",
-                powertrain=[
-                    pt
-                    for pt in ["ICEV-p", "BEV"]
-                    if pt in self.array.coords["powertrain"].values
-                ],
-            )
-        ] /= self.array.loc[
-            dict(
-                parameter="engine efficiency",
-                powertrain=[
-                    pt
-                    for pt in ["ICEV-p", "BEV"]
-                    if pt in self.array.coords["powertrain"].values
-                ],
-            )
-        ].values[
-            ..., None
-        ]
-
-        self["auxiliary power demand"] = (
-            self.energy.loc[dict(parameter="auxiliary energy")].mean(axis=-1)
-            * 1000
-            / distance.T
-        )
-
-        self.energy.loc[dict(parameter="motive energy")] = (
-            self.energy.loc[dict(parameter="motive energy at wheels")]
-            / self["transmission efficiency"]
+        self["TtW efficiency"] = (
+                self["transmission efficiency"]
+                * self["engine efficiency"]
+                * self["battery discharge efficiency"]
         )
 
         self.energy.loc[dict(parameter="motive energy")] = np.clip(
-            self.energy.loc[dict(parameter="motive energy")],
+            self.energy.loc[dict(parameter="motive energy at wheels")]
+            / self["TtW efficiency"],
             0,
-            self["power"].values[..., None],
+            self["power"].values[..., None]
         )
-        self.energy.loc[dict(parameter="motive energy")] /= self["engine efficiency"]
 
         # a round trip from and to the wheels has to be accounted for
         self.energy.loc[dict(parameter="recuperated energy")] = np.clip(
@@ -365,29 +346,11 @@ class TwoWheelerModel:
             self.energy.sel(parameter="auxiliary energy").sum(dim="second").T / distance
         ).T
 
-        self["TtW efficiency"] = (
-            self.energy.loc[dict(parameter="transmission efficiency")]
-            * self.energy.loc[dict(parameter="engine efficiency")]
-        )
-
-    def set_auxiliaries(self):
-        """
-        Calculates the power needed to operate the auxiliary services of the vehicle (heating, cooling).
-
-        The demand for heat and cold are expressed as a fraction of the heating and cooling capacities
-
-        .. note:
-
-            Auxiliary power demand (W) = Base auxiliary power (W) +
-            (Heating demand (dimensionless, between 0 and 1) * Heating power (W)) +
-            (Cooling demand (dimensionless, between 0 and 1) * Cooling power (W))
-
-        """
-        self["auxiliary power demand"] = self["auxilliary power base demand"]
-
     def set_recuperation(self):
         self["recuperation efficiency"] = (
-            self["drivetrain efficiency"] * self["battery charge efficiency"]
+            self["transmission efficiency"]
+            * self["battery charge efficiency"]
+            * self["braking energy recuperation"]
         )
 
     def set_battery_replacements(self):
@@ -483,11 +446,17 @@ class TwoWheelerModel:
         ) * (self["electric power"] > 0)
 
         self["mechanical powertrain mass"] = (
-            self["mechanical powertrain mass share"] * self["glider base mass"]
+            (self["mechanical powertrain mass share"] * self["glider base mass"])
+            - self["combustion engine mass"]
         )
 
         self["electrical powertrain mass"] = (
-            self["electrical powertrain mass share"] * self["glider base mass"]
+            (self["electrical powertrain mass share"] * self["glider base mass"])
+            - self["electric engine mass"]
+            - self["electric charger mass"]
+            - self["converter mass"]
+            - self["inverter mass"]
+            - self["power distribution unit mass"]
         )
 
     def set_battery_properties(self):
@@ -565,9 +534,11 @@ class TwoWheelerModel:
             * self.array.loc[:, list_combustion, "LHV fuel MJ per kg"]
             / 3.6
         )
+
+        # fuel tank mass as a share of the fuel mass
         self.array.loc[:, list_combustion, "fuel tank mass"] = (
-            self.array.loc[:, list_combustion, "oxidation energy stored"]
-            * self.array.loc[:, list_combustion, "fuel tank mass per energy"]
+            self.array.loc[:, list_combustion, "fuel mass"]
+            * self.array.loc[:, list_combustion, "fuel tank mass share"]
         )
 
         if "BEV" in self.array.coords["powertrain"].values:
@@ -592,6 +563,7 @@ class TwoWheelerModel:
         ) * 3.6
 
     def set_costs(self):
+
         self["glider cost"] = (
             self["glider base mass"] * self["glider cost slope"]
             + self["glider cost intercept"]
@@ -607,26 +579,25 @@ class TwoWheelerModel:
         self["combustion powertrain cost"] = (
             self["combustion power"] * self["combustion powertrain cost per kW"]
         )
-        self["fuel cell cost"] = self["fuel cell power"] * self["fuel cell cost per kW"]
         self["power battery cost"] = (
             self["battery power"] * self["power battery cost per kW"]
         )
         self["energy battery cost"] = (
             self["energy battery cost per kWh"] * self["electric energy stored"]
         )
+
         self["fuel tank cost"] = self["fuel tank cost per kg"] * self["fuel mass"]
         # Per km
         self["energy cost"] = self["energy cost per kWh"] * self["TtW energy"] / 3600
 
         # For battery, need to divide cost of electricity in battery by efficiency of charging
-        for pt in self.battery:
-            if pt in self.array.coords["powertrain"].values:
-                with self(pt):
-                    self["energy cost"] /= self["battery charge efficiency"]
+
+        if "BEV" in self.array.coords["powertrain"].values:
+            with self("BEV"):
+                self["energy cost"] /= self["battery charge efficiency"]
 
         self["component replacement cost"] = (
             self["energy battery cost"] * self["battery lifetime replacements"]
-            + self["fuel cell cost"] * self["fuel cell lifetime replacements"]
         )
 
         to_markup = [
@@ -634,7 +605,6 @@ class TwoWheelerModel:
             "component replacement cost",
             "electric powertrain cost",
             "energy battery cost",
-            "fuel cell cost",
             "fuel tank cost",
             "glider cost",
             "lightweighting cost",
@@ -655,7 +625,6 @@ class TwoWheelerModel:
             "combustion powertrain cost",
             "electric powertrain cost",
             "energy battery cost",
-            "fuel cell cost",
             "fuel tank cost",
             "glider cost",
             "heat pump cost",
@@ -698,19 +667,17 @@ class TwoWheelerModel:
         return emissions per substance per second of driving cycle.
         :return: Does not return anything. Modifies ``self.array`` in place.
         """
-        hem = HotEmissionsModel(self.ecm.cycle, self.ecm.cycle_name)
+        hem = HotEmissionsModel(self.ecm.cycle)
 
         list_direct_emissions = [
-            "Hydrocarbons direct emissions, urban",
+
             "Carbon monoxide direct emissions, urban",
             "Nitrogen oxides direct emissions, urban",
+            "NMVOC direct emissions, urban",
             "Particulate matters direct emissions, urban",
             "Methane direct emissions, urban",
-            "NMVOC direct emissions, urban",
-            "Dinitrogen oxide direct emissions, urban",
             "Ammonia direct emissions, urban",
-            "Lead direct emissions, urban",
-            "Benzene direct emissions, urban",
+            "Dinitrogen oxide direct emissions, urban",
             "Ethane direct emissions, urban",
             "Propane direct emissions, urban",
             "Butane direct emissions, urban",
@@ -741,16 +708,15 @@ class TwoWheelerModel:
             "Chromium VI direct emissions, urban",
             "Mercury direct emissions, urban",
             "Cadmium direct emissions, urban",
-            "Hydrocarbons direct emissions, suburban",
+            "Benzene direct emissions, urban",
+
             "Carbon monoxide direct emissions, suburban",
             "Nitrogen oxides direct emissions, suburban",
+            "NMVOC direct emissions, suburban",
             "Particulate matters direct emissions, suburban",
             "Methane direct emissions, suburban",
-            "NMVOC direct emissions, suburban",
-            "Dinitrogen oxide direct emissions, suburban",
             "Ammonia direct emissions, suburban",
-            "Lead direct emissions, suburban",
-            "Benzene direct emissions, suburban",
+            "Dinitrogen oxide direct emissions, suburban",
             "Ethane direct emissions, suburban",
             "Propane direct emissions, suburban",
             "Butane direct emissions, suburban",
@@ -781,16 +747,15 @@ class TwoWheelerModel:
             "Chromium VI direct emissions, suburban",
             "Mercury direct emissions, suburban",
             "Cadmium direct emissions, suburban",
-            "Hydrocarbons direct emissions, rural",
+            "Benzene direct emissions, suburban",
+
             "Carbon monoxide direct emissions, rural",
             "Nitrogen oxides direct emissions, rural",
+            "NMVOC direct emissions, rural",
             "Particulate matters direct emissions, rural",
             "Methane direct emissions, rural",
-            "NMVOC direct emissions, rural",
-            "Dinitrogen oxide direct emissions, rural",
             "Ammonia direct emissions, rural",
-            "Lead direct emissions, rural",
-            "Benzene direct emissions, rural",
+            "Dinitrogen oxide direct emissions, rural",
             "Ethane direct emissions, rural",
             "Propane direct emissions, rural",
             "Butane direct emissions, rural",
@@ -821,80 +786,49 @@ class TwoWheelerModel:
             "Chromium VI direct emissions, rural",
             "Mercury direct emissions, rural",
             "Cadmium direct emissions, rural",
+            "Benzene direct emissions, rural"
         ]
 
         l_y = []
         for y in self.array.year.values:
-            # European emission standards funciton of registration year
-            if y < 1993:
+            # European emission standards function of registration year
+            if y < 2003:
                 l_y.append(1)
-            if 1993 <= y < 1997:
-                l_y.append(1)
-            if 1997 <= y < 2001:
+            if 2003 <= y < 2006:
                 l_y.append(2)
-            if 2001 <= y < 2006:
+            if 2006 <= y < 2016:
                 l_y.append(3)
-            if 2006 <= y < 2011:
+            if 2017 <= y < 2020:
                 l_y.append(4)
-            if 2011 <= y < 2015:
+            if y >= 2020:
                 l_y.append(5)
-            if 2015 <= y < 2017:
-                l_y.append(6.0)
-            if 2017 <= y < 2019:
-                l_y.append(6.1)
-            if 2019 <= y < 2021:
-                l_y.append(6.2)
-            if y >= 2021:
-                l_y.append(6.3)
 
-        l_pt = []
-        for pt in self.array.powertrain.values:
-            if pt in ["ICEV-d", "PHEV-c-d", "HEV-d", "PHEV-d"]:
-                l_pt.append("ICEV-d")
-            if pt in ["ICEV-p", "PHEV-c-p", "HEV-p", "PHEV-p"]:
-                l_pt.append("ICEV-p")
-            if pt == "ICEV-g":
-                l_pt.append("ICEV-g")
+        if "ICEV-p" in self.array.powertrain.values:
+            sizes = [s for s in self.array.coords["size"].values
+                     if s not in [
+                         'Bicycle <25',
+                         'Bicycle <45',
+                         'Bicycle cargo',
+                         'Kick-scooter'
+                     ]]
 
-        self.array.loc[
-            dict(
-                powertrain=[
-                    pt
-                    for pt in self.array.powertrain.values
-                    if pt not in ["FCEV", "BEV", "PHEV-e"]
-                ],
-                parameter=list_direct_emissions,
-            )
-        ] = hem.get_hot_emissions(
-            powertrain_type=l_pt,
-            euro_class=l_y,
-            lifetime_km=self.array.loc[
+
+            self.array.loc[
                 dict(
-                    powertrain=[
-                        pt
-                        for pt in self.array.powertrain.values
-                        if pt not in ["FCEV", "BEV", "PHEV-e"]
-                    ],
-                    parameter="lifetime kilometers",
+                    powertrain="ICEV-p",
+                    parameter=list_direct_emissions,
+                    size=sizes
                 )
-            ],
-            energy_consumption=self.energy.sel(
-                powertrain=[
-                    pt
-                    for pt in self.array.powertrain.values
-                    if pt not in ["FCEV", "BEV", "PHEV-e"]
-                ],
-                parameter=["motive energy", "auxiliary energy", "recuperated energy"],
-            ).sum(dim="parameter"),
-            yearly_km=self.array.sel(
-                parameter="kilometers per year",
-                powertrain=[
-                    pt
-                    for pt in self.array.powertrain.values
-                    if pt not in ["FCEV", "BEV", "PHEV-e"]
-                ],
-            ),
-        )
+            ] = hem.get_hot_emissions(
+                powertrain_type="ICEV-p",
+                euro_class=l_y,
+                sizes = sizes,
+                energy_consumption=self.energy.sel(
+                    powertrain="ICEV-p",
+                    parameter=["motive energy", "auxiliary energy", "recuperated energy"],
+                    size=sizes
+                ).sum(dim="parameter"),
+            )
 
     def set_noise_emissions(self):
         """
@@ -907,82 +841,64 @@ class TwoWheelerModel:
 
         :return: Does not return anything. Modifies ``self.array`` in place.
         """
-        nem = NoiseEmissionsModel(self.ecm.cycle, self.ecm.cycle_name)
 
-        list_noise_emissions = [
-            "noise, octave 1, day time, urban",
-            "noise, octave 2, day time, urban",
-            "noise, octave 3, day time, urban",
-            "noise, octave 4, day time, urban",
-            "noise, octave 5, day time, urban",
-            "noise, octave 6, day time, urban",
-            "noise, octave 7, day time, urban",
-            "noise, octave 8, day time, urban",
-            "noise, octave 1, day time, suburban",
-            "noise, octave 2, day time, suburban",
-            "noise, octave 3, day time, suburban",
-            "noise, octave 4, day time, suburban",
-            "noise, octave 5, day time, suburban",
-            "noise, octave 6, day time, suburban",
-            "noise, octave 7, day time, suburban",
-            "noise, octave 8, day time, suburban",
-            "noise, octave 1, day time, rural",
-            "noise, octave 2, day time, rural",
-            "noise, octave 3, day time, rural",
-            "noise, octave 4, day time, rural",
-            "noise, octave 5, day time, rural",
-            "noise, octave 6, day time, rural",
-            "noise, octave 7, day time, rural",
-            "noise, octave 8, day time, rural",
-        ]
+        sizes = [s for s in self.array.coords["size"].values
+                 if s not in [
+                     "Kick-scooter",
+                     "Bicycle <25",
+                     "Bicycle <45",
+                     "Bicycle cargo"]]
 
-        self.array.loc[
-            :,
-            [
-                pt
-                for pt in list(self.combustion)
-                if pt in self.array.coords["powertrain"].values
-            ],
-            list_noise_emissions,
-            :,
-            :,
-        ] = nem.get_sound_power_per_compartment("combustion").reshape((24, 1, 1))
+        if len(sizes)>0:
 
-        self.array.loc[
-            :,
-            [
-                pt
-                for pt in list(self.electric)
-                if pt in self.array.coords["powertrain"].values
-            ],
-            list_noise_emissions,
-            :,
-            :,
-        ] = nem.get_sound_power_per_compartment("electric").reshape((24, 1, 1))
+            nem = NoiseEmissionsModel(sizes=sizes)
 
-        self.array.loc[
-            :,
-            [
-                pt
-                for pt in list(self.fuel_cell)
-                if pt in self.array.coords["powertrain"].values
-            ],
-            list_noise_emissions,
-            :,
-            :,
-        ] = nem.get_sound_power_per_compartment("electric").reshape((24, 1, 1))
+            list_noise_emissions = [
+                "noise, octave 1, day time, urban",
+                "noise, octave 2, day time, urban",
+                "noise, octave 3, day time, urban",
+                "noise, octave 4, day time, urban",
+                "noise, octave 5, day time, urban",
+                "noise, octave 6, day time, urban",
+                "noise, octave 7, day time, urban",
+                "noise, octave 8, day time, urban",
+                "noise, octave 1, day time, suburban",
+                "noise, octave 2, day time, suburban",
+                "noise, octave 3, day time, suburban",
+                "noise, octave 4, day time, suburban",
+                "noise, octave 5, day time, suburban",
+                "noise, octave 6, day time, suburban",
+                "noise, octave 7, day time, suburban",
+                "noise, octave 8, day time, suburban",
+                "noise, octave 1, day time, rural",
+                "noise, octave 2, day time, rural",
+                "noise, octave 3, day time, rural",
+                "noise, octave 4, day time, rural",
+                "noise, octave 5, day time, rural",
+                "noise, octave 6, day time, rural",
+                "noise, octave 7, day time, rural",
+                "noise, octave 8, day time, rural",
+            ]
 
-        self.array.loc[
-            :,
-            [
-                pt
-                for pt in ["HEV-p", "HEV-d"]
-                if pt in self.array.coords["powertrain"].values
-            ],
-            list_noise_emissions,
-            :,
-            :,
-        ] = nem.get_sound_power_per_compartment("hybrid").reshape((24, 1, 1))
+            if "ICEV-p" in self.array.powertrain.values:
+
+                self.array.loc[
+                    dict(
+                        powertrain="ICEV-p",
+                        size=sizes,
+                        parameter=list_noise_emissions
+                    )
+                ] = nem.get_sound_power_per_compartment("combustion").T[:, :, None, None]
+
+            if "BEV" in self.array.powertrain.values:
+
+                self.array.loc[
+                    dict(
+                        powertrain="BEV",
+                        size=sizes,
+                        parameter=list_noise_emissions
+                    )
+                ] = nem.get_sound_power_per_compartment("electric").T[:, :, None, None]
 
     def calculate_cost_impacts(self, sensitivity=False, scope=None):
         """

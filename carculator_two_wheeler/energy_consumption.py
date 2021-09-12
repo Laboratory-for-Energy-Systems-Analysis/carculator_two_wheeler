@@ -43,6 +43,7 @@ class EnergyConsumptionModel:
         cycle = get_standard_driving_cycle(size=size)
         # retrieve road gradients (in degrees) for each second of the driving cycle selected
         self.gradient = get_gradients(size=size).reshape(-1, 1, 1, 1, len(size))
+
         # reshape the driving cycle
         self.cycle = cycle.reshape(-1, 1, 1, len(size))
 
@@ -143,6 +144,7 @@ class EnergyConsumptionModel:
 
             # Recuperation of the braking power within the limit of the electric engine power
             recuperated_power = braking_loss * self.velocity / 1000
+            recuperated_power *= recuperation_efficiency.values.T
 
             return (
                 total_power.astype("float32"),

@@ -3,10 +3,10 @@ import pandas as pd
 import stats_arrays as sa
 import xarray as xr
 
-from .two_wheelers_input_parameters import TwoWheelerInputParameters as c_i_p
+from .two_wheelers_input_parameters import TwoWheelerInputParameters as tw_i_p
 
 
-def fill_xarray_from_input_parameters(cip, sensitivity=False, scope=None):
+def fill_xarray_from_input_parameters(twip, sensitivity=False, scope=None):
 
     """Create an `xarray` labeled array from the sampled input parameters.
 
@@ -18,7 +18,7 @@ def fill_xarray_from_input_parameters(cip, sensitivity=False, scope=None):
 
 
     :param sensitivity:
-    :param cip: Instance of the :class:`CarInputParameters` class in :mod:`car_input_parameters`.
+    :param twip: Instance of the :class:`CarInputParameters` class in :mod:`car_input_parameters`.
     :param scope: a dictionary to narrow down the scope of vehicles to consider
     :returns: `tuple`, `xarray.DataArray`
     - tuple (`size_dict`, `powertrain_dict`, `parameter_dict`, `year_dict`)
@@ -33,29 +33,29 @@ def fill_xarray_from_input_parameters(cip, sensitivity=False, scope=None):
 
     """
 
-    # Check whether the argument passed is a cip object
-    if not isinstance(cip, c_i_p):
+    # Check whether the argument passed is a twip object
+    if not isinstance(twip, tw_i_p):
         raise TypeError(
             "The argument passed is not an object of the TwoWheelersInputParameter class"
         )
 
     if scope is None:
-        scope = {"size": cip.sizes, "powertrain": cip.powertrains, "year": cip.years}
+        scope = {"size": twip.sizes, "powertrain": twip.powertrains, "year": twip.years}
     else:
         if "size" not in scope:
-            scope["size"] = cip.sizes
+            scope["size"] = twip.sizes
         if "powertrain" not in scope:
-            scope["powertrain"] = cip.powertrains
+            scope["powertrain"] = twip.powertrains
         if "year" not in scope:
-            scope["year"] = cip.years
+            scope["year"] = twip.years
 
-    if any(s for s in scope["size"] if s not in cip.sizes):
+    if any(s for s in scope["size"] if s not in twip.sizes):
         raise ValueError("One of the size types is not valid.")
 
-    if any(y for y in scope["year"] if y not in cip.years):
+    if any(y for y in scope["year"] if y not in twip.years):
         raise ValueError("One of the years defined is not valid.")
 
-    if any(pt for pt in scope["powertrain"] if pt not in cip.powertrains):
+    if any(pt for pt in scope["powertrain"] if pt not in twip.powertrains):
         raise ValueError("One of the powertrain types is not valid.")
 
     if not sensitivity:
@@ -64,62 +64,62 @@ def fill_xarray_from_input_parameters(cip, sensitivity=False, scope=None):
                 (
                     len(scope["size"]),
                     len(scope["powertrain"]),
-                    len(cip.parameters),
+                    len(twip.parameters),
                     len(scope["year"]),
-                    cip.iterations or 1,
+                    twip.iterations or 1,
                 )
             ),
             coords=[
                 scope["size"],
                 scope["powertrain"],
-                cip.parameters,
+                twip.parameters,
                 scope["year"],
-                np.arange(cip.iterations or 1),
+                np.arange(twip.iterations or 1),
             ],
             dims=["size", "powertrain", "parameter", "year", "value"],
         )
     else:
         params = ["reference"]
-        params.extend([a for a in cip.input_parameters])
+        params.extend([a for a in twip.input_parameters])
         array = xr.DataArray(
             np.zeros(
                 (
                     len(scope["size"]),
                     len(scope["powertrain"]),
-                    len(cip.parameters),
+                    len(twip.parameters),
                     len(scope["year"]),
                     len(params),
                 )
             ),
-            coords=[cip.sizes, cip.powertrains, cip.parameters, cip.years, params],
+            coords=[twip.sizes, twip.powertrains, twip.parameters, twip.years, params],
             dims=["size", "powertrain", "parameter", "year", "value"],
         )
 
     size_dict = {k: i for i, k in enumerate(scope["size"])}
     powertrain_dict = {k: i for i, k in enumerate(scope["powertrain"])}
     year_dict = {k: i for i, k in enumerate(scope["year"])}
-    parameter_dict = {k: i for i, k in enumerate(cip.parameters)}
+    parameter_dict = {k: i for i, k in enumerate(twip.parameters)}
 
     if not sensitivity:
 
-        for param in cip:
+        for param in twip:
 
             pwt = (
-                set(cip.metadata[param]["powertrain"])
-                if isinstance(cip.metadata[param]["powertrain"], list)
-                else {cip.metadata[param]["powertrain"]}
+                set(twip.metadata[param]["powertrain"])
+                if isinstance(twip.metadata[param]["powertrain"], list)
+                else {twip.metadata[param]["powertrain"]}
             )
 
             size = (
-                set(cip.metadata[param]["sizes"])
-                if isinstance(cip.metadata[param]["sizes"], list)
-                else {cip.metadata[param]["sizes"]}
+                set(twip.metadata[param]["sizes"])
+                if isinstance(twip.metadata[param]["sizes"], list)
+                else {twip.metadata[param]["sizes"]}
             )
 
             year = (
-                set(cip.metadata[param]["year"])
-                if isinstance(cip.metadata[param]["year"], list)
-                else {cip.metadata[param]["year"]}
+                set(twip.metadata[param]["year"])
+                if isinstance(twip.metadata[param]["year"], list)
+                else {twip.metadata[param]["year"]}
             )
 
             if (
@@ -133,46 +133,46 @@ def fill_xarray_from_input_parameters(cip, sensitivity=False, scope=None):
                         powertrain=[p for p in pwt if p in scope["powertrain"]],
                         size=[s for s in size if s in scope["size"]],
                         year=[y for y in year if y in scope["year"]],
-                        parameter=cip.metadata[param]["name"],
+                        parameter=twip.metadata[param]["name"],
                     )
-                ] = cip.values[param]
+                ] = twip.values[param]
     else:
 
-        for param in cip.input_parameters:
+        for param in twip.input_parameters:
 
-            names = [n for n in cip.metadata if cip.metadata[n]["name"] == param]
+            names = [n for n in twip.metadata if twip.metadata[n]["name"] == param]
 
             for name in names:
 
                 pwt = (
-                    set(cip.metadata[name]["powertrain"])
-                    if isinstance(cip.metadata[name]["powertrain"], list)
-                    else {cip.metadata[name]["powertrain"]}
+                    set(twip.metadata[name]["powertrain"])
+                    if isinstance(twip.metadata[name]["powertrain"], list)
+                    else {twip.metadata[name]["powertrain"]}
                 )
 
                 size = (
-                    set(cip.metadata[name]["sizes"])
-                    if isinstance(cip.metadata[name]["sizes"], list)
-                    else {cip.metadata[name]["sizes"]}
+                    set(twip.metadata[name]["sizes"])
+                    if isinstance(twip.metadata[name]["sizes"], list)
+                    else {twip.metadata[name]["sizes"]}
                 )
 
                 year = (
-                    set(cip.metadata[name]["year"])
-                    if isinstance(cip.metadata[name]["year"], list)
-                    else {cip.metadata[name]["year"]}
+                    set(twip.metadata[name]["year"])
+                    if isinstance(twip.metadata[name]["year"], list)
+                    else {twip.metadata[name]["year"]}
                 )
 
                 vals = [
-                    cip.values[name] for _ in range(0, len(cip.input_parameters) + 1)
+                    twip.values[name] for _ in range(0, len(twip.input_parameters) + 1)
                 ]
-                vals[cip.input_parameters.index(param) + 1] *= 1.1
+                vals[twip.input_parameters.index(param) + 1] *= 1.1
 
                 array.loc[
                     dict(
                         powertrain=[p for p in pwt if p in scope["powertrain"]],
                         size=[s for s in size if s in scope["size"]],
                         year=[y for y in year if y in scope["year"]],
-                        parameter=cip.metadata[name]["name"],
+                        parameter=twip.metadata[name]["name"],
                     )
                 ] = vals
 
