@@ -3895,14 +3895,18 @@ class InventoryCalculation:
                     "converter, for electric passenger car",
                 )
             ],
-            [
-                self.inputs[i]
-                for i in self.inputs
-                if "BEV" in i[0]
-            ],
+            [self.inputs[i] for i in self.inputs if "BEV" in i[0]],
         ] = (
-            array[self.array_inputs["converter mass"], :, self.get_index_vehicle_from_array(["BEV"])]
-            / array[self.array_inputs["lifetime kilometers"], :, self.get_index_vehicle_from_array(["BEV"])]
+            array[
+                self.array_inputs["converter mass"],
+                :,
+                self.get_index_vehicle_from_array(["BEV"]),
+            ]
+            / array[
+                self.array_inputs["lifetime kilometers"],
+                :,
+                self.get_index_vehicle_from_array(["BEV"]),
+            ]
             * -1
         ).T
 
@@ -3916,14 +3920,18 @@ class InventoryCalculation:
                     "electric motor, electric passenger car",
                 )
             ],
-            [
-                self.inputs[i]
-                for i in self.inputs
-                if "BEV" in i[0]
-            ],
+            [self.inputs[i] for i in self.inputs if "BEV" in i[0]],
         ] = (
-            array[self.array_inputs["electric engine mass"], :, self.get_index_vehicle_from_array(["BEV"])]
-            / array[self.array_inputs["lifetime kilometers"], :, self.get_index_vehicle_from_array(["BEV"])]
+            array[
+                self.array_inputs["electric engine mass"],
+                :,
+                self.get_index_vehicle_from_array(["BEV"]),
+            ]
+            / array[
+                self.array_inputs["lifetime kilometers"],
+                :,
+                self.get_index_vehicle_from_array(["BEV"]),
+            ]
             * -1
         ).T
 
@@ -3937,14 +3945,18 @@ class InventoryCalculation:
                     "inverter, for electric passenger car",
                 )
             ],
-            [
-                self.inputs[i]
-                for i in self.inputs
-                if "BEV" in i[0]
-            ],
+            [self.inputs[i] for i in self.inputs if "BEV" in i[0]],
         ] = (
-            array[self.array_inputs["inverter mass"], :, self.get_index_vehicle_from_array(["BEV"])]
-            / array[self.array_inputs["lifetime kilometers"], :, self.get_index_vehicle_from_array(["BEV"])]
+            array[
+                self.array_inputs["inverter mass"],
+                :,
+                self.get_index_vehicle_from_array(["BEV"]),
+            ]
+            / array[
+                self.array_inputs["lifetime kilometers"],
+                :,
+                self.get_index_vehicle_from_array(["BEV"]),
+            ]
             * -1
         ).T
 
@@ -3958,14 +3970,18 @@ class InventoryCalculation:
                     "power distribution unit, for electric passenger car",
                 )
             ],
-            [
-                self.inputs[i]
-                for i in self.inputs
-                if "BEV" in i[0]
-            ],
+            [self.inputs[i] for i in self.inputs if "BEV" in i[0]],
         ] = (
-            array[self.array_inputs["power distribution unit mass"], :, self.get_index_vehicle_from_array(["BEV"])]
-            / array[self.array_inputs["lifetime kilometers"], :, self.get_index_vehicle_from_array(["BEV"])]
+            array[
+                self.array_inputs["power distribution unit mass"],
+                :,
+                self.get_index_vehicle_from_array(["BEV"]),
+            ]
+            / array[
+                self.array_inputs["lifetime kilometers"],
+                :,
+                self.get_index_vehicle_from_array(["BEV"]),
+            ]
             * -1
         ).T
 
@@ -3992,7 +4008,8 @@ class InventoryCalculation:
                         "Motorcycle 11-35kW",
                         "Motorcycle >35kW",
                     ]
-                ) and "Human" not in i[0]
+                )
+                and "Human" not in i[0]
             ],
         ] = (
             (
@@ -4016,7 +4033,7 @@ class InventoryCalculation:
                                 "Motorcycle >35kW",
                             ],
                             ["BEV", "ICEV-p"],
-                            method="and"
+                            method="and",
                         ),
                     )
                 ].sum(axis=0)
@@ -4033,8 +4050,8 @@ class InventoryCalculation:
                         "Motorcycle 11-35kW",
                         "Motorcycle >35kW",
                     ],
-                            ["BEV", "ICEV-p"],
-                            method="and"
+                    ["BEV", "ICEV-p"],
+                    method="and",
                 ),
             ].T
             * -1
@@ -4074,17 +4091,28 @@ class InventoryCalculation:
         self.A[
             :,
             self.inputs[("Battery BoP", "GLO", "kilogram", "Battery BoP")],
-            [
-                self.inputs[i]
-                for i in self.inputs
-                if "BEV" in i[0]
-            ],
+            [self.inputs[i] for i in self.inputs if "BEV" in i[0]],
         ] = (
             (
-                array[self.array_inputs["battery BoP mass"], :, self.get_index_vehicle_from_array(["BEV"])]
-                * (1 + array[self.array_inputs["battery lifetime replacements"], :, self.get_index_vehicle_from_array(["BEV"])])
+                array[
+                    self.array_inputs["battery BoP mass"],
+                    :,
+                    self.get_index_vehicle_from_array(["BEV"]),
+                ]
+                * (
+                    1
+                    + array[
+                        self.array_inputs["battery lifetime replacements"],
+                        :,
+                        self.get_index_vehicle_from_array(["BEV"]),
+                    ]
+                )
             )
-            / array[self.array_inputs["lifetime kilometers"], :, self.get_index_vehicle_from_array(["BEV"])]
+            / array[
+                self.array_inputs["lifetime kilometers"],
+                :,
+                self.get_index_vehicle_from_array(["BEV"]),
+            ]
             * -1
         ).T
 
@@ -4095,16 +4123,31 @@ class InventoryCalculation:
             "Battery cell",
         )
 
-        self.A[:, self.inputs[battery_cell_label], [
-                self.inputs[i]
-                for i in self.inputs
-                if "BEV" in i[0]
-            ],] = (
+        self.A[
+            :,
+            self.inputs[battery_cell_label],
+            [self.inputs[i] for i in self.inputs if "BEV" in i[0]],
+        ] = (
             (
-                array[self.array_inputs["battery cell mass"], :, self.get_index_vehicle_from_array(["BEV"])]
-                * (1 + array[self.array_inputs["battery lifetime replacements"], :, self.get_index_vehicle_from_array(["BEV"])])
+                array[
+                    self.array_inputs["battery cell mass"],
+                    :,
+                    self.get_index_vehicle_from_array(["BEV"]),
+                ]
+                * (
+                    1
+                    + array[
+                        self.array_inputs["battery lifetime replacements"],
+                        :,
+                        self.get_index_vehicle_from_array(["BEV"]),
+                    ]
+                )
             )
-            / array[self.array_inputs["lifetime kilometers"], :, self.get_index_vehicle_from_array(["BEV"])]
+            / array[
+                self.array_inputs["lifetime kilometers"],
+                :,
+                self.get_index_vehicle_from_array(["BEV"]),
+            ]
             * -1
         ).T
 
@@ -4137,8 +4180,7 @@ class InventoryCalculation:
                     [
                         self.inputs[i]
                         for i in self.inputs
-                        if str(y) in i[0] and "transport, " in i[0]
-                           and "BEV" in i[0]
+                        if str(y) in i[0] and "transport, " in i[0] and "BEV" in i[0]
                     ],
                 )
             ] = (
@@ -4148,12 +4190,11 @@ class InventoryCalculation:
                 * self.A[
                     :,
                     self.inputs[battery_cell_label],
-                  [
-                      self.inputs[i]
-                      for i in self.inputs
-                      if str(y) in i[0] and "transport, " in i[0]
-                         and "BEV" in i[0]
-                  ],
+                    [
+                        self.inputs[i]
+                        for i in self.inputs
+                        if str(y) in i[0] and "transport, " in i[0] and "BEV" in i[0]
+                    ],
                 ]
             ).reshape(
                 self.iterations, 1, -1
