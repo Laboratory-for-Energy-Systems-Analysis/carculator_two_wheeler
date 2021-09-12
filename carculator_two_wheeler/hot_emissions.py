@@ -1,8 +1,8 @@
 import pickle
 
 import numpy as np
-import xarray as xr
 import pandas as pd
+import xarray as xr
 
 from . import DATA_DIR
 
@@ -25,6 +25,7 @@ def get_hot_emission_factors():
 
     return hot.groupby(["euro_class", "component", "size"]).sum()["value"].to_xarray()
 
+
 class HotEmissionsModel:
     """
     Calculate hot pollutants emissions based on HBEFA 4.1 data, function of fuel consumption
@@ -43,9 +44,7 @@ class HotEmissionsModel:
 
         self.hot = get_hot_emission_factors()
 
-    def get_hot_emissions(
-        self, powertrain_type, euro_class, sizes, energy_consumption
-    ):
+    def get_hot_emissions(self, powertrain_type, euro_class, sizes, energy_consumption):
         """
         Calculate hot pollutants emissions given a powertrain type (i.e., ICEV-p) and a EURO pollution class, per air sub-compartment
         (i.e., urban, suburban and rural).
@@ -88,15 +87,46 @@ class HotEmissionsModel:
             euro_class=euro_class,
             size=sizes,
             component=[
-                'CO', 'NOx', 'VOC', 'PM2.5', 'CH4', 'NH3', 'N2O', 'Ethane',
-                'Propane', 'Butane', 'Pentane', 'Hexane', 'Cyclohexane', 'Heptane',
-                'Ethene', 'Propene', '1-Pentene', 'Toluene', 'm-Xylene', 'o-Xylene',
-                'Formaldehyde', 'Acetaldehyde', 'Benzaldehyde', 'Acetone', 'Methyl ethyl ketone',
-                'Acrolein', 'Styrene', 'PAHs', 'Arsenic', 'Selenium', 'Zinc', 'Copper', 'Nickel',
-                'Chromium', 'Chromium VI', 'Mercury', 'Cadmium', 'Benzene'
-                    ]
+                "CO",
+                "NOx",
+                "VOC",
+                "PM2.5",
+                "CH4",
+                "NH3",
+                "N2O",
+                "Ethane",
+                "Propane",
+                "Butane",
+                "Pentane",
+                "Hexane",
+                "Cyclohexane",
+                "Heptane",
+                "Ethene",
+                "Propene",
+                "1-Pentene",
+                "Toluene",
+                "m-Xylene",
+                "o-Xylene",
+                "Formaldehyde",
+                "Acetaldehyde",
+                "Benzaldehyde",
+                "Acetone",
+                "Methyl ethyl ketone",
+                "Acrolein",
+                "Styrene",
+                "PAHs",
+                "Arsenic",
+                "Selenium",
+                "Zinc",
+                "Copper",
+                "Nickel",
+                "Chromium",
+                "Chromium VI",
+                "Mercury",
+                "Cadmium",
+                "Benzene",
+            ],
         ).transpose("component", "euro_class", "size")
-
 
         distance = self.cycle.sum() / 3600
 
@@ -108,26 +138,19 @@ class HotEmissionsModel:
         # emissions are in grams per MJ
 
         hot = (
-            hot_emissions.values[..., None, None].transpose(0, 2, 1, 3, 4)
-            * energy_consumption.values
-        ) / 1000 / 1000
+            (
+                hot_emissions.values[..., None, None].transpose(0, 2, 1, 3, 4)
+                * energy_consumption.values
+            )
+            / 1000
+            / 1000
+        )
 
         # we split the emission per air compartment
         # as we know how the WMTC driving cycle distributes
 
-        urban = (
-            hot[..., :600].sum(axis=-1)
-            / distance
-        )
-        suburban = (
-            hot[..., 601:1200].sum(
-                axis=-1
-            )
-            / distance
-        )
-        rural = (
-            hot[..., 1200:].sum(axis=-1)
-            / distance
-        )
+        urban = hot[..., :600].sum(axis=-1) / distance
+        suburban = hot[..., 601:1200].sum(axis=-1) / distance
+        rural = hot[..., 1200:].sum(axis=-1) / distance
 
         return np.vstack((urban, suburban, rural)).transpose(1, 0, 2, 3)

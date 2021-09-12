@@ -1,6 +1,8 @@
 import numexpr as ne
 import numpy as np
+
 from . import get_standard_driving_cycle
+
 
 class NoiseEmissionsModel:
     """
@@ -42,15 +44,20 @@ class NoiseEmissionsModel:
             constants_motorcycle = np.array(
                 (95, 97.2, 92.7, 92.9, 94.7, 93.2, 90.1, 86.5)
             ).reshape((-1, 1))
-            coefficients_scooter = np.array((4.2, 7.4, 9.8, 11.6, 15.7, 18.9, 20.3, 20.6)).reshape((-1, 1))
-            coefficients_motorcycle = np.array((3.2, 5.9, 11.9, 11.6, 11.5, 12.6, 11.1, 12)).reshape((-1, 1))
-
+            coefficients_scooter = np.array(
+                (4.2, 7.4, 9.8, 11.6, 15.7, 18.9, 20.3, 20.6)
+            ).reshape((-1, 1))
+            coefficients_motorcycle = np.array(
+                (3.2, 5.9, 11.9, 11.6, 11.5, 12.6, 11.1, 12)
+            ).reshape((-1, 1))
 
             for x in range(0, cycle.shape[-1]):
                 if self.sizes[x] in ["Moped <4kW", "Scooter <4kW"]:
                     array[:, x] = array[:, x] * coefficients_scooter + constants_scooter
                 else:
-                    array[:, x] = array[:, x] * coefficients_motorcycle + constants_motorcycle
+                    array[:, x] = (
+                        array[:, x] * coefficients_motorcycle + constants_motorcycle
+                    )
 
             if powertrain_type == "electric":
                 # For electric cars, we add correction factors
@@ -80,7 +87,6 @@ class NoiseEmissionsModel:
         if powertrain_type not in ("combustion", "electric"):
             raise TypeError("The powertrain type is not valid.")
 
-
         # propulsion noise, in dB, for each second of the driving cycle
         propulsion = self.propulsion_noise(powertrain_type)
 
@@ -91,21 +97,8 @@ class NoiseEmissionsModel:
         # as we know how the WMTC driving cycle distributes
 
         distance = self.cycle.sum() / 3600
-        urban = (
-                sound_power[..., :600].sum(axis=-1)
-                / distance
-        )
-        suburban = (
-                sound_power[..., 601:1200].sum(
-                    axis=-1
-                )
-                / distance
-        )
-        rural = (
-                sound_power[..., 1200:].sum(axis=-1)
-                / distance
-        )
-
-
+        urban = sound_power[..., :600].sum(axis=-1) / distance
+        suburban = sound_power[..., 601:1200].sum(axis=-1) / distance
+        rural = sound_power[..., 1200:].sum(axis=-1) / distance
 
         return np.vstack((urban, suburban, rural))
