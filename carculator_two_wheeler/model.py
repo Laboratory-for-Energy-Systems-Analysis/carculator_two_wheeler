@@ -154,35 +154,44 @@ class TwoWheelerModel:
             ] = 0
 
         if "Human" in self.array.powertrain.values:
-            if any(s in self.array.coords["size"].values
-                   for s in [
-                        "Bicycle <45",
-                        "Bicycle cargo",
-                        "Scooter <4kW",
-                        "Moped <4kW",
-                        "Scooter 4-11kW",
-                        "Motorcycle 4-11kW",
-                        "Motorcycle 11-35kW",
-                        "Motorcycle >35kW",
-                   ]):
+            if any(
+                s in self.array.coords["size"].values
+                for s in [
+                    "Bicycle <45",
+                    "Bicycle cargo",
+                    "Scooter <4kW",
+                    "Moped <4kW",
+                    "Scooter 4-11kW",
+                    "Motorcycle 4-11kW",
+                    "Motorcycle 11-35kW",
+                    "Motorcycle >35kW",
+                ]
+            ):
                 self.array.loc[
                     dict(
                         parameter="is_available",
                         powertrain="Human",
-                        size=[s for s in [
-                            "Bicycle <45",
-                            "Bicycle cargo",
-                            "Scooter <4kW",
-                            "Moped <4kW",
-                            "Scooter 4-11kW",
-                            "Motorcycle 4-11kW",
-                            "Motorcycle 11-35kW",
-                            "Motorcycle >35kW",
-                        ] if s in self.array.coords["size"].values],
+                        size=[
+                            s
+                            for s in [
+                                "Bicycle <45",
+                                "Bicycle cargo",
+                                "Scooter <4kW",
+                                "Moped <4kW",
+                                "Scooter 4-11kW",
+                                "Motorcycle 4-11kW",
+                                "Motorcycle 11-35kW",
+                                "Motorcycle >35kW",
+                            ]
+                            if s in self.array.coords["size"].values
+                        ],
                     )
                 ] = 0
 
-        if "Moped <4kW" in self.array.coords["size"].values and "BEV" in self.array.powertrain.values:
+        if (
+            "Moped <4kW" in self.array.coords["size"].values
+            and "BEV" in self.array.powertrain.values
+        ):
             self.array.loc[
                 dict(
                     parameter="is_available",
@@ -198,7 +207,11 @@ class TwoWheelerModel:
                 self.array.loc[
                     dict(
                         parameter="is_available",
-                        powertrain=[p for p in ["Human", "ICEV-p"] if p in self.array.powertrain.values],
+                        powertrain=[
+                            p
+                            for p in ["Human", "ICEV-p"]
+                            if p in self.array.powertrain.values
+                        ],
                         size=[
                             "Kick-scooter",
                         ],
@@ -206,22 +219,29 @@ class TwoWheelerModel:
                 ] = 0
 
         if "ICEV-p" in self.array.powertrain.values:
-            if any(s in self.array.coords["size"].values for s in [
-                "Kick-scooter",
-                "Bicycle <25",
-                "Bicycle <45",
-                "Bicycle cargo",
-            ]):
+            if any(
+                s in self.array.coords["size"].values
+                for s in [
+                    "Kick-scooter",
+                    "Bicycle <25",
+                    "Bicycle <45",
+                    "Bicycle cargo",
+                ]
+            ):
                 self.array.loc[
                     dict(
                         parameter="is_available",
                         powertrain=["ICEV-p"],
-                        size=[s for s in [
-                            "Kick-scooter",
-                            "Bicycle <25",
-                            "Bicycle <45",
-                            "Bicycle cargo",
-                        ] if s in self.array.coords["size"].values],
+                        size=[
+                            s
+                            for s in [
+                                "Kick-scooter",
+                                "Bicycle <25",
+                                "Bicycle <45",
+                                "Bicycle cargo",
+                            ]
+                            if s in self.array.coords["size"].values
+                        ],
                     )
                 ] = 0
 

@@ -1341,10 +1341,9 @@ class InventoryCalculation:
 
         # Collect indices of activities contributing to the first level
         ind_veh = [
-            self.inputs[i] for i in self.inputs if "transport, " in i[0]
-                                                   and any(
-                s in i[0] for s in self.scope["size"]
-            )
+            self.inputs[i]
+            for i in self.inputs
+            if "transport, " in i[0] and any(s in i[0] for s in self.scope["size"])
         ]
 
         arr = self.A[0, : -self.number_of_vehicles, ind_veh].sum(axis=0)
@@ -1381,7 +1380,6 @@ class InventoryCalculation:
             * -1
         )
         arr = arr[..., self.split_indices].sum(axis=-1)
-
 
         if sensitivity:
             results[...] = arr.transpose(0, 2, 3, 4, 5, 1).sum(axis=-2)
@@ -3759,15 +3757,19 @@ class InventoryCalculation:
                     "kilogram",
                     "used Li-ion battery",
                 )
-                ],
-                [
-                                self.inputs[i]
-                                for i in self.inputs
-                                if "BEV" in i[0]
-                ]
+            ],
+            [self.inputs[i] for i in self.inputs if "BEV" in i[0]],
         ] = (
-            array[self.array_inputs["energy battery mass"], :, self.get_index_vehicle_from_array(["BEV"])]
-            / array[self.array_inputs["lifetime kilometers"], :, self.get_index_vehicle_from_array(["BEV"])]
+            array[
+                self.array_inputs["energy battery mass"],
+                :,
+                self.get_index_vehicle_from_array(["BEV"]),
+            ]
+            / array[
+                self.array_inputs["lifetime kilometers"],
+                :,
+                self.get_index_vehicle_from_array(["BEV"]),
+            ]
         ).T * -1
 
         # Powertrain components
@@ -4791,7 +4793,6 @@ class InventoryCalculation:
         ] = array[self.array_inputs["energy battery mass"], :]
 
         # Powertrain components
-
 
         self.A[
             :,
