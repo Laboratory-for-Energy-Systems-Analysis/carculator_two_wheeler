@@ -148,45 +148,82 @@ class TwoWheelerModel:
         # we remove all electric vehicles from before 2010
         self.array.loc[dict(parameter="is_available")] = 1
         l_years = [y for y in self.array.coords["year"].values if y < 2010]
-        if len(l_years) > 0:
+        if len(l_years) > 0 and "BEV" in self.array.powertrain.values:
             self.array.loc[
                 dict(parameter="is_available", year=l_years, powertrain="BEV")
             ] = 0
 
-        self.array.loc[
-            dict(
-                parameter="is_available",
-                powertrain="Human",
-                size=[
-                    "Scooter <4kW",
-                    "Moped <4kW",
-                    "Scooter 4-11kW",
-                    "Motorcycle 4-11kW",
-                    "Motorcycle 11-35kW",
-                    "Motorcycle >35kW",
-                ],
-            )
-        ] = 0
+        if "Human" in self.array.powertrain.values:
+            if any(s in self.array.coords["size"].values
+                   for s in [
+                        "Bicycle <45",
+                        "Bicycle cargo",
+                        "Scooter <4kW",
+                        "Moped <4kW",
+                        "Scooter 4-11kW",
+                        "Motorcycle 4-11kW",
+                        "Motorcycle 11-35kW",
+                        "Motorcycle >35kW",
+                   ]):
+                self.array.loc[
+                    dict(
+                        parameter="is_available",
+                        powertrain="Human",
+                        size=[s for s in [
+                            "Bicycle <45",
+                            "Bicycle cargo",
+                            "Scooter <4kW",
+                            "Moped <4kW",
+                            "Scooter 4-11kW",
+                            "Motorcycle 4-11kW",
+                            "Motorcycle 11-35kW",
+                            "Motorcycle >35kW",
+                        ] if s in self.array.coords["size"].values],
+                    )
+                ] = 0
 
-        self.array.loc[
-            dict(
-                parameter="is_available",
-                powertrain="BEV",
-                size=[
-                    "Moped <4kW",
-                ],
-            )
-        ] = 0
+        if "Moped <4kW" in self.array.coords["size"].values and "BEV" in self.array.powertrain.values:
+            self.array.loc[
+                dict(
+                    parameter="is_available",
+                    powertrain="BEV",
+                    size=[
+                        "Moped <4kW",
+                    ],
+                )
+            ] = 0
 
-        self.array.loc[
-            dict(
-                parameter="is_available",
-                powertrain=["Human", "ICEV-p"],
-                size=[
-                    "Kick-scooter",
-                ],
-            )
-        ] = 0
+        if any(p in self.array.powertrain.values for p in ["Human", "ICEV-p"]):
+            if "Kick-scooter" in self.array.coords["size"].values:
+                self.array.loc[
+                    dict(
+                        parameter="is_available",
+                        powertrain=[p for p in ["Human", "ICEV-p"] if p in self.array.powertrain.values],
+                        size=[
+                            "Kick-scooter",
+                        ],
+                    )
+                ] = 0
+
+        if "ICEV-p" in self.array.powertrain.values:
+            if any(s in self.array.coords["size"].values for s in [
+                "Kick-scooter",
+                "Bicycle <25",
+                "Bicycle <45",
+                "Bicycle cargo",
+            ]):
+                self.array.loc[
+                    dict(
+                        parameter="is_available",
+                        powertrain=["ICEV-p"],
+                        size=[s for s in [
+                            "Kick-scooter",
+                            "Bicycle <25",
+                            "Bicycle <45",
+                            "Bicycle cargo",
+                        ] if s in self.array.coords["size"].values],
+                    )
+                ] = 0
 
         print("Done!")
 

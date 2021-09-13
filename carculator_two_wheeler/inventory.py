@@ -246,7 +246,7 @@ class InventoryCalculation:
 
         self.array = array.stack(desired=["size", "powertrain", "year"])
 
-        self.compliant_vehicles = 1 - array.sel(parameter="is_available")
+        self.compliant_vehicles = array.sel(parameter="is_available")
 
         # store some important specs for inventory documentation
         self.specs = array.sel(
@@ -1340,10 +1340,14 @@ class InventoryCalculation:
         f = np.zeros((np.shape(self.A)[1]))
 
         # Collect indices of activities contributing to the first level
-        ind_cars = [
-            self.inputs[i] for i in self.inputs if "transport, passenger" in i[0]
+        ind_veh = [
+            self.inputs[i] for i in self.inputs if "transport, " in i[0]
+                                                   and any(
+                s in i[0] for s in self.scope["size"]
+            )
         ]
-        arr = self.A[0, : -self.number_of_vehicles, ind_cars].sum(axis=0)
+
+        arr = self.A[0, : -self.number_of_vehicles, ind_veh].sum(axis=0)
         ind = np.nonzero(arr)[0]
 
         if self.scenario != "static":
@@ -1378,11 +1382,15 @@ class InventoryCalculation:
         )
         arr = arr[..., self.split_indices].sum(axis=-1)
 
+
         if sensitivity:
             results[...] = arr.transpose(0, 2, 3, 4, 5, 1).sum(axis=-2)
             results /= results.sel(parameter="reference")
         else:
             results[...] = arr.transpose(0, 2, 3, 4, 5, 1)
+
+        print(results.shape)
+        print(arr.shape)
 
         # If the FU is in passenger-km, we normalize the results by the number of passengers
         if self.scope["fu"]["unit"] == "vkm":
@@ -3751,12 +3759,16 @@ class InventoryCalculation:
                     "kilogram",
                     "used Li-ion battery",
                 )
-            ],
-            -self.number_of_vehicles :,
+                ],
+                [
+                                self.inputs[i]
+                                for i in self.inputs
+                                if "BEV" in i[0]
+                ]
         ] = (
-            array[self.array_inputs["energy battery mass"], :]
-            / array[self.array_inputs["lifetime kilometers"], :]
-        )
+            array[self.array_inputs["energy battery mass"], :, self.get_index_vehicle_from_array(["BEV"])]
+            / array[self.array_inputs["lifetime kilometers"], :, self.get_index_vehicle_from_array(["BEV"])]
+        ).T * -1
 
         # Powertrain components
         if (
@@ -4113,8 +4125,7 @@ class InventoryCalculation:
                 :,
                 self.get_index_vehicle_from_array(["BEV"]),
             ]
-            * -1
-        ).T
+        ).T * -1
 
         battery_cell_label = (
             "Battery cell, " + battery_tech,
@@ -4148,8 +4159,7 @@ class InventoryCalculation:
                 :,
                 self.get_index_vehicle_from_array(["BEV"]),
             ]
-            * -1
-        ).T
+        ).T * -1
 
         # Set an input of electricity, given the country of manufacture
         self.A[
@@ -4224,8 +4234,7 @@ class InventoryCalculation:
         ] = (
             array[self.array_inputs["fuel tank mass"], :, index]
             / array[self.array_inputs["lifetime kilometers"], :, index]
-            * -1
-        ).T
+        ).T * -1
 
         try:
             sum_renew, co2_intensity_tech = self.define_renewable_rate_in_mix()
@@ -4562,7 +4571,7 @@ class InventoryCalculation:
             self.inputs[("road maintenance", "CH", "meter-year", "road maintenance")],
             -self.number_of_vehicles :,
         ] = (
-            1.29e-3 * -1
+            1.29e-3 * array[self.array_inputs["is_available"], :] * -1
         )
 
         # Exhaust emissions
@@ -4627,6 +4636,8 @@ class InventoryCalculation:
             / 1000
             * 1000
         ) * -1
+
+        self.A = np.nan_to_num(self.A, 0)
 
         print("*********************************************************************")
 
@@ -4780,24 +4791,7 @@ class InventoryCalculation:
         ] = array[self.array_inputs["energy battery mass"], :]
 
         # Powertrain components
-        self.A[
-            :,
-            self.inputs[
-                (
-                    "market for charger, electric passenger car",
-                    "GLO",
-                    "kilogram",
-                    "charger, electric passenger car",
-                )
-            ],
-            [
-                self.inputs[i]
-                for i in self.inputs
-                if any(i[0].startswith(x) for x in self.scope["size"])
-            ],
-        ] = (
-            array[self.array_inputs["charger mass"], :] * -1
-        )
+
 
         self.A[
             :,
