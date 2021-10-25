@@ -49,6 +49,7 @@ setup(
         "bw2io",
         "pycountry",
         "wurst",
+        "pypardiso"
     ],
     url="https://github.com/romainsacchi/carculator_two_wheeler",
     description="Prospective life cycle assessment of two-wheelers vehicles made blazing fast",
