@@ -544,14 +544,11 @@ class TwoWheelerModel:
         self["battery cell mass share"] = self["battery cell mass share"].clip(
             min=0, max=1
         )
-        self.array.loc[:, pt_list, "battery BoP mass", :, :] = (
-            self.array.loc[
-                :,
-                pt_list,
-                "battery cell mass",
-            ]
-            * (1 - self.array.loc[:, pt_list, "battery cell mass share", :, :])
-        )
+        self.array.loc[:, pt_list, "battery BoP mass", :, :] = self.array.loc[
+            :,
+            pt_list,
+            "battery cell mass",
+        ] * (1 - self.array.loc[:, pt_list, "battery cell mass share", :, :])
 
         list_pt_el = [
             pt for pt in ["BEV"] if pt in self.array.coords["powertrain"].values

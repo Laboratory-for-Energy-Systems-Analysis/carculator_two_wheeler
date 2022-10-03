@@ -76,7 +76,7 @@ class InternalNoiseModel:
         noise = f(self.cycle)
 
         # convert dBs to Watts (or joule.s^-1)
-        noise = (10 ** -12) * (10 ** (noise / 10))
+        noise = (10**-12) * (10 ** (noise / 10))
 
         # sum dBs along driving cycle to get joules
         noise = noise.sum(axis=2)
