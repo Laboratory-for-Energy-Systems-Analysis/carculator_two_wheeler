@@ -8,21 +8,22 @@ Driving cycle, velocity and acceleration
 
 Beside custom driving cycles, there are eleven default driving cycles to select from:
 
-    * WLTC
-    * WLTC 3.1
-    * WLTC 3.2
-    * WLTC 3.3
-    * WLTC 3.4
-    * CADC Urban
-    * CADC Road
-    * CADC Motorway
-    * CADC Motorway 130
-    * CADC
-    * NEDC
+* WLTC
+* WLTC 3.1
+* WLTC 3.2
+* WLTC 3.3
+* WLTC 3.4
+* CADC Urban
+* CADC Road
+* CADC Motorway
+* CADC Motorway 130
+* CADC
+* NEDC
 
 They are needed to calculate a number of things, such as:
-    * velocity, driving distance, driving time, and acceleration,
-    * but also hot pollutant and noise emissions.
+
+* velocity, driving distance, driving time, and acceleration,
+* but also hot pollutant and noise emissions.
 
 Manually, such parameters can be obtained the following way:
 

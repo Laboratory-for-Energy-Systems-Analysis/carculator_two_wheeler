@@ -177,9 +177,10 @@ from the CarModel object:
     plt.ylabel('kWh/100 km')
     plt.show()
 
-.. image:: https://github.com/romainsacchi/carculator_two_wheeler/raw/master/docs/fig_kwh_100km.png
+.. image:: /_static/img/fig_kwh_100km.png
     :width: 400
-    :alt: Alternative text
+    :alt: Fig Kwh/100 km
+    :align: center
 
 .. note::
 
@@ -277,9 +278,11 @@ Hence, to plot the carbon footprint for all medium cars in 2020:
     :alt: Example carbon footprint
     :align: center
 
-Note that, for now, only the ReCiPe method is available for midpoint characterization. Also, once the instance of the :class:`CarModel`
-class has been created, there is no need to re-create it in order to calculate additional environmental impacts (unless you wish to
-change values of certain input or calculated parameters, the driving cycle or go from static to stochastic mode).
+.. note::
+
+    For now, only the ReCiPe method is available for midpoint characterization. Also, once the instance of the :class:`CarModel`
+    class has been created, there is no need to re-create it in order to calculate additional environmental impacts (unless you wish to
+    change values of certain input or calculated parameters, the driving cycle or go from static to stochastic mode).
 
 Characterization of inventories (stochastic)
 --------------------------------------------
@@ -312,7 +315,8 @@ stochastic mode (with 500 iterations and the driving cycle WLTC).
     :alt: Example Stochastic BEV PHEV
     :align: center
 
-Many other examples are described in a Jupyter Notebook in the ``examples`` folder.
+Many examples are given in this :download:`examples.zip file <_static/resources/examples.zip>` which
+contains a Jupyter notebook you can run directly on your computer.
 
 Export of inventories (static)
 ------------------------------

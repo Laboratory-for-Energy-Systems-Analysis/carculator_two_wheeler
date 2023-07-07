@@ -1,6 +1,7 @@
 import csv
 import glob
 import itertools
+import warnings
 from inspect import currentframe, getframeinfo
 from pathlib import Path
 
@@ -15,7 +16,12 @@ from .export import ExportInventory
 from .geomap import Geomap
 from .utils import build_fleet_array
 
-np.warnings.filterwarnings("ignore", category=np.VisibleDeprecationWarning)
+
+try:
+    np.warnings.filterwarnings("ignore", category=np.VisibleDeprecationWarning)
+except AttributeError:
+    np.warnings = warnings
+    np.warnings.filterwarnings("ignore", category=np.VisibleDeprecationWarning)
 
 REMIND_FILES_DIR = DATA_DIR / "IAM"
 DATASET_MAPPING = DATA_DIR / "mapping_datasets.csv"
@@ -131,6 +137,7 @@ class InventoryCalculation:
 
     Petrol technologies
     -------------------
+
     - petrol
     - bioethanol - wheat straw
     - bioethanol - maize starch
@@ -139,14 +146,14 @@ class InventoryCalculation:
     - synthetic gasoline - economic allocation
     - synthetic gasoline - energy allocation
 
+
     :ivar array: array from the CarModel class
     :vartype array: CarModel.array
     :ivar scope: dictionary that contains filters for narrowing the analysis
     :ivar background_configuration: dictionary that contains choices for background system
-    :ivar scenario: REMIND energy scenario to use ("SSP2-Baseline": business-as-usual,
-                                                    "SSP2-PkBudg1300": limits temperature increase by 2100 to 2 degrees Celsius,
-                                                    "static": no forward-looking modification of the background inventories).
-                    "SSP2-Baseline" selected by default.
+    :ivar scenario: REMIND energy scenario to use (
+     "SSP2-Baseline": business-as-usual, "SSP2-PkBudg1300": limits temperature increase by 2100 to 2 degrees Celsius,
+     "static": no forward-looking modification of the background inventories). "SSP2-Baseline" selected by default.
 
     """
 
@@ -1896,7 +1903,7 @@ class InventoryCalculation:
         """
         Load a dictionary with available impact assessment methods as keys, and assessment level and categories as values.
 
-        ..code-block:: python
+        .. code-block:: python
 
             {'recipe': {'midpoint': ['freshwater ecotoxicity',
                                    'human toxicity',
