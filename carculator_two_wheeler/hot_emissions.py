@@ -1,5 +1,3 @@
-import pickle
-
 import numpy as np
 import pandas as pd
 import xarray as xr
@@ -53,6 +51,7 @@ class HotEmissionsModel:
         https://www.eea.europa.eu/publications/emep-eea-guidebook-2019/part-b-sectoral-guidance-chapters/1-energy/1-a-combustion/road-transport-appendix-4-emission/view
 
         Originally, the sizes are given as:
+
         * Mopeds 2-stroke <50 cm³
         * Mopeds 4-stroke <50 cm³
         * Motorcycles 4-stroke <250 cm³
@@ -60,6 +59,7 @@ class HotEmissionsModel:
         * Motorcycles 4-stroke >750 cm³
 
         and we map them to:
+
         * Moped <4kW
         * Scooter <4kW
         * Scooter 4-11kW and Motorcycle 4-11kW

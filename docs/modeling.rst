@@ -1,5 +1,7 @@
-Modeling and assumptions
-========================
+.. _model:
+
+Modeling
+========
 
 The modeling of passenger vehicles in the past, present and future is complex and relies on many assumptions.
 With **carculator_two_wheeler** and **carculator_two_wheeler online**, we wish to be transparent about those: assumptions and modeling approaches should ideally be easily

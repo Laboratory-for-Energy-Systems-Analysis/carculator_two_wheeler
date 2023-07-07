@@ -1,5 +1,6 @@
 import itertools
 import warnings
+from pathlib import Path
 
 import pandas as pd
 
@@ -67,7 +68,7 @@ def create_fleet_composition_from_IAM_file(fp):
     """
     This function creates a consumable fleet composition array from a CSV file.
     The array returned is consumed by `InventoryCalculation`.
-    :param fp: Path file path
+    :param fp: csv file location
     :type fp: Path
     :return: fleet composition array
     :rtype: xarray.DataArray

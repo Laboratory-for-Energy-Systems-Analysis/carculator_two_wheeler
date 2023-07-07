@@ -11,26 +11,25 @@ def fill_xarray_from_input_parameters(twip, sensitivity=False, scope=None):
     """Create an `xarray` labeled array from the sampled input parameters.
 
 
-    This function extracts the parameters' names and values contained in the
-    `parameters` attribute of the :class:`CarInputParameters` class in :mod:`car_input_parameters` and insert them into a
-    multi-dimensional numpy-like array from the *xarray* package
-    (http://xarray.pydata.org/en/stable/).
+    This function extracts the parameters' names and values contained in the `parameters` attribute of the
+    :class:`CarInputParameters` class in :mod:`car_input_parameters` and insert them into a multidimensional
+    numpy-like array from the *xarray* package (http://xarray.pydata.org/en/stable/).
+
+    Returns:
+
+    * tuple (`size_dict`, `powertrain_dict`, `parameter_dict`, `year_dict`)
+    * array
+       * Dimensions of `array`:
+            0. Vehicle size (str), e.g. "small", "medium"
+            1. Powertrain (str), e.g. "ICE-p", "BEV"
+            2. Year (int)
+            3. Samples
 
 
-    :param sensitivity:
-    :param twip: Instance of the :class:`CarInputParameters` class in :mod:`car_input_parameters`.
+    :param sensitivity: boolean value
+    :param twip: instance of the :class:`CarInputParameters` class in :mod:`car_input_parameters`.
     :param scope: a dictionary to narrow down the scope of vehicles to consider
     :returns: `tuple`, `xarray.DataArray`
-    - tuple (`size_dict`, `powertrain_dict`, `parameter_dict`, `year_dict`)
-    - array
-
-    Dimensions of `array`:
-
-        0. Vehicle size, e.g. "small", "medium". str.
-        1. Powertrain, e.g. "ICE-p", "BEV". str.
-        2. Year. int.
-        3. Samples.
-
     """
 
     # Check whether the argument passed is a twip object
@@ -185,42 +184,42 @@ def modify_xarray_from_custom_parameters(fp, array):
 
     This function allows to override one or several default parameter values by providing either:
 
-        * a file path to an Excel workbook that contains the new values
-        * or a dictionary
+    * a file path to an Excel workbook that contains the new values
+    * or a dictionary
 
     The dictionary must be of the following format:
 
     .. code-block:: python
 
-            {
-                (parameter category,
-                    powertrain,
-                    size,
-                    parameter name,
-                    uncertainty type): {
-                                        (year, 'loc'): value,
-                                        (year, 'scale'): value,
-                                        (year, 'shape'): value,
-                                        (year, 'minimum'): value,
-                                        (year, 'maximum'): value
-                }
-
+        {
+            (parameter category,
+                powertrain,
+                size,
+                parameter name,
+                uncertainty type): {
+                                    (year, 'loc'): value,
+                                    (year, 'scale'): value,
+                                    (year, 'shape'): value,
+                                    (year, 'minimum'): value,
+                                    (year, 'maximum'): value
             }
+
+        }
 
     For example:
 
     .. code-block:: python
 
-            {
-                ('Driving',
-                'all',
-                'all',
-                'lifetime kilometers',
-                'none'): {
-                    (2018, 'loc'): 150000, (2040, 'loc'): 150000
-                    }
+        {
+            ('Driving',
+            'all',
+            'all',
+            'lifetime kilometers',
+            'none'): {
+                (2018, 'loc'): 150000, (2040, 'loc'): 150000
+                }
 
-            }
+        }
 
     :param array:
     :param fp: File path of workbook with new values or dictionary.
@@ -422,7 +421,8 @@ def modify_xarray_from_custom_parameters(fp, array):
 
                 else:
                     print(
-                        "The uncertainty type is not recognized for {} in {}.\n The parameter is skipped and default value applies".format(
+                        "The uncertainty type is not recognized for {} in {}.\n "
+                        "The parameter is skipped and default value applies".format(
                             param, y
                         )
                     )

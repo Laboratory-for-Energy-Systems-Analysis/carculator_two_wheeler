@@ -19,9 +19,7 @@ def get_gradients(
     There's no road gradients given for the WMTC.
     But we have some for the kick-scooters and bicycles' driving cycle.
 
-
-    :returns: A pandas DataFrame object with driving time (in seconds) as index,
-        and road gradients as values.
+    :returns: A pandas DataFrame object with driving time (in seconds) as index, and road gradients as values.
     :rtype: panda.Series
 
     """

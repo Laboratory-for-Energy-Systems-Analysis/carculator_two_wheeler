@@ -7,7 +7,7 @@ REGION_MAPPING_FILEPATH = DATA_DIR / "regionmappingH12.csv"
 
 def get_IAM_geomatcher():
     """
-    Geographical boundaries for IMAGE regions are initally included in geomatcher.
+    Geographical boundaries for IMAGE regions are initially included in geo-matcher.
     However, they are not properly labelled.
 
     """
@@ -98,6 +98,7 @@ class Geomap:
         """
         Find the corresponding ecoinvent region given an IAM region.
 
+        :param contained: boolean value
         :param location: name of a IAM region
         :type location: str
         :return: name of an ecoinvent region

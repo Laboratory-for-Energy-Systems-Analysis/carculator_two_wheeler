@@ -12,11 +12,10 @@ class EnergyConsumptionModel:
     """
     Calculate energy consumption of a vehicle for a given driving cycle and vehicle parameters.
 
-    Based on a selected driving cycle, this class calculates the acceleration needed and provides
-    two methods:
+    Based on a selected driving cycle, this class calculates the acceleration needed and provides two methods:
 
-        - :func:`~energy_consumption.EnergyConsumptionModel.aux_energy_per_km` calculates the energy needed to power auxiliary services
-        - :func:`~energy_consumption.EnergyConsumptionModel.motive_energy_per_km` calculates the energy needed to move the vehicle over 1 km
+    - :func:`~energy_consumption.EnergyConsumptionModel.aux_energy_per_km` calculates the energy needed to power auxiliary services
+    - :func:`~energy_consumption.EnergyConsumptionModel.motive_energy_per_km` calculates the energy needed to move the vehicle over 1 km
 
     Acceleration is calculated as the difference between velocity at t_2 and velocity at t_0, divided by 2.
     See for example: http://www.unece.org/fileadmin/DAM/trans/doc/2012/wp29grpe/WLTP-DHC-12-07e.xls
@@ -34,7 +33,6 @@ class EnergyConsumptionModel:
     :ivar acceleration: Time series of acceleration, calculated as increment in velocity per interval of 1 second,
         in meter per second^2.
     :vartype acceleration: numpy.ndarray
-
 
     """
 
@@ -93,8 +91,12 @@ class EnergyConsumptionModel:
 
             g v M C_{r}
 
-        where :math:`g` is 9.81 (m/s2), :math:`v` is velocity (m/s), :math:`M` is mass (kg),
-        and :math:`C_{r}` is the rolling resistance coefficient (dimensionless).
+        *where:*
+
+        - :math:`g` is 9.81 (m/s2),
+        - :math:`v` is velocity (m/s),
+        - :math:`M` is mass (kg),
+        - and :math:`C_{r}` is the rolling resistance coefficient (dimensionless).
 
         Power to overcome air resistance is calculated by:
 
@@ -103,8 +105,12 @@ class EnergyConsumptionModel:
             \frac{1}{2} \rho_{air} v^{3} A C_{d}
 
 
-        where :math:`\rho_{air}` is 1.225 (kg/m3), :math:`v` is velocity (m/s), :math:`A` is frontal area (m2), and :math:`C_{d}`
-        is the aerodynamic drag coefficient (dimensionless).
+        *where:*
+
+        - :math:`\rho_{air}` is 1.225 (kg/m3),
+        - :math:`v` is velocity (m/s),
+        - :math:`A` is frontal area (m2),
+        - and :math:`C_{d}` is the aerodynamic drag coefficient (dimensionless).
 
         :returns: net motive energy (in kJ/km)
         :rtype: float

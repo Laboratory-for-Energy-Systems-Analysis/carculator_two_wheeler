@@ -1,7 +1,5 @@
-# ``carculator_two_wheeler``
-
 <p align="center">
-  <img style="height:130px;" src="https://github.com/romainsacchi/coarse/raw/master/docs/mediumsmall.png">
+  <img style="height:130px;" src="docs/_static/img/mediumsmall_2.png">
 </p>
 
 <p align="center">
@@ -13,27 +11,28 @@
   <a href="https://doi.org/10.5281/zenodo.3778259"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.3778259.svg" alt="DOI"></a>
 </p>
 
+# ``carculator_two_wheeler``
+
 Prospective life cycle assessment of two-wheelers made blazing fast.
 
 A fully parameterized Python model developed by the [Technology Assessment group](https://www.psi.ch/en/ta) of the
 [Paul Scherrer Institut](https://www.psi.ch/en) to perform life cycle assessments (LCA) of two-wheelers.
 Builds upon the initial LCA model developed by [Cox et al. 2018](https://doi.org/10.1016/j.apenergy.2017.12.100).
 
-See [the documentation](https://carculator_two_wheeler.readthedocs.io/en/latest/index.html) for more detail, validation, etc.
+See [the documentation](https://carculator_two_wheeler.readthedocs.io) for more detail, validation, etc.
 
 ### Why ``carculator_two_wheeler``?
 
-``carculator_two_wheeler`` allows to:
+``carculator_two_wheeler`` allows yout to:
 * produce [life cycle assessment (LCA)](https://en.wikipedia.org/wiki/Life-cycle_assessment) results that include conventional midpoint impact assessment indicators as well cost indicators
-*  ``carculator_two_wheeler`` uses time- and energy scenario-differentiated background inventories for the future, based on outputs of Integrated Asessment Model [REMIND](https://www.pik-potsdam.de/research/transformation-pathways/models/remind/remind).
+* ``carculator_two_wheeler`` uses time- and energy scenario-differentiated background inventories for the future, based on outputs of Integrated Asessment Model [REMIND](https://www.pik-potsdam.de/research/transformation-pathways/models/remind/remind).
 * calculate hot pollutant and noise emissions based on a specified driving cycle
 * produce error propagation analyzes (i.e., Monte Carlo) while preserving relations between inputs and outputs
 * control all the parameters sensitive to the foreground model (i.e., the vehicles) but also to the background model
 (i.e., supply of fuel, battery chemistry, etc.)
-* and easily export the vehicle models as inventories to be further imported in the [Brightway2](https://brightwaylca.org/) LCA framework
-  or the [SimaPro](https://www.simapro.com/) LCA software.
+* and easily export the vehicle models as inventories to be further imported in the [Brightway2](https://brightway.dev) LCA framework or the [SimaPro](https://www.simapro.com/) LCA software.
 
-``carculator_two_wheeler`` integrates well with the [Brightway](https://brightwaylca.org/) LCA framework.
+``carculator_two_wheeler`` integrates well with the [Brightway2](https://brightway.dev) LCA framework.
 
 ## Install
 
@@ -44,19 +43,21 @@ We recommend the installation on **Python 3.7 or above**.
 
 ### Installation of the latest version, using conda
 
-    conda install -c romainsacchi carculator_two_wheeler
+```bash
+conda install -c romainsacchi carculator_two_wheeler
+```
 
 ### Installation of a stable release (1.3.1) from Pypi
 
-    pip install carculator_two_wheeler
+```bash
+pip install carculator_two_wheeler
+```
 
 ## Usage
 
 ### As a Python library
 
-
-
-For more examples, see [examples](https://github.com/romainsacchi/carculator_two_wheeler/blob/master/examples/Examples.ipynb).
+For more examples, see [examples](docs/_static/resources/examples.zip).
 
 ## As a Web app
 
@@ -73,8 +74,8 @@ Do not hesitate to contact the development team at [carculator_two_wheeler@psi.c
 
 ## Contributing
 
-See [contributing](https://github.com/romainsacchi/carculator_two_wheeler/blob/master/CONTRIBUTING.md).
+See [contributing](CONTRIBUTING.md).
 
 ## License
 
-[BSD-3-Clause](https://github.com/romainsacchi/carculator_two_wheeler/blob/master/LICENSE). Copyright 2020 Paul Scherrer Institut.
+[BSD-3-Clause](LICENSE). Copyright 2020 Paul Scherrer Institut.

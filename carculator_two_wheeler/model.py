@@ -17,7 +17,7 @@ class TwoWheelerModel:
     This class represents the entirety of the vehicles considered, with useful attributes, such as an array that stores
     all the vehicles parameters.
 
-    :ivar array: multi-dimensional numpy-like array that contains parameters' value(s)
+    :ivar array: multidimensional numpy-like array that contains parameters' value(s)
     :vartype array: xarray.DataArray
     :ivar mappings: Dictionary with names correspondence
     :vartype mappings: dict
@@ -425,9 +425,7 @@ class TwoWheelerModel:
 
     def set_battery_replacements(self):
         """
-        This methods calculates the fraction of the replacement battery needed to match the vehicle lifetime.
-
-
+        These methods calculate the fraction of the replacement battery needed to match the vehicle lifetime.
         """
         # Number of replacement of battery is rounded *up*
 
@@ -461,12 +459,11 @@ class TwoWheelerModel:
         """
         Define ``curb mass``, ``driving mass``, and ``total cargo mass``.
 
-            * `curb mass <https://en.wikipedia.org/wiki/Curb_weight>`__ is the mass of the vehicle and fuel, without people or cargo.
-            * ``total cargo mass`` is the mass of the cargo and passengers.
-            * ``driving mass`` is the ``curb mass`` plus ``total cargo mass``.
+        * `curb mass <https://en.wikipedia.org/wiki/Curb_weight>`__ is the mass of the vehicle and fuel, without people or cargo.
+        * ``total cargo mass`` is the mass of the cargo and passengers.
+        * ``driving mass`` is the ``curb mass`` plus ``total cargo mass``.
 
-        .. note::
-            driving mass = total cargo mass + driving mass
+        .. note:: driving mass = total cargo mass + driving mass
 
         """
 
@@ -958,13 +955,13 @@ class TwoWheelerModel:
 
     def calculate_cost_impacts(self, sensitivity=False, scope=None):
         """
-        This method returns an array with cost values per vehicle-km, sub-divided into the following groups:
+        This method returns an array with cost values per vehicle-km, subdivided into the following groups:
 
-            * Purchase
-            * Maintentance
-            * Component replacement
-            * Energy
-            * Total cost of ownership
+        * Purchase
+        * Maintentance
+        * Component replacement
+        * Energy
+        * Total cost of ownership
 
         :return: A xarray array with cost information per vehicle-km
         :rtype: xarray.core.dataarray.DataArray

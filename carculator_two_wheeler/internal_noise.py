@@ -1,4 +1,3 @@
-import numexpr as ne
 import numpy as np
 from scipy.interpolate import interp1d
 
@@ -7,7 +6,7 @@ from . import DATA_DIR
 
 class InternalNoiseModel:
     """
-    Calculate internal noise function ofpowertrain and size, based on http://www.auto-decibel-db.com/index.html.
+    Calculate internal noise function of powertrain and size, based on http://www.auto-decibel-db.com/index.html.
 
     :param cycle: Driving cycle. Pandas Series of second-by-second speeds (km/h) or name (str)
         of cycle e.g., "WLTC","WLTC 3.1","WLTC 3.2","WLTC 3.3","WLTC 3.4","CADC Urban","CADC Road",
@@ -19,7 +18,6 @@ class InternalNoiseModel:
     def __init__(self, cycle):
 
         self.cycle = cycle
-
         self.noise_coeff = self.get_noise_coefficients()
 
     @staticmethod
