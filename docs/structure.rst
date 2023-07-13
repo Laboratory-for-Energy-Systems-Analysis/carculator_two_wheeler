@@ -3,9 +3,10 @@
 Structure
 =========
 
-.. image:: https://github.com/romainsacchi/carculator/blob/master/docs/_static/img/coarse.png?raw=true
-    :width: 900
-    :alt: Alternative text
+.. image:: /_static/img/coarse.png
+    :align: center
+    :width: 85%
+    :alt: Coarse
 
 Modules
 -------
@@ -30,27 +31,31 @@ Additionally, three modules are used to:
 Driving cycle module
 --------------------
 
-.. image:: https://github.com/romainsacchi/carculator/blob/master/docs/_static/img/driving_cycle.png?raw=true
-    :width: 400
-    :alt: Alternative text
+.. image:: /_static/img/driving_cycle.png
+    :align: center
+    :width: 85%
+    :alt: Driving Cycle
 
 Mass module
 -----------
 
-.. image:: https://github.com/romainsacchi/carculator/blob/master/docs/_static/img/mass_module.png?raw=true
-    :width: 900
-    :alt: Alternative text
+.. image:: /_static/img/mass_module.png
+    :align: center
+    :width: 85%
+    :alt: Mass Module
 
 Auxiliary energy module
 -----------------------
 
-.. image:: https://github.com/romainsacchi/carculator/blob/master/docs/_static/img/aux_energy.png?raw=true
-    :width: 900
-    :alt: Alternative text
+.. image:: /_static/img/aux_energy.png
+    :align: center
+    :width: 85%
+    :alt: Auxiliary Energy
     
 Motive energy module
 --------------------
 
-.. image:: https://github.com/romainsacchi/carculator/blob/master/docs/_static/img/motive_energy.png?raw=true
-    :width: 900
-    :alt: Alternative text
+.. image:: /_static/img/motive_energy.png
+    :align: center
+    :width: 85%
+    :alt: Motive Energy

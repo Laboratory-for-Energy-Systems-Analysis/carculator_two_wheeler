@@ -1,0 +1,15 @@
+﻿"|g-scooters-img|","Scooter, electric, <4 kW - 2020","Scooter, electric, 4-11 kW -2020",Comment,Source
+Lifetime [km],25’000,30’000,"See :ref:`Table 8 <table-8>`.",":cite:`ct-1003, ct-1060`"
+Annual kilometers [km],1570,1’870,,
+Energy consumption [MJ/km] (kWh/100 km),0.133 (4.08),0.189 (5.79),"Energy consumption is calculated from actual usage values reported to :cite:`ct-1092`, based on a sample of 83 vehicles, with a cumulative mileage of 500’000 kilometers.",":cite:`ct-1092`"
+Passenger mass [kg],75,75,Standard assumption.,
+Cargo mass [kg],4,4,,
+Curb mass [kg],"100 [3]_","130 [2]_",Based on manufacturers’ data.,"Piaggio, NIU, Gogoro, Pink"
+Driving mass [kg],"179 [2]_","209 [2]_",Calculated.,
+Power [kW],2.6,6.1,Based on manufacturers’ data.,"Piaggio, NIU, Gogoro, Pink"
+Battery capacity [kWh],2.3,3.3,,
+Depth of discharge [%],80,80,Standard assumption to preserve battery lifetime.,"Similar assumptions were used by :cite:`ct-1012`."
+Battery replacement unit [unit],1,1,Standard assumption for this type of vehicle.,
+Range autonomy [km],50,50,Calculated.,
+Servicing per lifetime [unit],1,1.2,"The original :cite:`ct-1047` dataset for maintenance for motor scooters is valid for a lifetime of 25’000.",":cite:`ct-1048`"
+"Abrasion emissions (tire, brake, and road wear) [kg/km]","6e-6, 6.39e-6, 6.18e-6",,,":cite:`ct-1028`"
