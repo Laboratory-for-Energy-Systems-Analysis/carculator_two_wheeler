@@ -15,7 +15,6 @@ class NoiseEmissionsModel:
     """
 
     def __init__(self, sizes):
-
         self.sizes = sizes
         self.cycle = get_standard_driving_cycle(size=sizes)
 

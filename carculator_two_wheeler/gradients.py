@@ -8,7 +8,6 @@ from . import DATA_DIR
 def get_gradients(
     size=None,
 ):
-
     """Get driving cycle data as a Pandas `Series`.
 
     Driving cycles are given as km/h per second.

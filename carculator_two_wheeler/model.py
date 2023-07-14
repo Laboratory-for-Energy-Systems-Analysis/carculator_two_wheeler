@@ -27,7 +27,6 @@ class TwoWheelerModel:
     """
 
     def __init__(self, array, gradient=None, energy_storage=None):
-
         self.array = array
 
         self.ecm = EnergyConsumptionModel(size=self.array.coords["size"].values)
@@ -561,7 +560,6 @@ class TwoWheelerModel:
         ] * (1 - self.array.loc[:, list_pt_el, "battery cell mass share"])
 
     def set_range(self):
-
         list_pt = [
             pt for pt in ["ICEV-p"] if pt in self.array.coords["powertrain"].values
         ]
@@ -587,7 +585,6 @@ class TwoWheelerModel:
         )
 
     def set_energy_stored_properties(self):
-
         list_combustion = [
             pt for pt in ["ICEV-p"] if pt in self.array.coords["powertrain"].values
         ]
@@ -606,7 +603,6 @@ class TwoWheelerModel:
 
         if "BEV" in self.array.coords["powertrain"].values:
             with self("BEV") as cpm:
-
                 cpm["electric energy stored"] = (
                     cpm["battery cell mass"] * cpm["battery cell energy density"]
                 )
@@ -626,7 +622,6 @@ class TwoWheelerModel:
         ) * 3.6
 
     def set_costs(self):
-
         self["glider cost"] = (
             self["glider base mass"] * self["glider cost slope"]
             + self["glider cost intercept"]
@@ -907,7 +902,6 @@ class TwoWheelerModel:
         ]
 
         if len(sizes) > 0:
-
             nem = NoiseEmissionsModel(sizes=sizes)
 
             list_noise_emissions = [
@@ -938,7 +932,6 @@ class TwoWheelerModel:
             ]
 
             if "ICEV-p" in self.array.powertrain.values:
-
                 self.array.loc[
                     dict(
                         powertrain="ICEV-p", size=sizes, parameter=list_noise_emissions
@@ -948,7 +941,6 @@ class TwoWheelerModel:
                 ]
 
             if "BEV" in self.array.powertrain.values:
-
                 self.array.loc[
                     dict(powertrain="BEV", size=sizes, parameter=list_noise_emissions)
                 ] = nem.get_sound_power_per_compartment("electric").T[:, :, None, None]

@@ -276,7 +276,12 @@ class ExportInventory:
                 "kilowatt hour",
                 "electricity, low voltage",
             ),
-            ("cement production, Portland", "EUR", "kilogram", "cement, Portland",): (
+            (
+                "cement production, Portland",
+                "EUR",
+                "kilogram",
+                "cement, Portland",
+            ): (
                 "cement production, Portland",
                 "CH",
                 "kilogram",
@@ -459,7 +464,6 @@ class ExportInventory:
         self.uvek_dist = load_uvek_transport_distances()
 
     def rename_vehicles(self):
-
         d_names = {
             "ICEV-d": "diesel",
             "ICEV-p": "gasoline",
@@ -567,12 +571,12 @@ class ExportInventory:
         return dict_uvek
 
     def write_lci(
-            self,
-            presamples,
-            ecoinvent_compatibility,
-            ecoinvent_version,
-            vehicle_specs,
-            forbidden_activities=None,
+        self,
+        presamples,
+        ecoinvent_compatibility,
+        ecoinvent_version,
+        vehicle_specs,
+        forbidden_activities=None,
     ):
         """
         Return the inventory as a dictionary:
@@ -881,7 +885,6 @@ class ExportInventory:
                 mult_factor = 1
 
                 if ecoinvent_compatibility:
-
                     tuple_output = self.map_remind_ecoinvent.get(
                         tuple_output, tuple_output
                     )
@@ -904,7 +907,6 @@ class ExportInventory:
                             continue
 
                     if ecoinvent_version == "uvek":
-
                         tuple_output = self.map_36_to_uvek.get(
                             tuple_output, tuple_output
                         )
@@ -917,7 +919,6 @@ class ExportInventory:
                             )
 
                 else:
-
                     tuple_output = self.map_ecoinvent_remind.get(
                         tuple_output, tuple_output
                     )
@@ -931,7 +932,7 @@ class ExportInventory:
                     uncertainty = [("uncertainty type", 1)]
 
                 elif np.all(
-                        np.isclose(self.array[:, row, col], self.array[0, row, col])
+                    np.isclose(self.array[:, row, col], self.array[0, row, col])
                 ):
                     # Several values, but all the same, so no uncertainty
                     amount = self.array[0, row, col] * mult_factor
@@ -967,7 +968,6 @@ class ExportInventory:
 
                 # If reference product
                 if tuple_output == tuple_input:
-
                     list_exc.append(
                         {
                             "name": tuple_output[0],
@@ -1025,7 +1025,6 @@ class ExportInventory:
                 description = self.references[tuple_output[0]]["description"]
                 special_remark = self.references[tuple_output[0]]["special remark"]
             else:
-
                 try:
                     key = [
                         k
@@ -1039,13 +1038,11 @@ class ExportInventory:
                 special_remark = self.references[key]["special remark"]
 
             if ecoinvent_compatibility or (
-                    ecoinvent_compatibility is False
-                    and tuple_output[0] not in activities_to_be_removed
+                ecoinvent_compatibility is False
+                and tuple_output[0] not in activities_to_be_removed
             ):
-
                 string = ""
                 if "passenger car" in tuple_output[0].lower():
-
                     d_pwt = {
                         "gasoline": "ICEV-p",
                         "diesel": "ICEV-d",
@@ -1101,7 +1098,6 @@ class ExportInventory:
                     else:
                         items = [t.strip() for t in tuple_output[0].split(",")]
                         if items[2] == "fleet average":
-
                             if items[3] == "all powertrains":
                                 size = None
                                 pwt = None
@@ -1120,9 +1116,7 @@ class ExportInventory:
                         pwt = d_pwt[pwt]
 
                         if not vehicle_specs is None:
-
                             for p in vehicle_specs.parameter.values:
-
                                 try:
                                     val = vehicle_specs.sel(
                                         powertrain=pwt,
@@ -1133,24 +1127,23 @@ class ExportInventory:
                                     ).values
 
                                     if val != 0:
-
                                         if p in (
-                                                "TtW efficiency",
-                                                "combustion power share",
-                                                "capacity utilization",
-                                                "fuel cell system efficiency",
+                                            "TtW efficiency",
+                                            "combustion power share",
+                                            "capacity utilization",
+                                            "fuel cell system efficiency",
                                         ):
                                             val = int(val * 100)
                                         else:
                                             val = int(val)
 
                                         string += (
-                                                d_names[p]
-                                                + ": "
-                                                + str(val)
-                                                + " "
-                                                + d_units[p]
-                                                + ". "
+                                            d_names[p]
+                                            + ": "
+                                            + str(val)
+                                            + " "
+                                            + d_units[p]
+                                            + ". "
                                         )
                                 except KeyError:
                                     print(
@@ -1169,30 +1162,30 @@ class ExportInventory:
                 if ecoinvent_version == "uvek":
                     dist_train, dist_truck, dist_barge = (0, 0, 0)
                     if tuple_output[1] in (
-                            "RER",
-                            "Europe without Switzerland",
-                            "SE",
-                            "GLO",
-                            "DE",
-                            "JP",
-                            "CN",
+                        "RER",
+                        "Europe without Switzerland",
+                        "SE",
+                        "GLO",
+                        "DE",
+                        "JP",
+                        "CN",
                     ):
                         for exc in list_exc:
                             if exc["name"] in self.uvek_dist:
                                 dist_train += (
-                                        self.uvek_dist[exc["name"]]["train RER"]
-                                        * float(exc["amount"])
-                                        / 1000
+                                    self.uvek_dist[exc["name"]]["train RER"]
+                                    * float(exc["amount"])
+                                    / 1000
                                 )
                                 dist_truck += (
-                                        self.uvek_dist[exc["name"]]["truck RER"]
-                                        * float(exc["amount"])
-                                        / 1000
+                                    self.uvek_dist[exc["name"]]["truck RER"]
+                                    * float(exc["amount"])
+                                    / 1000
                                 )
                                 dist_barge += (
-                                        self.uvek_dist[exc["name"]]["barge RER"]
-                                        * float(exc["amount"])
-                                        / 1000
+                                    self.uvek_dist[exc["name"]]["barge RER"]
+                                    * float(exc["amount"])
+                                    / 1000
                                 )
 
                         if dist_train > 0:
@@ -1233,23 +1226,22 @@ class ExportInventory:
                             )
 
                     elif tuple_output[1] == "CH":
-
                         for exc in list_exc:
                             if exc["name"] in self.uvek_dist:
                                 dist_train += (
-                                        self.uvek_dist[exc["name"]]["train CH"]
-                                        * float(exc["amount"])
-                                        / 1000
+                                    self.uvek_dist[exc["name"]]["train CH"]
+                                    * float(exc["amount"])
+                                    / 1000
                                 )
                                 dist_truck += (
-                                        self.uvek_dist[exc["name"]]["truck CH"]
-                                        * float(exc["amount"])
-                                        / 1000
+                                    self.uvek_dist[exc["name"]]["truck CH"]
+                                    * float(exc["amount"])
+                                    / 1000
                                 )
                                 dist_barge += (
-                                        self.uvek_dist[exc["name"]]["barge CH"]
-                                        * float(exc["amount"])
-                                        / 1000
+                                    self.uvek_dist[exc["name"]]["barge CH"]
+                                    * float(exc["amount"])
+                                    / 1000
                                 )
 
                         if dist_train > 0:
@@ -1313,15 +1305,15 @@ class ExportInventory:
             return list_act
 
     def write_lci_to_excel(
-            self,
-            ecoinvent_compatibility,
-            ecoinvent_version,
-            software_compatibility,
-            vehicle_specs=None,
-            directory=None,
-            filename=None,
-            forbidden_activities=None,
-            export_format="file",
+        self,
+        ecoinvent_compatibility,
+        ecoinvent_version,
+        software_compatibility,
+        vehicle_specs=None,
+        directory=None,
+        filename=None,
+        forbidden_activities=None,
+        export_format="file",
     ):
         """
         Export a file that can be consumed by the software defined in `software_compatibility`.
@@ -1348,31 +1340,31 @@ class ExportInventory:
         if software_compatibility == "brightway2":
             if filename is None:
                 safe_name = (
-                        safe_filename(
-                            "carculator_inventory_export_{}_brightway2".format(
-                                str(datetime.date.today())
-                            ),
-                            False,
-                        )
-                        + ".xlsx"
-                )
-            else:
-                safe_name = (
-                        safe_filename(
-                            filename,
-                            False,
-                        )
-                        + ".xlsx"
-                )
-        else:
-            safe_name = (
                     safe_filename(
-                        "carculator_inventory_export_{}_simapro".format(
+                        "carculator_inventory_export_{}_brightway2".format(
                             str(datetime.date.today())
                         ),
                         False,
                     )
-                    + ".csv"
+                    + ".xlsx"
+                )
+            else:
+                safe_name = (
+                    safe_filename(
+                        filename,
+                        False,
+                    )
+                    + ".xlsx"
+                )
+        else:
+            safe_name = (
+                safe_filename(
+                    "carculator_inventory_export_{}_simapro".format(
+                        str(datetime.date.today())
+                    ),
+                    False,
+                )
+                + ".csv"
             )
 
         if directory is None:
@@ -1394,7 +1386,6 @@ class ExportInventory:
             data = self.format_data_for_lci_for_bw2(list_act)
 
             if export_format == "file":
-
                 workbook = xlsxwriter.Workbook(filepath_export)
                 bold = workbook.add_format({"bold": True})
                 bold.set_font_size(12)
@@ -1453,7 +1444,7 @@ class ExportInventory:
         else:
             if export_format == "file":
                 with open(
-                        filepath_export, "w", newline="", encoding="latin1"
+                    filepath_export, "w", newline="", encoding="latin1"
                 ) as csvFile:
                     writer = csv.writer(csvFile, delimiter=";")
                     rows = self.format_data_for_lci_for_simapro(
@@ -1657,7 +1648,6 @@ class ExportInventory:
 
         # We loop through the activities
         for a in data:
-
             # We fetch teh main and sub categories (sub category is in fact a path)
             if a["name"] in self.references:
                 main_category = self.references[a["name"]]["category 1"]
@@ -1678,7 +1668,6 @@ class ExportInventory:
 
             # We loop through the fields SimaPro expects to see
             for item in fields:
-
                 # If it is a waste treatment activity, we skip the field `Products`
                 if main_category == "waste treatment" and item == "Products":
                     continue
@@ -1690,14 +1679,13 @@ class ExportInventory:
                 rows.append([item])
 
                 if item == "Process name":
-
                     if ei_version in ("3.5", "3.6"):
                         name = (
-                                a["name"].capitalize()
-                                + " {"
-                                + a.get("location", "GLO")
-                                + "}"
-                                + "| Cut-off, U"
+                            a["name"].capitalize()
+                            + " {"
+                            + a.get("location", "GLO")
+                            + "}"
+                            + "| Cut-off, U"
                         )
 
                     if ei_version == "uvek":
@@ -1709,7 +1697,6 @@ class ExportInventory:
                     rows.append(["Unit process"])
 
                 if item == "Comment":
-
                     if a["comment"] != "":
                         string = a["comment"]
                     else:
@@ -1746,11 +1733,11 @@ class ExportInventory:
                     rows.append([f"{datetime.datetime.today():%d.%m.%Y}"])
 
                 if item in (
-                        "Cut off rules",
-                        "Capital goods",
-                        "Technology",
-                        "Representativeness",
-                        "Boundary with nature",
+                    "Cut off rules",
+                    "Capital goods",
+                    "Technology",
+                    "Representativeness",
+                    "Boundary with nature",
                 ):
                     rows.append(["Unspecified"])
 
@@ -1812,11 +1799,11 @@ class ExportInventory:
                     for e in a["exchanges"]:
                         if e["type"] == "production":
                             name = (
-                                    e["name"].capitalize()
-                                    + " {"
-                                    + e.get("location", "GLO")
-                                    + "}"
-                                    + "| Cut-off, U"
+                                e["name"].capitalize()
+                                + " {"
+                                + e.get("location", "GLO")
+                                + "}"
+                                + "| Cut-off, U"
                             )
 
                             if ei_version in ("3.5", "3.6"):
@@ -1848,38 +1835,37 @@ class ExportInventory:
                         if e["type"] == "technosphere":
                             if ei_version in ("3.5", "3.6"):
                                 if (
-                                        not any(
-                                            i.lower() in e["name"].lower()
-                                            for i in (
-                                                    "waste",
-                                                    "emissions",
-                                                    "treatment",
-                                                    "scrap",
-                                                    "used powertrain",
-                                                    "disposal",
-                                                    "sludge",
-                                                    "used li-ion",
-                                                    "mineral oil storage",
-                                            )
+                                    not any(
+                                        i.lower() in e["name"].lower()
+                                        for i in (
+                                            "waste",
+                                            "emissions",
+                                            "treatment",
+                                            "scrap",
+                                            "used powertrain",
+                                            "disposal",
+                                            "sludge",
+                                            "used li-ion",
+                                            "mineral oil storage",
                                         )
-                                        or any(
-                                    i in e["name"]
-                                    for i in [
-                                        "from municipal waste incineration",
-                                        "municipal solid waste, incineration",
-                                        "Biomethane",
-                                        "biogas upgrading",
-                                        "anaerobic digestion, with biogenic carbon uptake",
-                                    ]
-                                )
-                                        or any(
-                                    i.lower() in e["reference product"].lower()
-                                    for i in [
-                                        "electricity",
-                                    ]
-                                )
+                                    )
+                                    or any(
+                                        i in e["name"]
+                                        for i in [
+                                            "from municipal waste incineration",
+                                            "municipal solid waste, incineration",
+                                            "Biomethane",
+                                            "biogas upgrading",
+                                            "anaerobic digestion, with biogenic carbon uptake",
+                                        ]
+                                    )
+                                    or any(
+                                        i.lower() in e["reference product"].lower()
+                                        for i in [
+                                            "electricity",
+                                        ]
+                                    )
                                 ):
-
                                     if ei_version == "3.6":
                                         (
                                             e["name"],
@@ -1922,48 +1908,48 @@ class ExportInventory:
                                         )
 
                                     name = (
-                                            e["name"].capitalize()
-                                            + " {"
-                                            + e.get("location", "GLO")
-                                            + "}"
+                                        e["name"].capitalize()
+                                        + " {"
+                                        + e.get("location", "GLO")
+                                        + "}"
                                     )
 
                                     if name not in list_own_datasets:
                                         name = (
-                                                e["reference product"].capitalize()
-                                                + " {"
-                                                + e.get("location", "GLO")
-                                                + "}"
+                                            e["reference product"].capitalize()
+                                            + " {"
+                                            + e.get("location", "GLO")
+                                            + "}"
                                         )
 
                                         if "market" in e["name"]:
                                             name += (
-                                                    "| market for "
-                                                    + e["reference product"].lower()
-                                                    + " "
+                                                "| market for "
+                                                + e["reference product"].lower()
+                                                + " "
                                             )
                                         if "market group" in e["name"]:
                                             name += (
-                                                    "| market group for "
-                                                    + e["reference product"].lower()
-                                                    + " "
+                                                "| market group for "
+                                                + e["reference product"].lower()
+                                                + " "
                                             )
 
                                         if "production" in e["name"]:
                                             if (
-                                                    len(e["reference product"].split(", "))
-                                                    > 1
+                                                len(e["reference product"].split(", "))
+                                                > 1
                                             ):
                                                 name += (
-                                                        "| "
-                                                        + e["reference product"].split(
-                                                    ", "
-                                                )[0]
-                                                        + " production, "
-                                                        + e["reference product"].split(
-                                                    ", "
-                                                )[1]
-                                                        + " "
+                                                    "| "
+                                                    + e["reference product"].split(
+                                                        ", "
+                                                    )[0]
+                                                    + " production, "
+                                                    + e["reference product"].split(
+                                                        ", "
+                                                    )[1]
+                                                    + " "
                                                 )
 
                                     rows.append(
@@ -1983,41 +1969,39 @@ class ExportInventory:
 
                             if ei_version == "uvek":
                                 if (
-                                        not any(
-                                            i.lower() in e["name"].lower()
-                                            for i in (
-                                                    "waste",
-                                                    "emissions",
-                                                    "treatment",
-                                                    "scrap",
-                                                    "used powertrain",
-                                                    "disposal",
-                                                    "used passenger car",
-                                                    "used electric passenger car",
-                                                    "anaerobic digestion, with biogenic carbon uptake",
-                                                    "mineral oil storage",
-                                            )
+                                    not any(
+                                        i.lower() in e["name"].lower()
+                                        for i in (
+                                            "waste",
+                                            "emissions",
+                                            "treatment",
+                                            "scrap",
+                                            "used powertrain",
+                                            "disposal",
+                                            "used passenger car",
+                                            "used electric passenger car",
+                                            "anaerobic digestion, with biogenic carbon uptake",
+                                            "mineral oil storage",
                                         )
-                                        or any(
-                                    i in e["name"]
-                                    for i in [
-                                        "from municipal waste incineration",
-                                        "aluminium scrap, new",
-                                        "brake wear emissions",
-                                        "tyre wear emissions",
-                                        "road wear emissions",
-                                        "used powertrain from electric passenger car",
-                                    ]
-                                )
-                                        or (
+                                    )
+                                    or any(
+                                        i in e["name"]
+                                        for i in [
+                                            "from municipal waste incineration",
+                                            "aluminium scrap, new",
+                                            "brake wear emissions",
+                                            "tyre wear emissions",
+                                            "road wear emissions",
+                                            "used powertrain from electric passenger car",
+                                        ]
+                                    )
+                                    or (
                                         "municipal solid waste, incineration"
                                         in e["name"]
                                         and e["unit"] == "kilowatt hour"
-                                )
+                                    )
                                 ):
-
                                     if e["name"] not in [i["name"] for i in data]:
-
                                         try:
                                             name = self.map_36_to_uvek_for_simapro[
                                                 e["name"],
@@ -2039,9 +2023,9 @@ class ExportInventory:
 
                                     uvek_multiplication_factors = {
                                         "market for heat, from steam, in chemical industry": 1
-                                                                                             / 2.257,
+                                        / 2.257,
                                         "steam production, as energy carrier, in chemical industry": 1
-                                                                                                     / 2.257,
+                                        / 2.257,
                                         "market group for natural gas, high pressure": 0.842,
                                         "market for natural gas, high pressure": 0.842,
                                         "market for natural gas, high pressure, vehicle grade": 0.842,
@@ -2083,8 +2067,8 @@ class ExportInventory:
                 if item == "Resources":
                     for e in a["exchanges"]:
                         if (
-                                e["type"] == "biosphere"
-                                and e["categories"][0] == "natural resource"
+                            e["type"] == "biosphere"
+                            and e["categories"][0] == "natural resource"
                         ):
                             if e["name"] not in simapro_biosphere_flows_to_remove:
                                 rows.append(
@@ -2103,13 +2087,12 @@ class ExportInventory:
                 if item == "Emissions to air":
                     for e in a["exchanges"]:
                         if (
-                                e["type"] == "biosphere" and e["categories"][0] == "air"
+                            e["type"] == "biosphere" and e["categories"][0] == "air"
                         ) or e["name"] in [
                             "Carbon dioxide, from soil or biomass stock",
                             "Carbon dioxide, to soil or biomass stock",
                         ]:
                             if e["name"] not in simapro_biosphere_flows_to_remove:
-
                                 if e["name"].lower() == "water":
                                     e["unit"] = "kilogram"
                                     e["amount"] /= 1000
@@ -2168,7 +2151,7 @@ class ExportInventory:
                 if item == "Emissions to soil":
                     for e in a["exchanges"]:
                         if (
-                                e["type"] == "biosphere" and e["categories"][0] == "soil"
+                            e["type"] == "biosphere" and e["categories"][0] == "soil"
                         ) and e["name"] not in [
                             "Carbon dioxide, from soil or biomass stock",
                             "Carbon dioxide, to soil or biomass stock",
@@ -2191,46 +2174,44 @@ class ExportInventory:
                     for e in a["exchanges"]:
                         is_waste = False
                         if e["type"] == "technosphere":
-
                             # We check if this is indeed a waste treatment activity
                             if e["name"] in self.references:
                                 if self.references[e["name"]] == "waste treatment":
                                     is_waste = True
                             else:
                                 if (
-                                        any(
-                                            i.lower() in e["name"].lower()
-                                            for i in (
-                                                    " waste ",
-                                                    "emissions",
-                                                    "treatment",
-                                                    "scrap",
-                                                    "used powertrain",
-                                                    "used passenger car",
-                                                    "used electric passenger car",
-                                                    "municipal solid waste",
-                                                    "disposal",
-                                                    "rainwater mineral oil",
-                                                    "sludge",
-                                                    "used li-ion",
-                                            )
+                                    any(
+                                        i.lower() in e["name"].lower()
+                                        for i in (
+                                            " waste ",
+                                            "emissions",
+                                            "treatment",
+                                            "scrap",
+                                            "used powertrain",
+                                            "used passenger car",
+                                            "used electric passenger car",
+                                            "municipal solid waste",
+                                            "disposal",
+                                            "rainwater mineral oil",
+                                            "sludge",
+                                            "used li-ion",
                                         )
-                                        and not any(
-                                    i.lower() in e["name"].lower()
-                                    for i in (
+                                    )
+                                    and not any(
+                                        i.lower() in e["name"].lower()
+                                        for i in (
                                             "anaerobic",
                                             "cooking",
                                             "heat",
                                             "manual dismantling",
+                                        )
                                     )
-                                )
-                                        and e["unit"] not in ["kilowatt hour", "megajoule"]
+                                    and e["unit"] not in ["kilowatt hour", "megajoule"]
                                 ):
                                     is_waste = True
 
                             # Yes, it is a waste treatment activity
                             if is_waste:
-
                                 name = ""
 
                                 # In SimaPro, waste inputs are positive numbers
@@ -2238,7 +2219,6 @@ class ExportInventory:
                                     e["amount"] *= -1
 
                                 if ei_version in ("3.5", "3.6"):
-
                                     if ei_version == "3.6":
                                         (
                                             e["name"],
@@ -2298,25 +2278,23 @@ class ExportInventory:
                                     )
 
                                 if ei_version == "uvek":
-
                                     if not any(
-                                            i in e["name"].lower()
-                                            for i in [
-                                                "brake wear",
-                                                "tyre wear",
-                                                "road wear",
-                                                "aluminium scrap, new",
-                                                "used powertrain from electric passenger car",
-                                            ]
+                                        i in e["name"].lower()
+                                        for i in [
+                                            "brake wear",
+                                            "tyre wear",
+                                            "road wear",
+                                            "aluminium scrap, new",
+                                            "used powertrain from electric passenger car",
+                                        ]
                                     ):
-
                                         uvek_multiplication_factors = {
                                             "market for manual dismantling of used electric passenger car": 1
-                                                                                                            / 1200,
+                                            / 1200,
                                             "manual dismantling of used passenger car with internal combustion engine": 1
-                                                                                                                        / 1200,
+                                            / 1200,
                                             "market for manual dismantling of used passenger car with internal combustion engine": 1
-                                                                                                                                   / 1200,
+                                            / 1200,
                                         }
 
                                         if e["name"] in uvek_multiplication_factors:
@@ -2345,7 +2323,7 @@ class ExportInventory:
 
                                         else:
                                             name = (
-                                                    e["name"] + "/" + e["location"] + " U"
+                                                e["name"] + "/" + e["location"] + " U"
                                             )
 
                                         rows.append(
@@ -2443,12 +2421,12 @@ class ExportInventory:
         return rows
 
     def write_lci_to_bw(
-            self,
-            presamples,
-            ecoinvent_compatibility,
-            ecoinvent_version,
-            forbidden_activities,
-            vehicle_specs=None,
+        self,
+        presamples,
+        ecoinvent_compatibility,
+        ecoinvent_version,
+        forbidden_activities,
+        vehicle_specs=None,
     ):
         """
         Return a LCIImporter object with the inventory as `data` attribute.
@@ -2512,7 +2490,6 @@ class ExportInventory:
 
         # Estimate distribution parameters from data
         for distribution in DISTRIBUTIONS:
-
             # Try to fit the distribution
             try:
                 # Ignore warnings from data that can't be fit

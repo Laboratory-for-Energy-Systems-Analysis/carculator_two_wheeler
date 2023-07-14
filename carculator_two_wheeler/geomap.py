@@ -91,7 +91,6 @@ class Geomap:
     """
 
     def __init__(self):
-
         self.geo = get_IAM_geomatcher()
 
     def iam_to_ecoinvent_location(self, location, contained=False):

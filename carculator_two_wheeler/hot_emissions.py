@@ -37,7 +37,6 @@ class HotEmissionsModel:
     """
 
     def __init__(self, cycle):
-
         self.cycle = cycle
 
         self.hot = get_hot_emission_factors()

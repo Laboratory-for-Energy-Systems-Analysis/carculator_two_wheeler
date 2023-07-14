@@ -16,13 +16,11 @@ class InternalNoiseModel:
     """
 
     def __init__(self, cycle):
-
         self.cycle = cycle
         self.noise_coeff = self.get_noise_coefficients()
 
     @staticmethod
     def get_noise_coefficients():
-
         filename = "internal_noise_coefficients.csv"
         filepath = DATA_DIR / filename
         if not filepath.is_file():

@@ -7,7 +7,6 @@ from .two_wheelers_input_parameters import TwoWheelerInputParameters as tw_i_p
 
 
 def fill_xarray_from_input_parameters(twip, sensitivity=False, scope=None):
-
     """Create an `xarray` labeled array from the sampled input parameters.
 
 
@@ -100,9 +99,7 @@ def fill_xarray_from_input_parameters(twip, sensitivity=False, scope=None):
     parameter_dict = {k: i for i, k in enumerate(twip.parameters)}
 
     if not sensitivity:
-
         for param in twip:
-
             pwt = (
                 set(twip.metadata[param]["powertrain"])
                 if isinstance(twip.metadata[param]["powertrain"], list)
@@ -126,7 +123,6 @@ def fill_xarray_from_input_parameters(twip, sensitivity=False, scope=None):
                 and size.intersection(scope["size"])
                 and year.intersection(scope["year"])
             ):
-
                 array.loc[
                     dict(
                         powertrain=[p for p in pwt if p in scope["powertrain"]],
@@ -136,13 +132,10 @@ def fill_xarray_from_input_parameters(twip, sensitivity=False, scope=None):
                     )
                 ] = twip.values[param]
     else:
-
         for param in twip.input_parameters:
-
             names = [n for n in twip.metadata if twip.metadata[n]["name"] == param]
 
             for name in names:
-
                 pwt = (
                     set(twip.metadata[name]["powertrain"])
                     if isinstance(twip.metadata[name]["powertrain"], list)
@@ -334,7 +327,6 @@ def modify_xarray_from_custom_parameters(fp, array):
                         continue
 
                 elif distr in [2, 3, 4, 5]:
-
                     # Check if the correct parameters are present
                     # Triangular
 
@@ -400,7 +392,6 @@ def modify_xarray_from_custom_parameters(fp, array):
 
                     # Stochastic mode
                     if array.sizes["value"] > 1:
-
                         rng = sa.MCRandomNumberGenerator(a)
 
                         for s in sizes:
@@ -409,7 +400,6 @@ def modify_xarray_from_custom_parameters(fp, array):
                                     dict(powertrain=p, size=s, year=y, parameter=param)
                                 ] = rng.generate(array.sizes["value"]).reshape((-1,))
                     else:
-
                         dist = sa.uncertainty_choices[distr]
                         median = float(dist.ppf(a, np.array((0.5,))))
 
