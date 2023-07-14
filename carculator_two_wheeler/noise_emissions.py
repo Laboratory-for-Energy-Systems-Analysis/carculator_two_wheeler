@@ -75,10 +75,9 @@ class NoiseEmissionsModel:
         Calculate sound energy (in J/s) over the driving cycle duration from sound power (in dB).
         The sound energy sums are further divided into `geographical compartments`: urban, suburban and rural.
 
-            * *urban*: from 0 to 50 km/k
-            * *suburban*: from 51 km/h to 80 km/h
-            * *rural*: above 80 km/h
-
+        * *urban*: from 0 to 50 km/k
+        * *suburban*: from 51 km/h to 80 km/h
+        * *rural*: above 80 km/h
 
         :return: Sound energy (in Joules) per km driven, per geographical compartment.
         :rtype: numpy.array

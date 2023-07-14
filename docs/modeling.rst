@@ -1,746 +1,710 @@
-Modeling and assumptions
-========================
-
-The modeling of passenger vehicles in the past, present and future is complex and relies on many assumptions.
-With **carculator_two_wheeler** and **carculator_two_wheeler online**, we wish to be transparent about those: assumptions and modeling approaches should ideally be easily
-critiqued and modified.
-
-We try here to give a comprehensive list of assumptions and modeling choices, and describe how, as a user, you
-can change those.
-
-Parameters' names are indicated ``verbatim`` and are to be used in **carculator_two_wheeler**. The can also be accessed and modified
-via its online graphical user interface **carculator_two_wheeler online**,  via the search bar in the *Car Parameters* section.
-
-Vehicle sizing
-**************
-**carculator_two_wheeler** models vehicles along four dimensions:
-
-* their powertrain (e.g., gasoline-run internal combustion engine, battery electric vehicle, etc.),
-* their size (e.g., mini, medium, large, etc.),
-* their year of production (2000, 2010, 2017 and 2040)
-* and a parameter dimension (i.e., input and calculated parameters).
-
-When **carculator_two_wheeler** sizes the vehicles for the different powertrains, sizes and years, it starts with the
-input parameter's value for the ``glider base mass``, which is essentially an initial guess for the mass of the vehicle's
-glider without anything on it.
-
-Then it adds the following components and their associated mass:
-
-* ``fuel mass``: mass of the fuel in the fuel tank (only applicable to vehicles using liquid or gaseous fuels),
-* ``fuel tank mass``: mass of the fuel tank (empty),
-* ``charger mass``: mass of the onboard battery charger (for battery electric and plugin hybrid vehicles only),
-* ``converter mass``: mass of the onboard electricity AC/DC converter (for battery electric and plugin hybrid vehicles only),
-* ``inverter mass``: mass of the onboard electricity DC/AC converter (for battery electric and plugin hybrid vehicles only),
-* ``power distribution unit mass``: mass of the onboard power distribution unit (for battery electric and plugin hybrid vehicles only),
-* ``combustion engine mass``: mass of the internal combustion engine (if applicable),
-* ``electric engine mass``: mass of the electric motor (if applicable),
-* ``powertrain mass``: mass of the powertrain excluding the mass of the engine (e.g., transmission, drive shafts, differentials, etc.),
-* ``fuel cell stack mass``: mass of the fuel cell stack (only for fuel cell electric vehicles),
-* ``fuel cell ancillary BoP mass``: mass of the ancillary part of the Balance of Plant of the fuel cell stack (only for fuel cell electric vehicles),
-* ``fuel cell essential BoP mass``: mass of the essential part of the Balance of Plant of the fuel cell stack (only for fuel cell electric vehicles),
-* ``battery cell mass``: mass of the battery cells. Two types of batteries are distinguished: power and energy batteries,
-* ``battery BoP mass``: mass of the Balance of Plant of the battery.
-
-
-Adding the mass of the glider to the mass of these components constitutes a first attempt at guessing the ``curb mass`` of
-the vehicle, that is its mass in working order, but without passengers and cargo.
-The ``driving mass`` of the vehicle is then obtained by summing the ``curb mass`` to the mass of the passengers
-(``average passengers`` x ``average passenger mass``) and cargo transported (``cargo mass``).
-
-A second step consists into calculating the mass of the combustion and electric engine, based on the following relations:
-
-    power demand (``power``) [kW] = ``power-to-mass ratio`` [kW/kg] x ``curb mass`` [kg]
-
-    electrical power demand (``electric power``) [kW] = power demand (``power``) [kW] x (1 - ``combustion power share`` [%])
-
-    ``electric engine mass`` [kW] = (``electric power`` [kW] x ``electric mass per power`` [kg/kW]) + ``electric fixed mass`` [kg]
-
-    combustion power demand (``combustion power``) [kW] = ``power`` [kW] x ``combustion power share`` [%]
-
-    ``combustion engine mass`` [kW] = (``combustion power`` [kW] x ``combustion mass per power`` [kg/kW]) + ``combustion fixed mass`` [kg]
-
-
-As well as for the mass of the powertrain:
-
-    ``powertrain mass`` [kg] = (``power`` [kW] x ``powertrain mass per power`` [kg/kW]) + ``powertrain fixed mass`` [kg]
-
-With the mass of these new components recalculated (``electric engine mass``, ``combustion engine mass`` and ``powertrain mass``),
-the curb mass of the vehicle is calculated once again. This iterative process stops when the curb mass of the vehicle
-stabilizes (i.e., when recalculating the mass of the engine and powertrain does not lead to a change in the new curb
-mass of more than one percent).
-
-.. image:: https://github.com/romainsacchi/carculator_two_wheeler/raw/master/docs/mass_module.png
-    :width: 900
-    :alt: Structure of mass module
-
-Four initial input parameters are therefore of importance:
-
-* ``glider base mass``:the initial mass of the glider
-* ``power to mass ratio``: the power-to-mass ratio
-* ``combustion power share``: how much of the power is provided by an internal combustion engine
-* ``combustion mass per power``: the mass of the combustion engine per unit of power
-
-For electric vehicles (i.e., BEV and FCEV), ``combustion power share`` = 0.
-For internal combustion engine vehicles (i.e., ICEV-p, ICEV-d and ICEV-g),
-``combustion power share`` = 1 in the early years (until 2020). However, starting 2020 on, this value drops progressively
-to 0.85 by 2050, as we assumed a mild-hybridization of the powertrain to a level similar to that of non-plugin hybrids nowadays (i.e., HEV-p and HEV-d).
-While it is uncertain whether ICEVs will exist in the future, it was assumed that a way for them to comply with future
-emission standards was to be assisted by an electric engine. This mild-hybridization allows to reduce the size of the combustion engine and recover energy during braking.
-
-For non-plugin hybrids, ``combustion power share`` is usually set at around 0.75.
-
-For plugin hybrid vehicles, things are modeled differently: a purely electric vehicle is modeled, as well as a purely
-combustion-based vehicle. Later on, when the range of the purely-electric vehicle is calculated, a ``electric utility ratio``
-is obtained, which is used to fusion both vehicles. This ratio, which is dependent on the range, is usually between 0.6 and 0.7.
-This means that plugin hybrid vehicles are made of between 60 and 70% of a purely electric vehicle and 30 to 40% of a purely combustion-based vehicle.
-
-If I know already the ``curb mass`` of a vehicle, can I override its value?
----------------------------------------------------------------------------
-
-With **carculator_two_wheeler online**:
-
-Currently, it is not possible to modify directly the calculated parameter ``curb mass``, as it would be recalculated.
-In order to do so, you need to use instead the Python library **carculator_two_wheeler** (see next section). You can however
-modify any of the input parameters ``glider base mass``, ``power to mass ratio``, ``combustion power share``
-and ``combustion mass per power`` used to calculate ``curb mass``.
-To do so, type their name in the search field of the Parameters section.
-
-.. image:: https://github.com/romainsacchi/carculator_two_wheeler/raw/master/docs/power_to_mass_change.png
-    :width: 900
-    :alt: Change parameters affecting the curb mass
-
-
-With **carculator_two_wheeler**:
-
-Yes. After having created the CarModel() object and executed the :meth:`.set_all` method, you can override the
-calculated ``curb mass`` value. Here is an example for a diesel car of medium size in 2020::
-
-    cm = CarModel(array, cycle='WLTC')
-    cm.set_all()
-    cm.array.loc[dict(parameter="curb mass",
-                  powertrain="ICEV-d",
-                  year=2020,
-                  size="Medium")] = 1600
-
-How to prevent the mild-hybridization of ICEVs?
------------------------------------------------
-
-With **carculator_two_wheeler online**:
-
-In the Parameters section, search for `combustion power share` and add the parameter for the vehicles you wish to modify.
-
-.. image:: https://github.com/romainsacchi/carculator_two_wheeler/raw/master/docs/combustion_power_share.png
-    :width: 900
-    :alt: Change combustion power share parameter
-
-With **carculator_two_wheeler**:
-
-You can simply override the default value by "1" in ``array`` before passing it to CarModel()::
-
-    dict_param = {('Powertrain',  ('ICEV-d', 'ICEV-p', 'ICEV-g'), 'all', 'combustion power share', 'none'): {
-                                                                                        (2000, 'loc'): 1,
-                                                                                        (2010, 'loc'): 1,
-                                                                                        (2017, 'loc'): 1,
-                                                                                        (2040, 'loc'): 1}
-                                                                                        }
-    modify_xarray_from_custom_parameters(dict_param, array)
-
-You can also just override the default value of a specific powertrain of a specific size, for a specific year::
-
-    dict_param = {('Powertrain',  'ICEV-d', 'Medium', 'combustion power share', 'none'): {
-                                                                                        (2017, 'loc'): 1
-                                                                                        }
-    modify_xarray_from_custom_parameters(dict_param, array)
-
-How can I modify the battery capacity of a battery electric car?
------------------------------------------------------------------------
-
-Two parameters are of importance, ``energy battery mass`` [kg] and ``battery cell energy density`` [kWh/kg], so that:
-
-``battery cell mass`` [kg] = ``energy battery mass`` [kg] × ``battery cell mass share`` [%]
-
-``energy stored`` [kWh] = ``battery cell energy density`` [kWh/kg] x ``battery cell mass`` [kg]
-
-Hence, by modifying either of them (or both), you can affect the capacity of the battery for a given size class.
-
-With **carculator_two_wheeler online**:
-
-.. image:: https://github.com/romainsacchi/carculator_two_wheeler/raw/master/docs/battery_capacity_change.png
-    :width: 900
-    :alt: Change battery capacity
-
-
-With **carculator_two_wheeler**:
-
-You can simply override the default values in ``array`` before passing it to CarModel()::
-
-    dict_param = {('Energy Storage',  'BEV', 'Medium', 'energy battery mass', 'none'): {
-                                                                                        (2000, 'loc'): 100,
-                                                                                        (2010, 'loc'): 150,
-                                                                                        (2017, 'loc'): 180,
-                                                                                        (2040, 'loc'): 200}
-                                                                                        },
-                 ('Energy Storage',  'BEV', 'Medium', 'battery cell energy density', 'none'): {
-                                                                                        (2000, 'loc'): 0.05,
-                                                                                        (2010, 'loc'): 0.1,
-                                                                                        (2017, 'loc'): 0.2,
-                                                                                        (2040, 'loc'): 0.3}
-                                                                                        }
-
-    modify_xarray_from_custom_parameters(dict_param, array)
-
-The ``curb mass`` values obtained for the vehicles in 2000, 2010 and 2017 are calibrated against a passenger cars database
-`Car2DB <https://car2db.com/>`_. The calibration of the ``curb mass`` for vehicles for the year 2000 is done against vehicles in
-the Car2DB database with a production year in the range of 1998-2002, against 2008-2012 and 2015-2018 for vehicles for the years
-2010 and 2017, respectively.
-The value of the input parameter ``glider base mass`` was adjusted to fit the distribution shown in the plots below.
-
-Calibration of vehicles' curb mass for the year 2000
-
-.. image:: https://github.com/romainsacchi/carculator_two_wheeler/raw/master/docs/curb_mass_calibration_2000.png
-    :width: 900
-    :alt: Calibration for year 2000 vehicles
-
-Calibration of vehicles' curb mass for the year 2010
-
-.. image:: https://github.com/romainsacchi/carculator_two_wheeler/raw/master/docs/curb_mass_calibration_2010.png
-    :width: 900
-    :alt: Calibration for year 2010 vehicles
-
-Calibration of vehicles' curb mass for the year 2017
-
-.. image:: https://github.com/romainsacchi/carculator_two_wheeler/raw/master/docs/mass_comparison.png
-    :width: 900
-    :alt: Calibration for year 2017 vehicles
-
-For the year 2040, the value for input parameters ``glider base mass``, ``combustion mass per power``, ``power to mass ratio`` are
-adjusted according to the following studies:
-
-* Hirschberg (Editor) S, Bauer C, Cox B, Heck T, Hofer J, Schenler W, et al. Opportunities and challenges for electric mobility: an interdisciplinary assessment of passenger vehicles Final report of the THELMA project in co-operation with the Swiss Competence Center for Energy Research "Efficient technologies and systems for mobil. 2016.
-* Del Duce, Andrea; Gauch, Marcel; Althaus, Hans-Jörg: "Electric passenger car transport and passenger car life cycle inventories in ecoinvent version 3", International Journal of Life Cycle Assessment, Vol. 21, pp. 1314-1326, (2016)
-* E. A. Grunditz and T. Thiringer, "Performance Analysis of Current BEVs Based on a Comprehensive Review of Specifications," in IEEE Transactions on Transportation Electrification, vol. 2, no. 3, pp. 270-289, Sept. 2016, doi: 10.1109/TTE.2016.2571783.
-
-What happens when I inter-/extrapolate to other years?
+.. _model:
+
+
+Modeling
+========
+
+This document describes the ``carculator_two_wheeler`` model, assumptions
+and inventories as exhaustively as possible.
+
+Overview of ``carculator_two_wheeler``
+--------------------------------------
+
+``carculator_two_wheeler`` is an open-source Python library. Its code is publicly
+available via its `Github repository <https://github.com/romainsacchi/carculator_two_wheeler>`__.
+You can also :download:`download an examples notebook <_static/resources/examples.zip>`, that guides new users into performing life cycle analyses.
+
+The vehicles included in the two-wheelers category are:
+
+* Kick scooters, electric
+* Bicycles, conventional
+* Bicycles, electric, with a top speed of 25 km/h
+* Bicycles, electric, with a top speed of 45 km/h
+* Bicycles, electric, cargo type
+* Scooters, gasoline
+* Scooters, electric
+* Motorbikes, gasoline
+* Motorbikes, electric
+
+
+Size classes
+************
+
+Some of these vehicles are defined across several power categories and powertrain types.
+
+.. _table-1:
+
+.. table:: Table 1: Overview of vehicles included in the two-wheelers category
+   :widths: auto
+   :align: center
+
+   +-----------------------------+--------------+--------------+-----------+------------+---------------+--------------+----------------+
+   |                             | **Gasoline** | **Electric** | **<1 kW** | **1-4 kW** | **4-11 kW**   | **11-35 kW** | **> 35kW**     |
+   +=============================+==============+==============+===========+============+===============+==============+================+
+   | Kick scooters               |              | x            | x         |            |               |              |                |
+   +-----------------------------+--------------+--------------+-----------+------------+---------------+--------------+----------------+
+   | Electric bicycles (< 25km/h)|              | x            | x         |            |               |              |                |
+   +-----------------------------+--------------+--------------+-----------+------------+---------------+--------------+----------------+
+   | Electric bicycles (< 45km/h)|              | x            | x         |            |               |              |                |
+   +-----------------------------+--------------+--------------+-----------+------------+---------------+--------------+----------------+
+   | Electric bicycles, cargo    |              | x            | x         |            |               |              |                |
+   +-----------------------------+--------------+--------------+-----------+------------+---------------+--------------+----------------+
+   | Scooters                    | x            | x            |           | x          | x             |              |                |
+   +-----------------------------+--------------+--------------+-----------+------------+---------------+--------------+----------------+
+   | Motorbikes                  | x            | x            |           |            | x             | x            | x              |
+   +-----------------------------+--------------+--------------+-----------+------------+---------------+--------------+----------------+
+
+The power intervals chosen correspond roughly to the required driving license types in Europe and Switzerland.
+AM, A1, A2, and A-type driving licenses are required for vehicles with an engine power inferior to 4 kW (including scooters),
+between 4 and 11 kW, between 11 and 35 kW, and above 35 kW, respectively.
+
+Modeling considerations applicable to all two-wheelers
 ------------------------------------------------------
 
-If the default years of 2000, 2010, 2017 and 2040 are of no interest, it is possible to inter-/extrapolate the vehicle
-models to any year between 2000 and 2050. When such inter-/extrapolation is done, all the *physical* input parameters' values
-are inter-/extrapolated **linearly**.
+* For all vehicles, the passenger mass is 75 kilograms.
+* For all vehicles, the vehicle datasets use one vehicle unit as a functional unit, and the corresponding transport activity uses one vehicle-kilometer as a functional unit.
 
-With **carculator_two_wheeler online**:
+Modeling considerations applicable to internal combustion engine vehicles
+-------------------------------------------------------------------------
+Several fuel-related emissions other than CO2 and SO2 are considered using
+the EMEP EEA’s 2019 Air Pollutant Emissions Inventory Guidebook :cite:`ct-1028`.
 
-In the Scope section, simply drag the desired years from the left frame to the right frame.
+Two sources of emissions are considered:
 
-.. image:: https://github.com/romainsacchi/carculator_two_wheeler/raw/master/docs/select_vehicle_tutorial.gif
-    :width: 900
-    :alt: Select years
+* Exhaust emissions: emissions from fuel combustion during operation, and their concentration relates to fuel consumption and the vehicle's emission standard.
+* Other non-exhaust emissions: brake, tire, and road wear emissions, emissions of refrigerant, and noise.
 
-With **carculator_two_wheeler**:
+Exhaust emissions per vehicle-kilometer for two-wheelers are summarized in :ref:`Table 2 <table-2>`.
 
-After creating ``array``, which is a `DataArray` object from the library ``xarray``, it is possible to use the `.interp()`
-method, like so::
+.. _table-2:
 
-     array = array.interp(year=np.arange(2015, 2051, 5),  kwargs={'fill_value': 'extrapolate'})
-
-Here, the years under study are from 2015 to 2050 by step of 5 years.
-
-This is slightly different for cost input parameters' values, which are usually following a decay-like cost curve, to account
-for a learning rate.
-Hence, parameters such as ``fuel tank cost per kg``, ``fuel cell cost per kW``, ``energy battery cost per kWh``, ``power battery cost per kW``,
-or ``combustion powertrain cost per kW`` would be of shape: a*exp(b) + c. Coefficients *a*, *b* and *c* are defined to fit the literature and projections.
-
-Projection of energy battery cost per kWh for BEV and FCEV.
-
-.. image:: https://github.com/romainsacchi/carculator_two_wheeler/raw/master/docs/cost_energy_battery_projection.png
-    :width: 900
-    :alt: Projection of energy battery cost per kWh
-
-
-Tank-to-wheel energy consumption
-********************************
-
-The `tank-to-wheel` energy consumption is the sum of:
-
-* the `motive energy` needed to move the vehicle over 1 km
-* the `auxilliary` energy needed to operate on-board equipment as well as to provide heating and cooling over 1 km
-
-Motive energy
--------------
-
-Once the vehicle and its powertrain has been sized, it is possible to calculate the `motive energy` required along
-a specific driving cycle to overcome the following forces:
-
-* rolling resistance
-* aerodynamic resistance
-* air resistance
-* road gradient resistance (if provided)
-
-on top of the *kinetic energy* needed to move the vehicle.
-
-To calculate the motive energy, the following parameters are needed:
-
-* the ``driving mass`` of the vehicle
-* its ``rolling resistance coefficient``
-* its ``aerodynamic drag coefficient``
-* its ``frontal area``
-* its tank-to-wheel efficiency (``TtW efficiency``)
-* its ``recuperation efficiency``
-* and the power of its electric motor, if any (``electric power``)
-
-To that amount of energy is subtracted the *energy recuperated* during braking, if the vehicle is equipped with
-an electric motor (to the extent of the power of the motor, discounted with a ``recuperation efficiency``).
-
-* ``recuperation efficiency`` [%] = ``drivetrain efficiency`` [%] x ``battery charge efficiency`` [%]
-
-
-.. image:: https://github.com/romainsacchi/carculator_two_wheeler/raw/master/docs/motive_energy.png
-    :width: 900
-    :alt: Calculation of the motive energy
-
-Also, ``distance``, ``velocity`` and ``acceleration`` are derived from the driving cycle.
-
-.. image:: https://github.com/romainsacchi/carculator_two_wheeler/raw/master/docs/driving_cycle.png
-    :width: 400
-    :alt: Driving cycle
-
-
-In parallel, the ``TtW efficiency`` (the loss of energy between the energy storage and the wheels) is calculated as the product of the following efficiency parameters:
-
-* ``battery discharge efficiency``
-* ``fuel cell system efficiency``
-* ``drivetrain efficiency``
-* ``engine efficiency``
-
-The `motive energy` is calculated as the sum of:
-
-* rolling resistance [kg.m.s^-2] = ``driving mass`` [kg] x ``rolling resistance coefficient`` [%] x 9.81 [m/s^2]
-* air resistance [kg.m.s^-2] = ``velocity`` ^2 [m^2/s^2] x (``frontal area`` [m^2] x ``aerodynamic drag coefficient`` [%] x air density [kg/m^3] / 2)
-* road gradient resistance [kg.m.s^-2] = ``driving mass`` [kg] x 9.81 [m/s^2] x sin(gradient)
-* kinetic force [kg.m.s^-2] = ``acceleration`` [m/s^2] x ``driving mass`` [kg]
-
-This gives:
-
-* force required [kg.m.s^-2] = rolling resistance + air resistance + road gradient resistance + kinetic force
-
-Then, the gross power required is calculated as:
-
-* power [W or kg.m^2.s^-3] = force required [kg.m.s^-2] x velocity [m/s]
-
-The recuperated power, via electro-braking is calculated as the decelerating power (when power is negative) comprised
-between 0 and the electric engine power *-1, times the recuperation efficiency:
-
-* recuperated power [W] = power [W] * recuperation efficiency [%], when power between (-1 x electric engine power [W]) and 0
-
-Finally, to obtain the `motive energy` the gross power minus the recuperated power (which is negative!) are summed along the driving cycle duration:
-
- * `motive energy` [joules] = sum ((power [W or joules/s] + recuperated power [W or joules/s]) / distance [m] / ``TtW efficiency`` [%] / 1000 [j/kj])
-
-The `motive energy` is divided by the ``TtW efficiency`` to obtain the amount of kilojoules needed in the tank (or battery) to move the vehicle over 1 km.
-
-Here is plotted the second-by-second gross power requirement for a large-sized battery electric vehicle, along the WLTC driving cycle:
-
-.. image:: https://github.com/romainsacchi/carculator_two_wheeler/raw/master/docs/kw_bev_wltc.png
-    :width: 900
-    :alt: Calculation of the motive energy
-
-How can I add a road gradient?
-------------------------------
-
-By default, the vehicles are compared based on a driving cycle on a flat road.
-
-It is however possible to pass a gradient series (which must provide a gradient degree for each second of
-the driving cycle) to the energy model::
-
-    cm = CarModel(arr, gradient=gradient)
-
-
-Auxilliary energy
-----------------
-
-The `auxilliary` energy, that is the energy needed to operate onboard equipment and heating and cooling systems, is also calculated
-as the sum of the power demand over time.
-
-This power demand entails:
-
-* the average power demand for heating
-* the average power demand for cooling
-* the average power demand for onboard electronics
-
-.. image:: https://github.com/romainsacchi/carculator_two_wheeler/raw/master/docs/aux_energy.png
-    :width: 900
-    :alt: Auxilliary energy
-
-This power demand is modeled as:
-
-* ``auxilliary power demand`` [W] = ``auxilliary power base demand`` [W] + (``heating thermal demand`` [W] x ``heating energy consumption`` [0-1]) + (``cooling thermal demand`` [W] x ``cooling energy consumption`` [0-1])
-
-``auxilliary power demand`` is summed over the driving time defined by the driving cycle and divided by the ``engine efficiency``.
-
-
-The power demand for heating varies between 200 Watts and 350 Watts depending on the car size.
-The power demand for cooling varies between 200 Watts and 350 Watts depending on the car size.
-
-Note that, unlike battery electric vehicles, internal combustion engine vehicles satisfy the power demand in heating
-without the additional use of energy, because ``heating energy consumption`` = 0.
-
-
-Tank-to-wheel energy
---------------------
-
-The sum of the `motive` and the `auxilliary` energy gives the tank-to-wheel energy (``TtW energy``) of the vehicle.
-
-Parameters such as ``battery discharge efficiency``, ``fuel cell system efficiency``, ``drivetrain efficiency``,
-``engine efficiency`` and therefore, indirectly, ``TtW efficiency``, have been calibrated to obtain ``TtW energy``
-figures that fit what is observed in reality.
-
-For 2010 and 2017 vehicles, the tank-to-wheel energy use (``TtW energy``) and underlying parameters have been calibrated
-against the database from the `Monitoring of CO2 emissions from passenger cars <https://www.eea.europa.eu/data-and-maps/data/co2-cars-emission-16>`_
-program from the European Environment Agency. This database lists energy and emission measurement for each new passenger
-car registered in the European Union, based on the NEDC and WLTC driving cycles.
-
-Tank-to-wheel energy calibration for 2010 vehicles
-
-.. image:: https://github.com/romainsacchi/carculator_two_wheeler/raw/master/docs/EU_energy_comparison_2010.png
-    :width: 900
-    :alt: Tank-to-wheel energy calibration for 2010 vehicles
-
-
-Tank-to-wheel energy calibration for 2017 vehicles
-
-.. image:: https://github.com/romainsacchi/carculator_two_wheeler/raw/master/docs/EU_energy_comparison.png
-    :width: 900
-    :alt: Tank-to-wheel energy calibration for 2017 vehicles
-
-For the year 2000, such energy and emission measurement data was not available. Hence, we relied on the `International
-Council on Clean Transportation data <https://theicct.org/chart-library-passenger-vehicle-fuel-economy>`_ that provides
-historical time series on the measured fuel efficiency of diesel and petrol engines based on the WLTC driving cycle,
-including its evolution between 2000 and 2010 (-20%). Therefore, the underlying parameters of ``TtW efficiency`` have
-been adjusted to produce ``TtW energy`` figures about 20% more important than those observed in 2010.
-
-Here is a comparison of the ``TtW energy`` based on the WLTC driving cycle for 2000, 2010 and 2017 vehicles:
-
-.. image:: https://github.com/romainsacchi/carculator_two_wheeler/raw/master/docs/EU_energy_comparison_2000.png
-    :width: 900
-    :alt: Tank-to-wheel energy calibration for 2000 vehicles
-
-Knowing the tank-to-wheel energy requirement allows to calculate the range (in km) of a vehicle on a full tank since:
-
-    ``range`` [km] = (``fuel mass`` [kg] x ``LHV fuel MJ per kg`` [Mj/kg] x 1000) / ``TtW energy``
-
-In the case of battery electric vehicles and hybrid vehicles, things are similar:
-
-    ``range`` [km] = (``electric energy stored`` [kWh] x ``battery DoD`` [%] x 3.6 x 1000) / ``TtW energy``
-
-The following lower heating values (LHV) for the liquid and gaseous fuels, in Mj/kg, are used:
-
-* conventional gasoline: 42.4
-* conventioanl diesel: 42.8
-* compressed natural gas: 55.5
-* hydrogen: 120
-
-Those can be changed by modifying the value of the ``LHV fuel MJ per kg`` in ``array`` before passing it to ``CarModel``.
-For example, we can decrease the LHV of diesel::
-
-    dict_param = {('Powertrain',  'ICEV-d', 'all', 'LHV fuel MJ per kg', 'none'): {
-                                                                                        (2000, 'loc'): 44,
-                                                                                        (2010, 'loc'): 44,
-                                                                                        (2017, 'loc'): 44,
-                                                                                        (2040, 'loc'): 44
-                                                                                        }
-    modify_xarray_from_custom_parameters(dict_param, array)
-
-
-How can I override the tank-to-wheel efficiency?
-------------------------------------------------
-
-With **carculator_two_wheeler online**:
-
-You cannot directly override ``TtW efficieny``.
-However, you can adjust any of the four parameters affecting ``TtW efficiency`` in the Tank-to-wheel efficiency section.
-
-.. image:: https://github.com/romainsacchi/carculator_two_wheeler/raw/master/docs/ttw_efficiency_change.png
-    :width: 900
-    :alt: Tank-to-wheel efficiency adjustment
-
-With **carculator_two_wheeler**:
-
-After having created the CarModel() object and executed the :meth:`.set_all` method, you can override the
-calculated ``TtW efficiency`` value and recalculate ``TtW energy`` with the :meth:`.calculate_ttw_energy` method.
-Here is an example for a diesel car of medium size in 2020, for which we want to set the TtW efficiency at 30% (instead of 24%)::
-
-    cm = CarModel(array, cycle='WLTC')
-    cm.set_all()
-    cm.array.loc[dict(parameter="TtW efficiency",
-                  powertrain="ICEV-d",
-                  year=2020,
-                  size="Medium")] = 0.3
-    cm.calculate_ttw_energy()
-
-You can also adjust any of the input parameters that affect ``TtW efficiency``, namely ``battery discharge efficiency``
- (for battery electric cars only), ``fuel cell stack efficiency`` (for fuel cell cars only), ``engine efficiency`` and
- ``drivetrain efficiency``.
-
-If I know already the fuel consumption of a vehicle, can I override it?
------------------------------------------------------------------------
-
-With **carculator_two_wheeler online**:
-
-Currently, it is not possible to modify directly the parameter ``TtW energy``, as it would be recalculated.
-In order to do so, you need to use instead the Python library *carculator_two_wheeler* (see next section):
-
-With **carculator_two_wheeler**:
-
-Yes. After having created the CarModel() object and executed the :meth:`.set_all` method, you can override the
-calculated ``TtW energy`` value (in kilojoules). Here is an example for a diesel car of medium size in 2020::
-
-    cm = CarModel(array, cycle='WLTC')
-    cm.set_all()
-    cm.array.loc[dict(parameter="TtW energy",
-                  powertrain="ICEV-d",
-                  year=2020,
-                  size="Medium")] = 2800
-
-
-Fuel blends
-***********
-
-The user can define fuel blends. The following fuel types are available, along with their lower heating value (in MJ/kg)
-and CO2 emission factor (kg CO2/kg fuel.
-
-Hydrogen technologies (LHV: 120 MJ/kg)
-......................................
-
-* 'electrolysis'
-* 'smr - natural gas'
-* 'smr - natural gas with CCS'
-* 'smr - biogas'
-* 'smr - biogas with CCS'
-* 'coal gasification'
-* 'wood gasification'
-* 'wood gasification with CCS'
-
-Natural gas technologies
-------------------------
-
-* 'cng' (55.5 MJ/kg, 2.65 kg CO2/kg CNG)
-* 'biogas' (55.5 MJ/kg, 2.65 kg CO2/kg CNG)
-* 'syngas' (55.5 MJ/kg, 2.65 kg CO2/kg CNG)
-
-Diesel technologies
--------------------
-
-* 'diesel' (42.8 MJ/kg, 3.14 kg CO2/kg)
-* 'biodiesel - algae' (31.7 MJ/kg, 2.85 kg CO2/kg)
-* 'biodiesel - cooking oil' (31.7 MJ/kg, 2.85 kg CO2/kg)
-* 'synthetic diesel' (43.3 MJ/kg, 3.16 kg CO2/kg)
-
-Petrol technologies
--------------------
-
-* 'petrol' (42.4 MJ/kg, 3.18 kg CO2/kg)
-* 'bioethanol - wheat straw' (26.8 MJ/kg, 1.91 kg CO2/kg)
-* 'bioethanol - maize starch' (26.8 MJ/kg, 1.91 kg CO2/kg)
-* 'bioethanol - sugarbeet' (26.8 MJ/kg, 1.91 kg CO2/kg)
-* 'bioethanol - forest residues' (26.8 MJ/kg, 1.91 kg CO2/kg)
-* 'synthetic gasoline' (42.4 MJ/kg, 3.18 kg CO2/kg)
-
-Once the fuel blend is defined, the range is calculated once again, now considering the new energy amount stored in the tank.
-Therefore, a car solely running on bio-ethanol will have a reduced range, increasing the fuel consumption and emissions
-related to the growing of crops and supply of fuel. The tailpipe CO2 emissions may not necessarily increase as biofuels
-have generally lower CO2 emission factors.
-
-It is important to note that CO2 emissions of biogenic origin from biofuels are characterized with a similar Global Warming Potential factor
-as those for conventional fossil fuels. However, CO2 uptake is considered during biomass growth.
-
-Fuel-related direct emissions
-*****************************
-
-Carbon dioxide emissions from fuel combustion are calculated based on the fuel blend defined by the user (see above).
-
-    carbon dioxide emission [kg/km] = CO2_fuel x ``fuel mass`` [kg] x share_fuel / ``range`` [km]
-
-This is calculated for every fuel type found in the blend (primary and secondary fuel).
-
-Sulfur dioxide emissions are calculated based on the fuel consumption and the sulfur content of the fuel. The sulfur
-content of the fuel is defined for over 90 countries. It is assumed that countries which currently have a fuel with
-a high sulfur content will have it down to 50 ppm by 2050. The past and current sulfur content in fuels for European
-countries in provided by the `Handbook Emission Factors for Road Transport <https://www.hbefa.net/e/index.html>`_.
-For other countries, it is provided by `Xier et al. 2020 <https://doi.org/10.1007/s11783-016-0859-5>`_.
-
-This maps shows the sulfur content the model considers in 2020 for on-road diesel fuel.
-.. image:: https://github.com/romainsacchi/carculator_two_wheeler/raw/master/docs/diesel_sulfur_map.png
-    :width: 900
-    :alt: Sulfur content in on-road diesel fuel in 2020
-
-Other emissions based on fuel combustion are considered, from Spielmann et al., Transport Services Data v.2 (2007).
-However those only apply when conventional diesel or conventional gasoline is burnt:
-
-* Cadmium
-* Chromium and Chromium VI
-* Copper
-* Nickel
-* Selenium
-* Zinc
-
-
-Hot pollutants emissions
-************************
-
-**carculator_two_wheeler** quantifies the emissions of the following substances:
-
-* Hydrocarbons
-* Carbon monoxide
-* Nitrogen oxides
-* Particulate matters
-* Methane
-* NMVOC
-* Lead
-* Sulfur dioxide
-* Dinitrogen oxide
-* Ammonia
-* Benzene
-* Xylene
-* Toluene
-* Formaldehyde
-* Acetyldehyde
-
-
-It does so by correlating the emission of a substance with teh fuel consumption of the vehiclea for each second of the driving cycle.
-
-The emission of substances function of the fuel consumption is sourced from the
-`Handbook Emission Factors for Road Transport <https://www.hbefa.net/e/index.html>`_ for vehicles of various emission
-standards (from Euro-0 to Euro-6d).
-
-Here is such correlation (g of pollutant emitted versus MJ of energy consumed) plotted for diesel-run vehicles:
-
-.. image:: https://github.com/romainsacchi/carculator_two_wheeler/raw/master/docs/hbefa_petrol_euro6d.png
-    :width: 900
-    :alt: Substance emission versus energy consumption, diesel
-
-Given the years selected, the corresponding emission factors are chosen:
-
-* before 1993: Euro-0
-* between 1993 and 1997: Euro-1
-* between 1998 and 2000: Euro-2
-* between 2001 and 2005: Euro-3
-* between 2006 and 2010: Euro-4
-* between 2011 and 2014: Euro-5
-* between 2015 and 2017: Euro-6-ab
-* between 2017 and 2019: Euro-6-c
-* between 2019 and 2020: Euro-6-d-temp
-* 2020 and beyond: Euro-6-d
-
-
-Emissions are summed over the duration of the driving cycle. Furthermore, some driving cycles have distinct parts
-corresponding to different driving environments: urban, suburban, highway, etc. These driving environments are used
-to further split emissions and be more precise on the fate of the substances and the exposure of the population.
-
-Noise emissions
-***************
-
-Given the driving cycle, where speed [km/h] is given along time [s], noise levels (in dB) are calculated for each of the
-8 octaves (or frequency ranges) to obtain `propulsion` and `rolling noise` levels, based on the
-`CNOSSOS model <https://ec.europa.eu/jrc/en/publication/reference-reports/common-noise-assessment-methods-europe-cnossos-eu>`_.
-
-For electric engines, `special coefficients apply <https://hal.archives-ouvertes.fr/hal-01355872/document>`_.
-
-Also, electric cars are added a warning signal of 56 dB at speed levels lower than 20 km/h.
-Hybrid cars are assumed to use an electric engine up to a speed level of 30 km/h, beyond which the combustion engine is used.
-The sum of the propulsion and rolling noise levels is converted to noise power (in joules) and divided by the distance
-driven to obtain the noise power par km driven (joules/km), for each octave.
-
-Noise emissions are further compartmented into urban, sub-urban and rural geographical environments based on speed
-intervals given by the driving cycle.
-The study from `Cucurachi et al. 2014 <https://www.ncbi.nlm.nih.gov/pubmed/24035845>`_ is used to characterize noise
-emissions against midpoint and endpoint indicators, expressed in Person-Pascal-second and DALYs, respectively.
-
-Overall, propulsion noise emissions dominate in urban environments, thereby justifying the use of electric cars in that
-regard. In sub-urban and rural environments, rolling noise emissions dominate above a speed level around 50 km/h.
-
-It is important to note that although **carculator_two_wheeler** differentiates noise coefficients by powertrain
-(internal combustion engine, electric and hybrid), it is not possible to differentiate them by size class.
-Therefore, the noise produced by a `small` vehicle will be similar to that produced by a `large` vehicle.
-
-Finally, the noise coefficients used correspond to day time exposure only.
-
-
-Vehicle inventory
-*****************
-This section presents the vehicle inventory once its size, mass, energy consumption and emissions are known.
-
-.. csv-table:: Vehicle inventory
-    :file: table_1.csv
-    :widths: 10 10 30 30 10 10
+.. csv-table:: Table 2: Exhaust emissions for two-wheelers, in grams per vehicle-kilometer.
+    :file: _static/tables/table-1.csv
+    :widths: auto
+    :align: center
     :header-rows: 1
 
+:ref:`Figure 1 <figure-1>` shows the calculated abrasion emissions for two-wheeled vehicles in mg per vehicle-kilometer.
 
-Fuel pathways
+.. _figure-1:
+
+.. figure:: _static/img/image_1.png
+    :align: center
+
+    *Figure 1: Total particulate matter emissions (<2.5 µm and 2.5-10 µm) in mg per vehicle-kilometer for two-wheeled vehicles.*
+
+Kick-scooters, electric
+-----------------------
+Illustrations of available models of electric kick-scooters considered in this study:
+
+.. image:: /_static/img/image_2.png
+    :width: 41%
+
+.. image:: /_static/img/image_3.png
+    :width: 50%
+
+|s_caption| *Ninebot Mini Pro by Segway (Left) and Mi Pro 2 by Xiaomi (Right)* |e_caption|
+
+Specifications (i.e., curb mass, motor power, battery capacity) for commercially available
+electric kick-scooters are available in :ref:`Annex B <annex-b>`. Specifications used to represent an average
+kick-scooter are detailed in :ref:`Table 3 <table-3>`. Kick-scooter energy consumption values are not
+modeled but extracted from :cite:`ct-1092`, where kick-scooter users have reported their
+electricity consumption.
+
+The :cite:`ct-1047` v.3 datasets for manufacturing a 17 kg heavy bicycle
+:cite:`ct-1048` is used as a proxy for the supply of the glider. The
+transport of the vehicle from the assembly plant to the intended market is included: 15’900
+km by transoceanic container ship and 1’000 km by truck (with a fleet-average vehicle). No
+requirement for road maintenance is attributed to the vehicle due to its lightweight and small
+size, following the previous implementation in :cite:`ct-1047` v.3 for bicycles.
+
+The dataset for the AC charger is based on the :cite:`ct-1047` v.3 dataset “charger
+production, for electric scooter”. It has been scaled down to represent a power output of 100
+Watts.
+
+.. note::
+
+    * **Important assumption:** No maintenance operation (incl. parts replacement) or battery
+      replacement is assumed throughout the vehicle's lifetime. The energy consumption values in
+      :ref:`Table 3 <table-3>` are about twice as high as those used in :cite:`ct-1012`, based on
+      manufacturers’ claimed range autonomy and battery size. However, even with such values,
+      the cumulated electricity required over the vehicle's lifetime is about 42 kWh. A usable
+      battery capacity of 0.2 kWh represents a bit more than 210 charge cycles, which should not
+      require a second battery. The absence of battery replacement differs from what is assumed
+      in :cite:`ct-1048` and is currently implemented in :cite:`ct-1004`, where one replacement is considered.
+    * **Important assumption:** It is believed that the energy consumption values represent the
+      consumption at the “wall plug” level, including charger loss and losses occurring at the
+      battery level during charge. Suppose the energy use values reported by :cite:`ct-1092`
+      users are, in fact, at “battery level”. In that case, the electricity use values considered in this
+      study are potentially underestimated by approximately 5% (i.e., battery charge losses).
+    * **Important remark:** Based on energy consumption values reported by users to
+      :cite:`ct-1092`, and considering a maximum depth of discharge of 80%, the range autonomy
+      obtained is significantly different from what is claimed by manufacturers (i.e., 8 to 10 km
+      calculated, as opposed to >20 km according to manufacturers – see :ref:`Annex B <annex-b>`).
+      Important remark: No requirement for road maintenance is attributed to the vehicle due to
+      its lightweight, as previously considered for conventional and electric bicycles :cite:`ct-1048`.
+
+.. _table-3:
+
+.. table:: Table 3: Specifications for kick-scooters
+   :widths: auto
+   :align: center
+
+   +-------------------------------+--------------------------+-----------------------------------+-------------------------------+
+   | |kick-scooter-img|            | **Kick Scooter,**        | **Comment**                       | **Source**                    |
+   |                               | **electric, <1kW - 2020**|                                   |                               |
+   +===============================+==========================+===================================+===============================+
+   | Lifetime [km]                 | 1’785                    | Lifetime, annual mileage, and     | :cite:`ct-1092`               |
+   +-------------------------------+--------------------------+ energy consumption values were    +                               +
+   | Annual kilometers [km]        | 890                      | calculated from actual usage      |                               |
+   +-------------------------------+--------------------------+ values reported to :cite:`ct-1092`+                               +
+   | Energy consumption [MJ/km]    | 0.086 (2.6)              | based on a sample of 10           |                               |
+   | (kWh/100 km)                  |                          | (8’945 km cumulated).             |                               |
+   +-------------------------------+--------------------------+-----------------------------------+-------------------------------+
+   | Passenger mass [kg]           | 75                       | Standard assumption.              |                               |
+   +-------------------------------+--------------------------+-----------------------------------+-------------------------------+
+   | Cargo mass [kg]               | 0                        |                                   |                               |
+   +-------------------------------+--------------------------+-----------------------------------+-------------------------------+
+   | Curb mass [kg]                | 12 [1]_                  | Based on manufacturers’ data.     | Segway Ninebot, iWatt, Xiaomi |
+   +-------------------------------+--------------------------+-----------------------------------+-------------------------------+
+   | Driving mass [kg]             | 87 [1]_                  | Calculated.                       |                               |
+   +-------------------------------+--------------------------+-----------------------------------+-------------------------------+
+   | Power [kW]                    | 0.25                     | Based on manufacturers’ data.     | Segway Ninebot, iWatt, Xiaomi |
+   +-------------------------------+--------------------------+-----------------------------------+                               +
+   | Electric energy stored [kWh]  | 0.25                     | Based on manufacturers’ data.     |                               |
+   +-------------------------------+--------------------------+-----------------------------------+-------------------------------+
+   | Range autonomy [km]           | 8-10                     | Calculated.                       |                               |
+   +-------------------------------+--------------------------+-----------------------------------+-------------------------------+
+   | Depth of discharge [%]        | 80%                      | Standard assumption to preserve   | Similar assumptions used by   |
+   |                               |                          | battery lifetime                  | :cite:`ct-1012`               |
+   +-------------------------------+--------------------------+-----------------------------------+                               +
+   | Battery replacement [unit]    | 0                        | Standard assumption for this      |                               |
+   |                               |                          | type of vehicle                   |                               |
+   +-------------------------------+--------------------------+-----------------------------------+                               +
+   | Servicing per lifetime [unit] | 0                        | Standard assumption for this      |                               |
+   |                               |                          | type of vehicle                   |                               |
+   +-------------------------------+--------------------------+-----------------------------------+-------------------------------+
+
+-----------
+
+.. [1] Mass values considering a Li-NMC battery. Mass values will slightly change with Li-LFP and Li-NCA batteries due to a different cell energy density. Refer directly to the implemented dataset.
+
+
+.. |kick-scooter-img| image:: /_static/img/image_4.png
+    :width: 100%
+
+
+Bicycle, conventional
+---------------------
+Examples of available models of urban bicycles considered in this study:
+
+.. image:: /_static/img/image_5.png
+    :width: 42%
+
+.. image:: /_static/img/image_6.png
+    :width: 50%
+
+|s_caption| *MINT model by CANDY (Left) and Commuter 5 by Canyon (Right)* |e_caption|
+
+Regarding the expected kilometric lifetime and annual mileage, the values from
+:cite:`ct-1048` are used. These values are used in Mobitool v.2.1
+:cite:`ct-1004`: 15’000 km over 15 years, giving an annual mileage of 1’000 km.
+
+Datasets for conventional bicycle production present in :cite:`ct-1047` v.3, initially
+from :cite:`ct-1048`, are used. However, its use has been scaled
+down to fit the mass of current average bicycles (i.e., 12 kg, against 17 kg initially). The
+transport of the vehicle from the assembly plant to the intended market is included: 15’900
+km by transoceanic container ship and 1’000 km by a fleet-average truck.
+
+Specifications used to represent an average conventional bicycle are detailed in :ref:`Table 4 <table-4>`.
+
+.. _table-4:
+
+.. table:: Table 4: Specifications for conventional bicycles
+   :widths: auto
+   :align: center
+
+   +-------------------------------+--------------------------+-----------------------------------+-------------------------------+
+   | |bicycles-img|                | **Bicycle, conventional**| **Comment**                       | **Source**                    |
+   |                               | **, urban - 2020**       |                                   |                               |
+   +===============================+==========================+===================================+===============================+
+   | Lifetime [km]                 | 15’000                   | Standard assumption               | A similar assumption is used  |
+   +-------------------------------+--------------------------+ (1’000 km/year)                   + in :cite:`ct-1048` and is     +
+   | Annual kilometers [km]        | 1’000                    |                                   | currently used in             |
+   +-------------------------------+--------------------------+-----------------------------------+ Mobitool v.2.1 :cite:`ct-1004`+
+   | Passenger mass [kg]           | 75                       | Standard assumption.              |                               |
+   +-------------------------------+--------------------------+-----------------------------------+                               +
+   | Cargo mass [kg]               | 1                        | Standard assumption.              |                               |
+   +-------------------------------+--------------------------+-----------------------------------+                               +
+   | Curb mass [kg]                | 12                       | Based on manufacturers’ data.     |                               |
+   +-------------------------------+--------------------------+-----------------------------------+-------------------------------+
+   | Driving mass [kg]             | 88                       | Calculated.                       |                               |
+   +-------------------------------+--------------------------+-----------------------------------+-------------------------------+
+   | Servicing per lifetime [unit] | 1                        | The original :cite:`ct-1047` v.3  | :cite:`ct-1047`               |
+   |                               |                          | datasets for maintenance          |                               |
+   |                               |                          | :cite:`ct-1048` is valid for the  |                               |
+   |                               |                          | entire lifetime of the bicycle    |                               |
+   |                               |                          | (which is 15’000 km). Note that   |                               |
+   |                               |                          | despite a lighter weight (12 kg   |                               |
+   |                               |                          | against 17 kg), we do not adjust  |                               |
+   |                               |                          | the requirements for maintenance. |                               |
+   +-------------------------------+--------------------------+-----------------------------------+-------------------------------+
+
+.. |bicycles-img| image:: /_static/img/image_7.png
+    :width: 100%
+
+Bicycle, electric
+-----------------
+Illustrations of available models of urban electric bicycles considered in this study:
+
+.. image:: /_static/img/image_8.png
+    :width: 32%
+
+.. image:: /_static/img/image_9.png
+    :width: 28%
+
+.. image:: /_static/img/image_10.png
+    :width: 33%
+
+|s_caption| *Zouma Supreme+ S model by Diamant (max. 45 km/h) (Left), Cult EVO model by Atala (max. 25 km/h) (Middle) and Cargo Bike by RadWagon (Right)* |e_caption|
+
+Annual mileage values are collected from :cite:`ct-1092`. They deviate by a factor of 2 to 3
+from the yearly mileage values previously used in :cite:`ct-1048`:
+2’000, 3’000, and 2’000 kilometers per year for the slow (max. speed <25 km/h), fast (max.
+speed <45 km/h) and electric cargo bicycles respectively, against 1’000 km in the report
+from :cite:`ct-1048`.
+In addition, electric bicycles are generally designed to have a longer kilometric lifetime
+comparatively to conventional bicycles, with an overall heavier chassis and reinforced tires.
+But the onboard electronics and battery management system cannot possibly last 15 years
+on average – as previously assumed in :cite:`ct-1048` – given such
+annual mileage. Hence, the calendar lifetime is reduced to 10 years to obtain a kilometric
+lifetime of 20’000 km, 30’000 km, and 20’000 km for the slow, fast, and cargo electric
+bicycles, respectively.
+
+The frame and mechanical powertrain are modeled using an input from the
+:cite:`ct-1047` dataset for electric bicycle production, from which the inputs for the
+electric motor and battery have been removed to size them separately. The input required
+from the electric bicycle production dataset is scaled on the driving mass minus the mass of
+the electric motor and battery, as this mass differs from what is initially considered in the
+dataset: 24 kg, against 23, 27, and 46 kg considered here for the slow, fast and cargo
+electric bicycles, respectively.
+
+The transport of the vehicle from the assembly plant to the intended market is included:
+15’900 km by ship and 1’000 km by truck. Abrasion emissions are scaled on the driving
+mass, but the datasets for abrasion emissions of passenger cars in :cite:`ct-1047`
+are used to approximate their composition.
+
+A 500W charger dataset has been created based on the :cite:`ct-1047` dataset for
+an electric scooter charger, and it has been scaled down accordingly based on the power
+output. This follows the approach used by :cite:`ct-1012`.
+
+The disposal of the bicycle is specified separately.
+
+.. note::
+
+    * **Important remark:** No requirement for road maintenance is attributed to the vehicle due to
+      its lightweight and small size, as previously considered in :cite:`ct-1048`.
+    * **Important remark:** Based on energy consumption data reported to :cite:`ct-1092`, and
+      considering a maximum depth of discharge of 80%, range autonomy values are found to be
+      twice to thrice as low as what is claimed by manufacturers (e.g., 32 km for 45 km/h electric
+      bicycles, as opposed to >90 km according to manufacturers – see :ref:`Annex A <annex-a>`).
+
+Specifications (i.e., curb mass, motor power, battery capacity, and range autonomy) for
+commercially available electric bicycles in :ref:`Annex A <annex-a>`. Specifications for electric bicycles
+considered in this study are presented in :ref:`Table 5 <table-5>`.
+
+.. _table-5:
+
+.. table:: Table 5: Specifications for electric bicycles
+   :widths: auto
+   :align: center
+
+   +-------------------------------+--------------------------+--------------------------+--------------------------+-----------------------------------+-------------------------------+
+   | |e-bicycles-img|              | **Bicycle, electric**    | **Bicycle, electric**    | **Bicycle, electric**    | **Comment**                       | **Source**                    |
+   |                               | **(<25 km/h) - 2020**    | **(<45 km/h) - 2020**    | **(cargo)**              |                                   |                               |
+   +===============================+==========================+==========================+==========================+===================================+===============================+
+   | Lifetime [km]                 | 20’000                   | 30’000                   | 20’000                   | Annual mileage and energy         | :cite:`ct-1092`               |
+   +-------------------------------+--------------------------+--------------------------+--------------------------+ consumption values calculated from+                               +
+   | Annual kilometers [km]        | 2’000                    | 3’000                    | 2’000                    | actual usage values reported to   |                               |
+   +-------------------------------+--------------------------+--------------------------+--------------------------+ :cite:`ct-1092` based on a sample +                               +
+   | Energy consumption [MJ/km]    | 0.025 (0.75)             | 0.045 (1.38)             | 0.035 (1.06)             | of 69 for “slow” electric bicycles|                               |
+   |                               |                          |                          |                          | (350’000 km cumulated), 21 for    |                               |
+   |                               |                          |                          |                          | “fast” electric bicycles (230’000 |                               |
+   |                               |                          |                          |                          | km cumulated) and 4 for electric  |                               |
+   |                               |                          |                          |                          | cargo bikes (8,200 km cumulated). |                               |
+   |                               |                          |                          |                          | The lifetime has been estimated by|                               |
+   |                               |                          |                          |                          | multiplying the annual mileage by |                               |
+   |                               |                          |                          |                          | ten years                         |                               |
+   +-------------------------------+--------------------------+--------------------------+--------------------------+-----------------------------------+-------------------------------+
+   | Passenger mass [kg]           | 75                       | 75                       | 75                       | Standard assumption.              |                               |
+   +-------------------------------+--------------------------+--------------------------+--------------------------+-----------------------------------+-------------------------------+
+   | Cargo mass [kg]               | 1                        | 1                        | 50                       |                                   |                               |
+   +-------------------------------+--------------------------+--------------------------+--------------------------+-----------------------------------+-------------------------------+
+   | Curb mass [kg]                | 23 [2]_                  | 27 [1]_                  | 45 [1]_                  | Based on manufacturers’ data.     | Cube,Haibike, Raleigh,Fischer |
+   +-------------------------------+--------------------------+--------------------------+--------------------------+-----------------------------------+-------------------------------+
+   | Driving mass [kg]             | 99 [1]_                  | 103 [1]_                 | 170                      | Calculated.                       |                               |
+   +-------------------------------+--------------------------+--------------------------+--------------------------+-----------------------------------+-------------------------------+
+   | Power [kW]                    | 0.25                     | 0.5                      | 0.25                     | Based on manufacturers’ data.     | Cube, Haibike, Raleigh,       |
+   +-------------------------------+--------------------------+--------------------------+--------------------------+-----------------------------------+ Fischer, Babboe               +
+   | Electric energy stored [kWh]  | 0.5                      | 0.5                      | 0.5                      | Based on manufacturers’ data.     |                               |
+   +-------------------------------+--------------------------+--------------------------+--------------------------+-----------------------------------+-------------------------------+
+   | Range autonomy [km]           | 60                       | 32                       | 40                       | Calculated.                       |                               |
+   +-------------------------------+--------------------------+--------------------------+--------------------------+-----------------------------------+-------------------------------+
+   | Depth of discharge [%]        | 80%                      | 80%                      | 80%                      | Standard assumption to preserve   | Similar assumptions were used |
+   |                               |                          |                          |                          | the battery lifetime.             | by :cite:`ct-1012`            |
+   |                               |                          |                          |                          |                                   |                               |
+   +-------------------------------+--------------------------+--------------------------+--------------------------+-----------------------------------+                               +
+   | Battery replacement [unit]    | 1                        | 1                        | 1                        | Standard assumption for this type |                               |
+   |                               |                          |                          |                          | of vehicle                        |                               |
+   +-------------------------------+--------------------------+--------------------------+--------------------------+-----------------------------------+-------------------------------+
+   | Servicing per lifetime [unit] | 1.33                     | 2                        | 1.33                     | The original :cite:`ct-1047`      |                               |
+   |                               |                          |                          |                          | datasets for maintenance assumes  |                               |
+   |                               |                          |                          |                          | a lifetime 15’000 km, yielding a  |                               |
+   |                               |                          |                          |                          | factor superior to 1.             |                               |
+   +-------------------------------+--------------------------+--------------------------+--------------------------+-----------------------------------+-------------------------------+
+
+------------
+
+.. [2] Mass values considering a Li-NMC battery. Mass values will slightly change with Li-LFP and Li-NCA batteries due to a different cell energy density. Refer to the implemented dataset directly.
+
+
+.. |e-bicycles-img| image:: /_static/img/image_11.png
+    :width: 100%
+
+Scooter, gasoline
+-----------------
+Examples of available models of gasoline scooters considered in this study:
+
+.. image:: /_static/img/image_12.png
+    :width: 45%
+
+.. image:: /_static/img/image_13.png
+    :width: 50%
+
+|s_caption| *Vespa Primavera model by Piaggio (50 cm3, <4 kW) (Left) and PCX 125 model by Honda (125 cm3, 4-11 kW) (Right)* |e_caption|
+
+Fuel consumption values are extracted from :cite:`ct-1092` over a cumulated mileage of 6.6 million vehicle-kilometers.
+
+The national vehicle registry (MOFIS) from :cite:`ct-1003` is used to obtain the age of
+gasoline scooters when discarded. The road transport survey data from TRACCS
+:cite:`ct-1060` for Switzerland in 2010 is used to get the annual mileage of
+mopeds/scooters. The values calculated are presented in :ref:`Table 6 <table-6>`.
+
+.. _table-6:
+
+.. table:: Table 6: Kilometric and calendar lifetime values for gasoline scooters
+   :widths: auto
+   :align: center
+
+   +--------------------------------------+-----------------------------------+--------------------------------------+
+   |                                      | **Age of decommissioning (i.e.,** | **Cumulated mileage reached at the** |
+   |                                      | **calendar lifetime) [years]**    | **age of decommissioning (i.e.,**    |
+   |                                      |                                   | **kilometric lifetime) [km]**        |
+   +======================================+===================================+======================================+
+   | **Source**                           | MOFIS registry :cite:`ct-1003`    | TRACCS 2010 survey data for          |
+   |                                      |                                   | Switzerland :cite:`ct-1060`          |
+   +--------------------------------------+-----------------------------------+--------------------------------------+
+   | **Comment**                          | Outliers have been removed (i.e., | Annual mileage values for “Mopeds”   |
+   |                                      | <5 years and >30 years).          | and "2-s motorcycles".               |
+   |                                      | Corresponds to gasoline-fueled    |                                      |
+   |                                      | “kleinmotorrad” in the registry.  |                                      |
+   +--------------------------------------+-----------------------------------+--------------------------------------+
+   | **Sample size**                      | 14’520                            |                                      |
+   +--------------------------------------+-----------------------------------+--------------------------------------+
+   | **Scooter, gasoline, <4 kW**         | 16                                | 25’000                               |
+   +--------------------------------------+-----------------------------------+--------------------------------------+
+   | **Scooter, gasoline, 4-11 kW**       | 16                                | 30’000                               |
+   +--------------------------------------+-----------------------------------+--------------------------------------+
+
+The glider and the mechanical powertrain of the scooter are modeled using the
+:cite:`ct-1047` dataset “motor scooter production” and scaled to mass accordingly,
+as the original dataset is meant to represent a 90 kg heavy scooter. The fuel tank is modeled
+separately, using an input of injection-molded high-density polyethylene.
+
+Market development indicates a preference for 2-stroke engines for engines with a small
+displacement volume (which allows extracting more power out of an otherwise small engine).
+In contrast, most engines with a displacement volume superior to 50 cm3 are 4-stroke (more
+reliable). In this study, engines with a power output inferior to 4 kW are assumed to be 2-
+stroke, while engines for which the power output is between 4 and 11 kW are considered 4-
+stroke.
+
+Emission factors from the EMEP EEA’s 2019 Air Pollutant Emissions Inventory Guidebook
+:cite:`ct-1028` are used for the emission standards, with the
+additional distinction between 2-stroke and 4-stroke engines (see :ref:`Table 2 <table-2>`).
+Accordingly, 2-stroke engine vehicles are supplied with fuel from the dataset “petrol blending for two-stroke
+engines” which contains a certain amount of lubricating motor oil.
+
+The transport of the vehicle from the assembly plant to the intended market is included:
+15’900 km by transoceanic container ship and 1’000 km by a fleet-average truck.
+
+Abrasion emissions are scaled on the driving mass, but the dataset for abrasion emissions
+of passenger cars in :cite:`ct-1047` is used to approximate their composition.
+
+The disposal of the scooter is included in the “motor scooter production” dataset.
+
+Scooters manufactured in 2006, 2016, and 2020 are modeled to represent the emission
+standards EURO 3, 4, and 5, respectively. Specifications for gasoline scooters considered in
+this study are presented in :ref:`Table 7 <table-7>`.
+
+.. _table-7:
+
+.. csv-table:: Table 7: Specifications for gasoline scooters
+    :file: _static/tables/table-2.csv
+    :widths: auto
+    :align: center
+    :header-rows: 1
+
+.. |g-scooters-img| image:: /_static/img/image_14.png
+    :width: 100%
+
+Scooter, electric
+-----------------
+Examples of available models of electric scooters considered in this study:
+
+.. image:: /_static/img/image_15.png
+    :width: 35%
+
+.. image:: /_static/img/image_16.png
+    :width: 52%
+
+|s_caption| *NQi Pro model by NIU (<4 kW) (Left) and VX-1 model by Vectrix (4-11 kW) (Right)* |e_caption|
+
+The national vehicle registry (MOFIS) from :cite:`ct-1003` is used to obtain the age of
+electric scooters when discarded. However, as :ref:`Table 8 <table-8>` indicates, the lifetime values
+obtained are substantially lower than that of gasoline scooters (:ref:`Table 6 <table-6>`). The road transport
+survey data from :cite:`ct-1060` for Switzerland in 2010 is used to obtain the
+annual mileage of mopeds/scooters, and the values calculated are presented in :ref:`Table 6 <table-6>`.
+
+.. note::
+
+   **Important assumption:** Because electric scooters are relatively recent on the market, the
+   lifetime values obtained (i.e., nine years, see :ref:`Table 8 <table-8>`) probably under represent the
+   performances expected from electric scooters manufactured in 2020. Hence, a similar
+   lifetime value as for gasoline scooters is assumed instead – without any good data to
+   support this. Time will confirm whether this assumption is correct or whether electric
+   scooters are discarded earlier than their gasoline counterparts (e.g., when the first battery
+   needs replacement). It is noted that :cite:`ct-1048` also assumed 25’000 km for electric scooters.
+
+.. _table-8:
+
+.. table:: Table 8: Kilometric and calendar lifetime values for electric scooters
+   :widths: auto
+   :align: center
+
+   +--------------------------------------+-----------------------------------+-----------------------------------+--------------------------------------+
+   |                                      | **Age of decommissioning (i.e.,** | **Corrected age of**              | **Cumulated mileage reached at the** |
+   |                                      | **calendar lifetime) [years]**    | **decommissioning [years]**       | **age of decommissioning (i.e.,**    |
+   |                                      |                                   |                                   | **kilometric lifetime) [km]**        |
+   +======================================+===================================+===================================+======================================+
+   | **Source**                           | MOFIS registry :cite:`ct-1003`    |                                   | TRACCS 2010 survey data for          |
+   |                                      |                                   |                                   | Switzerland :cite:`ct-1060`          |
+   +--------------------------------------+-----------------------------------+-----------------------------------+--------------------------------------+
+   | **Comment**                          | Outliers have been removed (i.e., | Current electric scooters are     | Annual mileage values for “Mopeds”   |
+   |                                      | <5 years and >30 years).          | assumed to last as long as their  | and "2-s motorcycles".               |
+   |                                      | Corresponds to electricity-powered| gasoline counterpart.             |                                      |
+   |                                      | “kleinmotorrad” in the registry.  |                                   |                                      |
+   +--------------------------------------+-----------------------------------+-----------------------------------+--------------------------------------+
+   | **Sample size**                      | 1’036                             |                                   |                                      |
+   +--------------------------------------+-----------------------------------+-----------------------------------+--------------------------------------+
+   | **Scooter, electric, <4 kW**         | 9                                 | 16                                | 25’000                               |
+   +--------------------------------------+-----------------------------------+-----------------------------------+--------------------------------------+
+   | **Scooter, electric, 4-11 kW**       | 9                                 | 16                                | 30’000                               |
+   +--------------------------------------+-----------------------------------+-----------------------------------+--------------------------------------+
+
+The :cite:`ct-1047` datasets for glider and electric powertrain for an electric scooter
+are used :cite:`ct-1048` – these datasets refer to 1 kilogram of glider and electric powertrain, respectively.
+The dataset for the electric powertrain production does not contain the battery, which is modeled separately.
+
+The transport of the vehicle from the assembly plant to the intended market is included:
+15’900 km by transoceanic container ship and 1’000 km by a fleet-average truck.
+
+Abrasion emissions are scaled on the driving mass, but the dataset for abrasion emissions
+of passenger cars in :cite:`ct-1047` is used to approximate their composition.
+
+The disposal of the scooter (incl. the batteries) is not included in either of the datasets for the
+glider or electric powertrain and is therefore added separately. Specifications for electric
+scooters considered in this study are presented in :ref:`Table 9 <table-9>`.
+
+.. _table-9:
+
+.. csv-table:: Table 9: Specifications for electric scooters
+    :file: _static/tables/table-3.csv
+    :widths: auto
+    :align: center
+    :header-rows: 1
+
+----------
+
+.. [3] Mass values considering a Li-NMC battery. Mass values will slightly change with Li-LFP and Li-NCA batteries due to a different cell energy density. Refer to the implemented dataset directly.
+
+
+Motorbike, gasoline
+-------------------
+Examples of available models of gasoline motorbikes considered in this study:
+
+.. image:: /_static/img/image_17.png
+    :width: 31%
+
+.. image:: /_static/img/image_18.png
+    :width: 33%
+
+.. image:: /_static/img/image_19.png
+    :width: 32%
+
+|s_caption| *Seventy models by MASH (4-11 kW) (Left), G 310 R model by BMW (11-35 kW) (Middle) and Ninja model by Kawasaki (>35 kW) (Right)* |e_caption|
+
+The national vehicle registry (MOFIS) from :cite:`ct-1003` is used to obtain the age of gasoline motorbikes when discarded.
+
+While annual mileage values can also be obtained, as with scooters, from the 2010 TRACCS survey data,
+the more recent 2015 Swiss Mobility census :cite:`ct-1033` seems a better option. In the micro census report,
+the annual mileage for motorcycles, excluding light motorcycles (i.e., scooters), is presented by engine displacement
+volume: “up to 125 cm3”, “126-749 cm3”, and “750-999 cm3” are used to represent “4-11 kW”, “11-35 kW” and “>35 kW” respectively.
+
+.. note::
+
+   **Important remark:** the kilometric lifetime values obtained differ significantly from those used
+   by :cite:`ct-1014`. Cox and Mutel considered a lifetime of 28-69’000 and 145’000 km for small (i.e., 4 and 11 kW)
+   and large (50 kW) motorbikes, respectively, against 25’000 and 40’500 km in this study.
+
+A dataset specific to motorbike production with the characteristics listed in :ref:`Table 10 <table-10>` could
+not be obtained. Hence, the dataset from :cite:`ct-1047` “motor scooter production”
+is used instead to approximate the energy and material requirements for manufacturing the
+glider and the mechanical part of the powertrain. The dataset initially refers to a 90 kg heavy
+scooter. The same approach is adopted for vehicle maintenance, where the dataset for scooter maintenance is used.
+
+The disposal of the vehicle is already included in the “motor scooter production” dataset.
+
+Vehicle specifications used in this study for gasoline motorbikes
+are presented in :ref:`Table 11 <table-11>` - :ref:`Table 13 <table-13>`.
+
+.. _table-10:
+
+.. csv-table:: Table 10: Kilometric and calendar lifetime values for gasoline motorbikes
+    :file: _static/tables/table-4.csv
+    :widths: auto
+    :align: center
+    :header-rows: 1
+
+4-11 kW
+*******
+
+.. _table-11:
+
+.. csv-table:: Table 11: Specifications for gasoline motorbikes, 4-11 kW
+    :file: _static/tables/table-5.csv
+    :widths: auto
+    :align: center
+    :header-rows: 1
+
+11-35 kW
+********
+
+.. _table-12:
+
+.. csv-table:: Table 12: Specifications for gasoline motorbikes, 11-35 kW
+    :file: _static/tables/table-6.csv
+    :widths: auto
+    :align: center
+    :header-rows: 1
+
+>35 kW
+******
+
+.. _table-13:
+
+.. csv-table:: Table 13: Specifications for gasoline motorbikes, >35 kW
+    :file: _static/tables/table-7.csv
+    :widths: auto
+    :align: center
+    :header-rows: 1
+
+.. |g-motorbikes-img| image:: /_static/img/image_20.png
+    :width: 100%
+
+Fleet average
 *************
 
-Different fuel pathways can be selected for a given powertrain type.
-The table below lists them.
+The fleet composition data of HBEFA 4.1 provides enough details to build a fleet-average
+motorbike. There are, however, several limitations to using HBEFA fleet data:
 
-.. csv-table:: Fuel pathways
-    :file: table_2.csv
-    :widths: 15 25 30 30
+* According to HBEFA’s fleet composition, 33% of the total fleet vehicle-kilometers are
+  driven by motorcycles with an emission standard anterior to EURO-3, which are not
+  vehicle models considered in this study. The share of vehicle-kilometers driven by
+  these old motorbikes is allocated instead to EURO-3 motorbikes, with the risk of
+  underestimating the emission of exhaust pollutants, notably CO.
+* 7% of the fleet vehicle-kilometers are driven with 2-stroke engines, not vehicle
+  models considered in this study (only small scooters). Hence, the 4-stroke
+  counterpart will be used instead to represent this share of vehicle-kilometer. In
+  practice, however, 2-stroke motorbikes have almost completely disappeared from the
+  market today as they are not allowed to drive on the road in many countries (i.e., they
+  mainly do not comply with noise and emission limits), with only a few models of off-
+  road and racing motorbikes left. Hence, substituting 4-stroke engine motorbikes for 2-
+  stroke ones is reasonable.
+* A last limitation is that HBEFA’s vehicle labeling does not precisely match the
+  vehicles considered here. Besides the emission standard, the distinction is made
+  between motorbikes with an engine displacement inferior or superior to 250 cm3. The
+  “4-11 kW” category is used to represent HBEFA’s vehicles with an engine
+  displacement below 250 cm3, while the fleet share represented by vehicles with an
+  engine displacement superior to 250 cm3 is represented evenly by the “11-35 kW”
+  and “>35 kW” categories.
+
+Based on this, the fleet composition presented in :ref:`Table 14 <table-14>` characterizes a fleet-average gasoline motorbike.
+
+.. _table-14:
+
+.. table:: Table 14: Fleet composition data for gasoline motorbikes in Switzerland in 2020
+   :widths: auto
+   :align: center
+
+   +-------------------+----------+-------------------------------------------------------------+
+   |                   |          | Vehicle-km share in the 2020 Swiss gasoline motorbike fleet |
+   +===================+==========+=====================+===================+===================+
+   |                   |          | **4-11 kW**         | **11-35 kW**      | **>35 kW**        |
+   +-------------------+----------+---------------------+-------------------+-------------------+
+   | **Gasoline**      | **2006** | 21.5%               | 23.75%            | 23.75%            |
+   +                   +----------+---------------------+-------------------+-------------------+
+   |                   | **2016** | 8.25%               | 11.38%            | 11.38%            |
+   +-------------------+----------+---------------------+-------------------+-------------------+
+
+Motorbike, electric
+-------------------
+
+A dataset specific to electric motorbikes production with the characteristics listed in :ref:`Table 16 <table-16>`
+above could not be obtained. Hence, the dataset “glider production, for electric scooter” is
+used instead to approximate the energy and material requirements for manufacturing the
+glider and the mechanical part of the powertrain. In addition, the dataset “electric powertrain
+production, for electric scooter” is used to approximate the manufacture of the electric part of
+the powertrain (incl. the electric motor) – the battery is modeled separately from the
+powertrain. The energy consumption values are based on reported values from users on :cite:`ct-1092`.
+
+The disposal of the vehicle is specified separately.
+
+.. note::
+
+   **Important assumption:** The national vehicle registry (MOFIS) from :cite:`ct-1003` does not
+   have a sample of decommissioned electric motorbikes large enough to be used. Hence, a similar lifetime value to
+   gasoline motorbikes is assumed instead – without any good data to support this. Similarly, the annual mileage
+   values from the 2015 Swiss micro-census on mobility :cite:`ct-1033` are used.
+
+.. _table-15:
+
+.. csv-table:: Table 15: Kilometric and calendar lifetime values for electric motorbikes
+    :file: _static/tables/table-8.csv
+    :widths: auto
+    :align: center
     :header-rows: 1
 
-Electricity mixes for battery charging and hydrogen production
-**************************************************************
+Specifications for the electric motorbikes considered in this study are presented in :ref:`Table 16 <table-16>`.
 
-**carculator_two_wheeler** has national electricity mixes for more than 80 countries, gathered from the following sources:
+.. _table-16:
 
-* European Union State members and the UK: `EU Reference Scenario 2016 <https://ec.europa.eu/energy/en/data-analysis/energy-modelling/eu-reference-scenario-2016>`_
-* Switzerland: STEM model - Panos E, Kober T, Wokaun A. Long term evaluation of electric storage technologies vs alternative flexibility options for the Swiss energy system. Appl Energy 2019;252:113470
-* African countries: `TEMBA <http://www.osemosys.org/temba.html>`_ model
-* Other countries: `IEA World Energy outlook 2017 <https://www.iea.org/reports/world-energy-outlook-2017>`_
+.. csv-table:: Table 16: Specifications for the electric motorbikes
+    :file: _static/tables/table-9.csv
+    :widths: auto
+    :align: center
+    :header-rows: 1
 
-Unless a specific electricity mix is indicated by the user, such national mixes are used when modeling the energy chain
-for battery and fuel cell electric vehicles (BEV, FCEV), for battery charging and the production of hydrogen via electrolysis, respectively.
+-------------
 
-Knowing the production year of the vehicle, considered to be its first year of use, as well as its annual mileage,
-the number of years of use is calculated. Hence, **the electricity mix used is the kilometer-distributed mix over the
-years of use of the vehicle**.
+.. [4] Mass values considering a Li-NMC battery. Mass values will slightly change with Li-LFP and Li-NCA batteries due to a different cell energy density. Refer to the implemented dataset directly.
 
-If the annual mileage of the vehicle is evenly distributed throughout its lifetime, the electricity mix used therefore
-equals the average of the year-by-year national mixes comprised between Year 0 and Year 0 + the number of years of use.
-
-
-Background inventory
-********************
-
-Besides datasets adapted from the literature, vehicle inventories also rely on a number of datasets provided by the database `ecoinvent cutoff 3.6 <https://www.ecoinvent.org>`_
-such as "market for glider, passenger car", "market for diesel", etc.
-
-However **carculator_two_wheeler** does not directly use the database as is: the database and its datasets are modified according to
-projections provided by the Integrated Assessment Model `REMIND <https://www.pik-potsdam.de/research/transformation-pathways/models/remind/remind>`_.
-
-REMIND provides projections for different regions in the world until 2150, following different energy scenarios,
-described `here <https://github.com/romainsacchi/premise/blob/master/premise/data/remind_output_files/description.md>`_.
-
-Projection outputs include the expected change over time in efficiency for power plants, steel making, cement production, etc.
-
-Using the Python library `premise <https://github.com/romainsacchi/premise>`_, we produce a number
-of ecoinvent databases with the inclusion of REMIND projections, so that future improvements in electricity production, among others,
-propagate into the datasets involved in the vehicles' inventories.
-
-**carculator_two_wheeler** comes with pre-calculated impact values for ecoinvent datasets from the following databases:
-
-* 2005 - ecoinvent-REMIND, SSP2-Base
-* 2010 - ecoinvent-REMIND, SSP2-Base
-* 2020 - ecoinvent-REMIND, SSP2-Base
-* 2030 - ecoinvent-REMIND, SSP2-Base
-* 2040 - ecoinvent-REMIND, SSP2-Base
-* 2050 - ecoinvent-REMIND, SSP2-Base
-* 2005 - ecoinvent-REMIND, SSP2-PkBudg1100
-* 2010 - ecoinvent-REMIND, SSP2-PkBudg1100
-* 2020 - ecoinvent-REMIND, SSP2-PkBudg1100
-* 2030 - ecoinvent-REMIND, SSP2-PkBudg1100
-* 2040 - ecoinvent-REMIND, SSP2-PkBudg1100
-* 2050 - ecoinvent-REMIND, SSP2-PkBudg1100
-
-Depending on the year of analysis and the energy scenario demanded, **carculator_two_wheeler** picks the corresponding datasets.
-If year of analysis in between the available years is demanded, a linear interpolation is used.
-
-With **carculator_two_wheeler online**, the results provided only use the "SSP2-Base" energy scenario of REMIND, projecting a global
-atmospheric temperature increase by 3.5 degrees Celsius by 2100.

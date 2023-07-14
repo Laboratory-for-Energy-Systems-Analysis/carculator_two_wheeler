@@ -1,21 +1,21 @@
 import sys
+from typing import List, Optional
 
 import numpy as np
 
 from . import DATA_DIR
 
 
-def get_standard_driving_cycle(size=None):
-
+def get_standard_driving_cycle(size: Optional[List] = None):
     """Get driving cycle data as a Pandas `Series`.
 
     Driving cycles are given as km/h per second.
     Driving cycles for kick-scooters and bicycles are from
-    http://brouter.de/brouter-web/#map=12/47.3195/8.5805/cyclosm&lonlats=8.404541,47.406508;8.580664,47.319341
+    https://brouter.de/brouter-web/#map=12/47.3195/8.5805/standard&lonlats=8.404541,47.406508;8.580664,47.319341
     Driving cycles for scooters, mopeds and motorbikes are from the WMTC.
 
-    :returns: A pandas DataFrame object with driving time (in seconds) as index,
-        and velocity (in km/h) as values.
+    :param size: List of vehicle sizes.
+    :returns: A pandas DataFrame object with driving time (in seconds) as index, and velocity (in km/h) as values.
     :rtype: panda.Series
 
     """

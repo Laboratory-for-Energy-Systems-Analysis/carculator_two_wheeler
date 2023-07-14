@@ -1,0 +1,12 @@
+﻿"|g-motorbikes-img|","Motorbike, gasoline, 4-11 kW, EURO-3 - 2006","Motorbike, gasoline, 4-11 kW, EURO-4 - 2016","Motorbike, gasoline, 4-11 kW, EURO-5 - 2020",Comment,Source
+Lifetime [km],25’000,25’000,25’000,"See :ref:`Table 10 <table-10>`.",":cite:`ct-1003, ct-1033`"
+Annual kilometers [km],1’776,1’776,1’776,,
+Energy consumption [MJ/km] (L gasoline/100 km),1.03 (2.42),1.02 (2.4),1.01 (2.37),"Energy consumption is calculated from actual usage values reported to :cite:`ct-1092`, based on a sample of 34 vehicles representing over 1.6 million kilometers.",":cite:`ct-1092`"
+Passenger mass [kg],75,75,75,"Standard assumption. The passenger occupancy values are similar to those used in :cite:`ct-1004`",
+Number of passengers [unit],1.1,1.1,1.1,,
+Cargo mass [kg],6,6,6,,
+Curb mass [kg],122,120,119,Based on manufacturers’ data.,
+Driving mass [kg],211,209,208,Calculated.,
+Power [kW],9,9,9,Based on manufacturers’ data.,
+Range autonomy [km],279,282,285,Calculated.,
+Servicing per lifetime [unit],1,1,1,The original ecoinvent dataset for maintenance for motor scooters is valid for a vehicle lifetime of 25’000 km.,":cite:`ct-1048`"

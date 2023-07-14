@@ -1,6 +1,7 @@
 import csv
 import glob
 import itertools
+import warnings
 from inspect import currentframe, getframeinfo
 from pathlib import Path
 
@@ -15,7 +16,12 @@ from .export import ExportInventory
 from .geomap import Geomap
 from .utils import build_fleet_array
 
-np.warnings.filterwarnings("ignore", category=np.VisibleDeprecationWarning)
+
+try:
+    np.warnings.filterwarnings("ignore", category=np.VisibleDeprecationWarning)
+except AttributeError:
+    np.warnings = warnings
+    np.warnings.filterwarnings("ignore", category=np.VisibleDeprecationWarning)
 
 REMIND_FILES_DIR = DATA_DIR / "IAM"
 DATASET_MAPPING = DATA_DIR / "mapping_datasets.csv"
@@ -105,21 +111,21 @@ class InventoryCalculation:
     under the form of one or several array(s), depending on the number of years to analyze,
     that should total 1, of which the indices correspond to:
 
-        - [0]: hydro-power
-        - [1]: nuclear
-        - [2]: natural gas
-        - [3]: solar power
-        - [4]: wind power
-        - [5]: biomass
-        - [6]: coal
-        - [7]: oil
-        - [8]: geothermal
-        - [9]: waste incineration
-        - [10]: biomass with CCS
-        - [11]: biogas with CCS
-        - [12]: coal with CCS
-        - [13]: natural gas with CCS
-        - [14]: wood with CCS
+    - [0]: hydro-power
+    - [1]: nuclear
+    - [2]: natural gas
+    - [3]: solar power
+    - [4]: wind power
+    - [5]: biomass
+    - [6]: coal
+    - [7]: oil
+    - [8]: geothermal
+    - [9]: waste incineration
+    - [10]: biomass with CCS
+    - [11]: biogas with CCS
+    - [12]: coal with CCS
+    - [13]: natural gas with CCS
+    - [14]: wood with CCS
 
     If none is given, the electricity mix corresponding to the country specified in `country` will be selected.
     If no country is specified, Europe applies.
@@ -131,24 +137,23 @@ class InventoryCalculation:
 
     Petrol technologies
     -------------------
-    petrol
-    bioethanol - wheat straw
-    bioethanol - maize starch
-    bioethanol - sugarbeet
-    bioethanol - forest residues
-    synthetic gasoline - economic allocation
-    synthetic gasoline - energy allocation
+
+    - petrol
+    - bioethanol - wheat straw
+    - bioethanol - maize starch
+    - bioethanol - sugarbeet
+    - bioethanol - forest residues
+    - synthetic gasoline - economic allocation
+    - synthetic gasoline - energy allocation
+
 
     :ivar array: array from the CarModel class
     :vartype array: CarModel.array
     :ivar scope: dictionary that contains filters for narrowing the analysis
     :ivar background_configuration: dictionary that contains choices for background system
-    :ivar scenario: REMIND energy scenario to use ("SSP2-Baseline": business-as-usual,
-                                                    "SSP2-PkBudg1300": limits temperature increase by 2100 to 2 degrees Celsius,
-                                                    "static": no forward-looking modification of the background inventories).
-                    "SSP2-Baseline" selected by default.
-
-    .. code-block:: python
+    :ivar scenario: REMIND energy scenario to use (
+     "SSP2-Baseline": business-as-usual, "SSP2-PkBudg1300": limits temperature increase by 2100 to 2 degrees Celsius,
+     "static": no forward-looking modification of the background inventories). "SSP2-Baseline" selected by default.
 
     """
 
@@ -1547,7 +1552,7 @@ class InventoryCalculation:
 
     def get_A_matrix(self):
         """
-        Load the A matrix. The A matrix contains exchanges of products (rows) between activities (columns).
+        Load the A matrix. The matrix contains exchanges of products (rows) between activities (columns).
 
         :return: A matrix with three dimensions of shape (number of values, number of products, number of activities).
         :rtype: numpy.ndarray
@@ -1898,7 +1903,7 @@ class InventoryCalculation:
         """
         Load a dictionary with available impact assessment methods as keys, and assessment level and categories as values.
 
-        ..code-block:: python
+        .. code-block:: python
 
             {'recipe': {'midpoint': ['freshwater ecotoxicity',
                                    'human toxicity',
@@ -3096,7 +3101,7 @@ class InventoryCalculation:
     def set_actual_range(self):
         """
         Set the actual range considering the blend.
-        Liquid bio-fuels and synthetic fuels typically have a lower calorific value. Hence, the need to recalculate
+        Liquid biofuels and synthetic fuels typically have a lower calorific value. Hence, the need to recalculate
         the vehicle range.
         Modifies parameter `range` of `array` in place
         """
@@ -3525,7 +3530,7 @@ class InventoryCalculation:
         :param find_input_by: can be 'name' or 'unit'
         :param value_in: value to look for
         :param value_out: functional unit output
-        :return: indices of all inputs to FU, indices of inputs of intereste
+        :return: indices of all inputs to FU, indices of inputs of interest
         :rtype: tuple
         """
 

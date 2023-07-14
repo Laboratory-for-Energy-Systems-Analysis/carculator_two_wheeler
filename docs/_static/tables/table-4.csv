@@ -1,0 +1,7 @@
+﻿,"Age of decommissioning (i.e., calendar lifetime) [years]",Annual mileage [km/year],"Cumulated mileage reached at the age of decommissioning (i.e., kilometric lifetime) [km]"
+**Source**,"MOFIS registry :cite:`ct-1003`",":cite:`ct-1033`"
+**Comment**,"Outliers have been removed (i.e., <5 years and >30 years). Corresponds to gasoline-powered “motorrad” in the registry.","The micro census categories “up to 125 cm3”, “126-749 cm3”, and “750-999 cm3” are used to represent “4-11 kW”, “11-35 kW”, and “>35 kW” motorcycles, respectively",
+**Sample size**,205’513,,
+"**Motorbike, gasoline, 4-11 kW**",14,1’776,25’000
+"**Motorbike, gasoline, 11-35 kW**",16,2’405,38’500
+"**Motorbike, gasoline, >35 kW**",14,2’896,40’500

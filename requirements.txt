@@ -8,3 +8,6 @@ numexpr
 bw2io
 pycountry
 wurst
+xarray
+pypardiso
+pathlib
