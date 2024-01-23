@@ -1,10 +1,1 @@
-scipy
-pyprind
-pandas
-numpy
-klausen
-xlrd
-numexpr
-bw2io
-pycountry
-wurst
+carculator_utils==1.2.0.dev0
