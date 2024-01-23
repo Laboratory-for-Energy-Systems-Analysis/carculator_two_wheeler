@@ -71,6 +71,7 @@ def test_model_results():
         columns=["powertrain", "size", "year", "parameter", "val", "ref_val", "diff"],
     ).to_excel(OUTPUT)
 
+
 def test_lcia():
     ic = InventoryTwoWheeler(twm)
     ic.calculate_impacts()
