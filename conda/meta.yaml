@@ -18,18 +18,7 @@ requirements:
     - python
     - setuptools
   run:
-    - scipy
-    - pyprind
-    - pandas
-    - xarray==0.17
-    - numpy
-    - klausen
-    - xlrd
-    - numexpr
-    - bw2io
-    - pycountry
-    - wurst
-    - pypardiso
+    - carculator_utils
 
 test:
   imports:
