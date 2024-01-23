@@ -30,7 +30,7 @@ with open("README.md", "r") as fh:
 
 setup(
     name="carculator_two_wheeler",
-    version="0.0.1",
+    version="0.1.0.dev0",
     packages=packages,
     author="Romain Sacchi <romain.sacchi@psi.ch>",
     license=open("LICENSE").read(),
@@ -40,15 +40,7 @@ setup(
         )
     },
     install_requires=[
-        "pandas",
-        "xarray",
-        "numpy",
-        "klausen",
-        "xlrd",
-        "numexpr",
-        "bw2io",
-        "pycountry",
-        "wurst",
+        "carculator_utils==1.2.0.dev3",
     ],
     url="https://github.com/romainsacchi/carculator_two_wheeler",
     description="Prospective life cycle assessment of two-wheelers vehicles made blazing fast",
