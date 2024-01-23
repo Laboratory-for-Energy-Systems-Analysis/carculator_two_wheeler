@@ -40,7 +40,7 @@ setup(
         )
     },
     install_requires=[
-        "carculator_utils==1.2.0.dev2",
+        "carculator_utils==1.2.0.dev3",
     ],
     url="https://github.com/romainsacchi/carculator_two_wheeler",
     description="Prospective life cycle assessment of two-wheelers vehicles made blazing fast",
