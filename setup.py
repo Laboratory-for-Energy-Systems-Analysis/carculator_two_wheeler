@@ -44,6 +44,8 @@ setup(
     ],
     url="https://github.com/romainsacchi/carculator_two_wheeler",
     description="Prospective life cycle assessment of two-wheelers vehicles made blazing fast",
+    long_description_content_type="text/markdown",
+    long_description=README,
     classifiers=[
         "Intended Audience :: End Users/Desktop",
         "Intended Audience :: Developers",
