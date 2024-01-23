@@ -74,10 +74,7 @@ jobs:
 
       - name: Run tests
         run: |
-          pytest --cov=carculator_two_wheeler
-          coveralls
-        env:
-          GITHUB_TOKEN: ${{ secrets.COVERALLS }}
+          pytest
 
   conda:
     name: (${{ matrix.python-version }}, ${{ matrix.os }})
