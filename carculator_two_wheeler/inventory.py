@@ -3,8 +3,9 @@ inventory.py contains Inventory which provides all methods to solve inventories.
 """
 
 import numpy as np
-from . import DATA_DIR
 from carculator_utils.inventory import Inventory
+
+from . import DATA_DIR
 
 np.warnings.filterwarnings("ignore", category=np.VisibleDeprecationWarning)
 
@@ -39,32 +40,37 @@ class InventoryTwoWheeler(Inventory):
             self.array.sel(
                 parameter="glider base mass",
                 combined_dim=[
-                    d for d in self.array.coords["combined_dim"].values
+                    d
+                    for d in self.array.coords["combined_dim"].values
                     if all(x in d for x in ["Bicycle <25", "Human"])
-                ]
+                ],
             )
-            * 1 / 17 * -1
+            * 1
+            / 17
+            * -1
         )
 
         idx = self.find_input_indices(("Two-wheeler, ", "Kick-scooter", "BEV"))
 
         self.A[
-        :,
-        self.find_input_indices(
-            contains=("bicycle production",), excludes=("battery",)
-        ),
-        idx,
+            :,
+            self.find_input_indices(
+                contains=("bicycle production",), excludes=("battery",)
+            ),
+            idx,
         ] = (
             self.array.sel(
                 parameter="glider base mass",
                 combined_dim=[
-                    d for d in self.array.coords["combined_dim"].values
+                    d
+                    for d in self.array.coords["combined_dim"].values
                     if all(x in d for x in ["Kick-scooter", "BEV"])
-                ]
+                ],
             )
-            * 1 / 17 * -1
+            * 1
+            / 17
+            * -1
         )
-
 
         idx = self.find_input_indices(
             contains=("Two-wheeler, ", "Bicycle", "BEV"), excludes=("cargo",)
@@ -80,12 +86,13 @@ class InventoryTwoWheeler(Inventory):
             self.array.sel(
                 parameter="glider base mass",
                 combined_dim=[
-                    d for d in self.array.coords["combined_dim"].values
-                    if all(x in d for x in ["Bicycle", "BEV"])
-                    and "cargo" not in d
-                ]
+                    d
+                    for d in self.array.coords["combined_dim"].values
+                    if all(x in d for x in ["Bicycle", "BEV"]) and "cargo" not in d
+                ],
             )
-            * 1 / 17
+            * 1
+            / 17
             * -1
         )
 
@@ -103,11 +110,13 @@ class InventoryTwoWheeler(Inventory):
             self.array.sel(
                 parameter="glider base mass",
                 combined_dim=[
-                    d for d in self.array.coords["combined_dim"].values
-                    if all(x in d for x in ["Bicycle","BEV", "cargo"])
-                ]
+                    d
+                    for d in self.array.coords["combined_dim"].values
+                    if all(x in d for x in ["Bicycle", "BEV", "cargo"])
+                ],
             )
-            * 1 / 50
+            * 1
+            / 50
             * -1
         )
 
@@ -119,16 +128,22 @@ class InventoryTwoWheeler(Inventory):
             self.find_input_indices(contains=("Two-wheeler, ", "Motorcycle", "ICEV"))
         )
 
-        self.A[:, self.find_input_indices(("motor scooter production",)), idx,] = (
+        self.A[
+            :,
+            self.find_input_indices(("motor scooter production",)),
+            idx,
+        ] = (
             self.array.sel(
                 parameter="glider base mass",
                 combined_dim=[
-                    d for d in self.array.coords["combined_dim"].values
+                    d
+                    for d in self.array.coords["combined_dim"].values
                     if any(x in d for x in ["Scooter", "Moped", "Motorcycle"])
                     and "ICEV-p" in d
-                ]
+                ],
             )
-            * 1 / 90
+            * 1
+            / 90
             * -1
         )
 
@@ -145,10 +160,10 @@ class InventoryTwoWheeler(Inventory):
             self.array.sel(
                 parameter="glider base mass",
                 combined_dim=[
-                    d for d in self.array.coords["combined_dim"].values
-                    if any(x in d for x in ["Scooter", "Motorcycle"])
-                    and "BEV" in d
-                ]
+                    d
+                    for d in self.array.coords["combined_dim"].values
+                    if any(x in d for x in ["Scooter", "Motorcycle"]) and "BEV" in d
+                ],
             )
             * -1
         )
@@ -168,7 +183,9 @@ class InventoryTwoWheeler(Inventory):
                 contains=("electric motor production, for electric scooter",)
             ),
             self.find_input_indices(contains=("Two-wheeler, ",)),
-        ] = (self.array.sel(parameter="electric engine mass") * -1)
+        ] = (
+            self.array.sel(parameter="electric engine mass") * -1
+        )
 
         self.A[
             :,
@@ -176,7 +193,9 @@ class InventoryTwoWheeler(Inventory):
                 contains=("market for internal combustion engine, passenger car",)
             ),
             self.find_input_indices(contains=("Two-wheeler, ",)),
-        ] = (self.array.sel(parameter="combustion engine mass") * -1)
+        ] = (
+            self.array.sel(parameter="combustion engine mass") * -1
+        )
 
         self.A[
             :,
@@ -184,7 +203,9 @@ class InventoryTwoWheeler(Inventory):
                 contains=("powertrain production, for electric scooter",)
             ),
             self.find_input_indices(contains=("Two-wheeler, ",)),
-        ] = (self.array.sel(parameter="electrical powertrain mass") * -1)
+        ] = (
+            self.array.sel(parameter="electrical powertrain mass") * -1
+        )
 
         self.A[
             :,
@@ -192,7 +213,9 @@ class InventoryTwoWheeler(Inventory):
                 contains=("market for internal combustion engine, passenger car",)
             ),
             self.find_input_indices(contains=("Two-wheeler, ",)),
-        ] = (self.array.sel(parameter="mechanical powertrain mass") * -1)
+        ] = (
+            self.array.sel(parameter="mechanical powertrain mass") * -1
+        )
 
         # Powertrain components
         self.A[
@@ -244,71 +267,117 @@ class InventoryTwoWheeler(Inventory):
             self.array.sel(
                 parameter="lifetime kilometers",
                 combined_dim=[
-                    d for d in self.array.coords["combined_dim"].values
-                    if any(x in d for x in ["Scooter", "Motorcycle"])
-                    and "ICEV-p" in d
-                ]
+                    d
+                    for d in self.array.coords["combined_dim"].values
+                    if any(x in d for x in ["Scooter", "Motorcycle"]) and "ICEV-p" in d
+                ],
             )
-            / 25000 * -1
+            / 25000
+            * -1
         )
 
-        idx = self.find_input_indices(contains=("Two-wheeler, ", "Bicycle <25", "Human"))
+        idx = self.find_input_indices(
+            contains=("Two-wheeler, ", "Bicycle <25", "Human")
+        )
 
         self.A[:, self.find_input_indices(("maintenance, bicycle",)), idx] = (
-                self.array.sel(
-                    parameter="lifetime kilometers",
-                    combined_dim=[
-                        d for d in self.array.coords["combined_dim"].values
-                        if all(x in d for x in ["Bicycle <25", "Human",])
-                    ]
-                )
-                / 25000 * -1
+            self.array.sel(
+                parameter="lifetime kilometers",
+                combined_dim=[
+                    d
+                    for d in self.array.coords["combined_dim"].values
+                    if all(
+                        x in d
+                        for x in [
+                            "Bicycle <25",
+                            "Human",
+                        ]
+                    )
+                ],
+            )
+            / 25000
+            * -1
         )
 
         idx = self.find_input_indices(contains=("Two-wheeler, ", "Bicycle", "BEV"))
 
-        self.A[:, self.find_input_indices(("maintenance, electric bicycle, without battery",)), idx] = (
-                self.array.sel(
-                    parameter="lifetime kilometers",
-                    combined_dim=[
-                        d for d in self.array.coords["combined_dim"].values
-                        if all(x in d for x in ["Bicycle", "BEV",])]
-                )
-                / 25000 * -1
+        self.A[
+            :,
+            self.find_input_indices(
+                ("maintenance, electric bicycle, without battery",)
+            ),
+            idx,
+        ] = (
+            self.array.sel(
+                parameter="lifetime kilometers",
+                combined_dim=[
+                    d
+                    for d in self.array.coords["combined_dim"].values
+                    if all(
+                        x in d
+                        for x in [
+                            "Bicycle",
+                            "BEV",
+                        ]
+                    )
+                ],
+            )
+            / 25000
+            * -1
         )
 
         idx = self.find_input_indices(("Two-wheeler, ", "Kick-scooter", "BEV"))
         self.A[:, self.find_input_indices(("treatment of used bicycle",)), idx] = (
-                self.array.sel(
-                    parameter="curb mass",
-                    combined_dim=[
-                        d for d in self.array.coords["combined_dim"].values
-                        if all(x in d for x in ["Kick-scooter", "BEV",])]
-                ) / 17
+            self.array.sel(
+                parameter="curb mass",
+                combined_dim=[
+                    d
+                    for d in self.array.coords["combined_dim"].values
+                    if all(
+                        x in d
+                        for x in [
+                            "Kick-scooter",
+                            "BEV",
+                        ]
+                    )
+                ],
+            )
+            / 17
         )
         idx = self.find_input_indices(("Two-wheeler, ", "Human", "Bicycle <25"))
 
-
         self.A[:, self.find_input_indices(("treatment of used bicycle",)), idx] = (
-                self.array.sel(
-                    parameter="curb mass",
-                    combined_dim=[
-                        d for d in self.array.coords["combined_dim"].values
-                        if all(x in d for x in ["Bicycle <25", "Human",])]
-                ) / 17
+            self.array.sel(
+                parameter="curb mass",
+                combined_dim=[
+                    d
+                    for d in self.array.coords["combined_dim"].values
+                    if all(
+                        x in d
+                        for x in [
+                            "Bicycle <25",
+                            "Human",
+                        ]
+                    )
+                ],
+            )
+            / 17
         )
 
-        idx = self.find_input_indices(
-            contains=("Two-wheeler, ", "Bicycle", "BEV")
-        )
+        idx = self.find_input_indices(contains=("Two-wheeler, ", "Bicycle", "BEV"))
 
-        self.A[:, self.find_input_indices(("treatment of used electric bicycle",)), idx] = (
-                self.array.sel(
-                    parameter="curb mass",
-                    combined_dim=[
-                        d for d in self.array.coords["combined_dim"].values
-                        if all(x in d for x in ["Bicycle", "BEV"])]
-                ) / 24
+        self.A[
+            :, self.find_input_indices(("treatment of used electric bicycle",)), idx
+        ] = (
+            self.array.sel(
+                parameter="curb mass",
+                combined_dim=[
+                    d
+                    for d in self.array.coords["combined_dim"].values
+                    if all(x in d for x in ["Bicycle", "BEV"])
+                ],
+            )
+            / 24
         )
 
         idx = self.find_input_indices(contains=("Two-wheeler, ", "Scooter", "BEV"))
@@ -323,32 +392,42 @@ class InventoryTwoWheeler(Inventory):
         )
         idx = list(set(idx))
 
-        self.A[:, self.find_input_indices(("manual dismantling of used electric scooter",)), idx] = (
-                self.array.sel(
-                    parameter="curb mass",
-                    combined_dim=[
-                        d for d in self.array.coords["combined_dim"].values
-                        if any(x in d for x in ["Scooter", "Motorcycle",])
-                        and any(x in d for x in ["BEV", "ICEV-p"])]
-                )
-                * -1
+        self.A[
+            :,
+            self.find_input_indices(("manual dismantling of used electric scooter",)),
+            idx,
+        ] = (
+            self.array.sel(
+                parameter="curb mass",
+                combined_dim=[
+                    d
+                    for d in self.array.coords["combined_dim"].values
+                    if any(
+                        x in d
+                        for x in [
+                            "Scooter",
+                            "Motorcycle",
+                        ]
+                    )
+                    and any(x in d for x in ["BEV", "ICEV-p"])
+                ],
+            )
+            * -1
         )
 
         # Energy storage
         self.add_battery()
 
         self.A[
-        :,
-        self.find_input_indices(
-            contains=("polyethylene production, high density, granulate",)
-        ),
-        self.find_input_indices(
-            contains=("Two-wheeler, ",)
-        ),
+            :,
+            self.find_input_indices(
+                contains=("polyethylene production, high density, granulate",)
+            ),
+            self.find_input_indices(contains=("Two-wheeler, ",)),
         ] = (
-                self.array.sel(parameter="fuel tank mass")
-        * (self.array.sel(parameter="combustion power") > 0)
-                * -1
+            self.array.sel(parameter="fuel tank mass")
+            * (self.array.sel(parameter="combustion power") > 0)
+            * -1
         )
 
         # Chargers
@@ -391,7 +470,7 @@ class InventoryTwoWheeler(Inventory):
         ] *= 0.25
 
         self.A[
-        :,
+            :,
             self.find_input_indices(("market for road maintenance",)),
             self.find_input_indices((f"transport, two-wheeler, ", "Bicycle")),
         ] *= 0.5
@@ -404,17 +483,19 @@ class InventoryTwoWheeler(Inventory):
         # 15'900 km by ship
         self.A[
             :,
-            self.find_input_indices(("market for transport, freight, sea, container ship",)),
+            self.find_input_indices(
+                ("market for transport, freight, sea, container ship",)
+            ),
             self.find_input_indices(("Two-wheeler, ",)),
         ] = (self.array.sel(parameter="curb mass") / 1000 * 15900) * -1
 
         # 1'000 km by truck
         self.A[
             :,
-            self.find_input_indices(("market group for transport, freight, lorry, unspecified",)),
+            self.find_input_indices(
+                ("market group for transport, freight, lorry, unspecified",)
+            ),
             self.find_input_indices(("Two-wheeler, ",)),
         ] = (self.array.sel(parameter="curb mass") / 1000 * 1000) * -1
-
-
 
         print("*********************************************************************")

@@ -1,10 +1,10 @@
+from itertools import product
+from pathlib import Path
+
 import numexpr as ne
 import numpy as np
 import xarray as xr
 import yaml
-from itertools import product
-from pathlib import Path
-
 from carculator_utils.energy_consumption import EnergyConsumptionModel
 from carculator_utils.model import VehicleModel
 
@@ -88,7 +88,6 @@ class TwoWheelerModel(VehicleModel):
         print("Done!")
 
     def set_battery_chemistry(self):
-
         # override default values for batteries
         # if provided by the user
         self.energy_storage = {
@@ -190,7 +189,10 @@ class TwoWheelerModel(VehicleModel):
 
         self["TtW energy"] = (
             self.energy.sel(
-                parameter=["motive energy", "auxiliary energy", ]
+                parameter=[
+                    "motive energy",
+                    "auxiliary energy",
+                ]
             ).sum(dim=["second", "parameter"])
             / distance
         ).T
@@ -299,7 +301,6 @@ class TwoWheelerModel(VehicleModel):
         ) * (self["charger mass"] > 0)
 
     def set_costs(self):
-
         self["glider cost"] = (
             self["glider base mass"] * self["glider cost slope"]
             + self["glider cost intercept"]
@@ -499,7 +500,6 @@ class TwoWheelerModel(VehicleModel):
 
         if "BEV" in self.array.coords["powertrain"].values:
             if "Moped <4kW" in self.array.coords["size"].values:
-
                 self.array.loc[
                     dict(
                         powertrain="BEV",
