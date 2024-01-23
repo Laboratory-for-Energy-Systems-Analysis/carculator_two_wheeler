@@ -366,6 +366,7 @@ class InventoryTwoWheeler(Inventory):
             / 17
         )
 
+
         idx = self.find_input_indices(contains=("Two-wheeler, ", "Bicycle", "BEV"))
 
         self.A[
