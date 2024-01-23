@@ -7,6 +7,10 @@ root_dir = os.path.dirname(__file__)
 if root_dir:
     os.chdir(root_dir)
 
+# read the contents of your README file
+this_directory = Path(__file__).parent
+README = (this_directory / "README.md").read_text()
+
 # Probably should be changed, __init__.py is no longer required for Python 3
 for dirpath, dirnames, filenames in os.walk("carculator_two_wheeler"):
     # Ignore dirnames that start with '.'
