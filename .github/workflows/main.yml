@@ -109,6 +109,7 @@ jobs:
           PKG_NAME=carculator_two_wheeler
           USER=romainsacchi
           conda install anaconda-client
+          conda install conda-build
           mkdir ~/conda-bld
           conda config --set anaconda_upload no
           export CONDA_BLD_PATH=~/conda-bld
