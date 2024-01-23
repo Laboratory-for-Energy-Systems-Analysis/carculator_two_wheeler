@@ -2,13 +2,12 @@ from pathlib import Path
 
 import numpy as np
 import pandas as pd
-from carculator import *
+from carculator_two_wheeler import *
 
 DATA = Path(__file__, "..").resolve() / "fixtures" / "two_wheelers_values.xlsx"
 OUTPUT = Path(__file__, "..").resolve() / "fixtures" / "test_model_results.xlsx"
 ref = pd.read_excel(DATA, index_col=0)
 
-from carculator_two_wheeler import *
 
 twip = TwoWheelerInputParameters()
 twip.static()
