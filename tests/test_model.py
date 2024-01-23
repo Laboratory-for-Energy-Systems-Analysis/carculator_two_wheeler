@@ -24,18 +24,12 @@ def test_model_results():
         "BEV",
     ]
     list_sizes = [
-        # "Small",
-        # "Lower medium",
-        "Bicycle" "Bicycle <25",
+        "Bicycle <25",
         "Bicycle <45",
         "Bicycle cargo",
-        # "Large"
     ]
     list_years = [
         2020,
-        # 2030,
-        # 2040,
-        # 2050
     ]
 
     l_res = []
@@ -76,3 +70,7 @@ def test_model_results():
         l_res,
         columns=["powertrain", "size", "year", "parameter", "val", "ref_val", "diff"],
     ).to_excel(OUTPUT)
+
+def test_lcia():
+    ic = InventoryTwoWheeler(twm)
+    ic.calculate_impacts()
