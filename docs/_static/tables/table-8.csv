@@ -1,0 +1,7 @@
+﻿,"Age of decommissioning (i.e., calendar lifetime) [years]",Annual mileage [km/year],"Cumulated mileage reached at the age of decommissioning (i.e., kilometric lifetime) [km]"
+**Source**,"MOFIS registry :cite:`ct-1003`",":cite:`ct-1033`"
+**Comment**,"Assumed similar to gasoline motorbikes","Assumed similar to gasoline motorbikes",
+**Sample size**,205’513,,
+"**Motorbike, gasoline, 4-11 kW**",14,1’776,25’000
+"**Motorbike, gasoline, 11-35 kW**",16,2’405,38’500
+"**Motorbike, gasoline, >35 kW**",14,2’896,40’500

@@ -1,0 +1,14 @@
+﻿"|g-motorbikes-img|","Motorbike, electric, 4-11 kW - 2020","Motorbike, electric, 11-35 kW - 2020","Motorbike, electric, >35 kW - 2020",Comment,Source
+Lifetime [km],25’000,38’500,40’500,"See :ref:`Table 10 <table-10>`.",":cite:`ct-1003, ct-1033`"
+Annual kilometers [km],1’776,2’405,2’896,,
+Energy consumption [MJ/km],0.182,0.246,0.275,"Energy consumption is calculated from actual usage values reported to :cite:`ct-1092`, based on a sample of 42 vehicles representing over 520’000 kilometers.",":cite:`ct-1092`"
+Passenger mass [kg],75,75,75,Standard assumption.,
+Cargo mass [kg],6,6,6,,
+Curb mass [kg],"105 [4]_","166 [3]_","255 [3]_",Based on manufacturers’ data.,"Super Soco, Horwin, Ox Rider, Zero motorcycles, Energica"
+Driving mass [kg],"194 [3]_","255 [3]_","3430 [3]_",Calculated.,
+Power [kW],5,14,49,Based on manufacturers’ data.,"Super Soco, Horwin, Ox Rider, Zero motorcycles, Energica"
+Battery capacity [kWh],2.9,8.1,16.5,,
+Depth of discharge [%],"80%","80%","80%",Standard assumption to preserve battery lifetime.,"Similar assumptions were used by :cite:`ct-1012`."
+Battery replacement unit [unit],1,1,1,Standard assumption for this type of vehicle.,
+Range autonomy [km],46,95,173,Calculated.,
+Servicing per lifetime [unit],1,1.54,1.62,The original ecoinvent dataset for maintenance for electric scooters is valid for a vehicle lifetime of 25’000 km.,":cite:`ct-1048`"
