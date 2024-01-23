@@ -14,7 +14,7 @@ def load_parameters(obj):
         return obj
 
 
-class VehicleInputParameters(VehicleInputParameters):
+class TwoWheelerInputParameters(VehicleInputParameters):
     """ """
 
     DEFAULT = Path(__file__, "..").resolve() / "data" / "default_parameters.json"

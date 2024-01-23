@@ -31,6 +31,7 @@ class TwoWheelerModel(VehicleModel):
         self.ecm = EnergyConsumptionModel(
             vehicle_type="two-wheeler",
             vehicle_size=list(self.array.coords["size"].values),
+            powertrains=list(self.array.coords["powertrain"].values),
             cycle=self.cycle,
             gradient=self.gradient,
             country=self.country,
@@ -82,7 +83,7 @@ class TwoWheelerModel(VehicleModel):
         self.set_particulates_emission()
         self.set_noise_emissions()
 
-        self.remove_energy_consumption_from_unavilable_vehicles()
+        self.remove_energy_consumption_from_unavailable_vehicles()
 
         print("Done!")
 
@@ -189,10 +190,12 @@ class TwoWheelerModel(VehicleModel):
 
         self["TtW energy"] = (
             self.energy.sel(
-                parameter=["motive energy", "auxiliary energy", "recuperated energy"]
+                parameter=["motive energy", "auxiliary energy", ]
             ).sum(dim=["second", "parameter"])
             / distance
         ).T
+
+        print(distance)
 
         self["TtW energy, combustion mode"] = self["TtW energy"] * (
             self["combustion power share"] > 0
@@ -464,7 +467,7 @@ class TwoWheelerModel(VehicleModel):
         else:
             return response / response.sel(value="reference")
 
-    def remove_energy_consumption_from_unavilable_vehicles(self):
+    def remove_energy_consumption_from_unavailable_vehicles(self):
         """
         This method sets the energy consumption of vehicles that are not available to zero.
         """

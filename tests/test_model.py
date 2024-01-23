@@ -8,7 +8,7 @@ OUTPUT = Path(__file__, "..").resolve() / "fixtures" / "test_model_results.xlsx"
 ref = pd.read_excel(DATA, index_col=0)
 
 from carculator_two_wheeler import *
-twip = VehicleInputParameters()
+twip = TwoWheelerInputParameters()
 twip.static()
 dcts, arr = fill_xarray_from_input_parameters(twip)
 twm = TwoWheelerModel(arr)
