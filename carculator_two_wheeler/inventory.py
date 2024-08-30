@@ -30,7 +30,7 @@ class InventoryTwoWheeler(Inventory):
         """
 
         # Glider/Frame
-        idx = self.find_input_indices(("Two-wheeler, ", "Bicycle, <25", "Human"))
+        idx = self.find_input_indices(("two-wheeler, ", "Bicycle, <25", "Human"), excludes=("transport",))
 
         self.A[
             :,
@@ -52,7 +52,7 @@ class InventoryTwoWheeler(Inventory):
             * -1
         )
 
-        idx = self.find_input_indices(("Two-wheeler, ", "Kick-scooter", "BEV"))
+        idx = self.find_input_indices(("two-wheeler, ", "Kick-scooter", "BEV"), excludes=("transport",))
 
         self.A[
             :,
@@ -75,7 +75,7 @@ class InventoryTwoWheeler(Inventory):
         )
 
         idx = self.find_input_indices(
-            contains=("Two-wheeler, ", "Bicycle", "BEV"), excludes=("cargo",)
+            contains=("two-wheeler, ", "Bicycle", "BEV"), excludes=("cargo", "transport")
         )
 
         self.A[
@@ -99,7 +99,7 @@ class InventoryTwoWheeler(Inventory):
         )
 
         idx = self.find_input_indices(
-            contains=("Two-wheeler, ", "Bicycle", "BEV", "cargo")
+            contains=("two-wheeler, ", "Bicycle", "BEV", "cargo"), excludes=("transport",)
         )
 
         self.A[
@@ -122,12 +122,12 @@ class InventoryTwoWheeler(Inventory):
             * -1
         )
 
-        idx = self.find_input_indices(contains=("Two-wheeler, ", "Moped", "ICEV"))
+        idx = self.find_input_indices(contains=("two-wheeler, ", "Moped", "ICEV"), excludes=("transport",))
         idx.extend(
-            self.find_input_indices(contains=("Two-wheeler, ", "Scooter", "ICEV"))
+            self.find_input_indices(contains=("two-wheeler, ", "Scooter", "ICEV"), excludes=("transport",))
         )
         idx.extend(
-            self.find_input_indices(contains=("Two-wheeler, ", "Motorcycle", "ICEV"))
+            self.find_input_indices(contains=("two-wheeler, ", "Motorcycle", "ICEV"), excludes=("transport",))
         )
 
         self.A[
@@ -149,9 +149,9 @@ class InventoryTwoWheeler(Inventory):
             * -1
         )
 
-        idx = self.find_input_indices(contains=("Two-wheeler, ", "Scooter", "BEV"))
+        idx = self.find_input_indices(contains=("two-wheeler, ", "Scooter", "BEV"), excludes=("transport",))
         idx.extend(
-            self.find_input_indices(contains=("Two-wheeler, ", "Motorcycle", "BEV"))
+            self.find_input_indices(contains=("two-wheeler, ", "Motorcycle", "BEV"), excludes=("transport",))
         )
 
         self.A[
@@ -173,7 +173,7 @@ class InventoryTwoWheeler(Inventory):
         self.A[
             :,
             self.find_input_indices(contains=("glider lightweighting",)),
-            self.find_input_indices(contains=("Two-wheeler, ",)),
+            self.find_input_indices(contains=("two-wheeler, ",), excludes=("transport",)),
         ] = (
             self.array.sel(parameter="lightweighting")
             * self.array.sel(parameter="glider base mass")
@@ -184,7 +184,7 @@ class InventoryTwoWheeler(Inventory):
             self.find_input_indices(
                 contains=("electric motor production, for electric scooter",)
             ),
-            self.find_input_indices(contains=("Two-wheeler, ",)),
+            [j for i, j in self.inputs.items() if i[0].startswith("two-wheeler, ")]
         ] = (
             self.array.sel(parameter="electric engine mass") * -1
         )
@@ -194,7 +194,7 @@ class InventoryTwoWheeler(Inventory):
             self.find_input_indices(
                 contains=("market for internal combustion engine, passenger car",)
             ),
-            self.find_input_indices(contains=("Two-wheeler, ",)),
+            [j for i, j in self.inputs.items() if i[0].startswith("two-wheeler, ")]
         ] = (
             self.array.sel(parameter="combustion engine mass") * -1
         )
@@ -204,7 +204,7 @@ class InventoryTwoWheeler(Inventory):
             self.find_input_indices(
                 contains=("powertrain production, for electric scooter",)
             ),
-            self.find_input_indices(contains=("Two-wheeler, ",)),
+            [j for i, j in self.inputs.items() if i[0].startswith("two-wheeler, ")]
         ] = (
             self.array.sel(parameter="electrical powertrain mass") * -1
         )
@@ -214,7 +214,7 @@ class InventoryTwoWheeler(Inventory):
             self.find_input_indices(
                 contains=("market for internal combustion engine, passenger car",)
             ),
-            self.find_input_indices(contains=("Two-wheeler, ",)),
+            [j for i, j in self.inputs.items() if i[0].startswith("two-wheeler, ")]
         ] = (
             self.array.sel(parameter="mechanical powertrain mass") * -1
         )
@@ -223,7 +223,7 @@ class InventoryTwoWheeler(Inventory):
         self.A[
             :,
             self.find_input_indices(("charger production, for electric scooter",)),
-            self.find_input_indices(("Two-wheeler, ",)),
+            [j for i, j in self.inputs.items() if i[0].startswith("two-wheeler, ")]
         ] = (
             self.array.sel(parameter="charger mass") * -1
         )
@@ -233,7 +233,7 @@ class InventoryTwoWheeler(Inventory):
             self.find_input_indices(
                 ("market for converter, for electric passenger car",)
             ),
-            self.find_input_indices(("Two-wheeler, ",)),
+            [j for i, j in self.inputs.items() if i[0].startswith("two-wheeler, ")]
         ] = (
             self.array.sel(parameter="converter mass") * -1
         )
@@ -243,7 +243,7 @@ class InventoryTwoWheeler(Inventory):
             self.find_input_indices(
                 ("market for inverter, for electric passenger car",)
             ),
-            self.find_input_indices(("Two-wheeler, ",)),
+            [j for i, j in self.inputs.items() if i[0].startswith("two-wheeler, ")]
         ] = (
             self.array.sel(parameter="inverter mass") * -1
         )
@@ -253,16 +253,16 @@ class InventoryTwoWheeler(Inventory):
             self.find_input_indices(
                 ("market for power distribution unit, for electric passenger car",)
             ),
-            self.find_input_indices(("Two-wheeler, ",)),
+            [j for i, j in self.inputs.items() if i[0].startswith("two-wheeler, ")]
         ] = (
             self.array.sel(parameter="power distribution unit mass") * -1
         )
 
         # Maintenance
 
-        idx = self.find_input_indices(contains=("Two-wheeler, ", "Scooter", "ICEV"))
+        idx = self.find_input_indices(contains=("two-wheeler, ", "Scooter", "ICEV"), excludes=("transport",))
         idx.extend(
-            self.find_input_indices(contains=("Two-wheeler, ", "Motorcycle", "ICEV"))
+            self.find_input_indices(contains=("two-wheeler, ", "Motorcycle", "ICEV"), excludes=("transport",))
         )
 
         self.A[:, self.find_input_indices(("maintenance, motor scooter",)), idx] = (
@@ -279,7 +279,7 @@ class InventoryTwoWheeler(Inventory):
         )
 
         idx = self.find_input_indices(
-            contains=("Two-wheeler, ", "Bicycle <25", "Human")
+            contains=("two-wheeler, ", "Bicycle <25", "Human"), excludes=("transport",)
         )
 
         self.A[:, self.find_input_indices(("maintenance, bicycle",)), idx] = (
@@ -301,7 +301,7 @@ class InventoryTwoWheeler(Inventory):
             * -1
         )
 
-        idx = self.find_input_indices(contains=("Two-wheeler, ", "Bicycle", "BEV"))
+        idx = self.find_input_indices(contains=("two-wheeler, ", "Bicycle", "BEV"), excludes=("transport",))
 
         self.A[
             :,
@@ -328,7 +328,7 @@ class InventoryTwoWheeler(Inventory):
             * -1
         )
 
-        idx = self.find_input_indices(("Two-wheeler, ", "Kick-scooter", "BEV"))
+        idx = self.find_input_indices(("two-wheeler, ", "Kick-scooter", "BEV"), excludes=("transport",))
         self.A[:, self.find_input_indices(("treatment of used bicycle",)), idx] = (
             self.array.sel(
                 parameter="curb mass",
@@ -346,7 +346,7 @@ class InventoryTwoWheeler(Inventory):
             )
             / 17
         )
-        idx = self.find_input_indices(("Two-wheeler, ", "Human", "Bicycle <25"))
+        idx = self.find_input_indices(("two-wheeler, ", "Human", "Bicycle <25"), excludes=("transport",))
 
         self.A[:, self.find_input_indices(("treatment of used bicycle",)), idx] = (
             self.array.sel(
@@ -366,7 +366,7 @@ class InventoryTwoWheeler(Inventory):
             / 17
         )
 
-        idx = self.find_input_indices(contains=("Two-wheeler, ", "Bicycle", "BEV"))
+        idx = self.find_input_indices(contains=("two-wheeler, ", "Bicycle", "BEV"), excludes=("transport",))
 
         self.A[
             :, self.find_input_indices(("treatment of used electric bicycle",)), idx
@@ -382,15 +382,15 @@ class InventoryTwoWheeler(Inventory):
             / 24
         )
 
-        idx = self.find_input_indices(contains=("Two-wheeler, ", "Scooter", "BEV"))
+        idx = self.find_input_indices(contains=("two-wheeler, ", "Scooter", "BEV"), excludes=("transport",))
         idx.extend(
-            self.find_input_indices(contains=("Two-wheeler, ", "Scooter", "ICEV"))
+            self.find_input_indices(contains=("two-wheeler, ", "Scooter", "ICEV"), excludes=("transport",))
         )
         idx.extend(
-            self.find_input_indices(contains=("Two-wheeler, ", "Motorcycle", "ICEV"))
+            self.find_input_indices(contains=("two-wheeler, ", "Motorcycle", "ICEV"), excludes=("transport",))
         )
         idx.extend(
-            self.find_input_indices(contains=("Two-wheeler, ", "Motorcycle", "BEV"))
+            self.find_input_indices(contains=("two-wheeler, ", "Motorcycle", "BEV"), excludes=("transport",))
         )
         idx = list(set(idx))
 
@@ -425,7 +425,7 @@ class InventoryTwoWheeler(Inventory):
             self.find_input_indices(
                 contains=("polyethylene production, high density, granulate",)
             ),
-            self.find_input_indices(contains=("Two-wheeler, ",)),
+            [j for i, j in self.inputs.items() if i[0].startswith("two-wheeler, ")]
         ] = (
             self.array.sel(parameter="fuel tank mass")
             * (self.array.sel(parameter="combustion power") > 0)
@@ -433,16 +433,16 @@ class InventoryTwoWheeler(Inventory):
         )
 
         # Chargers
-        idx = self.find_input_indices(contains=("Two-wheeler, ", "Kick-scooter", "BEV"))
+        idx = self.find_input_indices(contains=("two-wheeler, ", "Kick-scooter", "BEV"), excludes=("transport",))
         self.A[:, self.find_input_indices(("charging station, 100W",)), idx] = -1
 
-        idx = self.find_input_indices(contains=("Two-wheeler, ", "Bicycle", "BEV"))
+        idx = self.find_input_indices(contains=("two-wheeler, ", "Bicycle", "BEV"), excludes=("transport",))
         self.A[:, self.find_input_indices(("charging station, 500W",)), idx] = -1
 
-        idx = self.find_input_indices(contains=("Two-wheeler, ", "Scooter", "BEV"))
+        idx = self.find_input_indices(contains=("two-wheeler, ", "Scooter", "BEV"), excludes=("transport",))
         self.A[:, self.find_input_indices(("charging station, 3kW",)), idx] = -1
 
-        idx = self.find_input_indices(contains=("Two-wheeler, ", "Motorcycle", "BEV"))
+        idx = self.find_input_indices(contains=("two-wheeler, ", "Motorcycle", "BEV"), excludes=("transport",))
         self.A[:, self.find_input_indices(("charging station, 3kW",)), idx] = -1
 
         # END of vehicle building
@@ -488,7 +488,7 @@ class InventoryTwoWheeler(Inventory):
             self.find_input_indices(
                 ("market for transport, freight, sea, container ship",)
             ),
-            self.find_input_indices(("Two-wheeler, ",)),
+            [j for i, j in self.inputs.items() if i[0].startswith("two-wheeler, ")]
         ] = (self.array.sel(parameter="curb mass") / 1000 * 15900) * -1
 
         # 1'000 km by truck
@@ -497,7 +497,7 @@ class InventoryTwoWheeler(Inventory):
             self.find_input_indices(
                 ("market group for transport, freight, lorry, unspecified",)
             ),
-            self.find_input_indices(("Two-wheeler, ",)),
+            [j for i, j in self.inputs.items() if i[0].startswith("two-wheeler, ")]
         ] = (self.array.sel(parameter="curb mass") / 1000 * 1000) * -1
 
         print("*********************************************************************")

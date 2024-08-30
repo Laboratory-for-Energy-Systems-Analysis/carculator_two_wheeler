@@ -51,6 +51,7 @@ class TwoWheelerModel(VehicleModel):
             self.set_battery_properties()
             self.set_energy_stored_properties()
             self.set_recuperation()
+            self.set_battery_preferences()
 
             # if user-provided values are passed,
             # they override the default values
@@ -64,9 +65,8 @@ class TwoWheelerModel(VehicleModel):
         if self.energy_consumption:
             self.override_ttw_energy()
         else:
-            self.set_ttw_efficiency()
             self.calculate_ttw_energy()
-
+        self.set_ttw_efficiency()
         self.set_range()
 
         if self.target_range:
@@ -90,17 +90,34 @@ class TwoWheelerModel(VehicleModel):
     def set_battery_chemistry(self):
         # override default values for batteries
         # if provided by the user
-        self.energy_storage = {
-            "electric": {
-                x: "NMC-622"
-                for x in product(
-                    ["BEV"],
-                    self.array.coords["size"].values,
-                    self.array.year.values,
-                )
-            },
-            "origin": "CN",
+        if "electric" not in self.energy_storage:
+            self.energy_storage["electric"] = {}
+
+        default_chemistries = {
+            2000: "NMC-111",
+            2005: "NMC-111",
+            2010: "NMC-111",
+            2015: "NMC-111",
+            2020: "NMC-622",
+            2025: "NMC-811",
+            2030: "NMC-955",
         }
+
+        for x in product(
+                self.array.coords["powertrain"].values,
+                self.array.coords["size"].values,
+                self.array.year.values,
+        ):
+            if x not in self.energy_storage["electric"]:
+                if x[-1] in default_chemistries:
+                    self.energy_storage["electric"][x] = default_chemistries[x[-1]]
+                elif x[-1] < min(default_chemistries.keys()):
+                    self.energy_storage["electric"][x] = "NMC-111"
+                else:
+                    self.energy_storage["electric"][x] = "NMC-955"
+
+        if "origin" not in self.energy_storage:
+            self.energy_storage.update({"origin": "CN"})
 
     def adjust_cost(self):
         """
@@ -196,8 +213,6 @@ class TwoWheelerModel(VehicleModel):
             ).sum(dim=["second", "parameter"])
             / distance
         ).T
-
-        print(distance)
 
         self["TtW energy, combustion mode"] = self["TtW energy"] * (
             self["combustion power share"] > 0
