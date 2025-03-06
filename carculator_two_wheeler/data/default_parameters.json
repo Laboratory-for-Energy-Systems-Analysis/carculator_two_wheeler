@@ -33905,403 +33905,997 @@
         "minimum": 3000,
         "maximum": 5000
     },
-    "1284-2000-engine efficiency": {
-        "amount": 0.75,
-        "category": "Powertrain",
+    "1284-2000-battery cycle life, Li-O2": {
+        "amount": 1300,
+        "category": "Energy Storage",
         "powertrain": [
+            "Human",
+            "ICEV-p",
             "BEV"
         ],
         "sizes": [
-            "Bicycle <25"
+            "Kick-scooter",
+            "Bicycle <25",
+            "Bicycle cargo",
+            "Bicycle <45",
+            "Moped <4kW",
+            "Scooter <4kW",
+            "Scooter 4-11kW",
+            "Motorcycle 4-11kW",
+            "Motorcycle 11-35kW",
+            "Motorcycle >35kW"
         ],
         "year": 2000,
-        "name": "engine efficiency",
-        "unit": "unitless",
+        "name": "battery cycle life, Li-O2",
+        "unit": "unit",
         "importance": "Critical",
-        "source": "Cox, B. L., & Mutel, C. L. (2018). The environmental and cost performance of current and future motorcycles. Applied Energy, 212, 1013-1024. https://doi.org/10.1016/j.apenergy.2017.12.100",
-        "comment": "",
-        "status": "To be improved",
+        "source": "",
+        "comment": "Cycle life, used to calculate battery lifetime.",
+        "status": "",
         "kind": "distribution",
         "uncertainty_type": 5,
-        "loc": 0.75,
-        "minimum": 0.7124999999999999,
-        "maximum": 0.7875000000000001
+        "loc": 1300,
+        "minimum": 1000,
+        "maximum": 1500
     },
-    "1285-2010-engine efficiency": {
-        "amount": 0.75,
-        "category": "Powertrain",
+    "1285-2010-battery cycle life, Li-O2": {
+        "amount": 1300,
+        "category": "Energy Storage",
         "powertrain": [
+            "Human",
+            "ICEV-p",
             "BEV"
         ],
         "sizes": [
-            "Bicycle <25"
+            "Kick-scooter",
+            "Bicycle <25",
+            "Bicycle cargo",
+            "Bicycle <45",
+            "Moped <4kW",
+            "Scooter <4kW",
+            "Scooter 4-11kW",
+            "Motorcycle 4-11kW",
+            "Motorcycle 11-35kW",
+            "Motorcycle >35kW"
         ],
         "year": 2010,
-        "name": "engine efficiency",
-        "unit": "unitless",
+        "name": "battery cycle life, Li-O2",
+        "unit": "unit",
         "importance": "Critical",
-        "source": "Cox, B. L., & Mutel, C. L. (2018). The environmental and cost performance of current and future motorcycles. Applied Energy, 212, 1013-1024. https://doi.org/10.1016/j.apenergy.2017.12.100",
-        "comment": "",
-        "status": "To be improved",
+        "source": "",
+        "comment": "Cycle life, used to calculate battery lifetime.",
+        "status": "",
         "kind": "distribution",
         "uncertainty_type": 5,
-        "loc": 0.75,
-        "minimum": 0.7124999999999999,
-        "maximum": 0.7875000000000001
+        "loc": 1300,
+        "minimum": 1000,
+        "maximum": 1500
     },
-    "1286-2020-engine efficiency": {
-        "amount": 0.75,
-        "category": "Powertrain",
+    "1286-2020-battery cycle life, Li-O2": {
+        "amount": 1300,
+        "category": "Energy Storage",
         "powertrain": [
+            "Human",
+            "ICEV-p",
             "BEV"
         ],
         "sizes": [
-            "Bicycle <25"
+            "Kick-scooter",
+            "Bicycle <25",
+            "Bicycle cargo",
+            "Bicycle <45",
+            "Moped <4kW",
+            "Scooter <4kW",
+            "Scooter 4-11kW",
+            "Motorcycle 4-11kW",
+            "Motorcycle 11-35kW",
+            "Motorcycle >35kW"
         ],
         "year": 2020,
-        "name": "engine efficiency",
-        "unit": "unitless",
+        "name": "battery cycle life, Li-O2",
+        "unit": "unit",
         "importance": "Critical",
-        "source": "Cox, B. L., & Mutel, C. L. (2018). The environmental and cost performance of current and future motorcycles. Applied Energy, 212, 1013-1024. https://doi.org/10.1016/j.apenergy.2017.12.100",
-        "comment": "",
-        "status": "To be improved",
+        "source": "",
+        "comment": "Cycle life, used to calculate battery lifetime.",
+        "status": "",
         "kind": "distribution",
         "uncertainty_type": 5,
-        "loc": 0.75,
-        "minimum": 0.7124999999999999,
-        "maximum": 0.7875000000000001
+        "loc": 1300,
+        "minimum": 1000,
+        "maximum": 1500
     },
-    "1287-2030-engine efficiency": {
-        "amount": 0.75,
-        "category": "Powertrain",
+    "1287-2030-battery cycle life, Li-O2": {
+        "amount": 1300,
+        "category": "Energy Storage",
         "powertrain": [
+            "Human",
+            "ICEV-p",
             "BEV"
         ],
         "sizes": [
-            "Bicycle <25"
+            "Kick-scooter",
+            "Bicycle <25",
+            "Bicycle cargo",
+            "Bicycle <45",
+            "Moped <4kW",
+            "Scooter <4kW",
+            "Scooter 4-11kW",
+            "Motorcycle 4-11kW",
+            "Motorcycle 11-35kW",
+            "Motorcycle >35kW"
         ],
         "year": 2030,
-        "name": "engine efficiency",
-        "unit": "unitless",
+        "name": "battery cycle life, Li-O2",
+        "unit": "unit",
         "importance": "Critical",
-        "source": "Cox, B. L., & Mutel, C. L. (2018). The environmental and cost performance of current and future motorcycles. Applied Energy, 212, 1013-1024. https://doi.org/10.1016/j.apenergy.2017.12.100",
-        "comment": "",
-        "status": "To be improved",
+        "source": "",
+        "comment": "Cycle life, used to calculate battery lifetime.",
+        "status": "",
         "kind": "distribution",
         "uncertainty_type": 5,
-        "loc": 0.75,
-        "minimum": 0.7124999999999999,
-        "maximum": 0.7875000000000001
+        "loc": 1300,
+        "minimum": 1000,
+        "maximum": 1500
     },
-    "1288-2040-engine efficiency": {
-        "amount": 0.75,
-        "category": "Powertrain",
+    "1288-2040-battery cycle life, Li-O2": {
+        "amount": 1300,
+        "category": "Energy Storage",
         "powertrain": [
+            "Human",
+            "ICEV-p",
             "BEV"
         ],
         "sizes": [
-            "Bicycle <25"
+            "Kick-scooter",
+            "Bicycle <25",
+            "Bicycle cargo",
+            "Bicycle <45",
+            "Moped <4kW",
+            "Scooter <4kW",
+            "Scooter 4-11kW",
+            "Motorcycle 4-11kW",
+            "Motorcycle 11-35kW",
+            "Motorcycle >35kW"
         ],
         "year": 2040,
-        "name": "engine efficiency",
-        "unit": "unitless",
+        "name": "battery cycle life, Li-O2",
+        "unit": "unit",
         "importance": "Critical",
-        "source": "Cox, B. L., & Mutel, C. L. (2018). The environmental and cost performance of current and future motorcycles. Applied Energy, 212, 1013-1024. https://doi.org/10.1016/j.apenergy.2017.12.100",
-        "comment": "",
-        "status": "To be improved",
+        "source": "",
+        "comment": "Cycle life, used to calculate battery lifetime.",
+        "status": "",
         "kind": "distribution",
         "uncertainty_type": 5,
-        "loc": 0.75,
-        "minimum": 0.7124999999999999,
-        "maximum": 0.7875000000000001
+        "loc": 1300,
+        "minimum": 1000,
+        "maximum": 1500
     },
-    "1289-2050-engine efficiency": {
-        "amount": 0.75,
-        "category": "Powertrain",
+    "1289-2050-battery cycle life, Li-O2": {
+        "amount": 1300,
+        "category": "Energy Storage",
         "powertrain": [
+            "Human",
+            "ICEV-p",
             "BEV"
         ],
         "sizes": [
-            "Bicycle <25"
+            "Kick-scooter",
+            "Bicycle <25",
+            "Bicycle cargo",
+            "Bicycle <45",
+            "Moped <4kW",
+            "Scooter <4kW",
+            "Scooter 4-11kW",
+            "Motorcycle 4-11kW",
+            "Motorcycle 11-35kW",
+            "Motorcycle >35kW"
         ],
         "year": 2050,
-        "name": "engine efficiency",
-        "unit": "unitless",
+        "name": "battery cycle life, Li-O2",
+        "unit": "unit",
         "importance": "Critical",
-        "source": "Cox, B. L., & Mutel, C. L. (2018). The environmental and cost performance of current and future motorcycles. Applied Energy, 212, 1013-1024. https://doi.org/10.1016/j.apenergy.2017.12.100",
-        "comment": "",
-        "status": "To be improved",
+        "source": "",
+        "comment": "Cycle life, used to calculate battery lifetime.",
+        "status": "",
         "kind": "distribution",
         "uncertainty_type": 5,
-        "loc": 0.75,
-        "minimum": 0.7124999999999999,
-        "maximum": 0.7875000000000001
+        "loc": 1300,
+        "minimum": 1000,
+        "maximum": 1500
     },
-    "1290-2000-engine efficiency": {
-        "amount": 0.45,
-        "category": "Powertrain",
+    "1290-2000-battery cycle life, Li-S": {
+        "amount": 1150,
+        "category": "Energy Storage",
         "powertrain": [
+            "Human",
+            "ICEV-p",
             "BEV"
         ],
         "sizes": [
-            "Bicycle <45"
+            "Kick-scooter",
+            "Bicycle <25",
+            "Bicycle cargo",
+            "Bicycle <45",
+            "Moped <4kW",
+            "Scooter <4kW",
+            "Scooter 4-11kW",
+            "Motorcycle 4-11kW",
+            "Motorcycle 11-35kW",
+            "Motorcycle >35kW"
         ],
         "year": 2000,
-        "name": "engine efficiency",
-        "unit": "unitless",
+        "name": "battery cycle life, Li-S",
+        "unit": "unit",
         "importance": "Critical",
-        "source": "Cox, B. L., & Mutel, C. L. (2018). The environmental and cost performance of current and future motorcycles. Applied Energy, 212, 1013-1024. https://doi.org/10.1016/j.apenergy.2017.12.100",
-        "comment": "",
-        "status": "To be improved",
+        "source": "",
+        "comment": "Cycle life, used to calculate battery lifetime.",
+        "status": "",
         "kind": "distribution",
         "uncertainty_type": 5,
-        "loc": 0.45,
-        "minimum": 0.4275,
-        "maximum": 0.47250000000000003
+        "loc": 1150,
+        "minimum": 800,
+        "maximum": 1500
     },
-    "1291-2010-engine efficiency": {
-        "amount": 0.45,
-        "category": "Powertrain",
+    "1291-2010-battery cycle life, Li-S": {
+        "amount": 1150,
+        "category": "Energy Storage",
         "powertrain": [
+            "Human",
+            "ICEV-p",
             "BEV"
         ],
         "sizes": [
-            "Bicycle <45"
+            "Kick-scooter",
+            "Bicycle <25",
+            "Bicycle cargo",
+            "Bicycle <45",
+            "Moped <4kW",
+            "Scooter <4kW",
+            "Scooter 4-11kW",
+            "Motorcycle 4-11kW",
+            "Motorcycle 11-35kW",
+            "Motorcycle >35kW"
         ],
         "year": 2010,
-        "name": "engine efficiency",
-        "unit": "unitless",
+        "name": "battery cycle life, Li-S",
+        "unit": "unit",
         "importance": "Critical",
-        "source": "Cox, B. L., & Mutel, C. L. (2018). The environmental and cost performance of current and future motorcycles. Applied Energy, 212, 1013-1024. https://doi.org/10.1016/j.apenergy.2017.12.100",
-        "comment": "",
-        "status": "To be improved",
+        "source": "",
+        "comment": "Cycle life, used to calculate battery lifetime.",
+        "status": "",
         "kind": "distribution",
         "uncertainty_type": 5,
-        "loc": 0.45,
-        "minimum": 0.4275,
-        "maximum": 0.47250000000000003
+        "loc": 1150,
+        "minimum": 800,
+        "maximum": 1500
     },
-    "1292-2020-engine efficiency": {
-        "amount": 0.45,
-        "category": "Powertrain",
+    "1292-2020-battery cycle life, Li-S": {
+        "amount": 1150,
+        "category": "Energy Storage",
         "powertrain": [
+            "Human",
+            "ICEV-p",
             "BEV"
         ],
         "sizes": [
-            "Bicycle <45"
+            "Kick-scooter",
+            "Bicycle <25",
+            "Bicycle cargo",
+            "Bicycle <45",
+            "Moped <4kW",
+            "Scooter <4kW",
+            "Scooter 4-11kW",
+            "Motorcycle 4-11kW",
+            "Motorcycle 11-35kW",
+            "Motorcycle >35kW"
         ],
         "year": 2020,
-        "name": "engine efficiency",
-        "unit": "unitless",
+        "name": "battery cycle life, Li-S",
+        "unit": "unit",
         "importance": "Critical",
-        "source": "Cox, B. L., & Mutel, C. L. (2018). The environmental and cost performance of current and future motorcycles. Applied Energy, 212, 1013-1024. https://doi.org/10.1016/j.apenergy.2017.12.100",
-        "comment": "",
-        "status": "To be improved",
+        "source": "",
+        "comment": "Cycle life, used to calculate battery lifetime.",
+        "status": "",
         "kind": "distribution",
         "uncertainty_type": 5,
-        "loc": 0.45,
-        "minimum": 0.4275,
-        "maximum": 0.47250000000000003
+        "loc": 1150,
+        "minimum": 800,
+        "maximum": 1500
     },
-    "1293-2030-engine efficiency": {
-        "amount": 0.45,
-        "category": "Powertrain",
+    "1293-2030-battery cycle life, Li-S": {
+        "amount": 1150,
+        "category": "Energy Storage",
         "powertrain": [
+            "Human",
+            "ICEV-p",
             "BEV"
         ],
         "sizes": [
-            "Bicycle <45"
+            "Kick-scooter",
+            "Bicycle <25",
+            "Bicycle cargo",
+            "Bicycle <45",
+            "Moped <4kW",
+            "Scooter <4kW",
+            "Scooter 4-11kW",
+            "Motorcycle 4-11kW",
+            "Motorcycle 11-35kW",
+            "Motorcycle >35kW"
         ],
         "year": 2030,
-        "name": "engine efficiency",
-        "unit": "unitless",
+        "name": "battery cycle life, Li-S",
+        "unit": "unit",
         "importance": "Critical",
-        "source": "Cox, B. L., & Mutel, C. L. (2018). The environmental and cost performance of current and future motorcycles. Applied Energy, 212, 1013-1024. https://doi.org/10.1016/j.apenergy.2017.12.100",
-        "comment": "",
-        "status": "To be improved",
+        "source": "",
+        "comment": "Cycle life, used to calculate battery lifetime.",
+        "status": "",
         "kind": "distribution",
         "uncertainty_type": 5,
-        "loc": 0.45,
-        "minimum": 0.4275,
-        "maximum": 0.47250000000000003
+        "loc": 1150,
+        "minimum": 800,
+        "maximum": 1500
     },
-    "1294-2040-engine efficiency": {
-        "amount": 0.45,
-        "category": "Powertrain",
+    "1294-2040-battery cycle life, Li-S": {
+        "amount": 1150,
+        "category": "Energy Storage",
         "powertrain": [
+            "Human",
+            "ICEV-p",
             "BEV"
         ],
         "sizes": [
-            "Bicycle <45"
+            "Kick-scooter",
+            "Bicycle <25",
+            "Bicycle cargo",
+            "Bicycle <45",
+            "Moped <4kW",
+            "Scooter <4kW",
+            "Scooter 4-11kW",
+            "Motorcycle 4-11kW",
+            "Motorcycle 11-35kW",
+            "Motorcycle >35kW"
         ],
         "year": 2040,
-        "name": "engine efficiency",
-        "unit": "unitless",
+        "name": "battery cycle life, Li-S",
+        "unit": "unit",
         "importance": "Critical",
-        "source": "Cox, B. L., & Mutel, C. L. (2018). The environmental and cost performance of current and future motorcycles. Applied Energy, 212, 1013-1024. https://doi.org/10.1016/j.apenergy.2017.12.100",
-        "comment": "",
-        "status": "To be improved",
+        "source": "",
+        "comment": "Cycle life, used to calculate battery lifetime.",
+        "status": "",
         "kind": "distribution",
         "uncertainty_type": 5,
-        "loc": 0.45,
-        "minimum": 0.4275,
-        "maximum": 0.47250000000000003
+        "loc": 1150,
+        "minimum": 800,
+        "maximum": 1500
     },
-    "1295-2050-engine efficiency": {
-        "amount": 0.45,
-        "category": "Powertrain",
+    "1295-2050-battery cycle life, Li-S": {
+        "amount": 1150,
+        "category": "Energy Storage",
         "powertrain": [
+            "Human",
+            "ICEV-p",
             "BEV"
         ],
         "sizes": [
-            "Bicycle <45"
+            "Kick-scooter",
+            "Bicycle <25",
+            "Bicycle cargo",
+            "Bicycle <45",
+            "Moped <4kW",
+            "Scooter <4kW",
+            "Scooter 4-11kW",
+            "Motorcycle 4-11kW",
+            "Motorcycle 11-35kW",
+            "Motorcycle >35kW"
         ],
         "year": 2050,
-        "name": "engine efficiency",
-        "unit": "unitless",
+        "name": "battery cycle life, Li-S",
+        "unit": "unit",
         "importance": "Critical",
-        "source": "Cox, B. L., & Mutel, C. L. (2018). The environmental and cost performance of current and future motorcycles. Applied Energy, 212, 1013-1024. https://doi.org/10.1016/j.apenergy.2017.12.100",
-        "comment": "",
-        "status": "To be improved",
+        "source": "",
+        "comment": "Cycle life, used to calculate battery lifetime.",
+        "status": "",
         "kind": "distribution",
         "uncertainty_type": 5,
-        "loc": 0.45,
-        "minimum": 0.4275,
-        "maximum": 0.47250000000000003
+        "loc": 1150,
+        "minimum": 800,
+        "maximum": 1500
     },
-    "1296-2000-engine efficiency": {
-        "amount": 0.7,
-        "category": "Powertrain",
+    "1296-2000-battery cycle life, SiB": {
+        "amount": 3250,
+        "category": "Energy Storage",
         "powertrain": [
+            "Human",
+            "ICEV-p",
             "BEV"
         ],
         "sizes": [
-            "Bicycle cargo"
+            "Kick-scooter",
+            "Bicycle <25",
+            "Bicycle cargo",
+            "Bicycle <45",
+            "Moped <4kW",
+            "Scooter <4kW",
+            "Scooter 4-11kW",
+            "Motorcycle 4-11kW",
+            "Motorcycle 11-35kW",
+            "Motorcycle >35kW"
         ],
         "year": 2000,
-        "name": "engine efficiency",
-        "unit": "unitless",
+        "name": "battery cycle life, SiB",
+        "unit": "unit",
         "importance": "Critical",
-        "source": "Cox, B. L., & Mutel, C. L. (2018). The environmental and cost performance of current and future motorcycles. Applied Energy, 212, 1013-1024. https://doi.org/10.1016/j.apenergy.2017.12.100",
-        "comment": "",
-        "status": "To be improved",
+        "source": "",
+        "comment": "Cycle life, used to calculate battery lifetime.",
+        "status": "",
         "kind": "distribution",
         "uncertainty_type": 5,
-        "loc": 0.7,
-        "minimum": 0.6649999999999999,
-        "maximum": 0.735
+        "loc": 3250,
+        "minimum": 2500,
+        "maximum": 4000
     },
-    "1297-2010-engine efficiency": {
-        "amount": 0.7,
-        "category": "Powertrain",
+    "1297-2010-battery cycle life, SiB": {
+        "amount": 3250,
+        "category": "Energy Storage",
         "powertrain": [
+            "Human",
+            "ICEV-p",
             "BEV"
         ],
         "sizes": [
-            "Bicycle cargo"
+            "Kick-scooter",
+            "Bicycle <25",
+            "Bicycle cargo",
+            "Bicycle <45",
+            "Moped <4kW",
+            "Scooter <4kW",
+            "Scooter 4-11kW",
+            "Motorcycle 4-11kW",
+            "Motorcycle 11-35kW",
+            "Motorcycle >35kW"
         ],
         "year": 2010,
-        "name": "engine efficiency",
-        "unit": "unitless",
+        "name": "battery cycle life, SiB",
+        "unit": "unit",
         "importance": "Critical",
-        "source": "Cox, B. L., & Mutel, C. L. (2018). The environmental and cost performance of current and future motorcycles. Applied Energy, 212, 1013-1024. https://doi.org/10.1016/j.apenergy.2017.12.100",
-        "comment": "",
-        "status": "To be improved",
+        "source": "",
+        "comment": "Cycle life, used to calculate battery lifetime.",
+        "status": "",
         "kind": "distribution",
         "uncertainty_type": 5,
-        "loc": 0.7,
-        "minimum": 0.6649999999999999,
-        "maximum": 0.735
+        "loc": 3250,
+        "minimum": 2500,
+        "maximum": 4000
     },
-    "1298-2020-engine efficiency": {
-        "amount": 0.7,
-        "category": "Powertrain",
+    "1298-2020-battery cycle life, SiB": {
+        "amount": 3250,
+        "category": "Energy Storage",
         "powertrain": [
+            "Human",
+            "ICEV-p",
             "BEV"
         ],
         "sizes": [
-            "Bicycle cargo"
+            "Kick-scooter",
+            "Bicycle <25",
+            "Bicycle cargo",
+            "Bicycle <45",
+            "Moped <4kW",
+            "Scooter <4kW",
+            "Scooter 4-11kW",
+            "Motorcycle 4-11kW",
+            "Motorcycle 11-35kW",
+            "Motorcycle >35kW"
         ],
         "year": 2020,
-        "name": "engine efficiency",
-        "unit": "unitless",
+        "name": "battery cycle life, SiB",
+        "unit": "unit",
         "importance": "Critical",
-        "source": "Cox, B. L., & Mutel, C. L. (2018). The environmental and cost performance of current and future motorcycles. Applied Energy, 212, 1013-1024. https://doi.org/10.1016/j.apenergy.2017.12.100",
-        "comment": "",
-        "status": "To be improved",
+        "source": "",
+        "comment": "Cycle life, used to calculate battery lifetime.",
+        "status": "",
         "kind": "distribution",
         "uncertainty_type": 5,
-        "loc": 0.7,
-        "minimum": 0.6649999999999999,
-        "maximum": 0.735
+        "loc": 3250,
+        "minimum": 2500,
+        "maximum": 4000
     },
-    "1299-2030-engine efficiency": {
-        "amount": 0.7,
-        "category": "Powertrain",
+    "1299-2030-battery cycle life, SiB": {
+        "amount": 3250,
+        "category": "Energy Storage",
         "powertrain": [
+            "Human",
+            "ICEV-p",
             "BEV"
         ],
         "sizes": [
-            "Bicycle cargo"
+            "Kick-scooter",
+            "Bicycle <25",
+            "Bicycle cargo",
+            "Bicycle <45",
+            "Moped <4kW",
+            "Scooter <4kW",
+            "Scooter 4-11kW",
+            "Motorcycle 4-11kW",
+            "Motorcycle 11-35kW",
+            "Motorcycle >35kW"
         ],
         "year": 2030,
-        "name": "engine efficiency",
-        "unit": "unitless",
+        "name": "battery cycle life, SiB",
+        "unit": "unit",
         "importance": "Critical",
-        "source": "Cox, B. L., & Mutel, C. L. (2018). The environmental and cost performance of current and future motorcycles. Applied Energy, 212, 1013-1024. https://doi.org/10.1016/j.apenergy.2017.12.100",
-        "comment": "",
-        "status": "To be improved",
+        "source": "",
+        "comment": "Cycle life, used to calculate battery lifetime.",
+        "status": "",
         "kind": "distribution",
         "uncertainty_type": 5,
-        "loc": 0.7,
-        "minimum": 0.6649999999999999,
-        "maximum": 0.735
+        "loc": 3250,
+        "minimum": 2500,
+        "maximum": 4000
     },
-    "1300-2040-engine efficiency": {
-        "amount": 0.7,
-        "category": "Powertrain",
+    "1300-2040-battery cycle life, SiB": {
+        "amount": 3250,
+        "category": "Energy Storage",
         "powertrain": [
+            "Human",
+            "ICEV-p",
             "BEV"
         ],
         "sizes": [
-            "Bicycle cargo"
+            "Kick-scooter",
+            "Bicycle <25",
+            "Bicycle cargo",
+            "Bicycle <45",
+            "Moped <4kW",
+            "Scooter <4kW",
+            "Scooter 4-11kW",
+            "Motorcycle 4-11kW",
+            "Motorcycle 11-35kW",
+            "Motorcycle >35kW"
         ],
         "year": 2040,
-        "name": "engine efficiency",
-        "unit": "unitless",
+        "name": "battery cycle life, SiB",
+        "unit": "unit",
         "importance": "Critical",
-        "source": "Cox, B. L., & Mutel, C. L. (2018). The environmental and cost performance of current and future motorcycles. Applied Energy, 212, 1013-1024. https://doi.org/10.1016/j.apenergy.2017.12.100",
-        "comment": "",
-        "status": "To be improved",
+        "source": "",
+        "comment": "Cycle life, used to calculate battery lifetime.",
+        "status": "",
         "kind": "distribution",
         "uncertainty_type": 5,
-        "loc": 0.7,
-        "minimum": 0.6649999999999999,
-        "maximum": 0.735
+        "loc": 3250,
+        "minimum": 2500,
+        "maximum": 4000
     },
-    "1301-2050-engine efficiency": {
-        "amount": 0.7,
-        "category": "Powertrain",
+    "1301-2050-battery cycle life, SiB": {
+        "amount": 3250,
+        "category": "Energy Storage",
         "powertrain": [
+            "Human",
+            "ICEV-p",
             "BEV"
         ],
         "sizes": [
-            "Bicycle cargo"
+            "Kick-scooter",
+            "Bicycle <25",
+            "Bicycle cargo",
+            "Bicycle <45",
+            "Moped <4kW",
+            "Scooter <4kW",
+            "Scooter 4-11kW",
+            "Motorcycle 4-11kW",
+            "Motorcycle 11-35kW",
+            "Motorcycle >35kW"
         ],
         "year": 2050,
-        "name": "engine efficiency",
-        "unit": "unitless",
+        "name": "battery cycle life, SiB",
+        "unit": "unit",
         "importance": "Critical",
-        "source": "Cox, B. L., & Mutel, C. L. (2018). The environmental and cost performance of current and future motorcycles. Applied Energy, 212, 1013-1024. https://doi.org/10.1016/j.apenergy.2017.12.100",
-        "comment": "",
-        "status": "To be improved",
+        "source": "",
+        "comment": "Cycle life, used to calculate battery lifetime.",
+        "status": "",
         "kind": "distribution",
         "uncertainty_type": 5,
-        "loc": 0.7,
-        "minimum": 0.6649999999999999,
-        "maximum": 0.735
+        "loc": 3250,
+        "minimum": 2500,
+        "maximum": 4000
     },
     "1302-2000-engine efficiency": {
+        "amount": 0.75,
+        "category": "Powertrain",
+        "powertrain": [
+            "BEV"
+        ],
+        "sizes": [
+            "Bicycle <25"
+        ],
+        "year": 2000,
+        "name": "engine efficiency",
+        "unit": "unitless",
+        "importance": "Critical",
+        "source": "Cox, B. L., & Mutel, C. L. (2018). The environmental and cost performance of current and future motorcycles. Applied Energy, 212, 1013-1024. https://doi.org/10.1016/j.apenergy.2017.12.100",
+        "comment": "",
+        "status": "To be improved",
+        "kind": "distribution",
+        "uncertainty_type": 5,
+        "loc": 0.75,
+        "minimum": 0.7124999999999999,
+        "maximum": 0.7875000000000001
+    },
+    "1303-2010-engine efficiency": {
+        "amount": 0.75,
+        "category": "Powertrain",
+        "powertrain": [
+            "BEV"
+        ],
+        "sizes": [
+            "Bicycle <25"
+        ],
+        "year": 2010,
+        "name": "engine efficiency",
+        "unit": "unitless",
+        "importance": "Critical",
+        "source": "Cox, B. L., & Mutel, C. L. (2018). The environmental and cost performance of current and future motorcycles. Applied Energy, 212, 1013-1024. https://doi.org/10.1016/j.apenergy.2017.12.100",
+        "comment": "",
+        "status": "To be improved",
+        "kind": "distribution",
+        "uncertainty_type": 5,
+        "loc": 0.75,
+        "minimum": 0.7124999999999999,
+        "maximum": 0.7875000000000001
+    },
+    "1304-2020-engine efficiency": {
+        "amount": 0.75,
+        "category": "Powertrain",
+        "powertrain": [
+            "BEV"
+        ],
+        "sizes": [
+            "Bicycle <25"
+        ],
+        "year": 2020,
+        "name": "engine efficiency",
+        "unit": "unitless",
+        "importance": "Critical",
+        "source": "Cox, B. L., & Mutel, C. L. (2018). The environmental and cost performance of current and future motorcycles. Applied Energy, 212, 1013-1024. https://doi.org/10.1016/j.apenergy.2017.12.100",
+        "comment": "",
+        "status": "To be improved",
+        "kind": "distribution",
+        "uncertainty_type": 5,
+        "loc": 0.75,
+        "minimum": 0.7124999999999999,
+        "maximum": 0.7875000000000001
+    },
+    "1305-2030-engine efficiency": {
+        "amount": 0.75,
+        "category": "Powertrain",
+        "powertrain": [
+            "BEV"
+        ],
+        "sizes": [
+            "Bicycle <25"
+        ],
+        "year": 2030,
+        "name": "engine efficiency",
+        "unit": "unitless",
+        "importance": "Critical",
+        "source": "Cox, B. L., & Mutel, C. L. (2018). The environmental and cost performance of current and future motorcycles. Applied Energy, 212, 1013-1024. https://doi.org/10.1016/j.apenergy.2017.12.100",
+        "comment": "",
+        "status": "To be improved",
+        "kind": "distribution",
+        "uncertainty_type": 5,
+        "loc": 0.75,
+        "minimum": 0.7124999999999999,
+        "maximum": 0.7875000000000001
+    },
+    "1306-2040-engine efficiency": {
+        "amount": 0.75,
+        "category": "Powertrain",
+        "powertrain": [
+            "BEV"
+        ],
+        "sizes": [
+            "Bicycle <25"
+        ],
+        "year": 2040,
+        "name": "engine efficiency",
+        "unit": "unitless",
+        "importance": "Critical",
+        "source": "Cox, B. L., & Mutel, C. L. (2018). The environmental and cost performance of current and future motorcycles. Applied Energy, 212, 1013-1024. https://doi.org/10.1016/j.apenergy.2017.12.100",
+        "comment": "",
+        "status": "To be improved",
+        "kind": "distribution",
+        "uncertainty_type": 5,
+        "loc": 0.75,
+        "minimum": 0.7124999999999999,
+        "maximum": 0.7875000000000001
+    },
+    "1307-2050-engine efficiency": {
+        "amount": 0.75,
+        "category": "Powertrain",
+        "powertrain": [
+            "BEV"
+        ],
+        "sizes": [
+            "Bicycle <25"
+        ],
+        "year": 2050,
+        "name": "engine efficiency",
+        "unit": "unitless",
+        "importance": "Critical",
+        "source": "Cox, B. L., & Mutel, C. L. (2018). The environmental and cost performance of current and future motorcycles. Applied Energy, 212, 1013-1024. https://doi.org/10.1016/j.apenergy.2017.12.100",
+        "comment": "",
+        "status": "To be improved",
+        "kind": "distribution",
+        "uncertainty_type": 5,
+        "loc": 0.75,
+        "minimum": 0.7124999999999999,
+        "maximum": 0.7875000000000001
+    },
+    "1308-2000-engine efficiency": {
+        "amount": 0.45,
+        "category": "Powertrain",
+        "powertrain": [
+            "BEV"
+        ],
+        "sizes": [
+            "Bicycle <45"
+        ],
+        "year": 2000,
+        "name": "engine efficiency",
+        "unit": "unitless",
+        "importance": "Critical",
+        "source": "Cox, B. L., & Mutel, C. L. (2018). The environmental and cost performance of current and future motorcycles. Applied Energy, 212, 1013-1024. https://doi.org/10.1016/j.apenergy.2017.12.100",
+        "comment": "",
+        "status": "To be improved",
+        "kind": "distribution",
+        "uncertainty_type": 5,
+        "loc": 0.45,
+        "minimum": 0.4275,
+        "maximum": 0.47250000000000003
+    },
+    "1309-2010-engine efficiency": {
+        "amount": 0.45,
+        "category": "Powertrain",
+        "powertrain": [
+            "BEV"
+        ],
+        "sizes": [
+            "Bicycle <45"
+        ],
+        "year": 2010,
+        "name": "engine efficiency",
+        "unit": "unitless",
+        "importance": "Critical",
+        "source": "Cox, B. L., & Mutel, C. L. (2018). The environmental and cost performance of current and future motorcycles. Applied Energy, 212, 1013-1024. https://doi.org/10.1016/j.apenergy.2017.12.100",
+        "comment": "",
+        "status": "To be improved",
+        "kind": "distribution",
+        "uncertainty_type": 5,
+        "loc": 0.45,
+        "minimum": 0.4275,
+        "maximum": 0.47250000000000003
+    },
+    "1310-2020-engine efficiency": {
+        "amount": 0.45,
+        "category": "Powertrain",
+        "powertrain": [
+            "BEV"
+        ],
+        "sizes": [
+            "Bicycle <45"
+        ],
+        "year": 2020,
+        "name": "engine efficiency",
+        "unit": "unitless",
+        "importance": "Critical",
+        "source": "Cox, B. L., & Mutel, C. L. (2018). The environmental and cost performance of current and future motorcycles. Applied Energy, 212, 1013-1024. https://doi.org/10.1016/j.apenergy.2017.12.100",
+        "comment": "",
+        "status": "To be improved",
+        "kind": "distribution",
+        "uncertainty_type": 5,
+        "loc": 0.45,
+        "minimum": 0.4275,
+        "maximum": 0.47250000000000003
+    },
+    "1311-2030-engine efficiency": {
+        "amount": 0.45,
+        "category": "Powertrain",
+        "powertrain": [
+            "BEV"
+        ],
+        "sizes": [
+            "Bicycle <45"
+        ],
+        "year": 2030,
+        "name": "engine efficiency",
+        "unit": "unitless",
+        "importance": "Critical",
+        "source": "Cox, B. L., & Mutel, C. L. (2018). The environmental and cost performance of current and future motorcycles. Applied Energy, 212, 1013-1024. https://doi.org/10.1016/j.apenergy.2017.12.100",
+        "comment": "",
+        "status": "To be improved",
+        "kind": "distribution",
+        "uncertainty_type": 5,
+        "loc": 0.45,
+        "minimum": 0.4275,
+        "maximum": 0.47250000000000003
+    },
+    "1312-2040-engine efficiency": {
+        "amount": 0.45,
+        "category": "Powertrain",
+        "powertrain": [
+            "BEV"
+        ],
+        "sizes": [
+            "Bicycle <45"
+        ],
+        "year": 2040,
+        "name": "engine efficiency",
+        "unit": "unitless",
+        "importance": "Critical",
+        "source": "Cox, B. L., & Mutel, C. L. (2018). The environmental and cost performance of current and future motorcycles. Applied Energy, 212, 1013-1024. https://doi.org/10.1016/j.apenergy.2017.12.100",
+        "comment": "",
+        "status": "To be improved",
+        "kind": "distribution",
+        "uncertainty_type": 5,
+        "loc": 0.45,
+        "minimum": 0.4275,
+        "maximum": 0.47250000000000003
+    },
+    "1313-2050-engine efficiency": {
+        "amount": 0.45,
+        "category": "Powertrain",
+        "powertrain": [
+            "BEV"
+        ],
+        "sizes": [
+            "Bicycle <45"
+        ],
+        "year": 2050,
+        "name": "engine efficiency",
+        "unit": "unitless",
+        "importance": "Critical",
+        "source": "Cox, B. L., & Mutel, C. L. (2018). The environmental and cost performance of current and future motorcycles. Applied Energy, 212, 1013-1024. https://doi.org/10.1016/j.apenergy.2017.12.100",
+        "comment": "",
+        "status": "To be improved",
+        "kind": "distribution",
+        "uncertainty_type": 5,
+        "loc": 0.45,
+        "minimum": 0.4275,
+        "maximum": 0.47250000000000003
+    },
+    "1314-2000-engine efficiency": {
+        "amount": 0.7,
+        "category": "Powertrain",
+        "powertrain": [
+            "BEV"
+        ],
+        "sizes": [
+            "Bicycle cargo"
+        ],
+        "year": 2000,
+        "name": "engine efficiency",
+        "unit": "unitless",
+        "importance": "Critical",
+        "source": "Cox, B. L., & Mutel, C. L. (2018). The environmental and cost performance of current and future motorcycles. Applied Energy, 212, 1013-1024. https://doi.org/10.1016/j.apenergy.2017.12.100",
+        "comment": "",
+        "status": "To be improved",
+        "kind": "distribution",
+        "uncertainty_type": 5,
+        "loc": 0.7,
+        "minimum": 0.6649999999999999,
+        "maximum": 0.735
+    },
+    "1315-2010-engine efficiency": {
+        "amount": 0.7,
+        "category": "Powertrain",
+        "powertrain": [
+            "BEV"
+        ],
+        "sizes": [
+            "Bicycle cargo"
+        ],
+        "year": 2010,
+        "name": "engine efficiency",
+        "unit": "unitless",
+        "importance": "Critical",
+        "source": "Cox, B. L., & Mutel, C. L. (2018). The environmental and cost performance of current and future motorcycles. Applied Energy, 212, 1013-1024. https://doi.org/10.1016/j.apenergy.2017.12.100",
+        "comment": "",
+        "status": "To be improved",
+        "kind": "distribution",
+        "uncertainty_type": 5,
+        "loc": 0.7,
+        "minimum": 0.6649999999999999,
+        "maximum": 0.735
+    },
+    "1316-2020-engine efficiency": {
+        "amount": 0.7,
+        "category": "Powertrain",
+        "powertrain": [
+            "BEV"
+        ],
+        "sizes": [
+            "Bicycle cargo"
+        ],
+        "year": 2020,
+        "name": "engine efficiency",
+        "unit": "unitless",
+        "importance": "Critical",
+        "source": "Cox, B. L., & Mutel, C. L. (2018). The environmental and cost performance of current and future motorcycles. Applied Energy, 212, 1013-1024. https://doi.org/10.1016/j.apenergy.2017.12.100",
+        "comment": "",
+        "status": "To be improved",
+        "kind": "distribution",
+        "uncertainty_type": 5,
+        "loc": 0.7,
+        "minimum": 0.6649999999999999,
+        "maximum": 0.735
+    },
+    "1317-2030-engine efficiency": {
+        "amount": 0.7,
+        "category": "Powertrain",
+        "powertrain": [
+            "BEV"
+        ],
+        "sizes": [
+            "Bicycle cargo"
+        ],
+        "year": 2030,
+        "name": "engine efficiency",
+        "unit": "unitless",
+        "importance": "Critical",
+        "source": "Cox, B. L., & Mutel, C. L. (2018). The environmental and cost performance of current and future motorcycles. Applied Energy, 212, 1013-1024. https://doi.org/10.1016/j.apenergy.2017.12.100",
+        "comment": "",
+        "status": "To be improved",
+        "kind": "distribution",
+        "uncertainty_type": 5,
+        "loc": 0.7,
+        "minimum": 0.6649999999999999,
+        "maximum": 0.735
+    },
+    "1318-2040-engine efficiency": {
+        "amount": 0.7,
+        "category": "Powertrain",
+        "powertrain": [
+            "BEV"
+        ],
+        "sizes": [
+            "Bicycle cargo"
+        ],
+        "year": 2040,
+        "name": "engine efficiency",
+        "unit": "unitless",
+        "importance": "Critical",
+        "source": "Cox, B. L., & Mutel, C. L. (2018). The environmental and cost performance of current and future motorcycles. Applied Energy, 212, 1013-1024. https://doi.org/10.1016/j.apenergy.2017.12.100",
+        "comment": "",
+        "status": "To be improved",
+        "kind": "distribution",
+        "uncertainty_type": 5,
+        "loc": 0.7,
+        "minimum": 0.6649999999999999,
+        "maximum": 0.735
+    },
+    "1319-2050-engine efficiency": {
+        "amount": 0.7,
+        "category": "Powertrain",
+        "powertrain": [
+            "BEV"
+        ],
+        "sizes": [
+            "Bicycle cargo"
+        ],
+        "year": 2050,
+        "name": "engine efficiency",
+        "unit": "unitless",
+        "importance": "Critical",
+        "source": "Cox, B. L., & Mutel, C. L. (2018). The environmental and cost performance of current and future motorcycles. Applied Energy, 212, 1013-1024. https://doi.org/10.1016/j.apenergy.2017.12.100",
+        "comment": "",
+        "status": "To be improved",
+        "kind": "distribution",
+        "uncertainty_type": 5,
+        "loc": 0.7,
+        "minimum": 0.6649999999999999,
+        "maximum": 0.735
+    },
+    "1320-2000-engine efficiency": {
         "amount": 0.15,
         "category": "Powertrain",
         "powertrain": [
@@ -34323,7 +34917,7 @@
         "minimum": 0.1425,
         "maximum": 0.1575
     },
-    "1303-2010-engine efficiency": {
+    "1321-2010-engine efficiency": {
         "amount": 0.15,
         "category": "Powertrain",
         "powertrain": [
@@ -34345,7 +34939,7 @@
         "minimum": 0.1425,
         "maximum": 0.1575
     },
-    "1304-2020-engine efficiency": {
+    "1322-2020-engine efficiency": {
         "amount": 0.15,
         "category": "Powertrain",
         "powertrain": [
@@ -34367,7 +34961,7 @@
         "minimum": 0.1425,
         "maximum": 0.1575
     },
-    "1305-2030-engine efficiency": {
+    "1323-2030-engine efficiency": {
         "amount": 0.15,
         "category": "Powertrain",
         "powertrain": [
@@ -34389,7 +34983,7 @@
         "minimum": 0.1425,
         "maximum": 0.1575
     },
-    "1306-2040-engine efficiency": {
+    "1324-2040-engine efficiency": {
         "amount": 0.15,
         "category": "Powertrain",
         "powertrain": [
@@ -34411,7 +35005,7 @@
         "minimum": 0.1425,
         "maximum": 0.1575
     },
-    "1307-2050-engine efficiency": {
+    "1325-2050-engine efficiency": {
         "amount": 0.15,
         "category": "Powertrain",
         "powertrain": [
