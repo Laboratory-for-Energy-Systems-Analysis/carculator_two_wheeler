@@ -954,7 +954,7 @@
         "maximum": 27000
     },
     "42-2000-lifetime kilometers": {
-        "amount": 38500,
+        "amount": 50000,
         "category": "Driving",
         "powertrain": [
             "ICEV-p",
@@ -972,12 +972,12 @@
         "status": "Acceptable",
         "kind": "distribution",
         "uncertainty_type": 5,
-        "loc": 38500,
-        "minimum": 35000,
-        "maximum": 40000
+        "loc": 50000,
+        "minimum": 25000,
+        "maximum": 100000
     },
     "43-2010-lifetime kilometers": {
-        "amount": 38500,
+        "amount": 50000,
         "category": "Driving",
         "powertrain": [
             "ICEV-p",
@@ -995,12 +995,12 @@
         "status": "Acceptable",
         "kind": "distribution",
         "uncertainty_type": 5,
-        "loc": 38500,
-        "minimum": 35000,
-        "maximum": 40000
+        "loc": 50000,
+        "minimum": 25000,
+        "maximum": 100000
     },
     "44-2020-lifetime kilometers": {
-        "amount": 38500,
+        "amount": 50000,
         "category": "Driving",
         "powertrain": [
             "ICEV-p",
@@ -1018,12 +1018,12 @@
         "status": "Acceptable",
         "kind": "distribution",
         "uncertainty_type": 5,
-        "loc": 38500,
-        "minimum": 35000,
-        "maximum": 40000
+        "loc": 50000,
+        "minimum": 25000,
+        "maximum": 100000
     },
     "45-2030-lifetime kilometers": {
-        "amount": 38500,
+        "amount": 50000,
         "category": "Driving",
         "powertrain": [
             "ICEV-p",
@@ -1041,12 +1041,12 @@
         "status": "Acceptable",
         "kind": "distribution",
         "uncertainty_type": 5,
-        "loc": 38500,
-        "minimum": 35000,
-        "maximum": 40000
+        "loc": 50000,
+        "minimum": 25000,
+        "maximum": 100000
     },
     "46-2040-lifetime kilometers": {
-        "amount": 38500,
+        "amount": 50000,
         "category": "Driving",
         "powertrain": [
             "ICEV-p",
@@ -1064,12 +1064,12 @@
         "status": "Acceptable",
         "kind": "distribution",
         "uncertainty_type": 5,
-        "loc": 38500,
-        "minimum": 35000,
-        "maximum": 40000
+        "loc": 50000,
+        "minimum": 25000,
+        "maximum": 100000
     },
     "47-2050-lifetime kilometers": {
-        "amount": 38500,
+        "amount": 50000,
         "category": "Driving",
         "powertrain": [
             "ICEV-p",
@@ -1087,12 +1087,12 @@
         "status": "Acceptable",
         "kind": "distribution",
         "uncertainty_type": 5,
-        "loc": 38500,
-        "minimum": 35000,
-        "maximum": 40000
+        "loc": 50000,
+        "minimum": 25000,
+        "maximum": 100000
     },
     "48-2000-lifetime kilometers": {
-        "amount": 40500,
+        "amount": 100000,
         "category": "Driving",
         "powertrain": [
             "ICEV-p",
@@ -1110,12 +1110,12 @@
         "status": "Acceptable",
         "kind": "distribution",
         "uncertainty_type": 5,
-        "loc": 40500,
-        "minimum": 38000,
-        "maximum": 42000
+        "loc": 100000,
+        "minimum": 50000,
+        "maximum": 200000
     },
     "49-2010-lifetime kilometers": {
-        "amount": 40500,
+        "amount": 100000,
         "category": "Driving",
         "powertrain": [
             "ICEV-p",
@@ -1133,12 +1133,12 @@
         "status": "Acceptable",
         "kind": "distribution",
         "uncertainty_type": 5,
-        "loc": 40500,
-        "minimum": 38000,
-        "maximum": 42000
+        "loc": 100000,
+        "minimum": 50000,
+        "maximum": 200000
     },
     "50-2020-lifetime kilometers": {
-        "amount": 40500,
+        "amount": 100000,
         "category": "Driving",
         "powertrain": [
             "ICEV-p",
@@ -1156,12 +1156,12 @@
         "status": "Acceptable",
         "kind": "distribution",
         "uncertainty_type": 5,
-        "loc": 40500,
-        "minimum": 38000,
-        "maximum": 42000
+        "loc": 100000,
+        "minimum": 50000,
+        "maximum": 200000
     },
     "51-2030-lifetime kilometers": {
-        "amount": 40500,
+        "amount": 100000,
         "category": "Driving",
         "powertrain": [
             "ICEV-p",
@@ -1179,12 +1179,12 @@
         "status": "Acceptable",
         "kind": "distribution",
         "uncertainty_type": 5,
-        "loc": 40500,
-        "minimum": 38000,
-        "maximum": 42000
+        "loc": 100000,
+        "minimum": 50000,
+        "maximum": 200000
     },
     "52-2040-lifetime kilometers": {
-        "amount": 40500,
+        "amount": 100000,
         "category": "Driving",
         "powertrain": [
             "ICEV-p",
@@ -1202,12 +1202,12 @@
         "status": "Acceptable",
         "kind": "distribution",
         "uncertainty_type": 5,
-        "loc": 40500,
-        "minimum": 38000,
-        "maximum": 42000
+        "loc": 100000,
+        "minimum": 50000,
+        "maximum": 200000
     },
     "53-2050-lifetime kilometers": {
-        "amount": 40500,
+        "amount": 100000,
         "category": "Driving",
         "powertrain": [
             "ICEV-p",
@@ -1225,9 +1225,9 @@
         "status": "Acceptable",
         "kind": "distribution",
         "uncertainty_type": 5,
-        "loc": 40500,
-        "minimum": 38000,
-        "maximum": 42000
+        "loc": 100000,
+        "minimum": 50000,
+        "maximum": 200000
     },
     "54-2000-kilometers per year": {
         "amount": 890,
