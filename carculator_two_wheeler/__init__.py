@@ -15,9 +15,9 @@ __all__ = (
     "TwoWheelerModel",
     "InventoryTwoWheeler",
 )
-__version__ = (0, 1, 0, "dev0")
-
 from pathlib import Path
+
+from ._version import __version__
 
 DATA_DIR = Path(__file__).resolve().parent / "data"
 
