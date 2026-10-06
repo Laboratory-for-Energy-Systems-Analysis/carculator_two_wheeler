@@ -5,6 +5,7 @@ import numexpr as ne
 import numpy as np
 import xarray as xr
 import yaml
+
 from carculator_utils.energy_consumption import EnergyConsumptionModel
 from carculator_utils.model import VehicleModel
 
@@ -37,9 +38,7 @@ class TwoWheelerModel(VehicleModel):
             country=self.country,
         )
 
-        diff = 1.0
-        while diff > 0.001:
-            old_driving_mass = self["driving mass"].sum().values
+        for _ in self.iterate_sizing("driving mass", rtol=0.001):
 
             if self.target_mass:
                 self.override_vehicle_mass()
@@ -57,10 +56,6 @@ class TwoWheelerModel(VehicleModel):
             # they override the default values
             if "capacity" in self.energy_storage:
                 self.override_battery_capacity()
-
-            diff = (self["driving mass"].sum().values - old_driving_mass) / self[
-                "driving mass"
-            ].sum()
 
         if self.energy_consumption:
             self.override_ttw_energy()
