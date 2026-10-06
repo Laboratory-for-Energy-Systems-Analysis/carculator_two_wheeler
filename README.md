@@ -39,7 +39,7 @@ See [the documentation](https://carculator_two_wheeler.readthedocs.io) for more 
 ``carculator_two_wheeler`` is at an early stage of development and is subject to continuous change and improvement.
 Three ways of installing ``carculator_two_wheeler`` are suggested.
 
-We recommend the installation on **Python 3.7 or above**.
+Python **3.12** is required (`>=3.12,<3.13`).
 
 ### Installation of the latest version, using conda
 
