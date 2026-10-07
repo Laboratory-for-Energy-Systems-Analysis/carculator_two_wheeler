@@ -184,8 +184,12 @@ class TwoWheelerModel(VehicleModel):
             engine_power=self["power"],
             recuperation_efficiency=self["recuperation efficiency"],
             aux_power=self["auxiliary power demand"],
-            engine_efficiency=self["engine efficiency"],
-            transmission_efficiency=self["transmission efficiency"],
+            engine_efficiency=self.get_energy_efficiency_override(
+                "engine efficiency", self["engine efficiency"]
+            ),
+            transmission_efficiency=self.get_energy_efficiency_override(
+                "transmission efficiency", self["transmission efficiency"]
+            ),
             battery_charge_eff=self["battery charge efficiency"],
             battery_discharge_eff=self["battery discharge efficiency"],
         )
@@ -209,6 +213,8 @@ class TwoWheelerModel(VehicleModel):
             ).sum(dim=["second", "parameter"])
             / distance
         ).T
+
+        self.set_battery_energy_balance(include_recuperation=False)
 
         self["TtW energy, combustion mode"] = self["TtW energy"] * (
             self["combustion power share"] > 0
@@ -538,11 +544,12 @@ class TwoWheelerModel(VehicleModel):
                 )
             ] = 0
 
-        # set the `TtW energy` of BEV vehicles before 2010 to zero
-        self.array.loc[
-            dict(
-                powertrain="BEV",
-                year=slice(None, 2010),
-                parameter="TtW energy",
-            )
-        ] = 0
+        # Historical BEV mask applies only when BEV is in the requested scope.
+        if "BEV" in self.array.coords["powertrain"].values:
+            self.array.loc[
+                dict(
+                    powertrain="BEV",
+                    year=slice(None, 2010),
+                    parameter="TtW energy",
+                )
+            ] = 0
