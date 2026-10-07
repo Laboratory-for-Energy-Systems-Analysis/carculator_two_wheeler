@@ -12,19 +12,19 @@ Two-Wheelers Input Parameter
 Array
 -----
 
-.. automodule:: carculator_two_wheeler.array
+.. automodule:: carculator_utils.array
     :members:
     
 Driving cycle
 -------------
 
-.. automodule:: carculator_two_wheeler.driving_cycles
+.. automodule:: carculator_utils.driving_cycles
     :members:
     
 Energy consumption
 ------------------
 
-.. automodule:: carculator_two_wheeler.energy_consumption
+.. automodule:: carculator_utils.energy_consumption
     :members:
 
 Two-Wheelers Model
@@ -36,13 +36,13 @@ Two-Wheelers Model
 Noise Model
 -----------
 
-.. automodule:: carculator_two_wheeler.noise_emissions
+.. automodule:: carculator_utils.noise_emissions
     :members:
 
 Hot pollutants emissions
 ------------------------
 
-.. automodule:: carculator_two_wheeler.hot_emissions
+.. automodule:: carculator_utils.hot_emissions
     :members:
 
 Inventory calculation
@@ -54,11 +54,11 @@ Inventory calculation
 Inventory export
 ----------------
 
-.. automodule:: carculator_two_wheeler.export
+.. automodule:: carculator_utils.export
     :members:
 
 Background systems
 ------------------
 
-.. automodule:: carculator_two_wheeler.background_systems
+.. automodule:: carculator_utils.background_systems
     :members:

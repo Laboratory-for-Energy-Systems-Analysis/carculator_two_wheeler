@@ -4,6 +4,13 @@
 Modeling
 ========
 
+.. note::
+
+   The inventory and owner-reported energy sources below describe the original
+   model assumptions. For current 2025 priors, temporal consistency and the
+   absence of a new independent two-wheeler consumption calibration, see
+   :doc:`validity`.
+
 This document describes the ``carculator_two_wheeler`` model, assumptions
 and inventories as exhaustively as possible.
 
