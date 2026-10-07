@@ -483,73 +483,15 @@ class TwoWheelerModel(VehicleModel):
             return response / response.sel(value="reference")
 
     def remove_energy_consumption_from_unavailable_vehicles(self):
-        """
-        This method sets the energy consumption of vehicles that are not available to zero.
-        """
-
-        if "Human" in self.array.coords["powertrain"].values:
-            sizes = [
-                s
-                for s in [
-                    "Kick-scooter",
-                    "Bicycle <45",
-                    "Bicycle cargo",
-                    "Moped <4kW",
-                    "Scooter <4kW",
-                    "Scooter 4-11kW",
-                    "Motorcycle 4-11kW",
-                    "Motorcycle 11-35kW",
-                    "Motorcycle >35kW",
-                ]
-                if s in self.array.coords["size"].values
-            ]
-
-            self.array.loc[
-                dict(
-                    powertrain="Human",
-                    size=sizes,
-                    parameter="TtW energy",
-                )
-            ] = 0
-
-        if "BEV" in self.array.coords["powertrain"].values:
-            if "Moped <4kW" in self.array.coords["size"].values:
-                self.array.loc[
-                    dict(
-                        powertrain="BEV",
-                        size=[
-                            "Moped <4kW",
-                        ],
-                        parameter="TtW energy",
-                    )
-                ] = 0
-
-        if "ICEV-p" in self.array.coords["powertrain"].values:
-            sizes = [
-                s
-                for s in [
-                    "Kick-scooter",
-                    "Bicycle <25",
-                    "Bicycle <45",
-                    "Bicycle cargo",
-                ]
-                if s in self.array.coords["size"].values
-            ]
-
-            self.array.loc[
-                dict(
-                    powertrain="ICEV-p",
-                    size=sizes,
-                    parameter="TtW energy",
-                )
-            ] = 0
-
-        # Historical BEV mask applies only when BEV is in the requested scope.
-        if "BEV" in self.array.coords["powertrain"].values:
-            self.array.loc[
-                dict(
-                    powertrain="BEV",
-                    year=slice(None, 2010),
-                    parameter="TtW energy",
-                )
-            ] = 0
+        """Apply the existing size/powertrain/year policy to all energy outputs."""
+        pwt = self.array.powertrain
+        size = self.array.coords["size"]
+        available = xr.ones_like(self["TtW energy"], dtype=bool)
+        available &= ~((pwt == "Human") & (size != "Bicycle <25"))
+        available &= ~((pwt == "BEV") & (size == "Moped <4kW"))
+        available &= ~(
+            (pwt == "ICEV-p")
+            & size.isin(["Kick-scooter", "Bicycle <25", "Bicycle <45", "Bicycle cargo"])
+        )
+        available &= ~((pwt == "BEV") & (self.array.year <= 2010))
+        self.mask_energy_outputs(available)
