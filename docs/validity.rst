@@ -18,6 +18,9 @@ inputs and consistent temporal extensions. The 118-observation measurement
 catalog used for the recent paired comparisons covers cars, buses and trucks;
 it does **not** establish new empirical two-wheeler calibration. In particular,
 no new two-wheeler efficiency or auxiliary parameter was fitted to consumption.
+The subsequent :doc:`petrol_efficiency` review restores a historical engineering
+prior and adds six manufacturer screening observations; it does not fit a
+new efficiency to those observations.
 
 Analytical and model tests cover energy boundaries, regeneration, input
 validation, unavailable configurations, and human-only and combustion-only
@@ -71,13 +74,14 @@ these outputs. Regeneration and battery/charger losses must not be counted twice
 The 2025 motor/inverter (0.90), electric transmission (0.97), charger (0.90)
 and symmetric battery one-way (sqrt(0.97)) values are component priors in their
 documented scopes, not universally measured efficiencies. For relevant hybrid
-scopes, the independent motor peak/system-power ratio is 0.65. The temporal
-update preserves all 2025 scalar values and uncertainty distributions. Storage
+scopes, the independent motor peak/system-power ratio is 0.65. The earlier temporal
+update preserved all then-current 2025 scalar values and uncertainty distributions;
+the later petrol correction is documented in :doc:`petrol_efficiency`. Storage
 and charger trends preserve relative legacy losses; newly explicit component
 priors are extended across native years to avoid interpolating from missing
 zero values. Historical estimates and future projections therefore change.
 
-The family audit completes 546 annual cases (21 configurations, 2015–2040),
+The earlier family audit completed 546 annual cases (21 configurations, 2015–2040),
 including availability-masked historical cells. The former inputs caused 20
 sizing failures in this grid. All 40 existing 2025 measurement-comparison runs
 retain their energy use and driving mass exactly. These are consistency and
@@ -107,13 +111,13 @@ existing expected two-wheeler failure, plus offline wheel/source-distribution
 model and LCIA checks. See :doc:`release` for the release verification record.
 That software verification does not replace empirical validation.
 
-Open release blocker
---------------------
+Petrol parameter correction
+---------------------------
 
-The default 2025 ``Motorcycle 11-35kW`` / ``ICEV-p`` case has an engine
-efficiency input of 0.01 and returns about **33.0 MJ/km** (about
-**104 L/100 km**). The README example reproduces this result. Execution
-and finite-output checks pass, but this is not a physically credible
-default. **Publication of 0.1.1 is blocked pending a review of this
-parameter and its provenance.** No replacement efficiency has been
-invented during release preparation.
+The five affected petrol classes now use the restored historical efficiency
+prior (18.37% in 2025). The default ``Motorcycle 11-35kW`` / ``ICEV-p`` case
+returns **1.797 MJ/km**, or **5.646 L/100 km**, instead of 33.0 MJ/km.
+See :doc:`petrol_efficiency` for provenance, before/after inventory checks and
+manufacturer screening comparisons. Several unmatched consumption residuals
+remain large; this correction is not a claim of completed empirical calibration.
+Publication remains pending maintainer review of the remaining known issues.

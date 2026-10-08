@@ -71,6 +71,7 @@ User's Guide
    modeling
    structure
    validity
+   petrol_efficiency
 
 API Reference
 -------------

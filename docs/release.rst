@@ -47,7 +47,7 @@ Known limits
 ------------
 
 * Electric-bicycle glider-cost inputs can still produce a negative total cost; the strict expected-failure test remains in place.
-* The recent measurement review does not establish new empirical two-wheeler calibration.
+* Manufacturer screening still leaves substantial unmatched consumption residuals; see :doc:`petrol_efficiency`.
 * The coupled target-range repair was validated for passenger cars; two-wheeler target-range overrides have not received equivalent qualification.
 
 Verification status
@@ -66,13 +66,13 @@ qualification. Existing documentation warnings are recorded. These checks
 exercise packaging and software consistency; they do not establish physical
 plausibility or replace the measurement evidence and limitations in :doc:`validity`.
 
-Open release blocker
---------------------
+Petrol parameter correction
+---------------------------
 
-The default 2025 ``Motorcycle 11-35kW`` / ``ICEV-p`` case has an engine
-efficiency input of 0.01 and returns about **33.0 MJ/km** (about
-**104 L/100 km**). The README example reproduces this result. Execution
-and finite-output checks pass, but this is not a physically credible
-default. **Publication of 0.1.1 is blocked pending a review of this
-parameter and its provenance.** No replacement efficiency has been
-invented during release preparation.
+The five affected petrol classes now use the restored historical efficiency
+prior (18.37% in 2025). The default ``Motorcycle 11-35kW`` / ``ICEV-p`` case
+returns **1.797 MJ/km**, or **5.646 L/100 km**, instead of 33.0 MJ/km.
+See :doc:`petrol_efficiency` for provenance, before/after inventory checks and
+manufacturer screening comparisons. Several unmatched consumption residuals
+remain large; this correction is not a claim of completed empirical calibration.
+Publication remains pending maintainer review of the remaining known issues.

@@ -1,0 +1,661 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-08",
+  "status": "approved provisional restoration; independent efficiency calibration remains open",
+  "parameter": "engine efficiency",
+  "powertrain": "ICEV-p",
+  "sizes": [
+    "Moped <4kW",
+    "Motorcycle 11-35kW",
+    "Motorcycle 4-11kW",
+    "Scooter 4-11kW",
+    "Scooter <4kW"
+  ],
+  "historical_source_commit": "6ed72b3e0f5a29893212a8e8df4e0b501e96d2cc",
+  "defective_calibration_commit": "877b6c97380d29266d61c4170ea4ef70c156e801",
+  "implementation_commit_before_fix": "a65454c993dce4701b4341c52f2582b767fb5ae5",
+  "historical_efficiency_by_year": {
+    "2000": 0.18,
+    "2010": 0.18,
+    "2020": 0.18,
+    "2025": 0.1836654960617019,
+    "2030": 0.18733099212340384,
+    "2040": 0.1949605589441044,
+    "2050": 0.202900860732958
+  },
+  "uncertainty": {
+    "distribution": "triangular",
+    "minimum_relative_to_mode": 0.75,
+    "maximum_relative_to_mode": 1.25,
+    "interpretation": "engineering uncertainty, not a confidence interval"
+  },
+  "basis": "Restore the earlier repository curve; manufacturer consumption is screening evidence and does not identify engine efficiency independently of road load, cycle, mass, auxiliaries and transmission.",
+  "original_defaults_sha256": "97fc5f8b462fc7a2e1229393d05d1403821e0faf004176fb4727f4f8a547ee3d",
+  "corrected_defaults_sha256": "341d8f53b9a31c1ef66c55e91b4b960e68f21f05ce75249d57fbd70d68124dc3",
+  "supersedes": "Only the listed petrol engine-efficiency records. defaults_2025_provenance.json and temporal_energy_provenance.json retain their historical pre-repair provenance.",
+  "original_records": {
+    "762-2000-engine efficiency": {
+      "amount": 0.005,
+      "category": "Powertrain",
+      "powertrain": [
+        "ICEV-p"
+      ],
+      "sizes": [
+        "Scooter <4kW"
+      ],
+      "year": 2000,
+      "name": "engine efficiency",
+      "unit": "unitless",
+      "importance": "Critical",
+      "source": "Cox, B. L., & Mutel, C. L. (2018). The environmental and cost performance of current and future motorcycles. Applied Energy, 212, 1013-1024. https://doi.org/10.1016/j.apenergy.2017.12.100",
+      "comment": "",
+      "status": "To be improved",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 0.005,
+      "minimum": 0.00375,
+      "maximum": 0.00625
+    },
+    "763-2010-engine efficiency": {
+      "amount": 0.005,
+      "category": "Powertrain",
+      "powertrain": [
+        "ICEV-p"
+      ],
+      "sizes": [
+        "Scooter <4kW"
+      ],
+      "year": 2010,
+      "name": "engine efficiency",
+      "unit": "unitless",
+      "importance": "Critical",
+      "source": "Cox, B. L., & Mutel, C. L. (2018). The environmental and cost performance of current and future motorcycles. Applied Energy, 212, 1013-1024. https://doi.org/10.1016/j.apenergy.2017.12.100",
+      "comment": "",
+      "status": "To be improved",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 0.005,
+      "minimum": 0.00375,
+      "maximum": 0.00625
+    },
+    "764-2020-engine efficiency": {
+      "amount": 0.005,
+      "category": "Powertrain",
+      "powertrain": [
+        "ICEV-p"
+      ],
+      "sizes": [
+        "Scooter <4kW"
+      ],
+      "year": 2020,
+      "name": "engine efficiency",
+      "unit": "unitless",
+      "importance": "Critical",
+      "source": "Cox, B. L., & Mutel, C. L. (2018). The environmental and cost performance of current and future motorcycles. Applied Energy, 212, 1013-1024. https://doi.org/10.1016/j.apenergy.2017.12.100",
+      "comment": "",
+      "status": "To be improved",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 0.005,
+      "minimum": 0.00375,
+      "maximum": 0.00625
+    },
+    "765-2030-engine efficiency": {
+      "amount": 0.005,
+      "category": "Powertrain",
+      "powertrain": [
+        "ICEV-p"
+      ],
+      "sizes": [
+        "Scooter <4kW"
+      ],
+      "year": 2030,
+      "name": "engine efficiency",
+      "unit": "unitless",
+      "importance": "Critical",
+      "source": "Cox, B. L., & Mutel, C. L. (2018). The environmental and cost performance of current and future motorcycles. Applied Energy, 212, 1013-1024. https://doi.org/10.1016/j.apenergy.2017.12.100",
+      "comment": "",
+      "status": "To be improved",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 0.005,
+      "minimum": 0.00375,
+      "maximum": 0.00625
+    },
+    "766-2040-engine efficiency": {
+      "amount": 0.005,
+      "category": "Powertrain",
+      "powertrain": [
+        "ICEV-p"
+      ],
+      "sizes": [
+        "Scooter <4kW"
+      ],
+      "year": 2040,
+      "name": "engine efficiency",
+      "unit": "unitless",
+      "importance": "Critical",
+      "source": "Cox, B. L., & Mutel, C. L. (2018). The environmental and cost performance of current and future motorcycles. Applied Energy, 212, 1013-1024. https://doi.org/10.1016/j.apenergy.2017.12.100",
+      "comment": "",
+      "status": "To be improved",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 0.005,
+      "minimum": 0.00375,
+      "maximum": 0.00625
+    },
+    "767-2050-engine efficiency": {
+      "amount": 0.005,
+      "category": "Powertrain",
+      "powertrain": [
+        "ICEV-p"
+      ],
+      "sizes": [
+        "Scooter <4kW"
+      ],
+      "year": 2050,
+      "name": "engine efficiency",
+      "unit": "unitless",
+      "importance": "Critical",
+      "source": "Cox, B. L., & Mutel, C. L. (2018). The environmental and cost performance of current and future motorcycles. Applied Energy, 212, 1013-1024. https://doi.org/10.1016/j.apenergy.2017.12.100",
+      "comment": "",
+      "status": "To be improved",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 0.005,
+      "minimum": 0.00375,
+      "maximum": 0.00625
+    },
+    "1086-2000-engine efficiency": {
+      "amount": 0.02,
+      "category": "Powertrain",
+      "powertrain": [
+        "ICEV-p"
+      ],
+      "sizes": [
+        "Scooter 4-11kW",
+        "Motorcycle 4-11kW"
+      ],
+      "year": 2000,
+      "name": "engine efficiency",
+      "unit": "unitless",
+      "importance": "Critical",
+      "source": "Cox, B. L., & Mutel, C. L. (2018). The environmental and cost performance of current and future motorcycles. Applied Energy, 212, 1013-1024. https://doi.org/10.1016/j.apenergy.2017.12.100",
+      "comment": "",
+      "status": "To be improved",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 0.02,
+      "minimum": 0.015,
+      "maximum": 0.025
+    },
+    "1087-2010-engine efficiency": {
+      "amount": 0.02,
+      "category": "Powertrain",
+      "powertrain": [
+        "ICEV-p"
+      ],
+      "sizes": [
+        "Scooter 4-11kW",
+        "Motorcycle 4-11kW"
+      ],
+      "year": 2010,
+      "name": "engine efficiency",
+      "unit": "unitless",
+      "importance": "Critical",
+      "source": "Cox, B. L., & Mutel, C. L. (2018). The environmental and cost performance of current and future motorcycles. Applied Energy, 212, 1013-1024. https://doi.org/10.1016/j.apenergy.2017.12.100",
+      "comment": "",
+      "status": "To be improved",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 0.02,
+      "minimum": 0.015,
+      "maximum": 0.025
+    },
+    "1088-2020-engine efficiency": {
+      "amount": 0.02,
+      "category": "Powertrain",
+      "powertrain": [
+        "ICEV-p"
+      ],
+      "sizes": [
+        "Scooter 4-11kW",
+        "Motorcycle 4-11kW"
+      ],
+      "year": 2020,
+      "name": "engine efficiency",
+      "unit": "unitless",
+      "importance": "Critical",
+      "source": "Cox, B. L., & Mutel, C. L. (2018). The environmental and cost performance of current and future motorcycles. Applied Energy, 212, 1013-1024. https://doi.org/10.1016/j.apenergy.2017.12.100",
+      "comment": "",
+      "status": "To be improved",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 0.02,
+      "minimum": 0.015,
+      "maximum": 0.025
+    },
+    "1089-2030-engine efficiency": {
+      "amount": 0.02,
+      "category": "Powertrain",
+      "powertrain": [
+        "ICEV-p"
+      ],
+      "sizes": [
+        "Scooter 4-11kW",
+        "Motorcycle 4-11kW"
+      ],
+      "year": 2030,
+      "name": "engine efficiency",
+      "unit": "unitless",
+      "importance": "Critical",
+      "source": "Cox, B. L., & Mutel, C. L. (2018). The environmental and cost performance of current and future motorcycles. Applied Energy, 212, 1013-1024. https://doi.org/10.1016/j.apenergy.2017.12.100",
+      "comment": "",
+      "status": "To be improved",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 0.02,
+      "minimum": 0.015,
+      "maximum": 0.025
+    },
+    "1090-2040-engine efficiency": {
+      "amount": 0.02,
+      "category": "Powertrain",
+      "powertrain": [
+        "ICEV-p"
+      ],
+      "sizes": [
+        "Scooter 4-11kW",
+        "Motorcycle 4-11kW"
+      ],
+      "year": 2040,
+      "name": "engine efficiency",
+      "unit": "unitless",
+      "importance": "Critical",
+      "source": "Cox, B. L., & Mutel, C. L. (2018). The environmental and cost performance of current and future motorcycles. Applied Energy, 212, 1013-1024. https://doi.org/10.1016/j.apenergy.2017.12.100",
+      "comment": "",
+      "status": "To be improved",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 0.02,
+      "minimum": 0.015,
+      "maximum": 0.025
+    },
+    "1091-2050-engine efficiency": {
+      "amount": 0.02,
+      "category": "Powertrain",
+      "powertrain": [
+        "ICEV-p"
+      ],
+      "sizes": [
+        "Scooter 4-11kW",
+        "Motorcycle 4-11kW"
+      ],
+      "year": 2050,
+      "name": "engine efficiency",
+      "unit": "unitless",
+      "importance": "Critical",
+      "source": "Cox, B. L., & Mutel, C. L. (2018). The environmental and cost performance of current and future motorcycles. Applied Energy, 212, 1013-1024. https://doi.org/10.1016/j.apenergy.2017.12.100",
+      "comment": "",
+      "status": "To be improved",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 0.02,
+      "minimum": 0.015,
+      "maximum": 0.025
+    },
+    "1092-2000-engine efficiency": {
+      "amount": 0.01,
+      "category": "Powertrain",
+      "powertrain": [
+        "ICEV-p"
+      ],
+      "sizes": [
+        "Motorcycle 11-35kW"
+      ],
+      "year": 2000,
+      "name": "engine efficiency",
+      "unit": "unitless",
+      "importance": "Critical",
+      "source": "Cox, B. L., & Mutel, C. L. (2018). The environmental and cost performance of current and future motorcycles. Applied Energy, 212, 1013-1024. https://doi.org/10.1016/j.apenergy.2017.12.100",
+      "comment": "",
+      "status": "To be improved",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 0.01,
+      "minimum": 0.0075,
+      "maximum": 0.0125
+    },
+    "1093-2010-engine efficiency": {
+      "amount": 0.01,
+      "category": "Powertrain",
+      "powertrain": [
+        "ICEV-p"
+      ],
+      "sizes": [
+        "Motorcycle 11-35kW"
+      ],
+      "year": 2010,
+      "name": "engine efficiency",
+      "unit": "unitless",
+      "importance": "Critical",
+      "source": "Cox, B. L., & Mutel, C. L. (2018). The environmental and cost performance of current and future motorcycles. Applied Energy, 212, 1013-1024. https://doi.org/10.1016/j.apenergy.2017.12.100",
+      "comment": "",
+      "status": "To be improved",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 0.01,
+      "minimum": 0.0075,
+      "maximum": 0.0125
+    },
+    "1094-2020-engine efficiency": {
+      "amount": 0.01,
+      "category": "Powertrain",
+      "powertrain": [
+        "ICEV-p"
+      ],
+      "sizes": [
+        "Motorcycle 11-35kW"
+      ],
+      "year": 2020,
+      "name": "engine efficiency",
+      "unit": "unitless",
+      "importance": "Critical",
+      "source": "Cox, B. L., & Mutel, C. L. (2018). The environmental and cost performance of current and future motorcycles. Applied Energy, 212, 1013-1024. https://doi.org/10.1016/j.apenergy.2017.12.100",
+      "comment": "",
+      "status": "To be improved",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 0.01,
+      "minimum": 0.0075,
+      "maximum": 0.0125
+    },
+    "1095-2030-engine efficiency": {
+      "amount": 0.01,
+      "category": "Powertrain",
+      "powertrain": [
+        "ICEV-p"
+      ],
+      "sizes": [
+        "Motorcycle 11-35kW"
+      ],
+      "year": 2030,
+      "name": "engine efficiency",
+      "unit": "unitless",
+      "importance": "Critical",
+      "source": "Cox, B. L., & Mutel, C. L. (2018). The environmental and cost performance of current and future motorcycles. Applied Energy, 212, 1013-1024. https://doi.org/10.1016/j.apenergy.2017.12.100",
+      "comment": "",
+      "status": "To be improved",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 0.01,
+      "minimum": 0.0075,
+      "maximum": 0.0125
+    },
+    "1096-2040-engine efficiency": {
+      "amount": 0.01,
+      "category": "Powertrain",
+      "powertrain": [
+        "ICEV-p"
+      ],
+      "sizes": [
+        "Motorcycle 11-35kW"
+      ],
+      "year": 2040,
+      "name": "engine efficiency",
+      "unit": "unitless",
+      "importance": "Critical",
+      "source": "Cox, B. L., & Mutel, C. L. (2018). The environmental and cost performance of current and future motorcycles. Applied Energy, 212, 1013-1024. https://doi.org/10.1016/j.apenergy.2017.12.100",
+      "comment": "",
+      "status": "To be improved",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 0.01,
+      "minimum": 0.0075,
+      "maximum": 0.0125
+    },
+    "1097-2050-engine efficiency": {
+      "amount": 0.01,
+      "category": "Powertrain",
+      "powertrain": [
+        "ICEV-p"
+      ],
+      "sizes": [
+        "Motorcycle 11-35kW"
+      ],
+      "year": 2050,
+      "name": "engine efficiency",
+      "unit": "unitless",
+      "importance": "Critical",
+      "source": "Cox, B. L., & Mutel, C. L. (2018). The environmental and cost performance of current and future motorcycles. Applied Energy, 212, 1013-1024. https://doi.org/10.1016/j.apenergy.2017.12.100",
+      "comment": "",
+      "status": "To be improved",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 0.01,
+      "minimum": 0.0075,
+      "maximum": 0.0125
+    },
+    "1104-2000-engine efficiency": {
+      "amount": 0.01,
+      "category": "Powertrain",
+      "powertrain": [
+        "ICEV-p"
+      ],
+      "sizes": [
+        "Moped <4kW"
+      ],
+      "year": 2000,
+      "name": "engine efficiency",
+      "unit": "unitless",
+      "importance": "Critical",
+      "source": "Cox, B. L., & Mutel, C. L. (2018). The environmental and cost performance of current and future motorcycles. Applied Energy, 212, 1013-1024. https://doi.org/10.1016/j.apenergy.2017.12.100",
+      "comment": "",
+      "status": "To be improved",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 0.01,
+      "minimum": 0.0075,
+      "maximum": 0.0125
+    },
+    "1105-2010-engine efficiency": {
+      "amount": 0.01,
+      "category": "Powertrain",
+      "powertrain": [
+        "ICEV-p"
+      ],
+      "sizes": [
+        "Moped <4kW"
+      ],
+      "year": 2010,
+      "name": "engine efficiency",
+      "unit": "unitless",
+      "importance": "Critical",
+      "source": "Cox, B. L., & Mutel, C. L. (2018). The environmental and cost performance of current and future motorcycles. Applied Energy, 212, 1013-1024. https://doi.org/10.1016/j.apenergy.2017.12.100",
+      "comment": "",
+      "status": "To be improved",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 0.01,
+      "minimum": 0.0075,
+      "maximum": 0.0125
+    },
+    "1106-2020-engine efficiency": {
+      "amount": 0.01,
+      "category": "Powertrain",
+      "powertrain": [
+        "ICEV-p"
+      ],
+      "sizes": [
+        "Moped <4kW"
+      ],
+      "year": 2020,
+      "name": "engine efficiency",
+      "unit": "unitless",
+      "importance": "Critical",
+      "source": "Cox, B. L., & Mutel, C. L. (2018). The environmental and cost performance of current and future motorcycles. Applied Energy, 212, 1013-1024. https://doi.org/10.1016/j.apenergy.2017.12.100",
+      "comment": "",
+      "status": "To be improved",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 0.01,
+      "minimum": 0.0075,
+      "maximum": 0.0125
+    },
+    "1107-2030-engine efficiency": {
+      "amount": 0.01,
+      "category": "Powertrain",
+      "powertrain": [
+        "ICEV-p"
+      ],
+      "sizes": [
+        "Moped <4kW"
+      ],
+      "year": 2030,
+      "name": "engine efficiency",
+      "unit": "unitless",
+      "importance": "Critical",
+      "source": "Cox, B. L., & Mutel, C. L. (2018). The environmental and cost performance of current and future motorcycles. Applied Energy, 212, 1013-1024. https://doi.org/10.1016/j.apenergy.2017.12.100",
+      "comment": "",
+      "status": "To be improved",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 0.01,
+      "minimum": 0.0075,
+      "maximum": 0.0125
+    },
+    "1108-2040-engine efficiency": {
+      "amount": 0.01,
+      "category": "Powertrain",
+      "powertrain": [
+        "ICEV-p"
+      ],
+      "sizes": [
+        "Moped <4kW"
+      ],
+      "year": 2040,
+      "name": "engine efficiency",
+      "unit": "unitless",
+      "importance": "Critical",
+      "source": "Cox, B. L., & Mutel, C. L. (2018). The environmental and cost performance of current and future motorcycles. Applied Energy, 212, 1013-1024. https://doi.org/10.1016/j.apenergy.2017.12.100",
+      "comment": "",
+      "status": "To be improved",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 0.01,
+      "minimum": 0.0075,
+      "maximum": 0.0125
+    },
+    "1109-2050-engine efficiency": {
+      "amount": 0.01,
+      "category": "Powertrain",
+      "powertrain": [
+        "ICEV-p"
+      ],
+      "sizes": [
+        "Moped <4kW"
+      ],
+      "year": 2050,
+      "name": "engine efficiency",
+      "unit": "unitless",
+      "importance": "Critical",
+      "source": "Cox, B. L., & Mutel, C. L. (2018). The environmental and cost performance of current and future motorcycles. Applied Energy, 212, 1013-1024. https://doi.org/10.1016/j.apenergy.2017.12.100",
+      "comment": "",
+      "status": "To be improved",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 0.01,
+      "minimum": 0.0075,
+      "maximum": 0.0125
+    },
+    "baseline-2025-0119-engine efficiency": {
+      "amount": 0.01,
+      "category": "Powertrain",
+      "powertrain": [
+        "ICEV-p"
+      ],
+      "sizes": [
+        "Moped <4kW"
+      ],
+      "year": 2025,
+      "name": "engine efficiency",
+      "unit": "unitless",
+      "importance": "Critical",
+      "source": "Cox, B. L., & Mutel, C. L. (2018). The environmental and cost performance of current and future motorcycles. Applied Energy, 212, 1013-1024. https://doi.org/10.1016/j.apenergy.2017.12.100",
+      "comment": "2025 baseline: linear interpolation of the effective 2020 and 2030 records, before empirical calibration. Triangular modes and bounds are interpolated. Endpoint records: ('1106-2020-engine efficiency', '1107-2030-engine efficiency'). ",
+      "status": "To be improved",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 0.01,
+      "minimum": 0.0075,
+      "maximum": 0.0125
+    },
+    "baseline-2025-0120-engine efficiency": {
+      "amount": 0.01,
+      "category": "Powertrain",
+      "powertrain": [
+        "ICEV-p"
+      ],
+      "sizes": [
+        "Motorcycle 11-35kW"
+      ],
+      "year": 2025,
+      "name": "engine efficiency",
+      "unit": "unitless",
+      "importance": "Critical",
+      "source": "Cox, B. L., & Mutel, C. L. (2018). The environmental and cost performance of current and future motorcycles. Applied Energy, 212, 1013-1024. https://doi.org/10.1016/j.apenergy.2017.12.100",
+      "comment": "2025 baseline: linear interpolation of the effective 2020 and 2030 records, before empirical calibration. Triangular modes and bounds are interpolated. Endpoint records: ('1094-2020-engine efficiency', '1095-2030-engine efficiency'). ",
+      "status": "To be improved",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 0.01,
+      "minimum": 0.0075,
+      "maximum": 0.0125
+    },
+    "baseline-2025-0121-engine efficiency": {
+      "amount": 0.02,
+      "category": "Powertrain",
+      "powertrain": [
+        "ICEV-p"
+      ],
+      "sizes": [
+        "Motorcycle 4-11kW",
+        "Scooter 4-11kW"
+      ],
+      "year": 2025,
+      "name": "engine efficiency",
+      "unit": "unitless",
+      "importance": "Critical",
+      "source": "Cox, B. L., & Mutel, C. L. (2018). The environmental and cost performance of current and future motorcycles. Applied Energy, 212, 1013-1024. https://doi.org/10.1016/j.apenergy.2017.12.100",
+      "comment": "2025 baseline: linear interpolation of the effective 2020 and 2030 records, before empirical calibration. Triangular modes and bounds are interpolated. Endpoint records: ('1088-2020-engine efficiency', '1089-2030-engine efficiency'). ",
+      "status": "To be improved",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 0.02,
+      "minimum": 0.015,
+      "maximum": 0.025
+    },
+    "baseline-2025-0123-engine efficiency": {
+      "amount": 0.005,
+      "category": "Powertrain",
+      "powertrain": [
+        "ICEV-p"
+      ],
+      "sizes": [
+        "Scooter <4kW"
+      ],
+      "year": 2025,
+      "name": "engine efficiency",
+      "unit": "unitless",
+      "importance": "Critical",
+      "source": "Cox, B. L., & Mutel, C. L. (2018). The environmental and cost performance of current and future motorcycles. Applied Energy, 212, 1013-1024. https://doi.org/10.1016/j.apenergy.2017.12.100",
+      "comment": "2025 baseline: linear interpolation of the effective 2020 and 2030 records, before empirical calibration. Triangular modes and bounds are interpolated. Endpoint records: ('764-2020-engine efficiency', '765-2030-engine efficiency'). ",
+      "status": "To be improved",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 0.005,
+      "minimum": 0.00375,
+      "maximum": 0.00625
+    }
+  }
+}

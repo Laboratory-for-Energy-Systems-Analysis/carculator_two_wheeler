@@ -1,0 +1,1434 @@
+{
+  "schema_version": 1,
+  "review_date": "2026-10-08",
+  "defaults_sha256": "341d8f53b9a31c1ef66c55e91b4b960e68f21f05ce75249d57fbd70d68124dc3",
+  "catalog_sha256": "cb05d7461c568595836e26d692d80c4e00dd02d1d3d6ca0635ab9a807ff08356",
+  "cycle": "Two wheeler cycle (bundled size-specific traces)",
+  "scope": "Five ICEV-p classes; default blend, mass, road load and auxiliaries",
+  "qualification": "Provisional prior restoration, not an empirical calibration",
+  "checks": {
+    "completed_model_inventory_lcia_cases": 30,
+    "fuel_supplier_and_tailpipe_carbon_balance": "passed for all cases",
+    "annual_model_cases": 130
+  },
+  "before": [
+    {
+      "size": "Moped <4kW",
+      "year": 2020,
+      "engine_efficiency": 0.009999999776482582,
+      "fuel_energy_kJ_per_km": 8113.366161434704,
+      "fuel_L_per_100km": 25.491764629619308,
+      "driving_mass_kg": 144.00899066374078,
+      "fuel_supply_kg_per_km": 0.19129151973421016,
+      "co2_fossil_kg_per_km": 0.5937020117901457,
+      "co2_non-fossil_kg_per_km": 0.004340313994757143
+    },
+    {
+      "size": "Moped <4kW",
+      "year": 2025,
+      "engine_efficiency": 0.009999999776482582,
+      "fuel_energy_kJ_per_km": 8078.653243342809,
+      "fuel_L_per_100km": 25.382698488636784,
+      "driving_mass_kg": 142.95898982666804,
+      "fuel_supply_kg_per_km": 0.1904730817734324,
+      "co2_fossil_kg_per_km": 0.5911618664428019,
+      "co2_non-fossil_kg_per_km": 0.004321744025006576
+    },
+    {
+      "size": "Moped <4kW",
+      "year": 2030,
+      "engine_efficiency": 0.009999999776482582,
+      "fuel_energy_kJ_per_km": 8043.9403666319095,
+      "fuel_L_per_100km": 25.27363247767115,
+      "driving_mass_kg": 141.90899024129286,
+      "fuel_supply_kg_per_km": 0.18965464478830807,
+      "co2_fossil_kg_per_km": 0.5886217241235453,
+      "co2_non-fossil_kg_per_km": 0.004303174077393124
+    },
+    {
+      "size": "Scooter <4kW",
+      "year": 2020,
+      "engine_efficiency": 0.004999999888241291,
+      "fuel_energy_kJ_per_km": 18197.646170593056,
+      "fuel_L_per_100km": 57.176035663084214,
+      "driving_mass_kg": 173.68899132654442,
+      "fuel_supply_kg_per_km": 0.42905192768258016,
+      "co2_fossil_kg_per_km": 1.3316272095151993,
+      "co2_non-fossil_kg_per_km": 0.00973498505728687
+    },
+    {
+      "size": "Scooter <4kW",
+      "year": 2025,
+      "engine_efficiency": 0.004999999888241291,
+      "fuel_energy_kJ_per_km": 18108.801092166934,
+      "fuel_L_per_100km": 56.8968891556205,
+      "driving_mass_kg": 172.36398869071527,
+      "fuel_supply_kg_per_km": 0.426957197858377,
+      "co2_fossil_kg_per_km": 1.3251259003483622,
+      "co2_non-fossil_kg_per_km": 0.009687456629555957
+    },
+    {
+      "size": "Scooter <4kW",
+      "year": 2030,
+      "engine_efficiency": 0.004999999888241291,
+      "fuel_energy_kJ_per_km": 18019.956225563572,
+      "fuel_L_per_100km": 56.617743313692614,
+      "driving_mass_kg": 171.0389892139323,
+      "fuel_supply_kg_per_km": 0.4248624730283891,
+      "co2_fossil_kg_per_km": 1.3186246066818235,
+      "co2_non-fossil_kg_per_km": 0.00963992831514142
+    },
+    {
+      "size": "Scooter 4-11kW",
+      "year": 2020,
+      "engine_efficiency": 0.019999999552965164,
+      "fuel_energy_kJ_per_km": 8380.389003886661,
+      "fuel_L_per_100km": 26.330736187796035,
+      "driving_mass_kg": 221.01441825090188,
+      "fuel_supply_kg_per_km": 0.1975872056825627,
+      "co2_fossil_kg_per_km": 0.6132416203327998,
+      "co2_non-fossil_kg_per_km": 0.004483160127540224
+    },
+    {
+      "size": "Scooter 4-11kW",
+      "year": 2025,
+      "engine_efficiency": 0.019999999552965164,
+      "fuel_energy_kJ_per_km": 8357.731989196707,
+      "fuel_L_per_100km": 26.25954905360363,
+      "driving_mass_kg": 219.61441860815722,
+      "fuel_supply_kg_per_km": 0.1970530137471262,
+      "co2_fossil_kg_per_km": 0.6115836752906391,
+      "co2_non-fossil_kg_per_km": 0.004471039565497104
+    },
+    {
+      "size": "Scooter 4-11kW",
+      "year": 2030,
+      "engine_efficiency": 0.019999999552965164,
+      "fuel_energy_kJ_per_km": 8335.122255447945,
+      "fuel_L_per_100km": 26.188510473611835,
+      "driving_mass_kg": 218.21441896541256,
+      "fuel_supply_kg_per_km": 0.19651993657009148,
+      "co2_fossil_kg_per_km": 0.6099291900688966,
+      "co2_non-fossil_kg_per_km": 0.004458944296794214
+    },
+    {
+      "size": "Motorcycle 4-11kW",
+      "year": 2020,
+      "engine_efficiency": 0.019999999552965164,
+      "fuel_energy_kJ_per_km": 9816.038188400338,
+      "fuel_L_per_100km": 30.841469510333024,
+      "driving_mass_kg": 211.71441680846948,
+      "fuel_supply_kg_per_km": 0.2314359817449804,
+      "co2_fossil_kg_per_km": 0.7182963894768476,
+      "co2_non-fossil_kg_per_km": 0.00525117282697009
+    },
+    {
+      "size": "Motorcycle 4-11kW",
+      "year": 2025,
+      "engine_efficiency": 0.019999999552965164,
+      "fuel_energy_kJ_per_km": 9728.287759751254,
+      "fuel_L_per_100km": 30.56576233420391,
+      "driving_mass_kg": 210.73941683026243,
+      "fuel_supply_kg_per_km": 0.22936706084092945,
+      "co2_fossil_kg_per_km": 0.7118751821767204,
+      "co2_non-fossil_kg_per_km": 0.005204229991415357
+    },
+    {
+      "size": "Motorcycle 4-11kW",
+      "year": 2030,
+      "engine_efficiency": 0.019999999552965164,
+      "fuel_energy_kJ_per_km": 9640.577735188017,
+      "fuel_L_per_100km": 30.290182105561946,
+      "driving_mass_kg": 209.76441685205538,
+      "fuel_supply_kg_per_km": 0.2272990925573854,
+      "co2_fossil_kg_per_km": 0.7054569314776605,
+      "co2_non-fossil_kg_per_km": 0.005157308770368803
+    },
+    {
+      "size": "Motorcycle 11-35kW",
+      "year": 2020,
+      "engine_efficiency": 0.009999999776482582,
+      "fuel_energy_kJ_per_km": 33350.31781728337,
+      "fuel_L_per_100km": 104.78492344672527,
+      "driving_mass_kg": 251.29069325424462,
+      "fuel_supply_kg_per_km": 0.7863114830452713,
+      "co2_fossil_kg_per_km": 2.440435990190855,
+      "co2_non-fossil_kg_per_km": 0.017841035184631295
+    },
+    {
+      "size": "Motorcycle 11-35kW",
+      "year": 2025,
+      "engine_efficiency": 0.009999999776482582,
+      "fuel_energy_kJ_per_km": 33001.77605177988,
+      "fuel_L_per_100km": 103.68982377132299,
+      "driving_mass_kg": 250.0906932810667,
+      "fuel_supply_kg_per_km": 0.77809379846314,
+      "co2_fossil_kg_per_km": 2.414931169718692,
+      "co2_non-fossil_kg_per_km": 0.017654579813029446
+    },
+    {
+      "size": "Motorcycle 11-35kW",
+      "year": 2030,
+      "engine_efficiency": 0.009999999776482582,
+      "fuel_energy_kJ_per_km": 32653.232443488418,
+      "fuel_L_per_100km": 102.594718305979,
+      "driving_mass_kg": 248.8906933078888,
+      "fuel_supply_kg_per_km": 0.7698760704329867,
+      "co2_fossil_kg_per_km": 2.389426214399056,
+      "co2_non-fossil_kg_per_km": 0.017468123455612553
+    }
+  ],
+  "after": [
+    {
+      "size": "Moped <4kW",
+      "year": 2020,
+      "engine_efficiency": 0.18000000715255737,
+      "fuel_energy_kJ_per_km": 450.7425365383845,
+      "fuel_L_per_100km": 1.4162090581601752,
+      "driving_mass_kg": 144.00899066374078,
+      "fuel_supply_kg_per_km": 0.010627305992070901,
+      "co2_fossil_kg_per_km": 0.03298344305157191,
+      "co2_non-fossil_kg_per_km": 0.00024112854029306315
+    },
+    {
+      "size": "Moped <4kW",
+      "year": 2025,
+      "engine_efficiency": 0.18366549909114838,
+      "fuel_energy_kJ_per_km": 439.8568649391053,
+      "fuel_L_per_100km": 1.3820068574061681,
+      "driving_mass_kg": 142.95898982666804,
+      "fuel_supply_kg_per_km": 0.01037065090931972,
+      "co2_fossil_kg_per_km": 0.03218687538784452,
+      "co2_non-fossil_kg_per_km": 0.00023530515800701985
+    },
+    {
+      "size": "Moped <4kW",
+      "year": 2030,
+      "engine_efficiency": 0.18733099102973938,
+      "fuel_energy_kJ_per_km": 429.3971938449224,
+      "fuel_L_per_100km": 1.349143127564473,
+      "driving_mass_kg": 141.90899024129286,
+      "fuel_supply_kg_per_km": 0.010124039781495014,
+      "co2_fossil_kg_per_km": 0.03142148064936996,
+      "co2_non-fossil_kg_per_km": 0.00022970966830184293
+    },
+    {
+      "size": "Scooter <4kW",
+      "year": 2020,
+      "engine_efficiency": 0.18000000715255737,
+      "fuel_energy_kJ_per_km": 505.49014002041764,
+      "fuel_L_per_100km": 1.5882231142536236,
+      "driving_mass_kg": 173.68899132654442,
+      "fuel_supply_kg_per_km": 0.011918108362320655,
+      "co2_fossil_kg_per_km": 0.03698964241213726,
+      "co2_non-fossil_kg_per_km": 0.0002704162348016596
+    },
+    {
+      "size": "Scooter <4kW",
+      "year": 2025,
+      "engine_efficiency": 0.18366549909114838,
+      "fuel_energy_kJ_per_km": 492.9831889226188,
+      "fuel_L_per_100km": 1.5489269396110055,
+      "driving_mass_kg": 172.36398869071527,
+      "fuel_supply_kg_per_km": 0.011623227836145028,
+      "co2_fossil_kg_per_km": 0.036074436333627044,
+      "co2_non-fossil_kg_per_km": 0.0002637255353063566
+    },
+    {
+      "size": "Scooter <4kW",
+      "year": 2030,
+      "engine_efficiency": 0.18733099102973938,
+      "fuel_energy_kJ_per_km": 480.96568869177264,
+      "fuel_L_per_100km": 1.5111685935403834,
+      "driving_mass_kg": 171.0389892139323,
+      "fuel_supply_kg_per_km": 0.011339887255081166,
+      "co2_fossil_kg_per_km": 0.035195046210985244,
+      "co2_non-fossil_kg_per_km": 0.00025729667170078317
+    },
+    {
+      "size": "Scooter 4-11kW",
+      "year": 2020,
+      "engine_efficiency": 0.18000000715255737,
+      "fuel_energy_kJ_per_km": 931.1542759514434,
+      "fuel_L_per_100km": 2.9256371725518617,
+      "driving_mass_kg": 221.01441825090188,
+      "fuel_supply_kg_per_km": 0.021954132601635472,
+      "co2_fossil_kg_per_km": 0.0681379535841891,
+      "co2_non-fossil_kg_per_km": 0.000498128872132074
+    },
+    {
+      "size": "Scooter 4-11kW",
+      "year": 2025,
+      "engine_efficiency": 0.18366549909114838,
+      "fuel_energy_kJ_per_km": 910.1036224815351,
+      "fuel_L_per_100km": 2.859497139811161,
+      "driving_mass_kg": 219.61441860815722,
+      "fuel_supply_kg_per_km": 0.0214578143764335,
+      "co2_fossil_kg_per_km": 0.06659755529993716,
+      "co2_non-fossil_kg_per_km": 0.00048686764663870004
+    },
+    {
+      "size": "Scooter 4-11kW",
+      "year": 2030,
+      "engine_efficiency": 0.18733099102973938,
+      "fuel_energy_kJ_per_km": 889.8818100865793,
+      "fuel_L_per_100km": 2.795961281611292,
+      "driving_mass_kg": 218.21441896541256,
+      "fuel_supply_kg_per_km": 0.02098103801162475,
+      "co2_fossil_kg_per_km": 0.0651178081195381,
+      "co2_non-fossil_kg_per_km": 0.0004760498167034048
+    },
+    {
+      "size": "Motorcycle 4-11kW",
+      "year": 2020,
+      "engine_efficiency": 0.18000000715255737,
+      "fuel_energy_kJ_per_km": 1090.6708421045182,
+      "fuel_L_per_100km": 3.4268297328270183,
+      "driving_mass_kg": 211.71441680846948,
+      "fuel_supply_kg_per_km": 0.025715107486171986,
+      "co2_fossil_kg_per_km": 0.07981070498657243,
+      "co2_non-fossil_kg_per_km": 0.0005834636112149412
+    },
+    {
+      "size": "Motorcycle 4-11kW",
+      "year": 2025,
+      "engine_efficiency": 0.18366549909114838,
+      "fuel_energy_kJ_per_km": 1059.348390464866,
+      "fuel_L_per_100km": 3.32841625697331,
+      "driving_mass_kg": 210.73941683026243,
+      "fuel_supply_kg_per_km": 0.02497660767527588,
+      "co2_fossil_kg_per_km": 0.07751865971428404,
+      "co2_non-fossil_kg_per_km": 0.000566707400229679
+    },
+    {
+      "size": "Motorcycle 4-11kW",
+      "year": 2030,
+      "engine_efficiency": 0.18733099102973938,
+      "fuel_energy_kJ_per_km": 1029.2560207695944,
+      "fuel_L_per_100km": 3.2338676331153553,
+      "driving_mass_kg": 209.76441685205538,
+      "fuel_supply_kg_per_km": 0.024267109913573205,
+      "co2_fossil_kg_per_km": 0.0753166266650994,
+      "co2_non-fossil_kg_per_km": 0.0005506092320064054
+    },
+    {
+      "size": "Motorcycle 11-35kW",
+      "year": 2020,
+      "engine_efficiency": 0.18000000715255737,
+      "fuel_energy_kJ_per_km": 1852.7953192567456,
+      "fuel_L_per_100km": 5.821384274489758,
+      "driving_mass_kg": 251.29069325424462,
+      "fuel_supply_kg_per_km": 0.04368396856803273,
+      "co2_fossil_kg_per_km": 0.13557976881491793,
+      "co2_non-fossil_kg_per_km": 0.0009911685598285075
+    },
+    {
+      "size": "Motorcycle 11-35kW",
+      "year": 2025,
+      "engine_efficiency": 0.18366549909114838,
+      "fuel_energy_kJ_per_km": 1796.841294496927,
+      "fuel_L_per_100km": 5.645579706955614,
+      "driving_mass_kg": 250.0906932810667,
+      "fuel_supply_kg_per_km": 0.04236472200395819,
+      "co2_fossil_kg_per_km": 0.13148528861931613,
+      "co2_non-fossil_kg_per_km": 0.0009612354800320591
+    },
+    {
+      "size": "Motorcycle 11-35kW",
+      "year": 2030,
+      "engine_efficiency": 0.18733099102973938,
+      "fuel_energy_kJ_per_km": 1743.0768680685828,
+      "fuel_L_per_100km": 5.4766547408333555,
+      "driving_mass_kg": 248.8906933078888,
+      "fuel_supply_kg_per_km": 0.04109710032456175,
+      "co2_fossil_kg_per_km": 0.12755103402040785,
+      "co2_non-fossil_kg_per_km": 0.0009324737444214764
+    }
+  ],
+  "annual": [
+    {
+      "size": "Moped <4kW",
+      "year": 2015,
+      "engine_efficiency": 0.18000000715255737,
+      "fuel_energy_kJ_per_km": 450.7626974078891,
+      "fuel_L_per_100km": 1.4133400060685244,
+      "driving_mass_kg": 144.01996757902228
+    },
+    {
+      "size": "Moped <4kW",
+      "year": 2016,
+      "engine_efficiency": 0.18000000715255737,
+      "fuel_energy_kJ_per_km": 450.7556982237241,
+      "fuel_L_per_100km": 1.4143344781121014,
+      "driving_mass_kg": 144.0161567586802
+    },
+    {
+      "size": "Moped <4kW",
+      "year": 2017,
+      "engine_efficiency": 0.18000000715255737,
+      "fuel_energy_kJ_per_km": 450.74831472393674,
+      "fuel_L_per_100km": 1.4153853610428129,
+      "driving_mass_kg": 144.01213669140952
+    },
+    {
+      "size": "Moped <4kW",
+      "year": 2018,
+      "engine_efficiency": 0.18000000715255737,
+      "fuel_energy_kJ_per_km": 450.7425365383845,
+      "fuel_L_per_100km": 1.4162090581601752,
+      "driving_mass_kg": 144.00899066374078
+    },
+    {
+      "size": "Moped <4kW",
+      "year": 2019,
+      "engine_efficiency": 0.18000000715255737,
+      "fuel_energy_kJ_per_km": 450.7425365383845,
+      "fuel_L_per_100km": 1.4162090581601752,
+      "driving_mass_kg": 144.00899066374078
+    },
+    {
+      "size": "Moped <4kW",
+      "year": 2020,
+      "engine_efficiency": 0.18000000715255737,
+      "fuel_energy_kJ_per_km": 450.7425365383845,
+      "fuel_L_per_100km": 1.4162090581601752,
+      "driving_mass_kg": 144.00899066374078
+    },
+    {
+      "size": "Moped <4kW",
+      "year": 2021,
+      "engine_efficiency": 0.18073310554027558,
+      "fuel_energy_kJ_per_km": 448.53007822726767,
+      "fuel_L_per_100km": 1.4092576319090195,
+      "driving_mass_kg": 143.79899049632624
+    },
+    {
+      "size": "Moped <4kW",
+      "year": 2022,
+      "engine_efficiency": 0.18146620392799379,
+      "fuel_energy_kJ_per_km": 446.33549596784246,
+      "fuel_L_per_100km": 1.4023623712607913,
+      "driving_mass_kg": 143.58899032891168
+    },
+    {
+      "size": "Moped <4kW",
+      "year": 2023,
+      "engine_efficiency": 0.18219930231571196,
+      "fuel_energy_kJ_per_km": 444.1585739815198,
+      "fuel_L_per_100km": 1.3955225982506494,
+      "driving_mass_kg": 143.37899016149714
+    },
+    {
+      "size": "Moped <4kW",
+      "year": 2024,
+      "engine_efficiency": 0.18293240070343017,
+      "fuel_energy_kJ_per_km": 441.99909994854687,
+      "fuel_L_per_100km": 1.3887376457812313,
+      "driving_mass_kg": 143.1689899940826
+    },
+    {
+      "size": "Moped <4kW",
+      "year": 2025,
+      "engine_efficiency": 0.18366549909114838,
+      "fuel_energy_kJ_per_km": 439.8568649391053,
+      "fuel_L_per_100km": 1.3820068574061681,
+      "driving_mass_kg": 142.95898982666804
+    },
+    {
+      "size": "Moped <4kW",
+      "year": 2026,
+      "engine_efficiency": 0.18439859747886658,
+      "fuel_energy_kJ_per_km": 437.7316637947309,
+      "fuel_L_per_100km": 1.3753295885284857,
+      "driving_mass_kg": 142.748989909593
+    },
+    {
+      "size": "Moped <4kW",
+      "year": 2027,
+      "engine_efficiency": 0.1851316958665848,
+      "fuel_energy_kJ_per_km": 435.6232937124267,
+      "fuel_L_per_100km": 1.368705201951962,
+      "driving_mass_kg": 142.53898999251797
+    },
+    {
+      "size": "Moped <4kW",
+      "year": 2028,
+      "engine_efficiency": 0.18586479425430297,
+      "fuel_energy_kJ_per_km": 433.5315555341254,
+      "fuel_L_per_100km": 1.36213307193255,
+      "driving_mass_kg": 142.32899007544293
+    },
+    {
+      "size": "Moped <4kW",
+      "year": 2029,
+      "engine_efficiency": 0.18659789264202117,
+      "fuel_energy_kJ_per_km": 431.4562532315385,
+      "fuel_L_per_100km": 1.3556125825598013,
+      "driving_mass_kg": 142.1189901583679
+    },
+    {
+      "size": "Moped <4kW",
+      "year": 2030,
+      "engine_efficiency": 0.18733099102973938,
+      "fuel_energy_kJ_per_km": 429.3971938449224,
+      "fuel_L_per_100km": 1.349143127564473,
+      "driving_mass_kg": 141.90899024129286
+    },
+    {
+      "size": "Moped <4kW",
+      "year": 2031,
+      "engine_efficiency": 0.1880939483642578,
+      "fuel_energy_kJ_per_km": 427.4339877026138,
+      "fuel_L_per_100km": 1.3429748383607836,
+      "driving_mass_kg": 141.78299027540163
+    },
+    {
+      "size": "Moped <4kW",
+      "year": 2032,
+      "engine_efficiency": 0.18885690569877625,
+      "fuel_energy_kJ_per_km": 425.48664375522196,
+      "fuel_L_per_100km": 1.336856387329227,
+      "driving_mass_kg": 141.65699030951038
+    },
+    {
+      "size": "Moped <4kW",
+      "year": 2033,
+      "engine_efficiency": 0.18961986303329467,
+      "fuel_energy_kJ_per_km": 423.5549705326698,
+      "fuel_L_per_100km": 1.3307871728810123,
+      "driving_mass_kg": 141.53099034361912
+    },
+    {
+      "size": "Moped <4kW",
+      "year": 2034,
+      "engine_efficiency": 0.19038282036781312,
+      "fuel_energy_kJ_per_km": 421.6387796340862,
+      "fuel_L_per_100km": 1.3247666030706298,
+      "driving_mass_kg": 141.40499037772787
+    },
+    {
+      "size": "Moped <4kW",
+      "year": 2035,
+      "engine_efficiency": 0.19114577770233154,
+      "fuel_energy_kJ_per_km": 419.7378856666629,
+      "fuel_L_per_100km": 1.3187940954037443,
+      "driving_mass_kg": 141.27899041183665
+    },
+    {
+      "size": "Moped <4kW",
+      "year": 2036,
+      "engine_efficiency": 0.19190873503684996,
+      "fuel_energy_kJ_per_km": 417.85210618575525,
+      "fuel_L_per_100km": 1.3128690766489932,
+      "driving_mass_kg": 141.15299044594542
+    },
+    {
+      "size": "Moped <4kW",
+      "year": 2037,
+      "engine_efficiency": 0.1926716923713684,
+      "fuel_energy_kJ_per_km": 415.9812616365783,
+      "fuel_L_per_100km": 1.3069909826547992,
+      "driving_mass_kg": 141.02699048005417
+    },
+    {
+      "size": "Moped <4kW",
+      "year": 2038,
+      "engine_efficiency": 0.19343464970588684,
+      "fuel_energy_kJ_per_km": 414.1251752971785,
+      "fuel_L_per_100km": 1.3011592581701912,
+      "driving_mass_kg": 140.9009905141629
+    },
+    {
+      "size": "Moped <4kW",
+      "year": 2039,
+      "engine_efficiency": 0.19419760704040528,
+      "fuel_energy_kJ_per_km": 412.28367322285163,
+      "fuel_L_per_100km": 1.2953733566701662,
+      "driving_mass_kg": 140.77499054827166
+    },
+    {
+      "size": "Moped <4kW",
+      "year": 2040,
+      "engine_efficiency": 0.1949605643749237,
+      "fuel_energy_kJ_per_km": 410.4565841916712,
+      "fuel_L_per_100km": 1.289632740184545,
+      "driving_mass_kg": 140.64899058238043
+    },
+    {
+      "size": "Scooter <4kW",
+      "year": 2015,
+      "engine_efficiency": 0.18000000715255737,
+      "fuel_energy_kJ_per_km": 505.5105853642014,
+      "fuel_L_per_100km": 1.5849987984694305,
+      "driving_mass_kg": 173.69996824182593
+    },
+    {
+      "size": "Scooter <4kW",
+      "year": 2016,
+      "engine_efficiency": 0.18000000715255737,
+      "fuel_energy_kJ_per_km": 505.5034874200166,
+      "fuel_L_per_100km": 1.5861164126852234,
+      "driving_mass_kg": 173.69615742148386
+    },
+    {
+      "size": "Scooter <4kW",
+      "year": 2017,
+      "engine_efficiency": 0.18000000715255737,
+      "fuel_energy_kJ_per_km": 505.4959997374326,
+      "fuel_L_per_100km": 1.5872974223592122,
+      "driving_mass_kg": 173.69213735421317
+    },
+    {
+      "size": "Scooter <4kW",
+      "year": 2018,
+      "engine_efficiency": 0.18000000715255737,
+      "fuel_energy_kJ_per_km": 505.49014002041764,
+      "fuel_L_per_100km": 1.5882231142536236,
+      "driving_mass_kg": 173.68899132654442
+    },
+    {
+      "size": "Scooter <4kW",
+      "year": 2019,
+      "engine_efficiency": 0.18000000715255737,
+      "fuel_energy_kJ_per_km": 505.49014002041764,
+      "fuel_L_per_100km": 1.5882231142536236,
+      "driving_mass_kg": 173.68899132654442
+    },
+    {
+      "size": "Scooter <4kW",
+      "year": 2020,
+      "engine_efficiency": 0.18000000715255737,
+      "fuel_energy_kJ_per_km": 505.49014002041764,
+      "fuel_L_per_100km": 1.5882231142536236,
+      "driving_mass_kg": 173.68899132654442
+    },
+    {
+      "size": "Scooter <4kW",
+      "year": 2021,
+      "engine_efficiency": 0.18073310554027558,
+      "fuel_energy_kJ_per_km": 502.94816475957435,
+      "fuel_L_per_100km": 1.5802363632856045,
+      "driving_mass_kg": 173.4239907993786
+    },
+    {
+      "size": "Scooter <4kW",
+      "year": 2022,
+      "engine_efficiency": 0.18146620392799379,
+      "fuel_energy_kJ_per_km": 500.42672795630625,
+      "fuel_L_per_100km": 1.5723141430580871,
+      "driving_mass_kg": 173.15899027221278
+    },
+    {
+      "size": "Scooter <4kW",
+      "year": 2023,
+      "engine_efficiency": 0.18219930231571196,
+      "fuel_energy_kJ_per_km": 497.9255816945994,
+      "fuel_L_per_100km": 1.5644556746321525,
+      "driving_mass_kg": 172.89398974504692
+    },
+    {
+      "size": "Scooter <4kW",
+      "year": 2024,
+      "engine_efficiency": 0.18293240070343017,
+      "fuel_energy_kJ_per_km": 495.4444820324378,
+      "fuel_L_per_100km": 1.5566601915549696,
+      "driving_mass_kg": 172.6289892178811
+    },
+    {
+      "size": "Scooter <4kW",
+      "year": 2025,
+      "engine_efficiency": 0.18366549909114838,
+      "fuel_energy_kJ_per_km": 492.9831889226188,
+      "fuel_L_per_100km": 1.5489269396110055,
+      "driving_mass_kg": 172.36398869071527
+    },
+    {
+      "size": "Scooter <4kW",
+      "year": 2026,
+      "engine_efficiency": 0.18439859747886658,
+      "fuel_energy_kJ_per_km": 490.54146728403657,
+      "fuel_L_per_100km": 1.5412551801879375,
+      "driving_mass_kg": 172.09898879535868
+    },
+    {
+      "size": "Scooter <4kW",
+      "year": 2027,
+      "engine_efficiency": 0.1851316958665848,
+      "fuel_energy_kJ_per_km": 488.11908347075536,
+      "fuel_L_per_100km": 1.5336441791826723,
+      "driving_mass_kg": 171.83398890000208
+    },
+    {
+      "size": "Scooter <4kW",
+      "year": 2028,
+      "engine_efficiency": 0.18586479425430297,
+      "fuel_energy_kJ_per_km": 485.7158086627568,
+      "fuel_L_per_100km": 1.5260932176548914,
+      "driving_mass_kg": 171.5689890046455
+    },
+    {
+      "size": "Scooter <4kW",
+      "year": 2029,
+      "engine_efficiency": 0.18659789264202117,
+      "fuel_energy_kJ_per_km": 483.3314176359414,
+      "fuel_L_per_100km": 1.5186015879624621,
+      "driving_mass_kg": 171.3039891092889
+    },
+    {
+      "size": "Scooter <4kW",
+      "year": 2030,
+      "engine_efficiency": 0.18733099102973938,
+      "fuel_energy_kJ_per_km": 480.96568869177264,
+      "fuel_L_per_100km": 1.5111685935403834,
+      "driving_mass_kg": 171.0389892139323
+    },
+    {
+      "size": "Scooter <4kW",
+      "year": 2031,
+      "engine_efficiency": 0.1880939483642578,
+      "fuel_energy_kJ_per_km": 478.7313625537795,
+      "fuel_L_per_100km": 1.5041484597411396,
+      "driving_mass_kg": 170.8799892569743
+    },
+    {
+      "size": "Scooter <4kW",
+      "year": 2032,
+      "engine_efficiency": 0.18885690569877625,
+      "fuel_energy_kJ_per_km": 476.5150891897397,
+      "fuel_L_per_100km": 1.4971850467967638,
+      "driving_mass_kg": 170.7209893000163
+    },
+    {
+      "size": "Scooter <4kW",
+      "year": 2033,
+      "engine_efficiency": 0.18961986303329467,
+      "fuel_energy_kJ_per_km": 474.3166506874347,
+      "fuel_L_per_100km": 1.4902776700386633,
+      "driving_mass_kg": 170.56198934305831
+    },
+    {
+      "size": "Scooter <4kW",
+      "year": 2034,
+      "engine_efficiency": 0.19038282036781312,
+      "fuel_energy_kJ_per_km": 472.135832627721,
+      "fuel_L_per_100km": 1.4834256557733028,
+      "driving_mass_kg": 170.4029893861003
+    },
+    {
+      "size": "Scooter <4kW",
+      "year": 2035,
+      "engine_efficiency": 0.19114577770233154,
+      "fuel_energy_kJ_per_km": 469.9724240149229,
+      "fuel_L_per_100km": 1.4766283410634993,
+      "driving_mass_kg": 170.24398942914232
+    },
+    {
+      "size": "Scooter <4kW",
+      "year": 2036,
+      "engine_efficiency": 0.19190873503684996,
+      "fuel_energy_kJ_per_km": 467.8262172086793,
+      "fuel_L_per_100km": 1.4698850735142908,
+      "driving_mass_kg": 170.08498947218433
+    },
+    {
+      "size": "Scooter <4kW",
+      "year": 2037,
+      "engine_efficiency": 0.1926716923713684,
+      "fuel_energy_kJ_per_km": 465.69700785757595,
+      "fuel_L_per_100km": 1.4631952110644106,
+      "driving_mass_kg": 169.92598951522632
+    },
+    {
+      "size": "Scooter <4kW",
+      "year": 2038,
+      "engine_efficiency": 0.19343464970588684,
+      "fuel_energy_kJ_per_km": 463.5848942790837,
+      "fuel_L_per_100km": 1.4565590626221188,
+      "driving_mass_kg": 169.76698955826834
+    },
+    {
+      "size": "Scooter <4kW",
+      "year": 2039,
+      "engine_efficiency": 0.19419760704040528,
+      "fuel_energy_kJ_per_km": 461.48951249916917,
+      "fuel_L_per_100km": 1.449975484600376,
+      "driving_mass_kg": 169.60798960131032
+    },
+    {
+      "size": "Scooter <4kW",
+      "year": 2040,
+      "engine_efficiency": 0.1949605643749237,
+      "fuel_energy_kJ_per_km": 459.4105308245948,
+      "fuel_L_per_100km": 1.4434434348366845,
+      "driving_mass_kg": 169.44898964435234
+    },
+    {
+      "size": "Scooter 4-11kW",
+      "year": 2015,
+      "engine_efficiency": 0.18000000715255737,
+      "fuel_energy_kJ_per_km": 931.1796539288728,
+      "fuel_L_per_100km": 2.9196592027308377,
+      "driving_mass_kg": 221.02853142769237
+    },
+    {
+      "size": "Scooter 4-11kW",
+      "year": 2016,
+      "engine_efficiency": 0.18000000715255737,
+      "fuel_energy_kJ_per_km": 931.1708435381437,
+      "fuel_L_per_100km": 2.9217312930674573,
+      "driving_mass_kg": 221.02363180153833
+    },
+    {
+      "size": "Scooter 4-11kW",
+      "year": 2017,
+      "engine_efficiency": 0.18000000715255737,
+      "fuel_energy_kJ_per_km": 931.1615493809198,
+      "fuel_L_per_100km": 2.9239209170796023,
+      "driving_mass_kg": 221.01846314361887
+    },
+    {
+      "size": "Scooter 4-11kW",
+      "year": 2018,
+      "engine_efficiency": 0.18000000715255737,
+      "fuel_energy_kJ_per_km": 931.1542759514434,
+      "fuel_L_per_100km": 2.9256371725518617,
+      "driving_mass_kg": 221.01441825090188
+    },
+    {
+      "size": "Scooter 4-11kW",
+      "year": 2019,
+      "engine_efficiency": 0.18000000715255737,
+      "fuel_energy_kJ_per_km": 931.1542759514434,
+      "fuel_L_per_100km": 2.9256371725518617,
+      "driving_mass_kg": 221.01441825090188
+    },
+    {
+      "size": "Scooter 4-11kW",
+      "year": 2020,
+      "engine_efficiency": 0.18000000715255737,
+      "fuel_energy_kJ_per_km": 931.1542759514434,
+      "fuel_L_per_100km": 2.9256371725518617,
+      "driving_mass_kg": 221.01441825090188
+    },
+    {
+      "size": "Scooter 4-11kW",
+      "year": 2021,
+      "engine_efficiency": 0.18073310554027558,
+      "fuel_energy_kJ_per_km": 926.8758359122852,
+      "fuel_L_per_100km": 2.9121945416770734,
+      "driving_mass_kg": 220.73441832235295
+    },
+    {
+      "size": "Scooter 4-11kW",
+      "year": 2022,
+      "engine_efficiency": 0.18146620392799379,
+      "fuel_energy_kJ_per_km": 922.6319644861376,
+      "fuel_L_per_100km": 2.898860523544384,
+      "driving_mass_kg": 220.45441839380402
+    },
+    {
+      "size": "Scooter 4-11kW",
+      "year": 2023,
+      "engine_efficiency": 0.18219930231571196,
+      "fuel_energy_kJ_per_km": 918.4222444016873,
+      "fuel_L_per_100km": 2.885633807109536,
+      "driving_mass_kg": 220.1744184652551
+    },
+    {
+      "size": "Scooter 4-11kW",
+      "year": 2024,
+      "engine_efficiency": 0.18293240070343017,
+      "fuel_energy_kJ_per_km": 914.2462650757833,
+      "fuel_L_per_100km": 2.8725131023421233,
+      "driving_mass_kg": 219.89441853670616
+    },
+    {
+      "size": "Scooter 4-11kW",
+      "year": 2025,
+      "engine_efficiency": 0.18366549909114838,
+      "fuel_energy_kJ_per_km": 910.1036224815351,
+      "fuel_L_per_100km": 2.859497139811161,
+      "driving_mass_kg": 219.61441860815722
+    },
+    {
+      "size": "Scooter 4-11kW",
+      "year": 2026,
+      "engine_efficiency": 0.18439859747886658,
+      "fuel_energy_kJ_per_km": 905.9939190164054,
+      "fuel_L_per_100km": 2.8465846702706403,
+      "driving_mass_kg": 219.3344186796083
+    },
+    {
+      "size": "Scooter 4-11kW",
+      "year": 2027,
+      "engine_efficiency": 0.1851316958665848,
+      "fuel_energy_kJ_per_km": 901.9167633758316,
+      "fuel_L_per_100km": 2.8337744642624534,
+      "driving_mass_kg": 219.05441875105936
+    },
+    {
+      "size": "Scooter 4-11kW",
+      "year": 2028,
+      "engine_efficiency": 0.18586479425430297,
+      "fuel_energy_kJ_per_km": 897.8717704289887,
+      "fuel_L_per_100km": 2.8210653117260476,
+      "driving_mass_kg": 218.77441882251043
+    },
+    {
+      "size": "Scooter 4-11kW",
+      "year": 2029,
+      "engine_efficiency": 0.18659789264202117,
+      "fuel_energy_kJ_per_km": 893.8602007534453,
+      "fuel_L_per_100km": 2.808461173329046,
+      "driving_mass_kg": 218.4944188939615
+    },
+    {
+      "size": "Scooter 4-11kW",
+      "year": 2030,
+      "engine_efficiency": 0.18733099102973938,
+      "fuel_energy_kJ_per_km": 889.8818100865793,
+      "fuel_L_per_100km": 2.795961281611292,
+      "driving_mass_kg": 218.21441896541256
+    },
+    {
+      "size": "Scooter 4-11kW",
+      "year": 2031,
+      "engine_efficiency": 0.1880939483642578,
+      "fuel_energy_kJ_per_km": 885.7940607433242,
+      "fuel_L_per_100km": 2.783117790753151,
+      "driving_mass_kg": 217.93441867178518
+    },
+    {
+      "size": "Scooter 4-11kW",
+      "year": 2032,
+      "engine_efficiency": 0.18885690569877625,
+      "fuel_energy_kJ_per_km": 881.7393393511711,
+      "fuel_L_per_100km": 2.770378071959395,
+      "driving_mass_kg": 217.6544183781578
+    },
+    {
+      "size": "Scooter 4-11kW",
+      "year": 2033,
+      "engine_efficiency": 0.18961986303329467,
+      "fuel_energy_kJ_per_km": 877.7172472351755,
+      "fuel_L_per_100km": 2.7577408726145705,
+      "driving_mass_kg": 217.37441808453042
+    },
+    {
+      "size": "Scooter 4-11kW",
+      "year": 2034,
+      "engine_efficiency": 0.19038282036781312,
+      "fuel_energy_kJ_per_km": 873.7274280417251,
+      "fuel_L_per_100km": 2.7452050730745943,
+      "driving_mass_kg": 217.09441779090304
+    },
+    {
+      "size": "Scooter 4-11kW",
+      "year": 2035,
+      "engine_efficiency": 0.19114577770233154,
+      "fuel_energy_kJ_per_km": 869.7694958161827,
+      "fuel_L_per_100km": 2.732769460690539,
+      "driving_mass_kg": 216.81441749727566
+    },
+    {
+      "size": "Scooter 4-11kW",
+      "year": 2036,
+      "engine_efficiency": 0.19190873503684996,
+      "fuel_energy_kJ_per_km": 865.8430341060043,
+      "fuel_L_per_100km": 2.720432726990678,
+      "driving_mass_kg": 216.53441720364827
+    },
+    {
+      "size": "Scooter 4-11kW",
+      "year": 2037,
+      "engine_efficiency": 0.1926716923713684,
+      "fuel_energy_kJ_per_km": 861.9477047047282,
+      "fuel_L_per_100km": 2.7081938093483116,
+      "driving_mass_kg": 216.2544169100209
+    },
+    {
+      "size": "Scooter 4-11kW",
+      "year": 2038,
+      "engine_efficiency": 0.19343464970588684,
+      "fuel_energy_kJ_per_km": 858.0831611305767,
+      "fuel_L_per_100km": 2.6960516191361346,
+      "driving_mass_kg": 215.9744166163935
+    },
+    {
+      "size": "Scooter 4-11kW",
+      "year": 2039,
+      "engine_efficiency": 0.19419760704040528,
+      "fuel_energy_kJ_per_km": 854.2489833462305,
+      "fuel_L_per_100km": 2.684004836619248,
+      "driving_mass_kg": 215.69441632276613
+    },
+    {
+      "size": "Scooter 4-11kW",
+      "year": 2040,
+      "engine_efficiency": 0.1949605643749237,
+      "fuel_energy_kJ_per_km": 850.4448148520097,
+      "fuel_L_per_100km": 2.672052341694633,
+      "driving_mass_kg": 215.41441602913875
+    },
+    {
+      "size": "Motorcycle 4-11kW",
+      "year": 2015,
+      "engine_efficiency": 0.18000000715255737,
+      "fuel_energy_kJ_per_km": 1090.7004424535678,
+      "fuel_L_per_100km": 3.419827281229878,
+      "driving_mass_kg": 211.72852998525997
+    },
+    {
+      "size": "Motorcycle 4-11kW",
+      "year": 2016,
+      "engine_efficiency": 0.18000000715255737,
+      "fuel_energy_kJ_per_km": 1090.6901661956765,
+      "fuel_L_per_100km": 3.4222544785728317,
+      "driving_mass_kg": 211.7236303591059
+    },
+    {
+      "size": "Motorcycle 4-11kW",
+      "year": 2017,
+      "engine_efficiency": 0.18000000715255737,
+      "fuel_energy_kJ_per_km": 1090.6793256825304,
+      "fuel_L_per_100km": 3.424819352033665,
+      "driving_mass_kg": 211.71846170118647
+    },
+    {
+      "size": "Motorcycle 4-11kW",
+      "year": 2018,
+      "engine_efficiency": 0.18000000715255737,
+      "fuel_energy_kJ_per_km": 1090.6708421045182,
+      "fuel_L_per_100km": 3.4268297328270183,
+      "driving_mass_kg": 211.71441680846948
+    },
+    {
+      "size": "Motorcycle 4-11kW",
+      "year": 2019,
+      "engine_efficiency": 0.18000000715255737,
+      "fuel_energy_kJ_per_km": 1090.6708421045182,
+      "fuel_L_per_100km": 3.4268297328270183,
+      "driving_mass_kg": 211.71441680846948
+    },
+    {
+      "size": "Motorcycle 4-11kW",
+      "year": 2020,
+      "engine_efficiency": 0.18000000715255737,
+      "fuel_energy_kJ_per_km": 1090.6708421045182,
+      "fuel_L_per_100km": 3.4268297328270183,
+      "driving_mass_kg": 211.71441680846948
+    },
+    {
+      "size": "Motorcycle 4-11kW",
+      "year": 2021,
+      "engine_efficiency": 0.18073310554027558,
+      "fuel_energy_kJ_per_km": 1084.3046100443391,
+      "fuel_L_per_100km": 3.406827370548952,
+      "driving_mass_kg": 211.51941681282807
+    },
+    {
+      "size": "Motorcycle 4-11kW",
+      "year": 2022,
+      "engine_efficiency": 0.18146620392799379,
+      "fuel_energy_kJ_per_km": 1077.9899264292264,
+      "fuel_L_per_100km": 3.3869869707415186,
+      "driving_mass_kg": 211.32441681718666
+    },
+    {
+      "size": "Motorcycle 4-11kW",
+      "year": 2023,
+      "engine_efficiency": 0.18219930231571196,
+      "fuel_energy_kJ_per_km": 1071.7260769647073,
+      "fuel_L_per_100km": 3.367306289129504,
+      "driving_mass_kg": 211.12941682154525
+    },
+    {
+      "size": "Motorcycle 4-11kW",
+      "year": 2024,
+      "engine_efficiency": 0.18293240070343017,
+      "fuel_energy_kJ_per_km": 1065.5124320340476,
+      "fuel_L_per_100km": 3.3477833474906427,
+      "driving_mass_kg": 210.93441682590384
+    },
+    {
+      "size": "Motorcycle 4-11kW",
+      "year": 2025,
+      "engine_efficiency": 0.18366549909114838,
+      "fuel_energy_kJ_per_km": 1059.348390464866,
+      "fuel_L_per_100km": 3.32841625697331,
+      "driving_mass_kg": 210.73941683026243
+    },
+    {
+      "size": "Motorcycle 4-11kW",
+      "year": 2026,
+      "engine_efficiency": 0.18439859747886658,
+      "fuel_energy_kJ_per_km": 1053.2333975832344,
+      "fuel_L_per_100km": 3.309203274821549,
+      "driving_mass_kg": 210.54441683462102
+    },
+    {
+      "size": "Motorcycle 4-11kW",
+      "year": 2027,
+      "engine_efficiency": 0.1851316958665848,
+      "fuel_energy_kJ_per_km": 1047.1678428172092,
+      "fuel_L_per_100km": 3.2901456245975833,
+      "driving_mass_kg": 210.3494168389796
+    },
+    {
+      "size": "Motorcycle 4-11kW",
+      "year": 2028,
+      "engine_efficiency": 0.18586479425430297,
+      "fuel_energy_kJ_per_km": 1041.1501362565114,
+      "fuel_L_per_100km": 3.2712383108879433,
+      "driving_mass_kg": 210.1544168433382
+    },
+    {
+      "size": "Motorcycle 4-11kW",
+      "year": 2029,
+      "engine_efficiency": 0.18659789264202117,
+      "fuel_energy_kJ_per_km": 1035.1797139488,
+      "fuel_L_per_100km": 3.2524795617843902,
+      "driving_mass_kg": 209.9594168476968
+    },
+    {
+      "size": "Motorcycle 4-11kW",
+      "year": 2030,
+      "engine_efficiency": 0.18733099102973938,
+      "fuel_energy_kJ_per_km": 1029.2560207695944,
+      "fuel_L_per_100km": 3.2338676331153553,
+      "driving_mass_kg": 209.76441685205538
+    },
+    {
+      "size": "Motorcycle 4-11kW",
+      "year": 2031,
+      "engine_efficiency": 0.1880939483642578,
+      "fuel_energy_kJ_per_km": 1023.3468341869519,
+      "fuel_L_per_100km": 3.2153012834005783,
+      "driving_mass_kg": 209.6344168428539
+    },
+    {
+      "size": "Motorcycle 4-11kW",
+      "year": 2032,
+      "engine_efficiency": 0.18885690569877625,
+      "fuel_energy_kJ_per_km": 1017.4855696399733,
+      "fuel_L_per_100km": 3.196885502171116,
+      "driving_mass_kg": 209.50441683365244
+    },
+    {
+      "size": "Motorcycle 4-11kW",
+      "year": 2033,
+      "engine_efficiency": 0.18961986303329467,
+      "fuel_energy_kJ_per_km": 1011.6714720372421,
+      "fuel_L_per_100km": 3.178617916969926,
+      "driving_mass_kg": 209.37441682445098
+    },
+    {
+      "size": "Motorcycle 4-11kW",
+      "year": 2034,
+      "engine_efficiency": 0.19038282036781312,
+      "fuel_energy_kJ_per_km": 1005.903974315937,
+      "fuel_L_per_100km": 3.160496746115809,
+      "driving_mass_kg": 209.2444168152495
+    },
+    {
+      "size": "Motorcycle 4-11kW",
+      "year": 2035,
+      "engine_efficiency": 0.19114577770233154,
+      "fuel_energy_kJ_per_km": 1000.1825184662418,
+      "fuel_L_per_100km": 3.142520236371621,
+      "driving_mass_kg": 209.11441680604804
+    },
+    {
+      "size": "Motorcycle 4-11kW",
+      "year": 2036,
+      "engine_efficiency": 0.19190873503684996,
+      "fuel_energy_kJ_per_km": 994.5065553524877,
+      "fuel_L_per_100km": 3.124686662382322,
+      "driving_mass_kg": 208.98441679684657
+    },
+    {
+      "size": "Motorcycle 4-11kW",
+      "year": 2037,
+      "engine_efficiency": 0.1926716923713684,
+      "fuel_energy_kJ_per_km": 988.8755445370027,
+      "fuel_L_per_100km": 3.106994326121512,
+      "driving_mass_kg": 208.8544167876451
+    },
+    {
+      "size": "Motorcycle 4-11kW",
+      "year": 2038,
+      "engine_efficiency": 0.19343464970588684,
+      "fuel_energy_kJ_per_km": 983.2889541086942,
+      "fuel_L_per_100km": 3.0894415563528486,
+      "driving_mass_kg": 208.72441677844364
+    },
+    {
+      "size": "Motorcycle 4-11kW",
+      "year": 2039,
+      "engine_efficiency": 0.19419760704040528,
+      "fuel_energy_kJ_per_km": 977.746260515108,
+      "fuel_L_per_100km": 3.0720267081023893,
+      "driving_mass_kg": 208.59441676924217
+    },
+    {
+      "size": "Motorcycle 4-11kW",
+      "year": 2040,
+      "engine_efficiency": 0.1949605643749237,
+      "fuel_energy_kJ_per_km": 972.2469483996404,
+      "fuel_L_per_100km": 3.054748162147115,
+      "driving_mass_kg": 208.4644167600407
+    },
+    {
+      "size": "Motorcycle 11-35kW",
+      "year": 2015,
+      "engine_efficiency": 0.18000000715255737,
+      "fuel_energy_kJ_per_km": 1852.838196248112,
+      "fuel_L_per_100km": 5.809465518305038,
+      "driving_mass_kg": 251.31421521556211
+    },
+    {
+      "size": "Motorcycle 11-35kW",
+      "year": 2016,
+      "engine_efficiency": 0.18000000715255737,
+      "fuel_energy_kJ_per_km": 1852.8233107810472,
+      "fuel_L_per_100km": 5.813596812228886,
+      "driving_mass_kg": 251.306049171972
+    },
+    {
+      "size": "Motorcycle 11-35kW",
+      "year": 2017,
+      "engine_efficiency": 0.18000000715255737,
+      "fuel_energy_kJ_per_km": 1852.8076079733564,
+      "fuel_L_per_100km": 5.817962440437221,
+      "driving_mass_kg": 251.29743474210625
+    },
+    {
+      "size": "Motorcycle 11-35kW",
+      "year": 2018,
+      "engine_efficiency": 0.18000000715255737,
+      "fuel_energy_kJ_per_km": 1852.7953192567456,
+      "fuel_L_per_100km": 5.821384274489758,
+      "driving_mass_kg": 251.29069325424462
+    },
+    {
+      "size": "Motorcycle 11-35kW",
+      "year": 2019,
+      "engine_efficiency": 0.18000000715255737,
+      "fuel_energy_kJ_per_km": 1852.7953192567456,
+      "fuel_L_per_100km": 5.821384274489758,
+      "driving_mass_kg": 251.29069325424462
+    },
+    {
+      "size": "Motorcycle 11-35kW",
+      "year": 2020,
+      "engine_efficiency": 0.18000000715255737,
+      "fuel_energy_kJ_per_km": 1852.7953192567456,
+      "fuel_L_per_100km": 5.821384274489758,
+      "driving_mass_kg": 251.29069325424462
+    },
+    {
+      "size": "Motorcycle 11-35kW",
+      "year": 2021,
+      "engine_efficiency": 0.18073310554027558,
+      "fuel_energy_kJ_per_km": 1841.422943561694,
+      "fuel_L_per_100km": 5.785652875372601,
+      "driving_mass_kg": 251.05069325960903
+    },
+    {
+      "size": "Motorcycle 11-35kW",
+      "year": 2022,
+      "engine_efficiency": 0.18146620392799379,
+      "fuel_energy_kJ_per_km": 1830.1424535193917,
+      "fuel_L_per_100km": 5.7502101760855915,
+      "driving_mass_kg": 250.81069326497345
+    },
+    {
+      "size": "Motorcycle 11-35kW",
+      "year": 2023,
+      "engine_efficiency": 0.18219930231571196,
+      "fuel_energy_kJ_per_km": 1818.9527399939743,
+      "fuel_L_per_100km": 5.715052691782877,
+      "driving_mass_kg": 250.57069327033787
+    },
+    {
+      "size": "Motorcycle 11-35kW",
+      "year": 2024,
+      "engine_efficiency": 0.18293240070343017,
+      "fuel_energy_kJ_per_km": 1807.8527116305097,
+      "fuel_L_per_100km": 5.680176993485353,
+      "driving_mass_kg": 250.3306932757023
+    },
+    {
+      "size": "Motorcycle 11-35kW",
+      "year": 2025,
+      "engine_efficiency": 0.18366549909114838,
+      "fuel_energy_kJ_per_km": 1796.841294496927,
+      "fuel_L_per_100km": 5.645579706955614,
+      "driving_mass_kg": 250.0906932810667
+    },
+    {
+      "size": "Motorcycle 11-35kW",
+      "year": 2026,
+      "engine_efficiency": 0.18439859747886658,
+      "fuel_energy_kJ_per_km": 1785.9174117527232,
+      "fuel_L_per_100km": 5.611257448818115,
+      "driving_mass_kg": 249.85069328643112
+    },
+    {
+      "size": "Motorcycle 11-35kW",
+      "year": 2027,
+      "engine_efficiency": 0.1851316958665848,
+      "fuel_energy_kJ_per_km": 1775.0800434308376,
+      "fuel_L_per_100km": 5.577207014390644,
+      "driving_mass_kg": 249.61069329179554
+    },
+    {
+      "size": "Motorcycle 11-35kW",
+      "year": 2028,
+      "engine_efficiency": 0.18586479425430297,
+      "fuel_energy_kJ_per_km": 1764.3281658259712,
+      "fuel_L_per_100km": 5.543425187245638,
+      "driving_mass_kg": 249.37069329715996
+    },
+    {
+      "size": "Motorcycle 11-35kW",
+      "year": 2029,
+      "engine_efficiency": 0.18659789264202117,
+      "fuel_energy_kJ_per_km": 1753.6607713199958,
+      "fuel_L_per_100km": 5.50990880150057,
+      "driving_mass_kg": 249.13069330252438
+    },
+    {
+      "size": "Motorcycle 11-35kW",
+      "year": 2030,
+      "engine_efficiency": 0.18733099102973938,
+      "fuel_energy_kJ_per_km": 1743.0768680685828,
+      "fuel_L_per_100km": 5.4766547408333555,
+      "driving_mass_kg": 248.8906933078888
+    },
+    {
+      "size": "Motorcycle 11-35kW",
+      "year": 2031,
+      "engine_efficiency": 0.1880939483642578,
+      "fuel_energy_kJ_per_km": 1732.4400145810705,
+      "fuel_L_per_100km": 5.443234313342694,
+      "driving_mass_kg": 248.7306932965639
+    },
+    {
+      "size": "Motorcycle 11-35kW",
+      "year": 2032,
+      "engine_efficiency": 0.18885690569877625,
+      "fuel_energy_kJ_per_km": 1721.8891041026193,
+      "fuel_L_per_100km": 5.410083914212021,
+      "driving_mass_kg": 248.57069328523903
+    },
+    {
+      "size": "Motorcycle 11-35kW",
+      "year": 2033,
+      "engine_efficiency": 0.18961986303329467,
+      "fuel_energy_kJ_per_km": 1711.423099228262,
+      "fuel_L_per_100km": 5.377200283970145,
+      "driving_mass_kg": 248.41069327391415
+    },
+    {
+      "size": "Motorcycle 11-35kW",
+      "year": 2034,
+      "engine_efficiency": 0.19038282036781312,
+      "fuel_energy_kJ_per_km": 1701.0409791834315,
+      "fuel_L_per_100km": 5.344580215397711,
+      "driving_mass_kg": 248.25069326258927
+    },
+    {
+      "size": "Motorcycle 11-35kW",
+      "year": 2035,
+      "engine_efficiency": 0.19114577770233154,
+      "fuel_energy_kJ_per_km": 1690.7422085214064,
+      "fuel_L_per_100km": 5.312222026149619,
+      "driving_mass_kg": 248.09069325126438
+    },
+    {
+      "size": "Motorcycle 11-35kW",
+      "year": 2036,
+      "engine_efficiency": 0.19190873503684996,
+      "fuel_energy_kJ_per_km": 1680.5256234095468,
+      "fuel_L_per_100km": 5.280122059525661,
+      "driving_mass_kg": 247.9306932399395
+    },
+    {
+      "size": "Motorcycle 11-35kW",
+      "year": 2037,
+      "engine_efficiency": 0.1926716923713684,
+      "fuel_energy_kJ_per_km": 1670.3899512580504,
+      "fuel_L_per_100km": 5.2482763171164155,
+      "driving_mass_kg": 247.77069322861462
+    },
+    {
+      "size": "Motorcycle 11-35kW",
+      "year": 2038,
+      "engine_efficiency": 0.19343464970588684,
+      "fuel_energy_kJ_per_km": 1660.3342346416478,
+      "fuel_L_per_100km": 5.216681790742648,
+      "driving_mass_kg": 247.61069321728974
+    },
+    {
+      "size": "Motorcycle 11-35kW",
+      "year": 2039,
+      "engine_efficiency": 0.19419760704040528,
+      "fuel_energy_kJ_per_km": 1650.3575311794687,
+      "fuel_L_per_100km": 5.1853355194938215,
+      "driving_mass_kg": 247.45069320596485
+    },
+    {
+      "size": "Motorcycle 11-35kW",
+      "year": 2040,
+      "engine_efficiency": 0.1949605643749237,
+      "fuel_energy_kJ_per_km": 1640.4589380144423,
+      "fuel_L_per_100km": 5.154234666641077,
+      "driving_mass_kg": 247.29069319463997
+    }
+  ],
+  "manufacturer_screening": [
+    {
+      "id": "piaggio-liberty50-euro4",
+      "model_2025_L_per_100km": 1.5489269396110055,
+      "reported_L_per_100km": 2.8011204481792715,
+      "deviation_percent": -44.703308255887094,
+      "classification": "unmatched screening only"
+    },
+    {
+      "id": "honda-pcx125-2025",
+      "model_2025_L_per_100km": 2.859497139811161,
+      "reported_L_per_100km": 2.1,
+      "deviation_percent": 36.16653046719813,
+      "classification": "unmatched screening only"
+    },
+    {
+      "id": "honda-cb125r-2024",
+      "model_2025_L_per_100km": 3.32841625697331,
+      "reported_L_per_100km": 2.197802197802198,
+      "deviation_percent": 51.44293969228559,
+      "classification": "unmatched screening only"
+    },
+    {
+      "id": "honda-cb125f-2024",
+      "model_2025_L_per_100km": 3.32841625697331,
+      "reported_L_per_100km": 1.4,
+      "deviation_percent": 137.74401835523645,
+      "classification": "unmatched screening only"
+    },
+    {
+      "id": "honda-cb500-hornet-2024",
+      "model_2025_L_per_100km": 5.645579706955614,
+      "reported_L_per_100km": 3.5,
+      "deviation_percent": 61.302277341588976,
+      "classification": "unmatched screening only"
+    },
+    {
+      "id": "yamaha-mt03-2025",
+      "model_2025_L_per_100km": 5.645579706955614,
+      "reported_L_per_100km": 4,
+      "deviation_percent": 41.139492673890345,
+      "classification": "unmatched screening only"
+    }
+  ]
+}

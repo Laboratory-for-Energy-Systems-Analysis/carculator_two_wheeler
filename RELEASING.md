@@ -1,8 +1,10 @@
 # Releasing carculator_two_wheeler 0.1.1
 
-Status: release candidate prepared; publication blocked by the petrol-motorcycle
-efficiency defect documented in `CHANGELOG.md` and `docs/validity.rst`. Resolve
-and revalidate it before proceeding to publication. Use Python 3.12 and review the matching family set:
+Status: release candidate prepared; publication remains pending maintainer review.
+The implausible petrol-efficiency inputs have been corrected with a provisional
+historical prior, documented in `docs/petrol_efficiency.rst`. Review the remaining
+consumption evidence gaps, negative bicycle cost and battery-override qualification
+before publication. Use Python 3.12 and review the matching family set:
 
 | Package | Prepared version |
 | --- | --- |

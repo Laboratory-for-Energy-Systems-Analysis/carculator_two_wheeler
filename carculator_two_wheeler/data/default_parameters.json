@@ -18144,7 +18144,7 @@
         "maximum": 1.0033754123091398
     },
     "762-2000-engine efficiency": {
-        "amount": 0.005,
+        "amount": 0.18,
         "category": "Powertrain",
         "powertrain": [
             "ICEV-p"
@@ -18156,17 +18156,17 @@
         "name": "engine efficiency",
         "unit": "unitless",
         "importance": "Critical",
-        "source": "Cox, B. L., & Mutel, C. L. (2018). The environmental and cost performance of current and future motorcycles. Applied Energy, 212, 1013-1024. https://doi.org/10.1016/j.apenergy.2017.12.100",
-        "comment": "",
+        "source": "Restored provisional engineering prior: carculator_two_wheeler commit 6ed72b3e0f5a29893212a8e8df4e0b501e96d2cc. The historical record cites Cox and Mutel (2018), DOI 10.1016/j.apenergy.2017.12.100; its numerical efficiency was not independently verified from the paper.",
+        "comment": "2026-10-08 correction: restore the pre-September-2024 efficiency trajectory for five petrol classes. Retain triangular +/-25% relative engineering uncertainty. The 2025 value is the linear midpoint of 2020 and 2030. These are provisional cycle-average fuel-to-shaft assumptions, not measured peak efficiencies or newly fitted consumption values. Supersedes the 2025 baseline for this parameter only; see petrol_efficiency_provenance.json and docs/petrol_efficiency.rst.",
         "status": "To be improved",
         "kind": "distribution",
         "uncertainty_type": 5,
-        "loc": 0.005,
-        "minimum": 0.00375,
-        "maximum": 0.00625
+        "loc": 0.18,
+        "minimum": 0.135,
+        "maximum": 0.22499999999999998
     },
     "763-2010-engine efficiency": {
-        "amount": 0.005,
+        "amount": 0.18,
         "category": "Powertrain",
         "powertrain": [
             "ICEV-p"
@@ -18178,17 +18178,17 @@
         "name": "engine efficiency",
         "unit": "unitless",
         "importance": "Critical",
-        "source": "Cox, B. L., & Mutel, C. L. (2018). The environmental and cost performance of current and future motorcycles. Applied Energy, 212, 1013-1024. https://doi.org/10.1016/j.apenergy.2017.12.100",
-        "comment": "",
+        "source": "Restored provisional engineering prior: carculator_two_wheeler commit 6ed72b3e0f5a29893212a8e8df4e0b501e96d2cc. The historical record cites Cox and Mutel (2018), DOI 10.1016/j.apenergy.2017.12.100; its numerical efficiency was not independently verified from the paper.",
+        "comment": "2026-10-08 correction: restore the pre-September-2024 efficiency trajectory for five petrol classes. Retain triangular +/-25% relative engineering uncertainty. The 2025 value is the linear midpoint of 2020 and 2030. These are provisional cycle-average fuel-to-shaft assumptions, not measured peak efficiencies or newly fitted consumption values. Supersedes the 2025 baseline for this parameter only; see petrol_efficiency_provenance.json and docs/petrol_efficiency.rst.",
         "status": "To be improved",
         "kind": "distribution",
         "uncertainty_type": 5,
-        "loc": 0.005,
-        "minimum": 0.00375,
-        "maximum": 0.00625
+        "loc": 0.18,
+        "minimum": 0.135,
+        "maximum": 0.22499999999999998
     },
     "764-2020-engine efficiency": {
-        "amount": 0.005,
+        "amount": 0.18,
         "category": "Powertrain",
         "powertrain": [
             "ICEV-p"
@@ -18200,17 +18200,17 @@
         "name": "engine efficiency",
         "unit": "unitless",
         "importance": "Critical",
-        "source": "Cox, B. L., & Mutel, C. L. (2018). The environmental and cost performance of current and future motorcycles. Applied Energy, 212, 1013-1024. https://doi.org/10.1016/j.apenergy.2017.12.100",
-        "comment": "",
+        "source": "Restored provisional engineering prior: carculator_two_wheeler commit 6ed72b3e0f5a29893212a8e8df4e0b501e96d2cc. The historical record cites Cox and Mutel (2018), DOI 10.1016/j.apenergy.2017.12.100; its numerical efficiency was not independently verified from the paper.",
+        "comment": "2026-10-08 correction: restore the pre-September-2024 efficiency trajectory for five petrol classes. Retain triangular +/-25% relative engineering uncertainty. The 2025 value is the linear midpoint of 2020 and 2030. These are provisional cycle-average fuel-to-shaft assumptions, not measured peak efficiencies or newly fitted consumption values. Supersedes the 2025 baseline for this parameter only; see petrol_efficiency_provenance.json and docs/petrol_efficiency.rst.",
         "status": "To be improved",
         "kind": "distribution",
         "uncertainty_type": 5,
-        "loc": 0.005,
-        "minimum": 0.00375,
-        "maximum": 0.00625
+        "loc": 0.18,
+        "minimum": 0.135,
+        "maximum": 0.22499999999999998
     },
     "765-2030-engine efficiency": {
-        "amount": 0.005,
+        "amount": 0.18733099212340384,
         "category": "Powertrain",
         "powertrain": [
             "ICEV-p"
@@ -18222,17 +18222,17 @@
         "name": "engine efficiency",
         "unit": "unitless",
         "importance": "Critical",
-        "source": "Cox, B. L., & Mutel, C. L. (2018). The environmental and cost performance of current and future motorcycles. Applied Energy, 212, 1013-1024. https://doi.org/10.1016/j.apenergy.2017.12.100",
-        "comment": "",
+        "source": "Restored provisional engineering prior: carculator_two_wheeler commit 6ed72b3e0f5a29893212a8e8df4e0b501e96d2cc. The historical record cites Cox and Mutel (2018), DOI 10.1016/j.apenergy.2017.12.100; its numerical efficiency was not independently verified from the paper.",
+        "comment": "2026-10-08 correction: restore the pre-September-2024 efficiency trajectory for five petrol classes. Retain triangular +/-25% relative engineering uncertainty. The 2025 value is the linear midpoint of 2020 and 2030. These are provisional cycle-average fuel-to-shaft assumptions, not measured peak efficiencies or newly fitted consumption values. Supersedes the 2025 baseline for this parameter only; see petrol_efficiency_provenance.json and docs/petrol_efficiency.rst.",
         "status": "To be improved",
         "kind": "distribution",
         "uncertainty_type": 5,
-        "loc": 0.005,
-        "minimum": 0.00375,
-        "maximum": 0.00625
+        "loc": 0.18733099212340384,
+        "minimum": 0.14049824409255288,
+        "maximum": 0.2341637401542548
     },
     "766-2040-engine efficiency": {
-        "amount": 0.005,
+        "amount": 0.1949605589441044,
         "category": "Powertrain",
         "powertrain": [
             "ICEV-p"
@@ -18244,17 +18244,17 @@
         "name": "engine efficiency",
         "unit": "unitless",
         "importance": "Critical",
-        "source": "Cox, B. L., & Mutel, C. L. (2018). The environmental and cost performance of current and future motorcycles. Applied Energy, 212, 1013-1024. https://doi.org/10.1016/j.apenergy.2017.12.100",
-        "comment": "",
+        "source": "Restored provisional engineering prior: carculator_two_wheeler commit 6ed72b3e0f5a29893212a8e8df4e0b501e96d2cc. The historical record cites Cox and Mutel (2018), DOI 10.1016/j.apenergy.2017.12.100; its numerical efficiency was not independently verified from the paper.",
+        "comment": "2026-10-08 correction: restore the pre-September-2024 efficiency trajectory for five petrol classes. Retain triangular +/-25% relative engineering uncertainty. The 2025 value is the linear midpoint of 2020 and 2030. These are provisional cycle-average fuel-to-shaft assumptions, not measured peak efficiencies or newly fitted consumption values. Supersedes the 2025 baseline for this parameter only; see petrol_efficiency_provenance.json and docs/petrol_efficiency.rst.",
         "status": "To be improved",
         "kind": "distribution",
         "uncertainty_type": 5,
-        "loc": 0.005,
-        "minimum": 0.00375,
-        "maximum": 0.00625
+        "loc": 0.1949605589441044,
+        "minimum": 0.14622041920807832,
+        "maximum": 0.2437006986801305
     },
     "767-2050-engine efficiency": {
-        "amount": 0.005,
+        "amount": 0.202900860732958,
         "category": "Powertrain",
         "powertrain": [
             "ICEV-p"
@@ -18266,14 +18266,14 @@
         "name": "engine efficiency",
         "unit": "unitless",
         "importance": "Critical",
-        "source": "Cox, B. L., & Mutel, C. L. (2018). The environmental and cost performance of current and future motorcycles. Applied Energy, 212, 1013-1024. https://doi.org/10.1016/j.apenergy.2017.12.100",
-        "comment": "",
+        "source": "Restored provisional engineering prior: carculator_two_wheeler commit 6ed72b3e0f5a29893212a8e8df4e0b501e96d2cc. The historical record cites Cox and Mutel (2018), DOI 10.1016/j.apenergy.2017.12.100; its numerical efficiency was not independently verified from the paper.",
+        "comment": "2026-10-08 correction: restore the pre-September-2024 efficiency trajectory for five petrol classes. Retain triangular +/-25% relative engineering uncertainty. The 2025 value is the linear midpoint of 2020 and 2030. These are provisional cycle-average fuel-to-shaft assumptions, not measured peak efficiencies or newly fitted consumption values. Supersedes the 2025 baseline for this parameter only; see petrol_efficiency_provenance.json and docs/petrol_efficiency.rst.",
         "status": "To be improved",
         "kind": "distribution",
         "uncertainty_type": 5,
-        "loc": 0.005,
-        "minimum": 0.00375,
-        "maximum": 0.00625
+        "loc": 0.202900860732958,
+        "minimum": 0.1521756455497185,
+        "maximum": 0.25362607591619746
     },
     "768-2000-transmission efficiency": {
         "amount": 0.8,
@@ -27084,7 +27084,7 @@
         "maximum": 0.9900000000000001
     },
     "1086-2000-engine efficiency": {
-        "amount": 0.02,
+        "amount": 0.18,
         "category": "Powertrain",
         "powertrain": [
             "ICEV-p"
@@ -27097,17 +27097,17 @@
         "name": "engine efficiency",
         "unit": "unitless",
         "importance": "Critical",
-        "source": "Cox, B. L., & Mutel, C. L. (2018). The environmental and cost performance of current and future motorcycles. Applied Energy, 212, 1013-1024. https://doi.org/10.1016/j.apenergy.2017.12.100",
-        "comment": "",
+        "source": "Restored provisional engineering prior: carculator_two_wheeler commit 6ed72b3e0f5a29893212a8e8df4e0b501e96d2cc. The historical record cites Cox and Mutel (2018), DOI 10.1016/j.apenergy.2017.12.100; its numerical efficiency was not independently verified from the paper.",
+        "comment": "2026-10-08 correction: restore the pre-September-2024 efficiency trajectory for five petrol classes. Retain triangular +/-25% relative engineering uncertainty. The 2025 value is the linear midpoint of 2020 and 2030. These are provisional cycle-average fuel-to-shaft assumptions, not measured peak efficiencies or newly fitted consumption values. Supersedes the 2025 baseline for this parameter only; see petrol_efficiency_provenance.json and docs/petrol_efficiency.rst.",
         "status": "To be improved",
         "kind": "distribution",
         "uncertainty_type": 5,
-        "loc": 0.02,
-        "minimum": 0.015,
-        "maximum": 0.025
+        "loc": 0.18,
+        "minimum": 0.135,
+        "maximum": 0.22499999999999998
     },
     "1087-2010-engine efficiency": {
-        "amount": 0.02,
+        "amount": 0.18,
         "category": "Powertrain",
         "powertrain": [
             "ICEV-p"
@@ -27120,17 +27120,17 @@
         "name": "engine efficiency",
         "unit": "unitless",
         "importance": "Critical",
-        "source": "Cox, B. L., & Mutel, C. L. (2018). The environmental and cost performance of current and future motorcycles. Applied Energy, 212, 1013-1024. https://doi.org/10.1016/j.apenergy.2017.12.100",
-        "comment": "",
+        "source": "Restored provisional engineering prior: carculator_two_wheeler commit 6ed72b3e0f5a29893212a8e8df4e0b501e96d2cc. The historical record cites Cox and Mutel (2018), DOI 10.1016/j.apenergy.2017.12.100; its numerical efficiency was not independently verified from the paper.",
+        "comment": "2026-10-08 correction: restore the pre-September-2024 efficiency trajectory for five petrol classes. Retain triangular +/-25% relative engineering uncertainty. The 2025 value is the linear midpoint of 2020 and 2030. These are provisional cycle-average fuel-to-shaft assumptions, not measured peak efficiencies or newly fitted consumption values. Supersedes the 2025 baseline for this parameter only; see petrol_efficiency_provenance.json and docs/petrol_efficiency.rst.",
         "status": "To be improved",
         "kind": "distribution",
         "uncertainty_type": 5,
-        "loc": 0.02,
-        "minimum": 0.015,
-        "maximum": 0.025
+        "loc": 0.18,
+        "minimum": 0.135,
+        "maximum": 0.22499999999999998
     },
     "1088-2020-engine efficiency": {
-        "amount": 0.02,
+        "amount": 0.18,
         "category": "Powertrain",
         "powertrain": [
             "ICEV-p"
@@ -27143,17 +27143,17 @@
         "name": "engine efficiency",
         "unit": "unitless",
         "importance": "Critical",
-        "source": "Cox, B. L., & Mutel, C. L. (2018). The environmental and cost performance of current and future motorcycles. Applied Energy, 212, 1013-1024. https://doi.org/10.1016/j.apenergy.2017.12.100",
-        "comment": "",
+        "source": "Restored provisional engineering prior: carculator_two_wheeler commit 6ed72b3e0f5a29893212a8e8df4e0b501e96d2cc. The historical record cites Cox and Mutel (2018), DOI 10.1016/j.apenergy.2017.12.100; its numerical efficiency was not independently verified from the paper.",
+        "comment": "2026-10-08 correction: restore the pre-September-2024 efficiency trajectory for five petrol classes. Retain triangular +/-25% relative engineering uncertainty. The 2025 value is the linear midpoint of 2020 and 2030. These are provisional cycle-average fuel-to-shaft assumptions, not measured peak efficiencies or newly fitted consumption values. Supersedes the 2025 baseline for this parameter only; see petrol_efficiency_provenance.json and docs/petrol_efficiency.rst.",
         "status": "To be improved",
         "kind": "distribution",
         "uncertainty_type": 5,
-        "loc": 0.02,
-        "minimum": 0.015,
-        "maximum": 0.025
+        "loc": 0.18,
+        "minimum": 0.135,
+        "maximum": 0.22499999999999998
     },
     "1089-2030-engine efficiency": {
-        "amount": 0.02,
+        "amount": 0.18733099212340384,
         "category": "Powertrain",
         "powertrain": [
             "ICEV-p"
@@ -27166,17 +27166,17 @@
         "name": "engine efficiency",
         "unit": "unitless",
         "importance": "Critical",
-        "source": "Cox, B. L., & Mutel, C. L. (2018). The environmental and cost performance of current and future motorcycles. Applied Energy, 212, 1013-1024. https://doi.org/10.1016/j.apenergy.2017.12.100",
-        "comment": "",
+        "source": "Restored provisional engineering prior: carculator_two_wheeler commit 6ed72b3e0f5a29893212a8e8df4e0b501e96d2cc. The historical record cites Cox and Mutel (2018), DOI 10.1016/j.apenergy.2017.12.100; its numerical efficiency was not independently verified from the paper.",
+        "comment": "2026-10-08 correction: restore the pre-September-2024 efficiency trajectory for five petrol classes. Retain triangular +/-25% relative engineering uncertainty. The 2025 value is the linear midpoint of 2020 and 2030. These are provisional cycle-average fuel-to-shaft assumptions, not measured peak efficiencies or newly fitted consumption values. Supersedes the 2025 baseline for this parameter only; see petrol_efficiency_provenance.json and docs/petrol_efficiency.rst.",
         "status": "To be improved",
         "kind": "distribution",
         "uncertainty_type": 5,
-        "loc": 0.02,
-        "minimum": 0.015,
-        "maximum": 0.025
+        "loc": 0.18733099212340384,
+        "minimum": 0.14049824409255288,
+        "maximum": 0.2341637401542548
     },
     "1090-2040-engine efficiency": {
-        "amount": 0.02,
+        "amount": 0.1949605589441044,
         "category": "Powertrain",
         "powertrain": [
             "ICEV-p"
@@ -27189,17 +27189,17 @@
         "name": "engine efficiency",
         "unit": "unitless",
         "importance": "Critical",
-        "source": "Cox, B. L., & Mutel, C. L. (2018). The environmental and cost performance of current and future motorcycles. Applied Energy, 212, 1013-1024. https://doi.org/10.1016/j.apenergy.2017.12.100",
-        "comment": "",
+        "source": "Restored provisional engineering prior: carculator_two_wheeler commit 6ed72b3e0f5a29893212a8e8df4e0b501e96d2cc. The historical record cites Cox and Mutel (2018), DOI 10.1016/j.apenergy.2017.12.100; its numerical efficiency was not independently verified from the paper.",
+        "comment": "2026-10-08 correction: restore the pre-September-2024 efficiency trajectory for five petrol classes. Retain triangular +/-25% relative engineering uncertainty. The 2025 value is the linear midpoint of 2020 and 2030. These are provisional cycle-average fuel-to-shaft assumptions, not measured peak efficiencies or newly fitted consumption values. Supersedes the 2025 baseline for this parameter only; see petrol_efficiency_provenance.json and docs/petrol_efficiency.rst.",
         "status": "To be improved",
         "kind": "distribution",
         "uncertainty_type": 5,
-        "loc": 0.02,
-        "minimum": 0.015,
-        "maximum": 0.025
+        "loc": 0.1949605589441044,
+        "minimum": 0.14622041920807832,
+        "maximum": 0.2437006986801305
     },
     "1091-2050-engine efficiency": {
-        "amount": 0.02,
+        "amount": 0.202900860732958,
         "category": "Powertrain",
         "powertrain": [
             "ICEV-p"
@@ -27212,17 +27212,17 @@
         "name": "engine efficiency",
         "unit": "unitless",
         "importance": "Critical",
-        "source": "Cox, B. L., & Mutel, C. L. (2018). The environmental and cost performance of current and future motorcycles. Applied Energy, 212, 1013-1024. https://doi.org/10.1016/j.apenergy.2017.12.100",
-        "comment": "",
+        "source": "Restored provisional engineering prior: carculator_two_wheeler commit 6ed72b3e0f5a29893212a8e8df4e0b501e96d2cc. The historical record cites Cox and Mutel (2018), DOI 10.1016/j.apenergy.2017.12.100; its numerical efficiency was not independently verified from the paper.",
+        "comment": "2026-10-08 correction: restore the pre-September-2024 efficiency trajectory for five petrol classes. Retain triangular +/-25% relative engineering uncertainty. The 2025 value is the linear midpoint of 2020 and 2030. These are provisional cycle-average fuel-to-shaft assumptions, not measured peak efficiencies or newly fitted consumption values. Supersedes the 2025 baseline for this parameter only; see petrol_efficiency_provenance.json and docs/petrol_efficiency.rst.",
         "status": "To be improved",
         "kind": "distribution",
         "uncertainty_type": 5,
-        "loc": 0.02,
-        "minimum": 0.015,
-        "maximum": 0.025
+        "loc": 0.202900860732958,
+        "minimum": 0.1521756455497185,
+        "maximum": 0.25362607591619746
     },
     "1092-2000-engine efficiency": {
-        "amount": 0.01,
+        "amount": 0.18,
         "category": "Powertrain",
         "powertrain": [
             "ICEV-p"
@@ -27234,17 +27234,17 @@
         "name": "engine efficiency",
         "unit": "unitless",
         "importance": "Critical",
-        "source": "Cox, B. L., & Mutel, C. L. (2018). The environmental and cost performance of current and future motorcycles. Applied Energy, 212, 1013-1024. https://doi.org/10.1016/j.apenergy.2017.12.100",
-        "comment": "",
+        "source": "Restored provisional engineering prior: carculator_two_wheeler commit 6ed72b3e0f5a29893212a8e8df4e0b501e96d2cc. The historical record cites Cox and Mutel (2018), DOI 10.1016/j.apenergy.2017.12.100; its numerical efficiency was not independently verified from the paper.",
+        "comment": "2026-10-08 correction: restore the pre-September-2024 efficiency trajectory for five petrol classes. Retain triangular +/-25% relative engineering uncertainty. The 2025 value is the linear midpoint of 2020 and 2030. These are provisional cycle-average fuel-to-shaft assumptions, not measured peak efficiencies or newly fitted consumption values. Supersedes the 2025 baseline for this parameter only; see petrol_efficiency_provenance.json and docs/petrol_efficiency.rst.",
         "status": "To be improved",
         "kind": "distribution",
         "uncertainty_type": 5,
-        "loc": 0.01,
-        "minimum": 0.0075,
-        "maximum": 0.0125
+        "loc": 0.18,
+        "minimum": 0.135,
+        "maximum": 0.22499999999999998
     },
     "1093-2010-engine efficiency": {
-        "amount": 0.01,
+        "amount": 0.18,
         "category": "Powertrain",
         "powertrain": [
             "ICEV-p"
@@ -27256,17 +27256,17 @@
         "name": "engine efficiency",
         "unit": "unitless",
         "importance": "Critical",
-        "source": "Cox, B. L., & Mutel, C. L. (2018). The environmental and cost performance of current and future motorcycles. Applied Energy, 212, 1013-1024. https://doi.org/10.1016/j.apenergy.2017.12.100",
-        "comment": "",
+        "source": "Restored provisional engineering prior: carculator_two_wheeler commit 6ed72b3e0f5a29893212a8e8df4e0b501e96d2cc. The historical record cites Cox and Mutel (2018), DOI 10.1016/j.apenergy.2017.12.100; its numerical efficiency was not independently verified from the paper.",
+        "comment": "2026-10-08 correction: restore the pre-September-2024 efficiency trajectory for five petrol classes. Retain triangular +/-25% relative engineering uncertainty. The 2025 value is the linear midpoint of 2020 and 2030. These are provisional cycle-average fuel-to-shaft assumptions, not measured peak efficiencies or newly fitted consumption values. Supersedes the 2025 baseline for this parameter only; see petrol_efficiency_provenance.json and docs/petrol_efficiency.rst.",
         "status": "To be improved",
         "kind": "distribution",
         "uncertainty_type": 5,
-        "loc": 0.01,
-        "minimum": 0.0075,
-        "maximum": 0.0125
+        "loc": 0.18,
+        "minimum": 0.135,
+        "maximum": 0.22499999999999998
     },
     "1094-2020-engine efficiency": {
-        "amount": 0.01,
+        "amount": 0.18,
         "category": "Powertrain",
         "powertrain": [
             "ICEV-p"
@@ -27278,17 +27278,17 @@
         "name": "engine efficiency",
         "unit": "unitless",
         "importance": "Critical",
-        "source": "Cox, B. L., & Mutel, C. L. (2018). The environmental and cost performance of current and future motorcycles. Applied Energy, 212, 1013-1024. https://doi.org/10.1016/j.apenergy.2017.12.100",
-        "comment": "",
+        "source": "Restored provisional engineering prior: carculator_two_wheeler commit 6ed72b3e0f5a29893212a8e8df4e0b501e96d2cc. The historical record cites Cox and Mutel (2018), DOI 10.1016/j.apenergy.2017.12.100; its numerical efficiency was not independently verified from the paper.",
+        "comment": "2026-10-08 correction: restore the pre-September-2024 efficiency trajectory for five petrol classes. Retain triangular +/-25% relative engineering uncertainty. The 2025 value is the linear midpoint of 2020 and 2030. These are provisional cycle-average fuel-to-shaft assumptions, not measured peak efficiencies or newly fitted consumption values. Supersedes the 2025 baseline for this parameter only; see petrol_efficiency_provenance.json and docs/petrol_efficiency.rst.",
         "status": "To be improved",
         "kind": "distribution",
         "uncertainty_type": 5,
-        "loc": 0.01,
-        "minimum": 0.0075,
-        "maximum": 0.0125
+        "loc": 0.18,
+        "minimum": 0.135,
+        "maximum": 0.22499999999999998
     },
     "1095-2030-engine efficiency": {
-        "amount": 0.01,
+        "amount": 0.18733099212340384,
         "category": "Powertrain",
         "powertrain": [
             "ICEV-p"
@@ -27300,17 +27300,17 @@
         "name": "engine efficiency",
         "unit": "unitless",
         "importance": "Critical",
-        "source": "Cox, B. L., & Mutel, C. L. (2018). The environmental and cost performance of current and future motorcycles. Applied Energy, 212, 1013-1024. https://doi.org/10.1016/j.apenergy.2017.12.100",
-        "comment": "",
+        "source": "Restored provisional engineering prior: carculator_two_wheeler commit 6ed72b3e0f5a29893212a8e8df4e0b501e96d2cc. The historical record cites Cox and Mutel (2018), DOI 10.1016/j.apenergy.2017.12.100; its numerical efficiency was not independently verified from the paper.",
+        "comment": "2026-10-08 correction: restore the pre-September-2024 efficiency trajectory for five petrol classes. Retain triangular +/-25% relative engineering uncertainty. The 2025 value is the linear midpoint of 2020 and 2030. These are provisional cycle-average fuel-to-shaft assumptions, not measured peak efficiencies or newly fitted consumption values. Supersedes the 2025 baseline for this parameter only; see petrol_efficiency_provenance.json and docs/petrol_efficiency.rst.",
         "status": "To be improved",
         "kind": "distribution",
         "uncertainty_type": 5,
-        "loc": 0.01,
-        "minimum": 0.0075,
-        "maximum": 0.0125
+        "loc": 0.18733099212340384,
+        "minimum": 0.14049824409255288,
+        "maximum": 0.2341637401542548
     },
     "1096-2040-engine efficiency": {
-        "amount": 0.01,
+        "amount": 0.1949605589441044,
         "category": "Powertrain",
         "powertrain": [
             "ICEV-p"
@@ -27322,17 +27322,17 @@
         "name": "engine efficiency",
         "unit": "unitless",
         "importance": "Critical",
-        "source": "Cox, B. L., & Mutel, C. L. (2018). The environmental and cost performance of current and future motorcycles. Applied Energy, 212, 1013-1024. https://doi.org/10.1016/j.apenergy.2017.12.100",
-        "comment": "",
+        "source": "Restored provisional engineering prior: carculator_two_wheeler commit 6ed72b3e0f5a29893212a8e8df4e0b501e96d2cc. The historical record cites Cox and Mutel (2018), DOI 10.1016/j.apenergy.2017.12.100; its numerical efficiency was not independently verified from the paper.",
+        "comment": "2026-10-08 correction: restore the pre-September-2024 efficiency trajectory for five petrol classes. Retain triangular +/-25% relative engineering uncertainty. The 2025 value is the linear midpoint of 2020 and 2030. These are provisional cycle-average fuel-to-shaft assumptions, not measured peak efficiencies or newly fitted consumption values. Supersedes the 2025 baseline for this parameter only; see petrol_efficiency_provenance.json and docs/petrol_efficiency.rst.",
         "status": "To be improved",
         "kind": "distribution",
         "uncertainty_type": 5,
-        "loc": 0.01,
-        "minimum": 0.0075,
-        "maximum": 0.0125
+        "loc": 0.1949605589441044,
+        "minimum": 0.14622041920807832,
+        "maximum": 0.2437006986801305
     },
     "1097-2050-engine efficiency": {
-        "amount": 0.01,
+        "amount": 0.202900860732958,
         "category": "Powertrain",
         "powertrain": [
             "ICEV-p"
@@ -27344,14 +27344,14 @@
         "name": "engine efficiency",
         "unit": "unitless",
         "importance": "Critical",
-        "source": "Cox, B. L., & Mutel, C. L. (2018). The environmental and cost performance of current and future motorcycles. Applied Energy, 212, 1013-1024. https://doi.org/10.1016/j.apenergy.2017.12.100",
-        "comment": "",
+        "source": "Restored provisional engineering prior: carculator_two_wheeler commit 6ed72b3e0f5a29893212a8e8df4e0b501e96d2cc. The historical record cites Cox and Mutel (2018), DOI 10.1016/j.apenergy.2017.12.100; its numerical efficiency was not independently verified from the paper.",
+        "comment": "2026-10-08 correction: restore the pre-September-2024 efficiency trajectory for five petrol classes. Retain triangular +/-25% relative engineering uncertainty. The 2025 value is the linear midpoint of 2020 and 2030. These are provisional cycle-average fuel-to-shaft assumptions, not measured peak efficiencies or newly fitted consumption values. Supersedes the 2025 baseline for this parameter only; see petrol_efficiency_provenance.json and docs/petrol_efficiency.rst.",
         "status": "To be improved",
         "kind": "distribution",
         "uncertainty_type": 5,
-        "loc": 0.01,
-        "minimum": 0.0075,
-        "maximum": 0.0125
+        "loc": 0.202900860732958,
+        "minimum": 0.1521756455497185,
+        "maximum": 0.25362607591619746
     },
     "1098-2000-engine efficiency": {
         "amount": 0.24,
@@ -27486,7 +27486,7 @@
         "maximum": 0.3
     },
     "1104-2000-engine efficiency": {
-        "amount": 0.01,
+        "amount": 0.18,
         "category": "Powertrain",
         "powertrain": [
             "ICEV-p"
@@ -27498,17 +27498,17 @@
         "name": "engine efficiency",
         "unit": "unitless",
         "importance": "Critical",
-        "source": "Cox, B. L., & Mutel, C. L. (2018). The environmental and cost performance of current and future motorcycles. Applied Energy, 212, 1013-1024. https://doi.org/10.1016/j.apenergy.2017.12.100",
-        "comment": "",
+        "source": "Restored provisional engineering prior: carculator_two_wheeler commit 6ed72b3e0f5a29893212a8e8df4e0b501e96d2cc. The historical record cites Cox and Mutel (2018), DOI 10.1016/j.apenergy.2017.12.100; its numerical efficiency was not independently verified from the paper.",
+        "comment": "2026-10-08 correction: restore the pre-September-2024 efficiency trajectory for five petrol classes. Retain triangular +/-25% relative engineering uncertainty. The 2025 value is the linear midpoint of 2020 and 2030. These are provisional cycle-average fuel-to-shaft assumptions, not measured peak efficiencies or newly fitted consumption values. Supersedes the 2025 baseline for this parameter only; see petrol_efficiency_provenance.json and docs/petrol_efficiency.rst.",
         "status": "To be improved",
         "kind": "distribution",
         "uncertainty_type": 5,
-        "loc": 0.01,
-        "minimum": 0.0075,
-        "maximum": 0.0125
+        "loc": 0.18,
+        "minimum": 0.135,
+        "maximum": 0.22499999999999998
     },
     "1105-2010-engine efficiency": {
-        "amount": 0.01,
+        "amount": 0.18,
         "category": "Powertrain",
         "powertrain": [
             "ICEV-p"
@@ -27520,17 +27520,17 @@
         "name": "engine efficiency",
         "unit": "unitless",
         "importance": "Critical",
-        "source": "Cox, B. L., & Mutel, C. L. (2018). The environmental and cost performance of current and future motorcycles. Applied Energy, 212, 1013-1024. https://doi.org/10.1016/j.apenergy.2017.12.100",
-        "comment": "",
+        "source": "Restored provisional engineering prior: carculator_two_wheeler commit 6ed72b3e0f5a29893212a8e8df4e0b501e96d2cc. The historical record cites Cox and Mutel (2018), DOI 10.1016/j.apenergy.2017.12.100; its numerical efficiency was not independently verified from the paper.",
+        "comment": "2026-10-08 correction: restore the pre-September-2024 efficiency trajectory for five petrol classes. Retain triangular +/-25% relative engineering uncertainty. The 2025 value is the linear midpoint of 2020 and 2030. These are provisional cycle-average fuel-to-shaft assumptions, not measured peak efficiencies or newly fitted consumption values. Supersedes the 2025 baseline for this parameter only; see petrol_efficiency_provenance.json and docs/petrol_efficiency.rst.",
         "status": "To be improved",
         "kind": "distribution",
         "uncertainty_type": 5,
-        "loc": 0.01,
-        "minimum": 0.0075,
-        "maximum": 0.0125
+        "loc": 0.18,
+        "minimum": 0.135,
+        "maximum": 0.22499999999999998
     },
     "1106-2020-engine efficiency": {
-        "amount": 0.01,
+        "amount": 0.18,
         "category": "Powertrain",
         "powertrain": [
             "ICEV-p"
@@ -27542,17 +27542,17 @@
         "name": "engine efficiency",
         "unit": "unitless",
         "importance": "Critical",
-        "source": "Cox, B. L., & Mutel, C. L. (2018). The environmental and cost performance of current and future motorcycles. Applied Energy, 212, 1013-1024. https://doi.org/10.1016/j.apenergy.2017.12.100",
-        "comment": "",
+        "source": "Restored provisional engineering prior: carculator_two_wheeler commit 6ed72b3e0f5a29893212a8e8df4e0b501e96d2cc. The historical record cites Cox and Mutel (2018), DOI 10.1016/j.apenergy.2017.12.100; its numerical efficiency was not independently verified from the paper.",
+        "comment": "2026-10-08 correction: restore the pre-September-2024 efficiency trajectory for five petrol classes. Retain triangular +/-25% relative engineering uncertainty. The 2025 value is the linear midpoint of 2020 and 2030. These are provisional cycle-average fuel-to-shaft assumptions, not measured peak efficiencies or newly fitted consumption values. Supersedes the 2025 baseline for this parameter only; see petrol_efficiency_provenance.json and docs/petrol_efficiency.rst.",
         "status": "To be improved",
         "kind": "distribution",
         "uncertainty_type": 5,
-        "loc": 0.01,
-        "minimum": 0.0075,
-        "maximum": 0.0125
+        "loc": 0.18,
+        "minimum": 0.135,
+        "maximum": 0.22499999999999998
     },
     "1107-2030-engine efficiency": {
-        "amount": 0.01,
+        "amount": 0.18733099212340384,
         "category": "Powertrain",
         "powertrain": [
             "ICEV-p"
@@ -27564,17 +27564,17 @@
         "name": "engine efficiency",
         "unit": "unitless",
         "importance": "Critical",
-        "source": "Cox, B. L., & Mutel, C. L. (2018). The environmental and cost performance of current and future motorcycles. Applied Energy, 212, 1013-1024. https://doi.org/10.1016/j.apenergy.2017.12.100",
-        "comment": "",
+        "source": "Restored provisional engineering prior: carculator_two_wheeler commit 6ed72b3e0f5a29893212a8e8df4e0b501e96d2cc. The historical record cites Cox and Mutel (2018), DOI 10.1016/j.apenergy.2017.12.100; its numerical efficiency was not independently verified from the paper.",
+        "comment": "2026-10-08 correction: restore the pre-September-2024 efficiency trajectory for five petrol classes. Retain triangular +/-25% relative engineering uncertainty. The 2025 value is the linear midpoint of 2020 and 2030. These are provisional cycle-average fuel-to-shaft assumptions, not measured peak efficiencies or newly fitted consumption values. Supersedes the 2025 baseline for this parameter only; see petrol_efficiency_provenance.json and docs/petrol_efficiency.rst.",
         "status": "To be improved",
         "kind": "distribution",
         "uncertainty_type": 5,
-        "loc": 0.01,
-        "minimum": 0.0075,
-        "maximum": 0.0125
+        "loc": 0.18733099212340384,
+        "minimum": 0.14049824409255288,
+        "maximum": 0.2341637401542548
     },
     "1108-2040-engine efficiency": {
-        "amount": 0.01,
+        "amount": 0.1949605589441044,
         "category": "Powertrain",
         "powertrain": [
             "ICEV-p"
@@ -27586,17 +27586,17 @@
         "name": "engine efficiency",
         "unit": "unitless",
         "importance": "Critical",
-        "source": "Cox, B. L., & Mutel, C. L. (2018). The environmental and cost performance of current and future motorcycles. Applied Energy, 212, 1013-1024. https://doi.org/10.1016/j.apenergy.2017.12.100",
-        "comment": "",
+        "source": "Restored provisional engineering prior: carculator_two_wheeler commit 6ed72b3e0f5a29893212a8e8df4e0b501e96d2cc. The historical record cites Cox and Mutel (2018), DOI 10.1016/j.apenergy.2017.12.100; its numerical efficiency was not independently verified from the paper.",
+        "comment": "2026-10-08 correction: restore the pre-September-2024 efficiency trajectory for five petrol classes. Retain triangular +/-25% relative engineering uncertainty. The 2025 value is the linear midpoint of 2020 and 2030. These are provisional cycle-average fuel-to-shaft assumptions, not measured peak efficiencies or newly fitted consumption values. Supersedes the 2025 baseline for this parameter only; see petrol_efficiency_provenance.json and docs/petrol_efficiency.rst.",
         "status": "To be improved",
         "kind": "distribution",
         "uncertainty_type": 5,
-        "loc": 0.01,
-        "minimum": 0.0075,
-        "maximum": 0.0125
+        "loc": 0.1949605589441044,
+        "minimum": 0.14622041920807832,
+        "maximum": 0.2437006986801305
     },
     "1109-2050-engine efficiency": {
-        "amount": 0.01,
+        "amount": 0.202900860732958,
         "category": "Powertrain",
         "powertrain": [
             "ICEV-p"
@@ -27608,14 +27608,14 @@
         "name": "engine efficiency",
         "unit": "unitless",
         "importance": "Critical",
-        "source": "Cox, B. L., & Mutel, C. L. (2018). The environmental and cost performance of current and future motorcycles. Applied Energy, 212, 1013-1024. https://doi.org/10.1016/j.apenergy.2017.12.100",
-        "comment": "",
+        "source": "Restored provisional engineering prior: carculator_two_wheeler commit 6ed72b3e0f5a29893212a8e8df4e0b501e96d2cc. The historical record cites Cox and Mutel (2018), DOI 10.1016/j.apenergy.2017.12.100; its numerical efficiency was not independently verified from the paper.",
+        "comment": "2026-10-08 correction: restore the pre-September-2024 efficiency trajectory for five petrol classes. Retain triangular +/-25% relative engineering uncertainty. The 2025 value is the linear midpoint of 2020 and 2030. These are provisional cycle-average fuel-to-shaft assumptions, not measured peak efficiencies or newly fitted consumption values. Supersedes the 2025 baseline for this parameter only; see petrol_efficiency_provenance.json and docs/petrol_efficiency.rst.",
         "status": "To be improved",
         "kind": "distribution",
         "uncertainty_type": 5,
-        "loc": 0.01,
-        "minimum": 0.0075,
-        "maximum": 0.0125
+        "loc": 0.202900860732958,
+        "minimum": 0.1521756455497185,
+        "maximum": 0.25362607591619746
     },
     "1110-2000-battery cell energy density, NMC-111": {
         "amount": 0.05,
@@ -37803,7 +37803,7 @@
         "maximum": 0.9545355051914166
     },
     "baseline-2025-0119-engine efficiency": {
-        "amount": 0.01,
+        "amount": 0.1836654960617019,
         "category": "Powertrain",
         "powertrain": [
             "ICEV-p"
@@ -37815,17 +37815,17 @@
         "name": "engine efficiency",
         "unit": "unitless",
         "importance": "Critical",
-        "source": "Cox, B. L., & Mutel, C. L. (2018). The environmental and cost performance of current and future motorcycles. Applied Energy, 212, 1013-1024. https://doi.org/10.1016/j.apenergy.2017.12.100",
-        "comment": "2025 baseline: linear interpolation of the effective 2020 and 2030 records, before empirical calibration. Triangular modes and bounds are interpolated. Endpoint records: ('1106-2020-engine efficiency', '1107-2030-engine efficiency'). ",
+        "source": "Restored provisional engineering prior: carculator_two_wheeler commit 6ed72b3e0f5a29893212a8e8df4e0b501e96d2cc. The historical record cites Cox and Mutel (2018), DOI 10.1016/j.apenergy.2017.12.100; its numerical efficiency was not independently verified from the paper.",
+        "comment": "2026-10-08 correction: restore the pre-September-2024 efficiency trajectory for five petrol classes. Retain triangular +/-25% relative engineering uncertainty. The 2025 value is the linear midpoint of 2020 and 2030. These are provisional cycle-average fuel-to-shaft assumptions, not measured peak efficiencies or newly fitted consumption values. Supersedes the 2025 baseline for this parameter only; see petrol_efficiency_provenance.json and docs/petrol_efficiency.rst.",
         "status": "To be improved",
         "kind": "distribution",
         "uncertainty_type": 5,
-        "loc": 0.01,
-        "minimum": 0.0075,
-        "maximum": 0.0125
+        "loc": 0.1836654960617019,
+        "minimum": 0.13774912204627643,
+        "maximum": 0.22958187007712738
     },
     "baseline-2025-0120-engine efficiency": {
-        "amount": 0.01,
+        "amount": 0.1836654960617019,
         "category": "Powertrain",
         "powertrain": [
             "ICEV-p"
@@ -37837,17 +37837,17 @@
         "name": "engine efficiency",
         "unit": "unitless",
         "importance": "Critical",
-        "source": "Cox, B. L., & Mutel, C. L. (2018). The environmental and cost performance of current and future motorcycles. Applied Energy, 212, 1013-1024. https://doi.org/10.1016/j.apenergy.2017.12.100",
-        "comment": "2025 baseline: linear interpolation of the effective 2020 and 2030 records, before empirical calibration. Triangular modes and bounds are interpolated. Endpoint records: ('1094-2020-engine efficiency', '1095-2030-engine efficiency'). ",
+        "source": "Restored provisional engineering prior: carculator_two_wheeler commit 6ed72b3e0f5a29893212a8e8df4e0b501e96d2cc. The historical record cites Cox and Mutel (2018), DOI 10.1016/j.apenergy.2017.12.100; its numerical efficiency was not independently verified from the paper.",
+        "comment": "2026-10-08 correction: restore the pre-September-2024 efficiency trajectory for five petrol classes. Retain triangular +/-25% relative engineering uncertainty. The 2025 value is the linear midpoint of 2020 and 2030. These are provisional cycle-average fuel-to-shaft assumptions, not measured peak efficiencies or newly fitted consumption values. Supersedes the 2025 baseline for this parameter only; see petrol_efficiency_provenance.json and docs/petrol_efficiency.rst.",
         "status": "To be improved",
         "kind": "distribution",
         "uncertainty_type": 5,
-        "loc": 0.01,
-        "minimum": 0.0075,
-        "maximum": 0.0125
+        "loc": 0.1836654960617019,
+        "minimum": 0.13774912204627643,
+        "maximum": 0.22958187007712738
     },
     "baseline-2025-0121-engine efficiency": {
-        "amount": 0.02,
+        "amount": 0.1836654960617019,
         "category": "Powertrain",
         "powertrain": [
             "ICEV-p"
@@ -37860,14 +37860,14 @@
         "name": "engine efficiency",
         "unit": "unitless",
         "importance": "Critical",
-        "source": "Cox, B. L., & Mutel, C. L. (2018). The environmental and cost performance of current and future motorcycles. Applied Energy, 212, 1013-1024. https://doi.org/10.1016/j.apenergy.2017.12.100",
-        "comment": "2025 baseline: linear interpolation of the effective 2020 and 2030 records, before empirical calibration. Triangular modes and bounds are interpolated. Endpoint records: ('1088-2020-engine efficiency', '1089-2030-engine efficiency'). ",
+        "source": "Restored provisional engineering prior: carculator_two_wheeler commit 6ed72b3e0f5a29893212a8e8df4e0b501e96d2cc. The historical record cites Cox and Mutel (2018), DOI 10.1016/j.apenergy.2017.12.100; its numerical efficiency was not independently verified from the paper.",
+        "comment": "2026-10-08 correction: restore the pre-September-2024 efficiency trajectory for five petrol classes. Retain triangular +/-25% relative engineering uncertainty. The 2025 value is the linear midpoint of 2020 and 2030. These are provisional cycle-average fuel-to-shaft assumptions, not measured peak efficiencies or newly fitted consumption values. Supersedes the 2025 baseline for this parameter only; see petrol_efficiency_provenance.json and docs/petrol_efficiency.rst.",
         "status": "To be improved",
         "kind": "distribution",
         "uncertainty_type": 5,
-        "loc": 0.02,
-        "minimum": 0.015,
-        "maximum": 0.025
+        "loc": 0.1836654960617019,
+        "minimum": 0.13774912204627643,
+        "maximum": 0.22958187007712738
     },
     "baseline-2025-0122-engine efficiency": {
         "amount": 0.24,
@@ -37892,7 +37892,7 @@
         "maximum": 0.3
     },
     "baseline-2025-0123-engine efficiency": {
-        "amount": 0.005,
+        "amount": 0.1836654960617019,
         "category": "Powertrain",
         "powertrain": [
             "ICEV-p"
@@ -37904,14 +37904,14 @@
         "name": "engine efficiency",
         "unit": "unitless",
         "importance": "Critical",
-        "source": "Cox, B. L., & Mutel, C. L. (2018). The environmental and cost performance of current and future motorcycles. Applied Energy, 212, 1013-1024. https://doi.org/10.1016/j.apenergy.2017.12.100",
-        "comment": "2025 baseline: linear interpolation of the effective 2020 and 2030 records, before empirical calibration. Triangular modes and bounds are interpolated. Endpoint records: ('764-2020-engine efficiency', '765-2030-engine efficiency'). ",
+        "source": "Restored provisional engineering prior: carculator_two_wheeler commit 6ed72b3e0f5a29893212a8e8df4e0b501e96d2cc. The historical record cites Cox and Mutel (2018), DOI 10.1016/j.apenergy.2017.12.100; its numerical efficiency was not independently verified from the paper.",
+        "comment": "2026-10-08 correction: restore the pre-September-2024 efficiency trajectory for five petrol classes. Retain triangular +/-25% relative engineering uncertainty. The 2025 value is the linear midpoint of 2020 and 2030. These are provisional cycle-average fuel-to-shaft assumptions, not measured peak efficiencies or newly fitted consumption values. Supersedes the 2025 baseline for this parameter only; see petrol_efficiency_provenance.json and docs/petrol_efficiency.rst.",
         "status": "To be improved",
         "kind": "distribution",
         "uncertainty_type": 5,
-        "loc": 0.005,
-        "minimum": 0.00375,
-        "maximum": 0.00625
+        "loc": 0.1836654960617019,
+        "minimum": 0.13774912204627643,
+        "maximum": 0.22958187007712738
     },
     "baseline-2025-0124-frontal area": {
         "amount": 0.5,

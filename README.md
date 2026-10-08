@@ -66,11 +66,12 @@ impacts = inventory.calculate_impacts()
 print(impacts.sel(impact_category="climate change").sum("impact"))
 ```
 
-The example reports impacts per vehicle-kilometre. **Release blocker:** the
-default petrol motorcycle currently uses 1% engine efficiency and returns
-about 33 MJ/km (104 L/100 km). Treat this as an unresolved parameter defect;
-do not interpret that result as a credible consumption estimate. Publication
-of 0.1.1 is pending review of this input and its provenance.
+The example reports impacts per vehicle-kilometre. The petrol motorcycle now
+returns about **1.797 MJ/km (5.646 L/100 km)** after restoring the historical
+engine-efficiency prior. This fixes the former 1% efficiency defect; the prior
+remains provisional, with substantial differences from unmatched manufacturer
+consumption figures. See [the correction and sources](docs/petrol_efficiency.rst).
+Release 0.1.1 remains unpublished pending review of the remaining known issues.
 
 ## Modelling and validation
 
