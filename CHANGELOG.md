@@ -16,6 +16,7 @@ it has not yet been published. Older entries, where present, retain their origin
 
 ### Model and inventory changes
 
+- Preserve explicit generic and selected-chemistry battery prices through cost adjustment, including scoped zero and per-sample constructor inputs. Verify completed purchase and replacement costs and unchanged default pricing; see [usage](docs/usage.rst#battery-unit-costs).
 - Add native 2025 inputs and explicit component-efficiency priors with consistent temporal extensions.
 - Apply corrected shared stored-energy, terminal DC and charging boundaries, and mask unavailable configurations consistently.
 - Honor custom parameter dictionaries and files, preserve caller-owned arrays, and bound per-cell sizing iterations.
