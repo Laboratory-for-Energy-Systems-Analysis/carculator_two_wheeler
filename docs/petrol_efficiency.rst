@@ -189,4 +189,4 @@ environment. Wheels, sdist-built wheels, resource hashes, dependencies and
 offline core-only model/LCIA runs passed. Sphinx built with eight existing API
 documentation warnings. These local macOS/Python 3.12 results do not certify
 hosted CI or conda builds. The older five-package release record in
-:doc:`release` predates this correction.
+:download:`maintainer release record <../RELEASING.md>` predates this correction.

@@ -134,5 +134,5 @@ documentation warnings. Fresh installed-artifact verification passed 29 two-whee
 tests, with 92 shared tests skipped because the other three vehicle packages
 were not installed. Wheel/sdist resource checks, dependency checks and offline
 core-only model/LCIA runs passed. These local macOS/Python 3.12 checks do not
-certify hosted CI or conda builds; historical reports in :doc:`release` and :doc:`petrol_efficiency`
+certify hosted CI or conda builds; historical reports in :download:`maintainer release record <../RELEASING.md>` and :doc:`petrol_efficiency`
 predate this cost correction.
