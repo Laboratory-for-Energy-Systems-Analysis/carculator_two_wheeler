@@ -101,8 +101,8 @@ check the constant charger prior and positive costs.
 Regression tests cover the lower bound, mode and upper bound in completed
 models, independent ten-year discounted repayment sums, seeded input sampling,
 interpolation at every year from 2000 through 2050, and explicit overrides via
-both arrays and input dictionaries. They do not claim every stochastic model
-adjustment is seeded.
+both arrays and input dictionaries. Seeded projected-cost sampling is covered
+separately in :doc:`usage`.
 
 Reproduction and explicit scenarios
 -----------------------------------

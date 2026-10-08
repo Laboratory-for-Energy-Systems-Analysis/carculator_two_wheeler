@@ -132,8 +132,8 @@ Regression tests check static and seeded sampled input draws, zero costs at
 every interpolated year from 2000 through 2050, and completed runs with explicit
 array and dictionary overrides. Independent ten-year cash-flow sums verify the
 annualized cost difference and show that the charge is applied once without
-markup. These checks do not claim that all stochastic model adjustments are
-seeded or that complete ownership costs are empirically validated.
+markup. These checks do not empirically validate complete ownership costs.
+Seeded projected-cost sampling is covered separately in :doc:`usage`.
 
 The installed package includes :download:`scope, rationale and original records
 <../carculator_two_wheeler/data/heat_pump_cost_provenance.json>`. The
