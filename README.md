@@ -1,81 +1,118 @@
-<p align="center">
-  <img style="height:130px;" src="docs/_static/img/mediumsmall_2.png">
-</p>
+# carculator_two_wheeler
 
-<p align="center">
-  <a href="https://badge.fury.io/py/carculator_two_wheeler" target="_blank"><img src="https://badge.fury.io/py/carculator_two_wheeler.svg"></a>
-  <a href="https://github.com/romainsacchi/carculator_two_wheeler" target="_blank"><img src="https://github.com/romainsacchi/carculator_two_wheeler/actions/workflows/main.yml/badge.svg?branch=master"></a>
-  <a href="https://ci.appveyor.com/project/romainsacchi/carculator_two_wheeler" target="_blank"><img src="https://ci.appveyor.com/api/projects/status/github/romainsacchi/carculator_two_wheeler?svg=true"></a>
-  <a href="https://coveralls.io/github/romainsacchi/carculator_two_wheeler" target="_blank"><img src="https://coveralls.io/repos/github/romainsacchi/carculator_two_wheeler/badge.svg"></a>
-  <a href="https://carculator_two_wheeler.readthedocs.io/en/latest/" target="_blank"><img src="https://readthedocs.org/projects/carculator_two_wheeler/badge/?version=latest"></a>
-  <a href="https://doi.org/10.5281/zenodo.3778259"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.3778259.svg" alt="DOI"></a>
-</p>
+Prospective environmental and economic life cycle assessment of bicycles, scooters, mopeds and motorcycles.
 
-# ``carculator_two_wheeler``
+[![Installed artifacts](https://github.com/Laboratory-for-Energy-Systems-Analysis/carculator_two_wheeler/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/Laboratory-for-Energy-Systems-Analysis/carculator_two_wheeler/actions/workflows/main.yml)
+[![PyPI](https://img.shields.io/pypi/v/carculator_two_wheeler)](https://pypi.org/project/carculator_two_wheeler/)
 
-Prospective life cycle assessment of two-wheelers made blazing fast.
+Developed at the [Paul Scherrer Institute](https://www.psi.ch/en).
+This checkout prepares **0.1.1**; see [CHANGELOG.md](https://github.com/Laboratory-for-Energy-Systems-Analysis/carculator_two_wheeler/blob/main/CHANGELOG.md) for release status and changes.
 
-A fully parameterized Python model developed by the [Technology Assessment group](https://www.psi.ch/en/ta) of the
-[Paul Scherrer Institut](https://www.psi.ch/en) to perform life cycle assessments (LCA) of two-wheelers.
-Builds upon the initial LCA model developed by [Cox et al. 2018](https://doi.org/10.1016/j.apenergy.2017.12.100).
+## Installation
 
-See [the documentation](https://carculator_two_wheeler.readthedocs.io) for more detail, validation, etc.
-
-### Why ``carculator_two_wheeler``?
-
-``carculator_two_wheeler`` allows yout to:
-* produce [life cycle assessment (LCA)](https://en.wikipedia.org/wiki/Life-cycle_assessment) results that include conventional midpoint impact assessment indicators as well cost indicators
-* ``carculator_two_wheeler`` uses time- and energy scenario-differentiated background inventories for the future, based on outputs of Integrated Asessment Model [REMIND](https://www.pik-potsdam.de/research/transformation-pathways/models/remind/remind).
-* calculate hot pollutant and noise emissions based on a specified driving cycle
-* produce error propagation analyzes (i.e., Monte Carlo) while preserving relations between inputs and outputs
-* control all the parameters sensitive to the foreground model (i.e., the vehicles) but also to the background model
-(i.e., supply of fuel, battery chemistry, etc.)
-* and easily export the vehicle models as inventories to be further imported in the [Brightway2](https://brightway.dev) LCA framework or the [SimaPro](https://www.simapro.com/) LCA software.
-
-``carculator_two_wheeler`` integrates well with the [Brightway2](https://brightway.dev) LCA framework.
-
-## Install
-
-``carculator_two_wheeler`` is at an early stage of development and is subject to continuous change and improvement.
-Three ways of installing ``carculator_two_wheeler`` are suggested.
-
-Python **3.12** is required (`>=3.12,<3.13`).
-
-### Installation of the latest version, using conda
+Use **Python 3.12** (`>=3.12,<3.13`) and a fresh environment. The shared runtime
+requires NumPy `>=1.26.4,<2`.
 
 ```bash
-conda install -c romainsacchi carculator_two_wheeler
+python3.12 -m venv .venv
+source .venv/bin/activate
 ```
 
-### Installation of a stable release (1.3.1) from Pypi
+On Windows, activate with `.venv\Scripts\activate`. After publication, install
+this release from PyPI:
 
 ```bash
-pip install carculator_two_wheeler
+python -m pip install "carculator_two_wheeler==0.1.1"
 ```
 
-## Usage
+Before publication, use the matching source checkouts as described under development.
+Core calculations use bundled resources and need no Brightway project, ecoinvent
+installation or network access. Inventory export has optional dependencies:
 
-### As a Python library
+```bash
+python -m pip install "carculator_two_wheeler[excel,brightway]==0.1.1"
+```
 
-For more examples, see [examples](docs/_static/resources/examples.zip).
+The Brightway extra supports the legacy stack (`bw2io<0.9`, `bw2data<4`,
+`bw2calc<2`). Export currently targets ecoinvent 3.9 and 3.10; importing those
+inventories requires the corresponding background database in the destination tool.
 
-## As a Web app
+## Quick start
 
-``carculator_two_wheeler`` has a [graphical user interface](https://carculator_two_wheeler.psi.ch) for fast comparisons of vehicles.
+```python
+from carculator_two_wheeler import (
+    TwoWheelerInputParameters,
+    TwoWheelerModel,
+    InventoryTwoWheeler,
+    fill_xarray_from_input_parameters,
+)
 
-## Support
+inputs = TwoWheelerInputParameters()
+inputs.static()
+_, array = fill_xarray_from_input_parameters(
+    inputs,
+    scope={
+        "size": ["Motorcycle 11-35kW"],
+        "powertrain": ["ICEV-p", "BEV"],
+        "year": [2025],
+    },
+)
+model = TwoWheelerModel(array)
+model.set_all()
+print(model["TtW energy"])  # kJ per vehicle-kilometre
 
-Do not hesitate to contact the development team at [carculator_two_wheeler@psi.ch](mailto:carculator_two_wheeler@psi.ch).
+inventory = InventoryTwoWheeler(model, functional_unit="vkm")
+impacts = inventory.calculate_impacts()
+print(impacts.sel(impact_category="climate change").sum("impact"))
+```
 
-## Maintainers
+The example reports impacts per vehicle-kilometre. **Release blocker:** the
+default petrol motorcycle currently uses 1% engine efficiency and returns
+about 33 MJ/km (104 L/100 km). Treat this as an unresolved parameter defect;
+do not interpret that result as a credible consumption estimate. Publication
+of 0.1.1 is pending review of this input and its provenance.
 
-* [Romain Sacchi](https://github.com/romainsacchi)
-* [Chris Mutel](https://github.com/cmutel/)
+## Modelling and validation
 
-## Contributing
+The vehicle models include native **2025** parameters and documented temporal
+extensions. These combine engineering priors and selected calibration evidence;
+they are not independent measurements for every vehicle configuration.
 
-See [contributing](CONTRIBUTING.md).
+`TtW energy` is in kJ/km. For BEVs it is net stored-energy depletion;
+`model.battery_terminal_energy` reports terminal DC separately, while
+`electricity consumption` is grid electricity in kWh/km. Identify the measurement
+boundary before comparing energy outputs. Availability-masked zeroes do not
+represent physically zero consumption.
 
-## License
+Supported background scenarios are `SSP2-NPi`, `SSP2-PkBudg1000`,
+`SSP2-PkBudg650`, and `static`. ReCiPe supports midpoint/endpoint and EF midpoint.
+Use fresh model instances for independent cases. `inputs.stochastic(n, seed=...)`
+seeds parameter sampling, not every downstream cost adjustment.
 
-[BSD-3-Clause](LICENSE). Copyright 2020 Paul Scherrer Institut.
+See [validation and limitations](https://github.com/Laboratory-for-Energy-Systems-Analysis/carculator_two_wheeler/blob/main/docs/validity.rst), [migration notes](https://github.com/Laboratory-for-Energy-Systems-Analysis/carculator_two_wheeler/blob/main/docs/release.rst)
+and the [documentation](https://carculator-two-wheeler.readthedocs.io/en/latest/).
+
+The electric-bicycle cost model retains a known negative-cost case, documented by a strict expected-failure test. See the [changelog](https://github.com/Laboratory-for-Energy-Systems-Analysis/carculator_two_wheeler/blob/main/CHANGELOG.md).
+
+## Development and release
+
+Use matching sibling checkouts, especially `carculator_utils` **1.3.6 or newer**:
+
+```bash
+python -m pip install -e "../carculator_utils[test,excel,brightway]" -e ".[test,docs,excel,brightway]"
+python -m pip check
+python -m pytest
+python -m sphinx -b html docs docs/_build/html
+```
+
+The `docs` extra includes the extensions used by this repository.
+See [RELEASING.md](https://github.com/Laboratory-for-Energy-Systems-Analysis/carculator_two_wheeler/blob/main/RELEASING.md) for artifact verification, release order and publication.
+
+## Support and license
+
+Contact [carculator@psi.ch](mailto:carculator@psi.ch) or open an [issue](https://github.com/Laboratory-for-Energy-Systems-Analysis/carculator_two_wheeler/issues).
+Maintained by [Romain Sacchi](https://github.com/romainsacchi), with contributions
+from the carculator development team. See [contributing](https://github.com/Laboratory-for-Energy-Systems-Analysis/carculator_two_wheeler/blob/main/CONTRIBUTING.md).
+Licensed under [BSD-3-Clause](https://github.com/Laboratory-for-Energy-Systems-Analysis/carculator_two_wheeler/blob/main/LICENSE).
+
+Scientific background: [Cox et al. (2018)](https://doi.org/10.1016/j.apenergy.2017.12.100).

@@ -102,6 +102,18 @@ With matching Python 3.12 sibling checkouts, run from ``carculator_utils``::
 The shared `measurement catalog and outputs <https://github.com/Laboratory-for-Energy-Systems-Analysis/carculator_utils/blob/master/docs/energy_measurements.rst>`_
 record excluded observations as well as paired values. Multiple cycles of one
 vehicle and AC/DC measurements from one run are not independent vehicles.
-The family artifact verification passed 436 tests, with one existing expected
-two-wheeler failure, plus offline wheel/source-distribution model and LCIA checks.
+The family artifact verification on 2026-10-08 passed 497 tests, with one
+existing expected two-wheeler failure, plus offline wheel/source-distribution
+model and LCIA checks. See :doc:`release` for the release verification record.
 That software verification does not replace empirical validation.
+
+Open release blocker
+--------------------
+
+The default 2025 ``Motorcycle 11-35kW`` / ``ICEV-p`` case has an engine
+efficiency input of 0.01 and returns about **33.0 MJ/km** (about
+**104 L/100 km**). The README example reproduces this result. Execution
+and finite-output checks pass, but this is not a physically credible
+default. **Publication of 0.1.1 is blocked pending a review of this
+parameter and its provenance.** No replacement efficiency has been
+invented during release preparation.
