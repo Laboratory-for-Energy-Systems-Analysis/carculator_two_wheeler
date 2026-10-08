@@ -121,8 +121,8 @@ class TwoWheelerModel(VehicleModel):
 
         """
 
-        n_iterations = self.array.shape[-1]
-        n_year = len(self.array.year.values)
+        n_iterations = self.array.sizes["value"]
+        years = self.array.year
 
         # If uncertainty is not considered, the cost factor equals 1.
         # Otherwise, a variability of +/-30% is added.
@@ -135,6 +135,13 @@ class TwoWheelerModel(VehicleModel):
             else:
                 cost_factor = np.random.triangular(0.7, 1, 1.3, (n_iterations, 1))
 
+        # Broadcast by labels: one cost factor per sample, shared across years.
+        cost_factor = xr.DataArray(
+            np.asarray(cost_factor).ravel(),
+            dims="value",
+            coords={"value": self.array.value},
+        )
+
         # Correction of energy battery system cost, per kWh
         self.array.loc[
             :,
@@ -142,11 +149,7 @@ class TwoWheelerModel(VehicleModel):
             "energy battery cost per kWh",
             :,
             :,
-        ] = np.reshape(
-            (2.75e86 * np.exp(-9.61e-2 * self.array.year.values) + 5.059e1)
-            * cost_factor,
-            (1, 1, n_year, n_iterations),
-        )
+        ] = (2.75e86 * np.exp(-9.61e-2 * years) + 5.059e1) * cost_factor
 
         # Correction of power battery system cost, per kW
         self.array.loc[
@@ -161,11 +164,7 @@ class TwoWheelerModel(VehicleModel):
             "power battery cost per kW",
             :,
             :,
-        ] = np.reshape(
-            (8.337e40 * np.exp(-4.49e-2 * self.array.year.values) + 11.17)
-            * cost_factor,
-            (1, 1, n_year, n_iterations),
-        )
+        ] = (8.337e40 * np.exp(-4.49e-2 * years) + 11.17) * cost_factor
 
         self.apply_battery_cost_inputs(projected=True)
 
