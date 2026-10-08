@@ -101,10 +101,10 @@ traceable mechanical-bicycle costs, not a calibrated complete e-bike price.
 Motor, battery and charger prices and their common currency-year basis need
 separate review before claiming representative ownership costs.
 
-The original fit remains for kick-scooters, mopeds and small scooters, which
-can still have negative glider/maintenance costs. Human-only bicycle cost inputs
-also remain incomplete. Those are separate scopes from this approved electric-
-bicycle correction. Battery coupling and sample-label limitations documented
+A subsequent :doc:`small_vehicle_costs` repair addresses negative glider and
+maintenance costs in kick-scooters, mopeds and small scooters. The inherited
+BEV heat-pump and charger charges still need review. Human-only bicycle cost
+inputs also remain incomplete. Battery coupling and sample-label limitations documented
 in :doc:`validity` and :doc:`petrol_efficiency` are unaffected.
 
 Reproduction

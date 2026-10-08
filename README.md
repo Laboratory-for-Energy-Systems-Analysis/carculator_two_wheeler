@@ -95,8 +95,10 @@ and the [documentation](https://carculator-two-wheeler.readthedocs.io/en/latest/
 
 Electric-bicycle glider and maintenance costs now use a positive mechanical-bicycle
 prior supported by published market data. Complete e-bike prices remain
-uncalibrated, and other light-vehicle cost defects remain. See the
-[bicycle cost correction and limitations](docs/bicycle_costs.rst).
+uncalibrated. Kick-scooter, moped and small-scooter negative glider costs now
+use source-based provisional priors as well. Inherited heat-pump and charger
+costs still need review. See the [bicycle correction](docs/bicycle_costs.rst)
+and [small-vehicle sources, results and limitations](docs/small_vehicle_costs.rst).
 
 ## Development and release
 

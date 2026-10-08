@@ -23682,9 +23682,7 @@
             "BEV"
         ],
         "sizes": [
-            "Kick-scooter",
             "Moped <4kW",
-            "Scooter <4kW",
             "Scooter 4-11kW",
             "Motorcycle 4-11kW",
             "Motorcycle 11-35kW",
@@ -23708,9 +23706,7 @@
             "BEV"
         ],
         "sizes": [
-            "Kick-scooter",
             "Moped <4kW",
-            "Scooter <4kW",
             "Scooter 4-11kW",
             "Motorcycle 4-11kW",
             "Motorcycle 11-35kW",
@@ -23734,9 +23730,7 @@
             "BEV"
         ],
         "sizes": [
-            "Kick-scooter",
             "Moped <4kW",
-            "Scooter <4kW",
             "Scooter 4-11kW",
             "Motorcycle 4-11kW",
             "Motorcycle 11-35kW",
@@ -23760,9 +23754,7 @@
             "BEV"
         ],
         "sizes": [
-            "Kick-scooter",
             "Moped <4kW",
-            "Scooter <4kW",
             "Scooter 4-11kW",
             "Motorcycle 4-11kW",
             "Motorcycle 11-35kW",
@@ -23786,9 +23778,7 @@
             "BEV"
         ],
         "sizes": [
-            "Kick-scooter",
             "Moped <4kW",
-            "Scooter <4kW",
             "Scooter 4-11kW",
             "Motorcycle 4-11kW",
             "Motorcycle 11-35kW",
@@ -23812,9 +23802,7 @@
             "BEV"
         ],
         "sizes": [
-            "Kick-scooter",
             "Moped <4kW",
-            "Scooter <4kW",
             "Scooter 4-11kW",
             "Motorcycle 4-11kW",
             "Motorcycle 11-35kW",
@@ -23842,8 +23830,6 @@
             "Bicycle <25",
             "Bicycle cargo",
             "Bicycle <45",
-            "Moped <4kW",
-            "Scooter <4kW",
             "Scooter 4-11kW",
             "Motorcycle 4-11kW",
             "Motorcycle 11-35kW",
@@ -23871,8 +23857,6 @@
             "Bicycle <25",
             "Bicycle cargo",
             "Bicycle <45",
-            "Moped <4kW",
-            "Scooter <4kW",
             "Scooter 4-11kW",
             "Motorcycle 4-11kW",
             "Motorcycle 11-35kW",
@@ -23900,8 +23884,6 @@
             "Bicycle <25",
             "Bicycle cargo",
             "Bicycle <45",
-            "Moped <4kW",
-            "Scooter <4kW",
             "Scooter 4-11kW",
             "Motorcycle 4-11kW",
             "Motorcycle 11-35kW",
@@ -23929,8 +23911,6 @@
             "Bicycle <25",
             "Bicycle cargo",
             "Bicycle <45",
-            "Moped <4kW",
-            "Scooter <4kW",
             "Scooter 4-11kW",
             "Motorcycle 4-11kW",
             "Motorcycle 11-35kW",
@@ -23958,8 +23938,6 @@
             "Bicycle <25",
             "Bicycle cargo",
             "Bicycle <45",
-            "Moped <4kW",
-            "Scooter <4kW",
             "Scooter 4-11kW",
             "Motorcycle 4-11kW",
             "Motorcycle 11-35kW",
@@ -23987,8 +23965,6 @@
             "Bicycle <25",
             "Bicycle cargo",
             "Bicycle <45",
-            "Moped <4kW",
-            "Scooter <4kW",
             "Scooter 4-11kW",
             "Motorcycle 4-11kW",
             "Motorcycle 11-35kW",
@@ -24012,9 +23988,7 @@
             "BEV"
         ],
         "sizes": [
-            "Kick-scooter",
             "Moped <4kW",
-            "Scooter <4kW",
             "Scooter 4-11kW",
             "Motorcycle 4-11kW",
             "Motorcycle 11-35kW",
@@ -24040,9 +24014,7 @@
             "BEV"
         ],
         "sizes": [
-            "Kick-scooter",
             "Moped <4kW",
-            "Scooter <4kW",
             "Scooter 4-11kW",
             "Motorcycle 4-11kW",
             "Motorcycle 11-35kW",
@@ -24068,9 +24040,7 @@
             "BEV"
         ],
         "sizes": [
-            "Kick-scooter",
             "Moped <4kW",
-            "Scooter <4kW",
             "Scooter 4-11kW",
             "Motorcycle 4-11kW",
             "Motorcycle 11-35kW",
@@ -24096,9 +24066,7 @@
             "BEV"
         ],
         "sizes": [
-            "Kick-scooter",
             "Moped <4kW",
-            "Scooter <4kW",
             "Scooter 4-11kW",
             "Motorcycle 4-11kW",
             "Motorcycle 11-35kW",
@@ -24124,9 +24092,7 @@
             "BEV"
         ],
         "sizes": [
-            "Kick-scooter",
             "Moped <4kW",
-            "Scooter <4kW",
             "Scooter 4-11kW",
             "Motorcycle 4-11kW",
             "Motorcycle 11-35kW",
@@ -24152,9 +24118,7 @@
             "BEV"
         ],
         "sizes": [
-            "Kick-scooter",
             "Moped <4kW",
-            "Scooter <4kW",
             "Scooter 4-11kW",
             "Motorcycle 4-11kW",
             "Motorcycle 11-35kW",
@@ -24184,8 +24148,6 @@
             "Bicycle <25",
             "Bicycle cargo",
             "Bicycle <45",
-            "Moped <4kW",
-            "Scooter <4kW",
             "Scooter 4-11kW",
             "Motorcycle 4-11kW",
             "Motorcycle 11-35kW",
@@ -24215,8 +24177,6 @@
             "Bicycle <25",
             "Bicycle cargo",
             "Bicycle <45",
-            "Moped <4kW",
-            "Scooter <4kW",
             "Scooter 4-11kW",
             "Motorcycle 4-11kW",
             "Motorcycle 11-35kW",
@@ -24246,8 +24206,6 @@
             "Bicycle <25",
             "Bicycle cargo",
             "Bicycle <45",
-            "Moped <4kW",
-            "Scooter <4kW",
             "Scooter 4-11kW",
             "Motorcycle 4-11kW",
             "Motorcycle 11-35kW",
@@ -24277,8 +24235,6 @@
             "Bicycle <25",
             "Bicycle cargo",
             "Bicycle <45",
-            "Moped <4kW",
-            "Scooter <4kW",
             "Scooter 4-11kW",
             "Motorcycle 4-11kW",
             "Motorcycle 11-35kW",
@@ -24308,8 +24264,6 @@
             "Bicycle <25",
             "Bicycle cargo",
             "Bicycle <45",
-            "Moped <4kW",
-            "Scooter <4kW",
             "Scooter 4-11kW",
             "Motorcycle 4-11kW",
             "Motorcycle 11-35kW",
@@ -24339,8 +24293,6 @@
             "Bicycle <25",
             "Bicycle cargo",
             "Bicycle <45",
-            "Moped <4kW",
-            "Scooter <4kW",
             "Scooter 4-11kW",
             "Motorcycle 4-11kW",
             "Motorcycle 11-35kW",
@@ -38439,13 +38391,11 @@
             "BEV"
         ],
         "sizes": [
-            "Kick-scooter",
             "Moped <4kW",
             "Motorcycle 11-35kW",
             "Motorcycle 4-11kW",
             "Motorcycle >35kW",
-            "Scooter 4-11kW",
-            "Scooter <4kW"
+            "Scooter 4-11kW"
         ],
         "year": 2025,
         "name": "glider cost intercept",
@@ -38469,12 +38419,10 @@
             "Bicycle <45",
             "Bicycle cargo",
             "Kick-scooter",
-            "Moped <4kW",
             "Motorcycle 11-35kW",
             "Motorcycle 4-11kW",
             "Motorcycle >35kW",
-            "Scooter 4-11kW",
-            "Scooter <4kW"
+            "Scooter 4-11kW"
         ],
         "year": 2025,
         "name": "glider cost intercept",
@@ -38494,13 +38442,11 @@
             "BEV"
         ],
         "sizes": [
-            "Kick-scooter",
             "Moped <4kW",
             "Motorcycle 11-35kW",
             "Motorcycle 4-11kW",
             "Motorcycle >35kW",
-            "Scooter 4-11kW",
-            "Scooter <4kW"
+            "Scooter 4-11kW"
         ],
         "year": 2025,
         "name": "glider cost slope",
@@ -38526,12 +38472,10 @@
             "Bicycle <45",
             "Bicycle cargo",
             "Kick-scooter",
-            "Moped <4kW",
             "Motorcycle 11-35kW",
             "Motorcycle 4-11kW",
             "Motorcycle >35kW",
-            "Scooter 4-11kW",
-            "Scooter <4kW"
+            "Scooter 4-11kW"
         ],
         "year": 2025,
         "name": "glider cost slope",
@@ -41452,5 +41396,1181 @@
         "loc": 34.72222222222223,
         "minimum": 23.654513888888893,
         "maximum": 40.36458333333334
+    },
+    "small-vehicle-cost-kick-bev-2000-glider cost intercept": {
+        "amount": 0,
+        "category": "Costs",
+        "powertrain": [
+            "BEV"
+        ],
+        "sizes": [
+            "Kick-scooter"
+        ],
+        "year": 2000,
+        "name": "glider cost intercept",
+        "unit": "EUR/vehicle",
+        "importance": "",
+        "source": "Provisional source-based cost prior; oxelo-t7xl; see small_vehicle_cost_provenance.json",
+        "comment": "Frozen reference cost prior, applied unchanged across native years; not a historical price series. No dynamic subtraction of battery or powertrain costs. Heat-pump charge excluded from residual calibration. See packaged provenance for price boundaries and uncertainty.",
+        "status": "Provisional",
+        "kind": "distribution",
+        "uncertainty_type": 1,
+        "loc": 0
+    },
+    "small-vehicle-cost-scooter-bev-2000-glider cost intercept": {
+        "amount": 0,
+        "category": "Costs",
+        "powertrain": [
+            "BEV"
+        ],
+        "sizes": [
+            "Scooter <4kW"
+        ],
+        "year": 2000,
+        "name": "glider cost intercept",
+        "unit": "EUR/vehicle",
+        "importance": "",
+        "source": "Provisional source-based cost prior; niu-nqi-sport; see small_vehicle_cost_provenance.json",
+        "comment": "Frozen reference cost prior, applied unchanged across native years; not a historical price series. No dynamic subtraction of battery or powertrain costs. Heat-pump charge excluded from residual calibration. See packaged provenance for price boundaries and uncertainty.",
+        "status": "Provisional",
+        "kind": "distribution",
+        "uncertainty_type": 1,
+        "loc": 0
+    },
+    "small-vehicle-cost-kick-bev-2010-glider cost intercept": {
+        "amount": 0,
+        "category": "Costs",
+        "powertrain": [
+            "BEV"
+        ],
+        "sizes": [
+            "Kick-scooter"
+        ],
+        "year": 2010,
+        "name": "glider cost intercept",
+        "unit": "EUR/vehicle",
+        "importance": "",
+        "source": "Provisional source-based cost prior; oxelo-t7xl; see small_vehicle_cost_provenance.json",
+        "comment": "Frozen reference cost prior, applied unchanged across native years; not a historical price series. No dynamic subtraction of battery or powertrain costs. Heat-pump charge excluded from residual calibration. See packaged provenance for price boundaries and uncertainty.",
+        "status": "Provisional",
+        "kind": "distribution",
+        "uncertainty_type": 1,
+        "loc": 0
+    },
+    "small-vehicle-cost-scooter-bev-2010-glider cost intercept": {
+        "amount": 0,
+        "category": "Costs",
+        "powertrain": [
+            "BEV"
+        ],
+        "sizes": [
+            "Scooter <4kW"
+        ],
+        "year": 2010,
+        "name": "glider cost intercept",
+        "unit": "EUR/vehicle",
+        "importance": "",
+        "source": "Provisional source-based cost prior; niu-nqi-sport; see small_vehicle_cost_provenance.json",
+        "comment": "Frozen reference cost prior, applied unchanged across native years; not a historical price series. No dynamic subtraction of battery or powertrain costs. Heat-pump charge excluded from residual calibration. See packaged provenance for price boundaries and uncertainty.",
+        "status": "Provisional",
+        "kind": "distribution",
+        "uncertainty_type": 1,
+        "loc": 0
+    },
+    "small-vehicle-cost-kick-bev-2020-glider cost intercept": {
+        "amount": 0,
+        "category": "Costs",
+        "powertrain": [
+            "BEV"
+        ],
+        "sizes": [
+            "Kick-scooter"
+        ],
+        "year": 2020,
+        "name": "glider cost intercept",
+        "unit": "EUR/vehicle",
+        "importance": "",
+        "source": "Provisional source-based cost prior; oxelo-t7xl; see small_vehicle_cost_provenance.json",
+        "comment": "Frozen reference cost prior, applied unchanged across native years; not a historical price series. No dynamic subtraction of battery or powertrain costs. Heat-pump charge excluded from residual calibration. See packaged provenance for price boundaries and uncertainty.",
+        "status": "Provisional",
+        "kind": "distribution",
+        "uncertainty_type": 1,
+        "loc": 0
+    },
+    "small-vehicle-cost-scooter-bev-2020-glider cost intercept": {
+        "amount": 0,
+        "category": "Costs",
+        "powertrain": [
+            "BEV"
+        ],
+        "sizes": [
+            "Scooter <4kW"
+        ],
+        "year": 2020,
+        "name": "glider cost intercept",
+        "unit": "EUR/vehicle",
+        "importance": "",
+        "source": "Provisional source-based cost prior; niu-nqi-sport; see small_vehicle_cost_provenance.json",
+        "comment": "Frozen reference cost prior, applied unchanged across native years; not a historical price series. No dynamic subtraction of battery or powertrain costs. Heat-pump charge excluded from residual calibration. See packaged provenance for price boundaries and uncertainty.",
+        "status": "Provisional",
+        "kind": "distribution",
+        "uncertainty_type": 1,
+        "loc": 0
+    },
+    "small-vehicle-cost-kick-bev-2030-glider cost intercept": {
+        "amount": 0,
+        "category": "Costs",
+        "powertrain": [
+            "BEV"
+        ],
+        "sizes": [
+            "Kick-scooter"
+        ],
+        "year": 2030,
+        "name": "glider cost intercept",
+        "unit": "EUR/vehicle",
+        "importance": "",
+        "source": "Provisional source-based cost prior; oxelo-t7xl; see small_vehicle_cost_provenance.json",
+        "comment": "Frozen reference cost prior, applied unchanged across native years; not a historical price series. No dynamic subtraction of battery or powertrain costs. Heat-pump charge excluded from residual calibration. See packaged provenance for price boundaries and uncertainty.",
+        "status": "Provisional",
+        "kind": "distribution",
+        "uncertainty_type": 1,
+        "loc": 0
+    },
+    "small-vehicle-cost-scooter-bev-2030-glider cost intercept": {
+        "amount": 0,
+        "category": "Costs",
+        "powertrain": [
+            "BEV"
+        ],
+        "sizes": [
+            "Scooter <4kW"
+        ],
+        "year": 2030,
+        "name": "glider cost intercept",
+        "unit": "EUR/vehicle",
+        "importance": "",
+        "source": "Provisional source-based cost prior; niu-nqi-sport; see small_vehicle_cost_provenance.json",
+        "comment": "Frozen reference cost prior, applied unchanged across native years; not a historical price series. No dynamic subtraction of battery or powertrain costs. Heat-pump charge excluded from residual calibration. See packaged provenance for price boundaries and uncertainty.",
+        "status": "Provisional",
+        "kind": "distribution",
+        "uncertainty_type": 1,
+        "loc": 0
+    },
+    "small-vehicle-cost-kick-bev-2040-glider cost intercept": {
+        "amount": 0,
+        "category": "Costs",
+        "powertrain": [
+            "BEV"
+        ],
+        "sizes": [
+            "Kick-scooter"
+        ],
+        "year": 2040,
+        "name": "glider cost intercept",
+        "unit": "EUR/vehicle",
+        "importance": "",
+        "source": "Provisional source-based cost prior; oxelo-t7xl; see small_vehicle_cost_provenance.json",
+        "comment": "Frozen reference cost prior, applied unchanged across native years; not a historical price series. No dynamic subtraction of battery or powertrain costs. Heat-pump charge excluded from residual calibration. See packaged provenance for price boundaries and uncertainty.",
+        "status": "Provisional",
+        "kind": "distribution",
+        "uncertainty_type": 1,
+        "loc": 0
+    },
+    "small-vehicle-cost-scooter-bev-2040-glider cost intercept": {
+        "amount": 0,
+        "category": "Costs",
+        "powertrain": [
+            "BEV"
+        ],
+        "sizes": [
+            "Scooter <4kW"
+        ],
+        "year": 2040,
+        "name": "glider cost intercept",
+        "unit": "EUR/vehicle",
+        "importance": "",
+        "source": "Provisional source-based cost prior; niu-nqi-sport; see small_vehicle_cost_provenance.json",
+        "comment": "Frozen reference cost prior, applied unchanged across native years; not a historical price series. No dynamic subtraction of battery or powertrain costs. Heat-pump charge excluded from residual calibration. See packaged provenance for price boundaries and uncertainty.",
+        "status": "Provisional",
+        "kind": "distribution",
+        "uncertainty_type": 1,
+        "loc": 0
+    },
+    "small-vehicle-cost-kick-bev-2050-glider cost intercept": {
+        "amount": 0,
+        "category": "Costs",
+        "powertrain": [
+            "BEV"
+        ],
+        "sizes": [
+            "Kick-scooter"
+        ],
+        "year": 2050,
+        "name": "glider cost intercept",
+        "unit": "EUR/vehicle",
+        "importance": "",
+        "source": "Provisional source-based cost prior; oxelo-t7xl; see small_vehicle_cost_provenance.json",
+        "comment": "Frozen reference cost prior, applied unchanged across native years; not a historical price series. No dynamic subtraction of battery or powertrain costs. Heat-pump charge excluded from residual calibration. See packaged provenance for price boundaries and uncertainty.",
+        "status": "Provisional",
+        "kind": "distribution",
+        "uncertainty_type": 1,
+        "loc": 0
+    },
+    "small-vehicle-cost-scooter-bev-2050-glider cost intercept": {
+        "amount": 0,
+        "category": "Costs",
+        "powertrain": [
+            "BEV"
+        ],
+        "sizes": [
+            "Scooter <4kW"
+        ],
+        "year": 2050,
+        "name": "glider cost intercept",
+        "unit": "EUR/vehicle",
+        "importance": "",
+        "source": "Provisional source-based cost prior; niu-nqi-sport; see small_vehicle_cost_provenance.json",
+        "comment": "Frozen reference cost prior, applied unchanged across native years; not a historical price series. No dynamic subtraction of battery or powertrain costs. Heat-pump charge excluded from residual calibration. See packaged provenance for price boundaries and uncertainty.",
+        "status": "Provisional",
+        "kind": "distribution",
+        "uncertainty_type": 1,
+        "loc": 0
+    },
+    "small-vehicle-cost-moped-petrol-2000-glider cost intercept": {
+        "amount": 0,
+        "category": "Costs",
+        "powertrain": [
+            "ICEV-p"
+        ],
+        "sizes": [
+            "Moped <4kW"
+        ],
+        "year": 2000,
+        "name": "glider cost intercept",
+        "unit": "EUR/vehicle",
+        "importance": "",
+        "source": "Provisional source-based cost prior; mash-fifty; see small_vehicle_cost_provenance.json",
+        "comment": "Frozen reference cost prior, applied unchanged across native years; not a historical price series. No dynamic subtraction of battery or powertrain costs. Heat-pump charge excluded from residual calibration. See packaged provenance for price boundaries and uncertainty.",
+        "status": "Provisional",
+        "kind": "distribution",
+        "uncertainty_type": 1,
+        "loc": 0
+    },
+    "small-vehicle-cost-scooter-petrol-2000-glider cost intercept": {
+        "amount": 0,
+        "category": "Costs",
+        "powertrain": [
+            "ICEV-p"
+        ],
+        "sizes": [
+            "Scooter <4kW"
+        ],
+        "year": 2000,
+        "name": "glider cost intercept",
+        "unit": "EUR/vehicle",
+        "importance": "",
+        "source": "Provisional source-based cost prior; piaggio-liberty; see small_vehicle_cost_provenance.json",
+        "comment": "Frozen reference cost prior, applied unchanged across native years; not a historical price series. No dynamic subtraction of battery or powertrain costs. Heat-pump charge excluded from residual calibration. See packaged provenance for price boundaries and uncertainty.",
+        "status": "Provisional",
+        "kind": "distribution",
+        "uncertainty_type": 1,
+        "loc": 0
+    },
+    "small-vehicle-cost-moped-petrol-2010-glider cost intercept": {
+        "amount": 0,
+        "category": "Costs",
+        "powertrain": [
+            "ICEV-p"
+        ],
+        "sizes": [
+            "Moped <4kW"
+        ],
+        "year": 2010,
+        "name": "glider cost intercept",
+        "unit": "EUR/vehicle",
+        "importance": "",
+        "source": "Provisional source-based cost prior; mash-fifty; see small_vehicle_cost_provenance.json",
+        "comment": "Frozen reference cost prior, applied unchanged across native years; not a historical price series. No dynamic subtraction of battery or powertrain costs. Heat-pump charge excluded from residual calibration. See packaged provenance for price boundaries and uncertainty.",
+        "status": "Provisional",
+        "kind": "distribution",
+        "uncertainty_type": 1,
+        "loc": 0
+    },
+    "small-vehicle-cost-scooter-petrol-2010-glider cost intercept": {
+        "amount": 0,
+        "category": "Costs",
+        "powertrain": [
+            "ICEV-p"
+        ],
+        "sizes": [
+            "Scooter <4kW"
+        ],
+        "year": 2010,
+        "name": "glider cost intercept",
+        "unit": "EUR/vehicle",
+        "importance": "",
+        "source": "Provisional source-based cost prior; piaggio-liberty; see small_vehicle_cost_provenance.json",
+        "comment": "Frozen reference cost prior, applied unchanged across native years; not a historical price series. No dynamic subtraction of battery or powertrain costs. Heat-pump charge excluded from residual calibration. See packaged provenance for price boundaries and uncertainty.",
+        "status": "Provisional",
+        "kind": "distribution",
+        "uncertainty_type": 1,
+        "loc": 0
+    },
+    "small-vehicle-cost-moped-petrol-2020-glider cost intercept": {
+        "amount": 0,
+        "category": "Costs",
+        "powertrain": [
+            "ICEV-p"
+        ],
+        "sizes": [
+            "Moped <4kW"
+        ],
+        "year": 2020,
+        "name": "glider cost intercept",
+        "unit": "EUR/vehicle",
+        "importance": "",
+        "source": "Provisional source-based cost prior; mash-fifty; see small_vehicle_cost_provenance.json",
+        "comment": "Frozen reference cost prior, applied unchanged across native years; not a historical price series. No dynamic subtraction of battery or powertrain costs. Heat-pump charge excluded from residual calibration. See packaged provenance for price boundaries and uncertainty.",
+        "status": "Provisional",
+        "kind": "distribution",
+        "uncertainty_type": 1,
+        "loc": 0
+    },
+    "small-vehicle-cost-scooter-petrol-2020-glider cost intercept": {
+        "amount": 0,
+        "category": "Costs",
+        "powertrain": [
+            "ICEV-p"
+        ],
+        "sizes": [
+            "Scooter <4kW"
+        ],
+        "year": 2020,
+        "name": "glider cost intercept",
+        "unit": "EUR/vehicle",
+        "importance": "",
+        "source": "Provisional source-based cost prior; piaggio-liberty; see small_vehicle_cost_provenance.json",
+        "comment": "Frozen reference cost prior, applied unchanged across native years; not a historical price series. No dynamic subtraction of battery or powertrain costs. Heat-pump charge excluded from residual calibration. See packaged provenance for price boundaries and uncertainty.",
+        "status": "Provisional",
+        "kind": "distribution",
+        "uncertainty_type": 1,
+        "loc": 0
+    },
+    "small-vehicle-cost-moped-petrol-2030-glider cost intercept": {
+        "amount": 0,
+        "category": "Costs",
+        "powertrain": [
+            "ICEV-p"
+        ],
+        "sizes": [
+            "Moped <4kW"
+        ],
+        "year": 2030,
+        "name": "glider cost intercept",
+        "unit": "EUR/vehicle",
+        "importance": "",
+        "source": "Provisional source-based cost prior; mash-fifty; see small_vehicle_cost_provenance.json",
+        "comment": "Frozen reference cost prior, applied unchanged across native years; not a historical price series. No dynamic subtraction of battery or powertrain costs. Heat-pump charge excluded from residual calibration. See packaged provenance for price boundaries and uncertainty.",
+        "status": "Provisional",
+        "kind": "distribution",
+        "uncertainty_type": 1,
+        "loc": 0
+    },
+    "small-vehicle-cost-scooter-petrol-2030-glider cost intercept": {
+        "amount": 0,
+        "category": "Costs",
+        "powertrain": [
+            "ICEV-p"
+        ],
+        "sizes": [
+            "Scooter <4kW"
+        ],
+        "year": 2030,
+        "name": "glider cost intercept",
+        "unit": "EUR/vehicle",
+        "importance": "",
+        "source": "Provisional source-based cost prior; piaggio-liberty; see small_vehicle_cost_provenance.json",
+        "comment": "Frozen reference cost prior, applied unchanged across native years; not a historical price series. No dynamic subtraction of battery or powertrain costs. Heat-pump charge excluded from residual calibration. See packaged provenance for price boundaries and uncertainty.",
+        "status": "Provisional",
+        "kind": "distribution",
+        "uncertainty_type": 1,
+        "loc": 0
+    },
+    "small-vehicle-cost-moped-petrol-2040-glider cost intercept": {
+        "amount": 0,
+        "category": "Costs",
+        "powertrain": [
+            "ICEV-p"
+        ],
+        "sizes": [
+            "Moped <4kW"
+        ],
+        "year": 2040,
+        "name": "glider cost intercept",
+        "unit": "EUR/vehicle",
+        "importance": "",
+        "source": "Provisional source-based cost prior; mash-fifty; see small_vehicle_cost_provenance.json",
+        "comment": "Frozen reference cost prior, applied unchanged across native years; not a historical price series. No dynamic subtraction of battery or powertrain costs. Heat-pump charge excluded from residual calibration. See packaged provenance for price boundaries and uncertainty.",
+        "status": "Provisional",
+        "kind": "distribution",
+        "uncertainty_type": 1,
+        "loc": 0
+    },
+    "small-vehicle-cost-scooter-petrol-2040-glider cost intercept": {
+        "amount": 0,
+        "category": "Costs",
+        "powertrain": [
+            "ICEV-p"
+        ],
+        "sizes": [
+            "Scooter <4kW"
+        ],
+        "year": 2040,
+        "name": "glider cost intercept",
+        "unit": "EUR/vehicle",
+        "importance": "",
+        "source": "Provisional source-based cost prior; piaggio-liberty; see small_vehicle_cost_provenance.json",
+        "comment": "Frozen reference cost prior, applied unchanged across native years; not a historical price series. No dynamic subtraction of battery or powertrain costs. Heat-pump charge excluded from residual calibration. See packaged provenance for price boundaries and uncertainty.",
+        "status": "Provisional",
+        "kind": "distribution",
+        "uncertainty_type": 1,
+        "loc": 0
+    },
+    "small-vehicle-cost-moped-petrol-2050-glider cost intercept": {
+        "amount": 0,
+        "category": "Costs",
+        "powertrain": [
+            "ICEV-p"
+        ],
+        "sizes": [
+            "Moped <4kW"
+        ],
+        "year": 2050,
+        "name": "glider cost intercept",
+        "unit": "EUR/vehicle",
+        "importance": "",
+        "source": "Provisional source-based cost prior; mash-fifty; see small_vehicle_cost_provenance.json",
+        "comment": "Frozen reference cost prior, applied unchanged across native years; not a historical price series. No dynamic subtraction of battery or powertrain costs. Heat-pump charge excluded from residual calibration. See packaged provenance for price boundaries and uncertainty.",
+        "status": "Provisional",
+        "kind": "distribution",
+        "uncertainty_type": 1,
+        "loc": 0
+    },
+    "small-vehicle-cost-scooter-petrol-2050-glider cost intercept": {
+        "amount": 0,
+        "category": "Costs",
+        "powertrain": [
+            "ICEV-p"
+        ],
+        "sizes": [
+            "Scooter <4kW"
+        ],
+        "year": 2050,
+        "name": "glider cost intercept",
+        "unit": "EUR/vehicle",
+        "importance": "",
+        "source": "Provisional source-based cost prior; piaggio-liberty; see small_vehicle_cost_provenance.json",
+        "comment": "Frozen reference cost prior, applied unchanged across native years; not a historical price series. No dynamic subtraction of battery or powertrain costs. Heat-pump charge excluded from residual calibration. See packaged provenance for price boundaries and uncertainty.",
+        "status": "Provisional",
+        "kind": "distribution",
+        "uncertainty_type": 1,
+        "loc": 0
+    },
+    "small-vehicle-cost-kick-bev-2000-glider cost slope": {
+        "amount": 17.855654761904763,
+        "category": "Costs",
+        "powertrain": [
+            "BEV"
+        ],
+        "sizes": [
+            "Kick-scooter"
+        ],
+        "year": 2000,
+        "name": "glider cost slope",
+        "unit": "EUR/kg",
+        "importance": "",
+        "source": "Provisional source-based cost prior; oxelo-t7xl; see small_vehicle_cost_provenance.json",
+        "comment": "Frozen reference cost prior, applied unchanged across native years; not a historical price series. No dynamic subtraction of battery or powertrain costs. Heat-pump charge excluded from residual calibration. See packaged provenance for price boundaries and uncertainty.",
+        "status": "Provisional",
+        "kind": "distribution",
+        "uncertainty_type": 5,
+        "loc": 17.855654761904763,
+        "minimum": 10.043805803571429,
+        "maximum": 20.087611607142858
+    },
+    "small-vehicle-cost-scooter-bev-2000-glider cost slope": {
+        "amount": 19.460367406689148,
+        "category": "Costs",
+        "powertrain": [
+            "BEV"
+        ],
+        "sizes": [
+            "Scooter <4kW"
+        ],
+        "year": 2000,
+        "name": "glider cost slope",
+        "unit": "EUR/kg",
+        "importance": "",
+        "source": "Provisional source-based cost prior; niu-nqi-sport; see small_vehicle_cost_provenance.json",
+        "comment": "Frozen reference cost prior, applied unchanged across native years; not a historical price series. No dynamic subtraction of battery or powertrain costs. Heat-pump charge excluded from residual calibration. See packaged provenance for price boundaries and uncertainty.",
+        "status": "Provisional",
+        "kind": "distribution",
+        "uncertainty_type": 5,
+        "loc": 19.460367406689148,
+        "minimum": 10.946456666262646,
+        "maximum": 21.892913332525293
+    },
+    "small-vehicle-cost-kick-bev-2010-glider cost slope": {
+        "amount": 17.855654761904763,
+        "category": "Costs",
+        "powertrain": [
+            "BEV"
+        ],
+        "sizes": [
+            "Kick-scooter"
+        ],
+        "year": 2010,
+        "name": "glider cost slope",
+        "unit": "EUR/kg",
+        "importance": "",
+        "source": "Provisional source-based cost prior; oxelo-t7xl; see small_vehicle_cost_provenance.json",
+        "comment": "Frozen reference cost prior, applied unchanged across native years; not a historical price series. No dynamic subtraction of battery or powertrain costs. Heat-pump charge excluded from residual calibration. See packaged provenance for price boundaries and uncertainty.",
+        "status": "Provisional",
+        "kind": "distribution",
+        "uncertainty_type": 5,
+        "loc": 17.855654761904763,
+        "minimum": 10.043805803571429,
+        "maximum": 20.087611607142858
+    },
+    "small-vehicle-cost-scooter-bev-2010-glider cost slope": {
+        "amount": 19.460367406689148,
+        "category": "Costs",
+        "powertrain": [
+            "BEV"
+        ],
+        "sizes": [
+            "Scooter <4kW"
+        ],
+        "year": 2010,
+        "name": "glider cost slope",
+        "unit": "EUR/kg",
+        "importance": "",
+        "source": "Provisional source-based cost prior; niu-nqi-sport; see small_vehicle_cost_provenance.json",
+        "comment": "Frozen reference cost prior, applied unchanged across native years; not a historical price series. No dynamic subtraction of battery or powertrain costs. Heat-pump charge excluded from residual calibration. See packaged provenance for price boundaries and uncertainty.",
+        "status": "Provisional",
+        "kind": "distribution",
+        "uncertainty_type": 5,
+        "loc": 19.460367406689148,
+        "minimum": 10.946456666262646,
+        "maximum": 21.892913332525293
+    },
+    "small-vehicle-cost-kick-bev-2020-glider cost slope": {
+        "amount": 17.855654761904763,
+        "category": "Costs",
+        "powertrain": [
+            "BEV"
+        ],
+        "sizes": [
+            "Kick-scooter"
+        ],
+        "year": 2020,
+        "name": "glider cost slope",
+        "unit": "EUR/kg",
+        "importance": "",
+        "source": "Provisional source-based cost prior; oxelo-t7xl; see small_vehicle_cost_provenance.json",
+        "comment": "Frozen reference cost prior, applied unchanged across native years; not a historical price series. No dynamic subtraction of battery or powertrain costs. Heat-pump charge excluded from residual calibration. See packaged provenance for price boundaries and uncertainty.",
+        "status": "Provisional",
+        "kind": "distribution",
+        "uncertainty_type": 5,
+        "loc": 17.855654761904763,
+        "minimum": 10.043805803571429,
+        "maximum": 20.087611607142858
+    },
+    "small-vehicle-cost-scooter-bev-2020-glider cost slope": {
+        "amount": 19.460367406689148,
+        "category": "Costs",
+        "powertrain": [
+            "BEV"
+        ],
+        "sizes": [
+            "Scooter <4kW"
+        ],
+        "year": 2020,
+        "name": "glider cost slope",
+        "unit": "EUR/kg",
+        "importance": "",
+        "source": "Provisional source-based cost prior; niu-nqi-sport; see small_vehicle_cost_provenance.json",
+        "comment": "Frozen reference cost prior, applied unchanged across native years; not a historical price series. No dynamic subtraction of battery or powertrain costs. Heat-pump charge excluded from residual calibration. See packaged provenance for price boundaries and uncertainty.",
+        "status": "Provisional",
+        "kind": "distribution",
+        "uncertainty_type": 5,
+        "loc": 19.460367406689148,
+        "minimum": 10.946456666262646,
+        "maximum": 21.892913332525293
+    },
+    "small-vehicle-cost-kick-bev-2030-glider cost slope": {
+        "amount": 17.855654761904763,
+        "category": "Costs",
+        "powertrain": [
+            "BEV"
+        ],
+        "sizes": [
+            "Kick-scooter"
+        ],
+        "year": 2030,
+        "name": "glider cost slope",
+        "unit": "EUR/kg",
+        "importance": "",
+        "source": "Provisional source-based cost prior; oxelo-t7xl; see small_vehicle_cost_provenance.json",
+        "comment": "Frozen reference cost prior, applied unchanged across native years; not a historical price series. No dynamic subtraction of battery or powertrain costs. Heat-pump charge excluded from residual calibration. See packaged provenance for price boundaries and uncertainty.",
+        "status": "Provisional",
+        "kind": "distribution",
+        "uncertainty_type": 5,
+        "loc": 17.855654761904763,
+        "minimum": 14.284523809523812,
+        "maximum": 21.426785714285714
+    },
+    "small-vehicle-cost-scooter-bev-2030-glider cost slope": {
+        "amount": 19.460367406689148,
+        "category": "Costs",
+        "powertrain": [
+            "BEV"
+        ],
+        "sizes": [
+            "Scooter <4kW"
+        ],
+        "year": 2030,
+        "name": "glider cost slope",
+        "unit": "EUR/kg",
+        "importance": "",
+        "source": "Provisional source-based cost prior; niu-nqi-sport; see small_vehicle_cost_provenance.json",
+        "comment": "Frozen reference cost prior, applied unchanged across native years; not a historical price series. No dynamic subtraction of battery or powertrain costs. Heat-pump charge excluded from residual calibration. See packaged provenance for price boundaries and uncertainty.",
+        "status": "Provisional",
+        "kind": "distribution",
+        "uncertainty_type": 5,
+        "loc": 19.460367406689148,
+        "minimum": 15.56829392535132,
+        "maximum": 23.352440888026976
+    },
+    "small-vehicle-cost-kick-bev-2040-glider cost slope": {
+        "amount": 17.855654761904763,
+        "category": "Costs",
+        "powertrain": [
+            "BEV"
+        ],
+        "sizes": [
+            "Kick-scooter"
+        ],
+        "year": 2040,
+        "name": "glider cost slope",
+        "unit": "EUR/kg",
+        "importance": "",
+        "source": "Provisional source-based cost prior; oxelo-t7xl; see small_vehicle_cost_provenance.json",
+        "comment": "Frozen reference cost prior, applied unchanged across native years; not a historical price series. No dynamic subtraction of battery or powertrain costs. Heat-pump charge excluded from residual calibration. See packaged provenance for price boundaries and uncertainty.",
+        "status": "Provisional",
+        "kind": "distribution",
+        "uncertainty_type": 5,
+        "loc": 17.855654761904763,
+        "minimum": 12.275762648809524,
+        "maximum": 20.087611607142858
+    },
+    "small-vehicle-cost-scooter-bev-2040-glider cost slope": {
+        "amount": 19.460367406689148,
+        "category": "Costs",
+        "powertrain": [
+            "BEV"
+        ],
+        "sizes": [
+            "Scooter <4kW"
+        ],
+        "year": 2040,
+        "name": "glider cost slope",
+        "unit": "EUR/kg",
+        "importance": "",
+        "source": "Provisional source-based cost prior; niu-nqi-sport; see small_vehicle_cost_provenance.json",
+        "comment": "Frozen reference cost prior, applied unchanged across native years; not a historical price series. No dynamic subtraction of battery or powertrain costs. Heat-pump charge excluded from residual calibration. See packaged provenance for price boundaries and uncertainty.",
+        "status": "Provisional",
+        "kind": "distribution",
+        "uncertainty_type": 5,
+        "loc": 19.460367406689148,
+        "minimum": 13.37900259209879,
+        "maximum": 21.892913332525293
+    },
+    "small-vehicle-cost-kick-bev-2050-glider cost slope": {
+        "amount": 17.855654761904763,
+        "category": "Costs",
+        "powertrain": [
+            "BEV"
+        ],
+        "sizes": [
+            "Kick-scooter"
+        ],
+        "year": 2050,
+        "name": "glider cost slope",
+        "unit": "EUR/kg",
+        "importance": "",
+        "source": "Provisional source-based cost prior; oxelo-t7xl; see small_vehicle_cost_provenance.json",
+        "comment": "Frozen reference cost prior, applied unchanged across native years; not a historical price series. No dynamic subtraction of battery or powertrain costs. Heat-pump charge excluded from residual calibration. See packaged provenance for price boundaries and uncertainty.",
+        "status": "Provisional",
+        "kind": "distribution",
+        "uncertainty_type": 5,
+        "loc": 17.855654761904763,
+        "minimum": 12.275762648809524,
+        "maximum": 20.087611607142858
+    },
+    "small-vehicle-cost-scooter-bev-2050-glider cost slope": {
+        "amount": 19.460367406689148,
+        "category": "Costs",
+        "powertrain": [
+            "BEV"
+        ],
+        "sizes": [
+            "Scooter <4kW"
+        ],
+        "year": 2050,
+        "name": "glider cost slope",
+        "unit": "EUR/kg",
+        "importance": "",
+        "source": "Provisional source-based cost prior; niu-nqi-sport; see small_vehicle_cost_provenance.json",
+        "comment": "Frozen reference cost prior, applied unchanged across native years; not a historical price series. No dynamic subtraction of battery or powertrain costs. Heat-pump charge excluded from residual calibration. See packaged provenance for price boundaries and uncertainty.",
+        "status": "Provisional",
+        "kind": "distribution",
+        "uncertainty_type": 5,
+        "loc": 19.460367406689148,
+        "minimum": 13.37900259209879,
+        "maximum": 21.892913332525293
+    },
+    "small-vehicle-cost-moped-petrol-2000-glider cost slope": {
+        "amount": 26.988113006902122,
+        "category": "Costs",
+        "powertrain": [
+            "ICEV-p"
+        ],
+        "sizes": [
+            "Moped <4kW"
+        ],
+        "year": 2000,
+        "name": "glider cost slope",
+        "unit": "EUR/kg",
+        "importance": "",
+        "source": "Provisional source-based cost prior; mash-fifty; see small_vehicle_cost_provenance.json",
+        "comment": "Frozen reference cost prior, applied unchanged across native years; not a historical price series. No dynamic subtraction of battery or powertrain costs. Heat-pump charge excluded from residual calibration. See packaged provenance for price boundaries and uncertainty.",
+        "status": "Provisional",
+        "kind": "distribution",
+        "uncertainty_type": 5,
+        "loc": 26.988113006902122,
+        "minimum": 15.180813566382444,
+        "maximum": 30.361627132764887
+    },
+    "small-vehicle-cost-scooter-petrol-2000-glider cost slope": {
+        "amount": 26.62684980428444,
+        "category": "Costs",
+        "powertrain": [
+            "ICEV-p"
+        ],
+        "sizes": [
+            "Scooter <4kW"
+        ],
+        "year": 2000,
+        "name": "glider cost slope",
+        "unit": "EUR/kg",
+        "importance": "",
+        "source": "Provisional source-based cost prior; piaggio-liberty; see small_vehicle_cost_provenance.json",
+        "comment": "Frozen reference cost prior, applied unchanged across native years; not a historical price series. No dynamic subtraction of battery or powertrain costs. Heat-pump charge excluded from residual calibration. See packaged provenance for price boundaries and uncertainty.",
+        "status": "Provisional",
+        "kind": "distribution",
+        "uncertainty_type": 5,
+        "loc": 26.62684980428444,
+        "minimum": 14.977603014909997,
+        "maximum": 29.955206029819994
+    },
+    "small-vehicle-cost-moped-petrol-2010-glider cost slope": {
+        "amount": 26.988113006902122,
+        "category": "Costs",
+        "powertrain": [
+            "ICEV-p"
+        ],
+        "sizes": [
+            "Moped <4kW"
+        ],
+        "year": 2010,
+        "name": "glider cost slope",
+        "unit": "EUR/kg",
+        "importance": "",
+        "source": "Provisional source-based cost prior; mash-fifty; see small_vehicle_cost_provenance.json",
+        "comment": "Frozen reference cost prior, applied unchanged across native years; not a historical price series. No dynamic subtraction of battery or powertrain costs. Heat-pump charge excluded from residual calibration. See packaged provenance for price boundaries and uncertainty.",
+        "status": "Provisional",
+        "kind": "distribution",
+        "uncertainty_type": 5,
+        "loc": 26.988113006902122,
+        "minimum": 15.180813566382444,
+        "maximum": 30.361627132764887
+    },
+    "small-vehicle-cost-scooter-petrol-2010-glider cost slope": {
+        "amount": 26.62684980428444,
+        "category": "Costs",
+        "powertrain": [
+            "ICEV-p"
+        ],
+        "sizes": [
+            "Scooter <4kW"
+        ],
+        "year": 2010,
+        "name": "glider cost slope",
+        "unit": "EUR/kg",
+        "importance": "",
+        "source": "Provisional source-based cost prior; piaggio-liberty; see small_vehicle_cost_provenance.json",
+        "comment": "Frozen reference cost prior, applied unchanged across native years; not a historical price series. No dynamic subtraction of battery or powertrain costs. Heat-pump charge excluded from residual calibration. See packaged provenance for price boundaries and uncertainty.",
+        "status": "Provisional",
+        "kind": "distribution",
+        "uncertainty_type": 5,
+        "loc": 26.62684980428444,
+        "minimum": 14.977603014909997,
+        "maximum": 29.955206029819994
+    },
+    "small-vehicle-cost-moped-petrol-2020-glider cost slope": {
+        "amount": 26.988113006902122,
+        "category": "Costs",
+        "powertrain": [
+            "ICEV-p"
+        ],
+        "sizes": [
+            "Moped <4kW"
+        ],
+        "year": 2020,
+        "name": "glider cost slope",
+        "unit": "EUR/kg",
+        "importance": "",
+        "source": "Provisional source-based cost prior; mash-fifty; see small_vehicle_cost_provenance.json",
+        "comment": "Frozen reference cost prior, applied unchanged across native years; not a historical price series. No dynamic subtraction of battery or powertrain costs. Heat-pump charge excluded from residual calibration. See packaged provenance for price boundaries and uncertainty.",
+        "status": "Provisional",
+        "kind": "distribution",
+        "uncertainty_type": 5,
+        "loc": 26.988113006902122,
+        "minimum": 15.180813566382444,
+        "maximum": 30.361627132764887
+    },
+    "small-vehicle-cost-scooter-petrol-2020-glider cost slope": {
+        "amount": 26.62684980428444,
+        "category": "Costs",
+        "powertrain": [
+            "ICEV-p"
+        ],
+        "sizes": [
+            "Scooter <4kW"
+        ],
+        "year": 2020,
+        "name": "glider cost slope",
+        "unit": "EUR/kg",
+        "importance": "",
+        "source": "Provisional source-based cost prior; piaggio-liberty; see small_vehicle_cost_provenance.json",
+        "comment": "Frozen reference cost prior, applied unchanged across native years; not a historical price series. No dynamic subtraction of battery or powertrain costs. Heat-pump charge excluded from residual calibration. See packaged provenance for price boundaries and uncertainty.",
+        "status": "Provisional",
+        "kind": "distribution",
+        "uncertainty_type": 5,
+        "loc": 26.62684980428444,
+        "minimum": 14.977603014909997,
+        "maximum": 29.955206029819994
+    },
+    "small-vehicle-cost-moped-petrol-2030-glider cost slope": {
+        "amount": 26.988113006902122,
+        "category": "Costs",
+        "powertrain": [
+            "ICEV-p"
+        ],
+        "sizes": [
+            "Moped <4kW"
+        ],
+        "year": 2030,
+        "name": "glider cost slope",
+        "unit": "EUR/kg",
+        "importance": "",
+        "source": "Provisional source-based cost prior; mash-fifty; see small_vehicle_cost_provenance.json",
+        "comment": "Frozen reference cost prior, applied unchanged across native years; not a historical price series. No dynamic subtraction of battery or powertrain costs. Heat-pump charge excluded from residual calibration. See packaged provenance for price boundaries and uncertainty.",
+        "status": "Provisional",
+        "kind": "distribution",
+        "uncertainty_type": 5,
+        "loc": 26.988113006902122,
+        "minimum": 21.5904904055217,
+        "maximum": 32.385735608282545
+    },
+    "small-vehicle-cost-scooter-petrol-2030-glider cost slope": {
+        "amount": 26.62684980428444,
+        "category": "Costs",
+        "powertrain": [
+            "ICEV-p"
+        ],
+        "sizes": [
+            "Scooter <4kW"
+        ],
+        "year": 2030,
+        "name": "glider cost slope",
+        "unit": "EUR/kg",
+        "importance": "",
+        "source": "Provisional source-based cost prior; piaggio-liberty; see small_vehicle_cost_provenance.json",
+        "comment": "Frozen reference cost prior, applied unchanged across native years; not a historical price series. No dynamic subtraction of battery or powertrain costs. Heat-pump charge excluded from residual calibration. See packaged provenance for price boundaries and uncertainty.",
+        "status": "Provisional",
+        "kind": "distribution",
+        "uncertainty_type": 5,
+        "loc": 26.62684980428444,
+        "minimum": 21.301479843427554,
+        "maximum": 31.952219765141326
+    },
+    "small-vehicle-cost-moped-petrol-2040-glider cost slope": {
+        "amount": 26.988113006902122,
+        "category": "Costs",
+        "powertrain": [
+            "ICEV-p"
+        ],
+        "sizes": [
+            "Moped <4kW"
+        ],
+        "year": 2040,
+        "name": "glider cost slope",
+        "unit": "EUR/kg",
+        "importance": "",
+        "source": "Provisional source-based cost prior; mash-fifty; see small_vehicle_cost_provenance.json",
+        "comment": "Frozen reference cost prior, applied unchanged across native years; not a historical price series. No dynamic subtraction of battery or powertrain costs. Heat-pump charge excluded from residual calibration. See packaged provenance for price boundaries and uncertainty.",
+        "status": "Provisional",
+        "kind": "distribution",
+        "uncertainty_type": 5,
+        "loc": 26.988113006902122,
+        "minimum": 18.55432769224521,
+        "maximum": 30.361627132764887
+    },
+    "small-vehicle-cost-scooter-petrol-2040-glider cost slope": {
+        "amount": 26.62684980428444,
+        "category": "Costs",
+        "powertrain": [
+            "ICEV-p"
+        ],
+        "sizes": [
+            "Scooter <4kW"
+        ],
+        "year": 2040,
+        "name": "glider cost slope",
+        "unit": "EUR/kg",
+        "importance": "",
+        "source": "Provisional source-based cost prior; piaggio-liberty; see small_vehicle_cost_provenance.json",
+        "comment": "Frozen reference cost prior, applied unchanged across native years; not a historical price series. No dynamic subtraction of battery or powertrain costs. Heat-pump charge excluded from residual calibration. See packaged provenance for price boundaries and uncertainty.",
+        "status": "Provisional",
+        "kind": "distribution",
+        "uncertainty_type": 5,
+        "loc": 26.62684980428444,
+        "minimum": 18.305959240445553,
+        "maximum": 29.955206029819994
+    },
+    "small-vehicle-cost-moped-petrol-2050-glider cost slope": {
+        "amount": 26.988113006902122,
+        "category": "Costs",
+        "powertrain": [
+            "ICEV-p"
+        ],
+        "sizes": [
+            "Moped <4kW"
+        ],
+        "year": 2050,
+        "name": "glider cost slope",
+        "unit": "EUR/kg",
+        "importance": "",
+        "source": "Provisional source-based cost prior; mash-fifty; see small_vehicle_cost_provenance.json",
+        "comment": "Frozen reference cost prior, applied unchanged across native years; not a historical price series. No dynamic subtraction of battery or powertrain costs. Heat-pump charge excluded from residual calibration. See packaged provenance for price boundaries and uncertainty.",
+        "status": "Provisional",
+        "kind": "distribution",
+        "uncertainty_type": 5,
+        "loc": 26.988113006902122,
+        "minimum": 18.55432769224521,
+        "maximum": 30.361627132764887
+    },
+    "small-vehicle-cost-scooter-petrol-2050-glider cost slope": {
+        "amount": 26.62684980428444,
+        "category": "Costs",
+        "powertrain": [
+            "ICEV-p"
+        ],
+        "sizes": [
+            "Scooter <4kW"
+        ],
+        "year": 2050,
+        "name": "glider cost slope",
+        "unit": "EUR/kg",
+        "importance": "",
+        "source": "Provisional source-based cost prior; piaggio-liberty; see small_vehicle_cost_provenance.json",
+        "comment": "Frozen reference cost prior, applied unchanged across native years; not a historical price series. No dynamic subtraction of battery or powertrain costs. Heat-pump charge excluded from residual calibration. See packaged provenance for price boundaries and uncertainty.",
+        "status": "Provisional",
+        "kind": "distribution",
+        "uncertainty_type": 5,
+        "loc": 26.62684980428444,
+        "minimum": 18.305959240445553,
+        "maximum": 29.955206029819994
+    },
+    "small-vehicle-cost-kick-bev-2025-glider cost intercept": {
+        "amount": 0,
+        "category": "Costs",
+        "powertrain": [
+            "BEV"
+        ],
+        "sizes": [
+            "Kick-scooter"
+        ],
+        "year": 2025,
+        "name": "glider cost intercept",
+        "unit": "EUR/vehicle",
+        "importance": "",
+        "source": "Provisional source-based cost prior; oxelo-t7xl; see small_vehicle_cost_provenance.json",
+        "comment": "Frozen reference cost prior, applied unchanged across native years; not a historical price series. No dynamic subtraction of battery or powertrain costs. Heat-pump charge excluded from residual calibration. See packaged provenance for price boundaries and uncertainty.",
+        "status": "Provisional",
+        "kind": "distribution",
+        "uncertainty_type": 1,
+        "loc": 0
+    },
+    "small-vehicle-cost-scooter-bev-2025-glider cost intercept": {
+        "amount": 0,
+        "category": "Costs",
+        "powertrain": [
+            "BEV"
+        ],
+        "sizes": [
+            "Scooter <4kW"
+        ],
+        "year": 2025,
+        "name": "glider cost intercept",
+        "unit": "EUR/vehicle",
+        "importance": "",
+        "source": "Provisional source-based cost prior; niu-nqi-sport; see small_vehicle_cost_provenance.json",
+        "comment": "Frozen reference cost prior, applied unchanged across native years; not a historical price series. No dynamic subtraction of battery or powertrain costs. Heat-pump charge excluded from residual calibration. See packaged provenance for price boundaries and uncertainty.",
+        "status": "Provisional",
+        "kind": "distribution",
+        "uncertainty_type": 1,
+        "loc": 0
+    },
+    "small-vehicle-cost-moped-petrol-2025-glider cost intercept": {
+        "amount": 0,
+        "category": "Costs",
+        "powertrain": [
+            "ICEV-p"
+        ],
+        "sizes": [
+            "Moped <4kW"
+        ],
+        "year": 2025,
+        "name": "glider cost intercept",
+        "unit": "EUR/vehicle",
+        "importance": "",
+        "source": "Provisional source-based cost prior; mash-fifty; see small_vehicle_cost_provenance.json",
+        "comment": "Frozen reference cost prior, applied unchanged across native years; not a historical price series. No dynamic subtraction of battery or powertrain costs. Heat-pump charge excluded from residual calibration. See packaged provenance for price boundaries and uncertainty.",
+        "status": "Provisional",
+        "kind": "distribution",
+        "uncertainty_type": 1,
+        "loc": 0
+    },
+    "small-vehicle-cost-scooter-petrol-2025-glider cost intercept": {
+        "amount": 0,
+        "category": "Costs",
+        "powertrain": [
+            "ICEV-p"
+        ],
+        "sizes": [
+            "Scooter <4kW"
+        ],
+        "year": 2025,
+        "name": "glider cost intercept",
+        "unit": "EUR/vehicle",
+        "importance": "",
+        "source": "Provisional source-based cost prior; piaggio-liberty; see small_vehicle_cost_provenance.json",
+        "comment": "Frozen reference cost prior, applied unchanged across native years; not a historical price series. No dynamic subtraction of battery or powertrain costs. Heat-pump charge excluded from residual calibration. See packaged provenance for price boundaries and uncertainty.",
+        "status": "Provisional",
+        "kind": "distribution",
+        "uncertainty_type": 1,
+        "loc": 0
+    },
+    "small-vehicle-cost-kick-bev-2025-glider cost slope": {
+        "amount": 17.855654761904763,
+        "category": "Costs",
+        "powertrain": [
+            "BEV"
+        ],
+        "sizes": [
+            "Kick-scooter"
+        ],
+        "year": 2025,
+        "name": "glider cost slope",
+        "unit": "EUR/kg",
+        "importance": "",
+        "source": "Provisional source-based cost prior; oxelo-t7xl; see small_vehicle_cost_provenance.json",
+        "comment": "Frozen reference cost prior, applied unchanged across native years; not a historical price series. No dynamic subtraction of battery or powertrain costs. Heat-pump charge excluded from residual calibration. See packaged provenance for price boundaries and uncertainty.",
+        "status": "Provisional",
+        "kind": "distribution",
+        "uncertainty_type": 5,
+        "loc": 17.855654761904763,
+        "minimum": 12.16416480654762,
+        "maximum": 20.757198660714288
+    },
+    "small-vehicle-cost-scooter-bev-2025-glider cost slope": {
+        "amount": 19.460367406689148,
+        "category": "Costs",
+        "powertrain": [
+            "BEV"
+        ],
+        "sizes": [
+            "Scooter <4kW"
+        ],
+        "year": 2025,
+        "name": "glider cost slope",
+        "unit": "EUR/kg",
+        "importance": "",
+        "source": "Provisional source-based cost prior; niu-nqi-sport; see small_vehicle_cost_provenance.json",
+        "comment": "Frozen reference cost prior, applied unchanged across native years; not a historical price series. No dynamic subtraction of battery or powertrain costs. Heat-pump charge excluded from residual calibration. See packaged provenance for price boundaries and uncertainty.",
+        "status": "Provisional",
+        "kind": "distribution",
+        "uncertainty_type": 5,
+        "loc": 19.460367406689148,
+        "minimum": 13.257375295806982,
+        "maximum": 22.622677110276136
+    },
+    "small-vehicle-cost-moped-petrol-2025-glider cost slope": {
+        "amount": 26.988113006902122,
+        "category": "Costs",
+        "powertrain": [
+            "ICEV-p"
+        ],
+        "sizes": [
+            "Moped <4kW"
+        ],
+        "year": 2025,
+        "name": "glider cost slope",
+        "unit": "EUR/kg",
+        "importance": "",
+        "source": "Provisional source-based cost prior; mash-fifty; see small_vehicle_cost_provenance.json",
+        "comment": "Frozen reference cost prior, applied unchanged across native years; not a historical price series. No dynamic subtraction of battery or powertrain costs. Heat-pump charge excluded from residual calibration. See packaged provenance for price boundaries and uncertainty.",
+        "status": "Provisional",
+        "kind": "distribution",
+        "uncertainty_type": 5,
+        "loc": 26.988113006902122,
+        "minimum": 18.38565198595207,
+        "maximum": 31.37368137052372
+    },
+    "small-vehicle-cost-scooter-petrol-2025-glider cost slope": {
+        "amount": 26.62684980428444,
+        "category": "Costs",
+        "powertrain": [
+            "ICEV-p"
+        ],
+        "sizes": [
+            "Scooter <4kW"
+        ],
+        "year": 2025,
+        "name": "glider cost slope",
+        "unit": "EUR/kg",
+        "importance": "",
+        "source": "Provisional source-based cost prior; piaggio-liberty; see small_vehicle_cost_provenance.json",
+        "comment": "Frozen reference cost prior, applied unchanged across native years; not a historical price series. No dynamic subtraction of battery or powertrain costs. Heat-pump charge excluded from residual calibration. See packaged provenance for price boundaries and uncertainty.",
+        "status": "Provisional",
+        "kind": "distribution",
+        "uncertainty_type": 5,
+        "loc": 26.62684980428444,
+        "minimum": 18.139541429168776,
+        "maximum": 30.953712897480663
     }
 }

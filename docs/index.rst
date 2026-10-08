@@ -73,6 +73,7 @@ User's Guide
    validity
    petrol_efficiency
    bicycle_costs
+   small_vehicle_costs
 
 API Reference
 -------------

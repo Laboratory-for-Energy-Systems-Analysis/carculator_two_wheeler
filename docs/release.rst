@@ -46,7 +46,7 @@ matrices and export target versions are separate choices.
 Known limits
 ------------
 
-* Electric-bicycle negative costs have been corrected with a provisional mechanical-bicycle prior; complete purchase costs and other light-vehicle cost defects remain unqualified. See :doc:`bicycle_costs`.
+* Bicycle and small-vehicle negative glider costs have been corrected with provisional priors. Complete purchase costs, inherited heat-pump/charger charges and currency-year consistency remain unqualified. See :doc:`bicycle_costs` and :doc:`small_vehicle_costs`.
 * Manufacturer screening still leaves substantial unmatched consumption residuals; see :doc:`petrol_efficiency`.
 * The coupled target-range repair was validated for passenger cars; two-wheeler target-range overrides have not received equivalent qualification.
 
@@ -78,4 +78,6 @@ remain large; this correction is not a claim of completed empirical calibration.
 Publication remains pending maintainer review of the remaining known issues.
 
 The subsequent :doc:`bicycle_costs` correction removes the bicycle cost expected
-failure. The older verification record above describes the pre-correction artifacts.
+failure. The :doc:`small_vehicle_costs` correction extends the repair to kick-scooters,
+mopeds and small scooters. The older verification record above describes the
+pre-correction artifacts.

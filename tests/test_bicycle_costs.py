@@ -22,10 +22,11 @@ def test_bicycle_prior_has_disjoint_scope_and_preserves_relative_uncertainty():
     provenance = json.loads((DATA / "bicycle_cost_provenance.json").read_text())
     for key, original in provenance["original_records"].items():
         remainder = defaults[key]
-        assert remainder == {
-            **original,
-            "sizes": [s for s in original["sizes"] if s not in SIZES],
+        assert {k: v for k, v in remainder.items() if k != "sizes"} == {
+            k: v for k, v in original.items() if k != "sizes"
         }
+        assert remainder["sizes"]
+        assert set(remainder["sizes"]) <= set(original["sizes"]) - set(SIZES)
         matching = [
             r
             for r in defaults.values()

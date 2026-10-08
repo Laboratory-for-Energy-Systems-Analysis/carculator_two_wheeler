@@ -1,0 +1,1027 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-08",
+  "implementation_commit_before_fix": "694ef8b",
+  "status": "Provisional source-based cost assumptions, not independently validated ownership costs",
+  "cases": [
+    {
+      "id": "kick-bev",
+      "size": "Kick-scooter",
+      "powertrain": "BEV",
+      "source_id": "oxelo-t7xl",
+      "method": "mechanical mass proxy",
+      "reference_price_EUR": 119.99,
+      "reference_mass_kg": 5.6,
+      "reference_markup": 1.2,
+      "reference_non_glider_components_EUR": {},
+      "reference_non_glider_total_EUR": 0,
+      "reference_glider_retail_EUR": 119.99,
+      "slope_EUR_per_kg": 17.855654761904763,
+      "intercept_EUR": 0,
+      "model_reference_year": 2025
+    },
+    {
+      "id": "moped-petrol",
+      "size": "Moped <4kW",
+      "powertrain": "ICEV-p",
+      "source_id": "mash-fifty",
+      "method": "fixed reference residual",
+      "reference_price_EUR": 2099,
+      "reference_mass_kg": 42.0,
+      "reference_markup": 1.2,
+      "reference_non_glider_components_EUR": {
+        "battery onboard charging infrastructure cost": 0.0,
+        "combustion exhaust treatment cost": 650.0,
+        "combustion powertrain cost": 82.19506072998047,
+        "electric powertrain cost": 0.0,
+        "energy battery cost": 0.0,
+        "fuel tank cost": 3.4650001525878906,
+        "lightweighting cost": 3.1390435695648193,
+        "power battery cost": 0.0
+      },
+      "reference_non_glider_total_EUR": 738.7991044521332,
+      "reference_glider_retail_EUR": 1360.2008955478668,
+      "slope_EUR_per_kg": 26.988113006902122,
+      "intercept_EUR": 0,
+      "model_reference_year": 2025
+    },
+    {
+      "id": "scooter-bev",
+      "size": "Scooter <4kW",
+      "powertrain": "BEV",
+      "source_id": "niu-nqi-sport",
+      "method": "fixed reference residual",
+      "reference_price_EUR": 1999,
+      "reference_mass_kg": 53.0,
+      "reference_markup": 1.2,
+      "reference_non_glider_components_EUR": {
+        "battery onboard charging infrastructure cost": 164.3478240966797,
+        "combustion exhaust treatment cost": 0.0,
+        "combustion powertrain cost": 0.0,
+        "electric powertrain cost": 49.494422912597656,
+        "energy battery cost": 543.5172119140625,
+        "fuel tank cost": 0.0,
+        "lightweighting cost": 3.9611740112304688,
+        "power battery cost": 0.0
+      },
+      "reference_non_glider_total_EUR": 761.3206329345703,
+      "reference_glider_retail_EUR": 1237.6793670654297,
+      "slope_EUR_per_kg": 19.460367406689148,
+      "intercept_EUR": 0,
+      "model_reference_year": 2025
+    },
+    {
+      "id": "scooter-petrol",
+      "size": "Scooter <4kW",
+      "powertrain": "ICEV-p",
+      "source_id": "piaggio-liberty",
+      "method": "fixed reference residual",
+      "reference_price_EUR": 2441,
+      "reference_mass_kg": 53.0,
+      "reference_markup": 1.2,
+      "reference_non_glider_components_EUR": {
+        "battery onboard charging infrastructure cost": 0.0,
+        "combustion exhaust treatment cost": 650.0,
+        "combustion powertrain cost": 90.1061782836914,
+        "electric powertrain cost": 0.0,
+        "energy battery cost": 0.0,
+        "fuel tank cost": 3.4650001525878906,
+        "lightweighting cost": 3.9611740112304688,
+        "power battery cost": 0.0
+      },
+      "reference_non_glider_total_EUR": 747.5323524475098,
+      "reference_glider_retail_EUR": 1693.4676475524902,
+      "slope_EUR_per_kg": 26.62684980428444,
+      "intercept_EUR": 0,
+      "model_reference_year": 2025
+    }
+  ],
+  "sources": [
+    {
+      "id": "oxelo-t7xl",
+      "publisher": "Decathlon / Oxelo",
+      "title": "Adult T7XL mechanical kick-scooter",
+      "url": "https://www.decathlon.fr/p/trottinette-adulte-t7xl-noire/12329/c382c344m8377410",
+      "price_EUR": 119.99,
+      "mass_kg": 5.6,
+      "price_year": null,
+      "boundary": "Displayed French retail price; delivery may be additional.",
+      "role": "Mechanical-only mass/price proxy; not an electric kick-scooter price.",
+      "retrieved": "2026-10-08"
+    },
+    {
+      "id": "mash-fifty",
+      "publisher": "Mash Motors",
+      "title": "Fifty 50 cc Euro 5",
+      "url": "https://www.mash-motors.fr/en/50cc/46326-10806-mash-fifty-50-cc.html",
+      "price_EUR": 2099,
+      "power_kW": 2.1,
+      "mass_kg": 105,
+      "price_year": null,
+      "boundary": "French tax-inclusive advertised price, excluding registration and commissioning.",
+      "role": "Class-level full vehicle price anchor; model mass and power are not matched.",
+      "retrieved": "2026-10-08"
+    },
+    {
+      "id": "niu-nqi-sport",
+      "publisher": "NIU France",
+      "title": "NQi Sport Standard Range",
+      "url": "https://france.niu.com/collections/best-selling-collection/products/nqi-sport",
+      "price_EUR": 1999,
+      "price_year": null,
+      "boundary": "French advertised base vehicle price; excludes EUR 18.26 environmental contribution and EUR 129 registration. EUR 100 is only the deposit.",
+      "role": "Class-level full vehicle price anchor; battery, mass and power are not matched.",
+      "retrieved": "2026-10-08"
+    },
+    {
+      "id": "piaggio-liberty",
+      "publisher": "Piaggio Deutschland",
+      "title": "Preise & Farben, Oktober 2025",
+      "url": "https://wlassets.piaggio.com/wlassets/piaggio/de/pricelist/2025/Preisliste_PIAGGIO_10-2025/original/Preisliste_PIAGGIO_10-2025.pdf?1759918272054=",
+      "price_EUR": 2649,
+      "ancillary_charges_EUR": 208,
+      "vehicle_price_EUR": 2441,
+      "price_year": 2025,
+      "locator": "PDF page 3, Liberty 50",
+      "boundary": "German retail price less the separately stated ancillary charges; VAT is not removed.",
+      "role": "Class-level full vehicle price anchor; generic model is not a matched Liberty.",
+      "retrieved": "2026-10-08"
+    }
+  ],
+  "assumptions": [
+    "Only the four named active size/powertrain scopes change; all other effective defaults are preserved.",
+    "Kick-scooter glider uses a mechanical scooter retail price per kg, divided by the 1.2 reference markup. Transfer to the electric glider is an engineering assumption.",
+    "For mopeds and small scooters, subtract the frozen 2025 model non-glider components from a manufacturer price, then divide by the model reference glider mass and markup. This residual is not a measured frame/body production cost.",
+    "The unexplained EUR 300 heat-pump charge is excluded from residual calibration but remains in runtime purchase cost pending a separate repair. It must not be absorbed into the glider estimate.",
+    "Runtime battery, motor, charger, exhaust-treatment and replacement calculations remain separate. Subsequent changes in their costs must change the purchase total; the residual is never recalculated at runtime.",
+    "Reference prices include retail margins and, where specified, VAT. Dividing by reference markup prevents counting that model factor twice; this is not a separation of VAT or factory cost.",
+    "Only the Piaggio price has a documented 2025 date. Other displayed prices were retrieved in 2026 and are undated proxies for the 2025 model, without inflation adjustment.",
+    "Carry each slope and zero intercept unchanged across 2000-2050 to avoid introducing a 2025 discontinuity. This is a constant scenario assumption, not a reconstruction of historical or forecast nominal prices. Legacy components retain mixed price bases.",
+    "Retain each native year original relative triangular slope bounds. These are engineering uncertainty, not statistical confidence intervals from the manufacturer observations."
+  ],
+  "known_limits": [
+    "Complete purchase totals remain sensitive to inherited component assumptions, notably heat pumps and chargers; fix those separately without refitting away their effects.",
+    "Source vehicles have different masses, capacities, national markets and equipment from the generic models. Matching a calibration anchor is not independent validation.",
+    "Human bicycle cost defaults remain incomplete; other classes and full ownership-cost categories remain outside this repair."
+  ],
+  "original_defaults_sha256": "3cb20472ef43b53173e3a1c4ac4b103cff127fb34d7b79c86146baa203be9012",
+  "corrected_defaults_sha256": "a8218e081e629d3d9b4c701ee5179cb9504f8637754e91c7a99004e8f901774d",
+  "original_records": {
+    "966-2000-glider cost intercept": {
+      "amount": -900,
+      "category": "Costs",
+      "powertrain": [
+        "BEV"
+      ],
+      "sizes": [
+        "Kick-scooter",
+        "Moped <4kW",
+        "Scooter <4kW",
+        "Scooter 4-11kW",
+        "Motorcycle 4-11kW",
+        "Motorcycle 11-35kW",
+        "Motorcycle >35kW"
+      ],
+      "year": 2000,
+      "name": "glider cost intercept",
+      "unit": "Euro / car",
+      "importance": "",
+      "source": "Hirschberg et al. (2016), Calibration result",
+      "comment": "this is the base cost of the car per kg of glider - doesn't include energy storage or powertrain and should be the same for all powertrains",
+      "status": "",
+      "kind": "distribution",
+      "uncertainty_type": 1,
+      "loc": -900
+    },
+    "967-2010-glider cost intercept": {
+      "amount": -900,
+      "category": "Costs",
+      "powertrain": [
+        "BEV"
+      ],
+      "sizes": [
+        "Kick-scooter",
+        "Moped <4kW",
+        "Scooter <4kW",
+        "Scooter 4-11kW",
+        "Motorcycle 4-11kW",
+        "Motorcycle 11-35kW",
+        "Motorcycle >35kW"
+      ],
+      "year": 2010,
+      "name": "glider cost intercept",
+      "unit": "Euro / car",
+      "importance": "",
+      "source": "Hirschberg et al. (2016), Calibration result",
+      "comment": "this is the base cost of the car per kg of glider - doesn't include energy storage or powertrain and should be the same for all powertrains",
+      "status": "",
+      "kind": "distribution",
+      "uncertainty_type": 1,
+      "loc": -900
+    },
+    "968-2020-glider cost intercept": {
+      "amount": -900,
+      "category": "Costs",
+      "powertrain": [
+        "BEV"
+      ],
+      "sizes": [
+        "Kick-scooter",
+        "Moped <4kW",
+        "Scooter <4kW",
+        "Scooter 4-11kW",
+        "Motorcycle 4-11kW",
+        "Motorcycle 11-35kW",
+        "Motorcycle >35kW"
+      ],
+      "year": 2020,
+      "name": "glider cost intercept",
+      "unit": "Euro / car",
+      "importance": "",
+      "source": "Hirschberg et al. (2016), Calibration result",
+      "comment": "this is the base cost of the car per kg of glider - doesn't include energy storage or powertrain and should be the same for all powertrains",
+      "status": "",
+      "kind": "distribution",
+      "uncertainty_type": 1,
+      "loc": -900
+    },
+    "969-2030-glider cost intercept": {
+      "amount": -900,
+      "category": "Costs",
+      "powertrain": [
+        "BEV"
+      ],
+      "sizes": [
+        "Kick-scooter",
+        "Moped <4kW",
+        "Scooter <4kW",
+        "Scooter 4-11kW",
+        "Motorcycle 4-11kW",
+        "Motorcycle 11-35kW",
+        "Motorcycle >35kW"
+      ],
+      "year": 2030,
+      "name": "glider cost intercept",
+      "unit": "Euro / car",
+      "importance": "",
+      "source": "Hirschberg et al. (2016), Calibration result",
+      "comment": "this is the base cost of the car per kg of glider - doesn't include energy storage or powertrain and should be the same for all powertrains",
+      "status": "",
+      "kind": "distribution",
+      "uncertainty_type": 1,
+      "loc": -900
+    },
+    "970-2040-glider cost intercept": {
+      "amount": -900,
+      "category": "Costs",
+      "powertrain": [
+        "BEV"
+      ],
+      "sizes": [
+        "Kick-scooter",
+        "Moped <4kW",
+        "Scooter <4kW",
+        "Scooter 4-11kW",
+        "Motorcycle 4-11kW",
+        "Motorcycle 11-35kW",
+        "Motorcycle >35kW"
+      ],
+      "year": 2040,
+      "name": "glider cost intercept",
+      "unit": "Euro / car",
+      "importance": "",
+      "source": "Hirschberg et al. (2016), Calibration result",
+      "comment": "this is the base cost of the car per kg of glider - doesn't include energy storage or powertrain and should be the same for all powertrains",
+      "status": "",
+      "kind": "distribution",
+      "uncertainty_type": 1,
+      "loc": -900
+    },
+    "971-2050-glider cost intercept": {
+      "amount": -900,
+      "category": "Costs",
+      "powertrain": [
+        "BEV"
+      ],
+      "sizes": [
+        "Kick-scooter",
+        "Moped <4kW",
+        "Scooter <4kW",
+        "Scooter 4-11kW",
+        "Motorcycle 4-11kW",
+        "Motorcycle 11-35kW",
+        "Motorcycle >35kW"
+      ],
+      "year": 2050,
+      "name": "glider cost intercept",
+      "unit": "Euro / car",
+      "importance": "",
+      "source": "Hirschberg et al. (2016), Calibration result",
+      "comment": "this is the base cost of the car per kg of glider - doesn't include energy storage or powertrain and should be the same for all powertrains",
+      "status": "",
+      "kind": "distribution",
+      "uncertainty_type": 1,
+      "loc": -900
+    },
+    "972-2000-glider cost intercept": {
+      "amount": -900,
+      "category": "Costs",
+      "powertrain": [
+        "ICEV-p"
+      ],
+      "sizes": [
+        "Kick-scooter",
+        "Bicycle <25",
+        "Bicycle cargo",
+        "Bicycle <45",
+        "Moped <4kW",
+        "Scooter <4kW",
+        "Scooter 4-11kW",
+        "Motorcycle 4-11kW",
+        "Motorcycle 11-35kW",
+        "Motorcycle >35kW"
+      ],
+      "year": 2000,
+      "name": "glider cost intercept",
+      "unit": "Euro / car",
+      "importance": "",
+      "source": "Hirschberg et al. (2016), Calibration result",
+      "comment": "this is the base cost of the car per kg of glider - doesn't include energy storage or powertrain and should be the same for all powertrains",
+      "status": "",
+      "kind": "distribution",
+      "uncertainty_type": 1,
+      "loc": -900
+    },
+    "973-2010-glider cost intercept": {
+      "amount": -900,
+      "category": "Costs",
+      "powertrain": [
+        "ICEV-p"
+      ],
+      "sizes": [
+        "Kick-scooter",
+        "Bicycle <25",
+        "Bicycle cargo",
+        "Bicycle <45",
+        "Moped <4kW",
+        "Scooter <4kW",
+        "Scooter 4-11kW",
+        "Motorcycle 4-11kW",
+        "Motorcycle 11-35kW",
+        "Motorcycle >35kW"
+      ],
+      "year": 2010,
+      "name": "glider cost intercept",
+      "unit": "Euro / car",
+      "importance": "",
+      "source": "Hirschberg et al. (2016), Calibration result",
+      "comment": "this is the base cost of the car per kg of glider - doesn't include energy storage or powertrain and should be the same for all powertrains",
+      "status": "",
+      "kind": "distribution",
+      "uncertainty_type": 1,
+      "loc": -900
+    },
+    "974-2020-glider cost intercept": {
+      "amount": -900,
+      "category": "Costs",
+      "powertrain": [
+        "ICEV-p"
+      ],
+      "sizes": [
+        "Kick-scooter",
+        "Bicycle <25",
+        "Bicycle cargo",
+        "Bicycle <45",
+        "Moped <4kW",
+        "Scooter <4kW",
+        "Scooter 4-11kW",
+        "Motorcycle 4-11kW",
+        "Motorcycle 11-35kW",
+        "Motorcycle >35kW"
+      ],
+      "year": 2020,
+      "name": "glider cost intercept",
+      "unit": "Euro / car",
+      "importance": "",
+      "source": "Hirschberg et al. (2016), Calibration result",
+      "comment": "this is the base cost of the car per kg of glider - doesn't include energy storage or powertrain and should be the same for all powertrains",
+      "status": "",
+      "kind": "distribution",
+      "uncertainty_type": 1,
+      "loc": -900
+    },
+    "975-2030-glider cost intercept": {
+      "amount": -900,
+      "category": "Costs",
+      "powertrain": [
+        "ICEV-p"
+      ],
+      "sizes": [
+        "Kick-scooter",
+        "Bicycle <25",
+        "Bicycle cargo",
+        "Bicycle <45",
+        "Moped <4kW",
+        "Scooter <4kW",
+        "Scooter 4-11kW",
+        "Motorcycle 4-11kW",
+        "Motorcycle 11-35kW",
+        "Motorcycle >35kW"
+      ],
+      "year": 2030,
+      "name": "glider cost intercept",
+      "unit": "Euro / car",
+      "importance": "",
+      "source": "Hirschberg et al. (2016), Calibration result",
+      "comment": "this is the base cost of the car per kg of glider - doesn't include energy storage or powertrain and should be the same for all powertrains",
+      "status": "",
+      "kind": "distribution",
+      "uncertainty_type": 1,
+      "loc": -900
+    },
+    "976-2040-glider cost intercept": {
+      "amount": -900,
+      "category": "Costs",
+      "powertrain": [
+        "ICEV-p"
+      ],
+      "sizes": [
+        "Kick-scooter",
+        "Bicycle <25",
+        "Bicycle cargo",
+        "Bicycle <45",
+        "Moped <4kW",
+        "Scooter <4kW",
+        "Scooter 4-11kW",
+        "Motorcycle 4-11kW",
+        "Motorcycle 11-35kW",
+        "Motorcycle >35kW"
+      ],
+      "year": 2040,
+      "name": "glider cost intercept",
+      "unit": "Euro / car",
+      "importance": "",
+      "source": "Hirschberg et al. (2016), Calibration result",
+      "comment": "this is the base cost of the car per kg of glider - doesn't include energy storage or powertrain and should be the same for all powertrains",
+      "status": "",
+      "kind": "distribution",
+      "uncertainty_type": 1,
+      "loc": -900
+    },
+    "977-2050-glider cost intercept": {
+      "amount": -900,
+      "category": "Costs",
+      "powertrain": [
+        "ICEV-p"
+      ],
+      "sizes": [
+        "Kick-scooter",
+        "Bicycle <25",
+        "Bicycle cargo",
+        "Bicycle <45",
+        "Moped <4kW",
+        "Scooter <4kW",
+        "Scooter 4-11kW",
+        "Motorcycle 4-11kW",
+        "Motorcycle 11-35kW",
+        "Motorcycle >35kW"
+      ],
+      "year": 2050,
+      "name": "glider cost intercept",
+      "unit": "Euro / car",
+      "importance": "",
+      "source": "Hirschberg et al. (2016), Calibration result",
+      "comment": "this is the base cost of the car per kg of glider - doesn't include energy storage or powertrain and should be the same for all powertrains",
+      "status": "",
+      "kind": "distribution",
+      "uncertainty_type": 1,
+      "loc": -900
+    },
+    "978-2000-glider cost slope": {
+      "amount": 16,
+      "category": "Costs",
+      "powertrain": [
+        "BEV"
+      ],
+      "sizes": [
+        "Kick-scooter",
+        "Moped <4kW",
+        "Scooter <4kW",
+        "Scooter 4-11kW",
+        "Motorcycle 4-11kW",
+        "Motorcycle 11-35kW",
+        "Motorcycle >35kW"
+      ],
+      "year": 2000,
+      "name": "glider cost slope",
+      "unit": "Euro/ kg",
+      "importance": "",
+      "source": "Hirschberg et al. (2016), Calibration result",
+      "comment": "this is the base cost of the car per kg of glider - doesn't include energy storage or powertrain and should be the same for all powertrains",
+      "status": "",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 16,
+      "minimum": 9,
+      "maximum": 18
+    },
+    "979-2010-glider cost slope": {
+      "amount": 16,
+      "category": "Costs",
+      "powertrain": [
+        "BEV"
+      ],
+      "sizes": [
+        "Kick-scooter",
+        "Moped <4kW",
+        "Scooter <4kW",
+        "Scooter 4-11kW",
+        "Motorcycle 4-11kW",
+        "Motorcycle 11-35kW",
+        "Motorcycle >35kW"
+      ],
+      "year": 2010,
+      "name": "glider cost slope",
+      "unit": "Euro/ kg",
+      "importance": "",
+      "source": "Hirschberg et al. (2016), Calibration result",
+      "comment": "this is the base cost of the car per kg of glider - doesn't include energy storage or powertrain and should be the same for all powertrains",
+      "status": "",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 16,
+      "minimum": 9,
+      "maximum": 18
+    },
+    "980-2020-glider cost slope": {
+      "amount": 16,
+      "category": "Costs",
+      "powertrain": [
+        "BEV"
+      ],
+      "sizes": [
+        "Kick-scooter",
+        "Moped <4kW",
+        "Scooter <4kW",
+        "Scooter 4-11kW",
+        "Motorcycle 4-11kW",
+        "Motorcycle 11-35kW",
+        "Motorcycle >35kW"
+      ],
+      "year": 2020,
+      "name": "glider cost slope",
+      "unit": "Euro/ kg",
+      "importance": "",
+      "source": "Hirschberg et al. (2016), Calibration result",
+      "comment": "this is the base cost of the car per kg of glider - doesn't include energy storage or powertrain and should be the same for all powertrains",
+      "status": "",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 16,
+      "minimum": 9,
+      "maximum": 18
+    },
+    "981-2030-glider cost slope": {
+      "amount": 16,
+      "category": "Costs",
+      "powertrain": [
+        "BEV"
+      ],
+      "sizes": [
+        "Kick-scooter",
+        "Moped <4kW",
+        "Scooter <4kW",
+        "Scooter 4-11kW",
+        "Motorcycle 4-11kW",
+        "Motorcycle 11-35kW",
+        "Motorcycle >35kW"
+      ],
+      "year": 2030,
+      "name": "glider cost slope",
+      "unit": "Euro/ kg",
+      "importance": "",
+      "source": "Hirschberg et al. (2016), Calibration result",
+      "comment": "this is the base cost of the car per kg of glider - doesn't include energy storage or powertrain and should be the same for all powertrains",
+      "status": "",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 16,
+      "minimum": 12.8,
+      "maximum": 19.2
+    },
+    "982-2040-glider cost slope": {
+      "amount": 16,
+      "category": "Costs",
+      "powertrain": [
+        "BEV"
+      ],
+      "sizes": [
+        "Kick-scooter",
+        "Moped <4kW",
+        "Scooter <4kW",
+        "Scooter 4-11kW",
+        "Motorcycle 4-11kW",
+        "Motorcycle 11-35kW",
+        "Motorcycle >35kW"
+      ],
+      "year": 2040,
+      "name": "glider cost slope",
+      "unit": "Euro/ kg",
+      "importance": "",
+      "source": "Hirschberg et al. (2016), Calibration result",
+      "comment": "this is the base cost of the car per kg of glider - doesn't include energy storage or powertrain and should be the same for all powertrains",
+      "status": "",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 16,
+      "minimum": 11,
+      "maximum": 18
+    },
+    "983-2050-glider cost slope": {
+      "amount": 16,
+      "category": "Costs",
+      "powertrain": [
+        "BEV"
+      ],
+      "sizes": [
+        "Kick-scooter",
+        "Moped <4kW",
+        "Scooter <4kW",
+        "Scooter 4-11kW",
+        "Motorcycle 4-11kW",
+        "Motorcycle 11-35kW",
+        "Motorcycle >35kW"
+      ],
+      "year": 2050,
+      "name": "glider cost slope",
+      "unit": "Euro/ kg",
+      "importance": "",
+      "source": "Hirschberg et al. (2016), Calibration result",
+      "comment": "this is the base cost of the car per kg of glider - doesn't include energy storage or powertrain and should be the same for all powertrains",
+      "status": "",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 16,
+      "minimum": 11,
+      "maximum": 18
+    },
+    "984-2000-glider cost slope": {
+      "amount": 16,
+      "category": "Costs",
+      "powertrain": [
+        "ICEV-p"
+      ],
+      "sizes": [
+        "Kick-scooter",
+        "Bicycle <25",
+        "Bicycle cargo",
+        "Bicycle <45",
+        "Moped <4kW",
+        "Scooter <4kW",
+        "Scooter 4-11kW",
+        "Motorcycle 4-11kW",
+        "Motorcycle 11-35kW",
+        "Motorcycle >35kW"
+      ],
+      "year": 2000,
+      "name": "glider cost slope",
+      "unit": "Euro/ kg",
+      "importance": "",
+      "source": "Hirschberg et al. (2016), Calibration result",
+      "comment": "this is the base cost of the car per kg of glider - doesn't include energy storage or powertrain and should be the same for all powertrains",
+      "status": "",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 16,
+      "minimum": 9,
+      "maximum": 18
+    },
+    "985-2010-glider cost slope": {
+      "amount": 16,
+      "category": "Costs",
+      "powertrain": [
+        "ICEV-p"
+      ],
+      "sizes": [
+        "Kick-scooter",
+        "Bicycle <25",
+        "Bicycle cargo",
+        "Bicycle <45",
+        "Moped <4kW",
+        "Scooter <4kW",
+        "Scooter 4-11kW",
+        "Motorcycle 4-11kW",
+        "Motorcycle 11-35kW",
+        "Motorcycle >35kW"
+      ],
+      "year": 2010,
+      "name": "glider cost slope",
+      "unit": "Euro/ kg",
+      "importance": "",
+      "source": "Hirschberg et al. (2016), Calibration result",
+      "comment": "this is the base cost of the car per kg of glider - doesn't include energy storage or powertrain and should be the same for all powertrains",
+      "status": "",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 16,
+      "minimum": 9,
+      "maximum": 18
+    },
+    "986-2020-glider cost slope": {
+      "amount": 16,
+      "category": "Costs",
+      "powertrain": [
+        "ICEV-p"
+      ],
+      "sizes": [
+        "Kick-scooter",
+        "Bicycle <25",
+        "Bicycle cargo",
+        "Bicycle <45",
+        "Moped <4kW",
+        "Scooter <4kW",
+        "Scooter 4-11kW",
+        "Motorcycle 4-11kW",
+        "Motorcycle 11-35kW",
+        "Motorcycle >35kW"
+      ],
+      "year": 2020,
+      "name": "glider cost slope",
+      "unit": "Euro/ kg",
+      "importance": "",
+      "source": "Hirschberg et al. (2016), Calibration result",
+      "comment": "this is the base cost of the car per kg of glider - doesn't include energy storage or powertrain and should be the same for all powertrains",
+      "status": "",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 16,
+      "minimum": 9,
+      "maximum": 18
+    },
+    "987-2030-glider cost slope": {
+      "amount": 16,
+      "category": "Costs",
+      "powertrain": [
+        "ICEV-p"
+      ],
+      "sizes": [
+        "Kick-scooter",
+        "Bicycle <25",
+        "Bicycle cargo",
+        "Bicycle <45",
+        "Moped <4kW",
+        "Scooter <4kW",
+        "Scooter 4-11kW",
+        "Motorcycle 4-11kW",
+        "Motorcycle 11-35kW",
+        "Motorcycle >35kW"
+      ],
+      "year": 2030,
+      "name": "glider cost slope",
+      "unit": "Euro/ kg",
+      "importance": "",
+      "source": "Hirschberg et al. (2016), Calibration result",
+      "comment": "this is the base cost of the car per kg of glider - doesn't include energy storage or powertrain and should be the same for all powertrains",
+      "status": "",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 16,
+      "minimum": 12.8,
+      "maximum": 19.2
+    },
+    "988-2040-glider cost slope": {
+      "amount": 16,
+      "category": "Costs",
+      "powertrain": [
+        "ICEV-p"
+      ],
+      "sizes": [
+        "Kick-scooter",
+        "Bicycle <25",
+        "Bicycle cargo",
+        "Bicycle <45",
+        "Moped <4kW",
+        "Scooter <4kW",
+        "Scooter 4-11kW",
+        "Motorcycle 4-11kW",
+        "Motorcycle 11-35kW",
+        "Motorcycle >35kW"
+      ],
+      "year": 2040,
+      "name": "glider cost slope",
+      "unit": "Euro/ kg",
+      "importance": "",
+      "source": "Hirschberg et al. (2016), Calibration result",
+      "comment": "this is the base cost of the car per kg of glider - doesn't include energy storage or powertrain and should be the same for all powertrains",
+      "status": "",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 16,
+      "minimum": 11,
+      "maximum": 18
+    },
+    "989-2050-glider cost slope": {
+      "amount": 16,
+      "category": "Costs",
+      "powertrain": [
+        "ICEV-p"
+      ],
+      "sizes": [
+        "Kick-scooter",
+        "Bicycle <25",
+        "Bicycle cargo",
+        "Bicycle <45",
+        "Moped <4kW",
+        "Scooter <4kW",
+        "Scooter 4-11kW",
+        "Motorcycle 4-11kW",
+        "Motorcycle 11-35kW",
+        "Motorcycle >35kW"
+      ],
+      "year": 2050,
+      "name": "glider cost slope",
+      "unit": "Euro/ kg",
+      "importance": "",
+      "source": "Hirschberg et al. (2016), Calibration result",
+      "comment": "this is the base cost of the car per kg of glider - doesn't include energy storage or powertrain and should be the same for all powertrains",
+      "status": "",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 16,
+      "minimum": 11,
+      "maximum": 18
+    },
+    "baseline-2025-0147-glider cost intercept": {
+      "amount": -900.0,
+      "category": "Costs",
+      "powertrain": [
+        "BEV"
+      ],
+      "sizes": [
+        "Kick-scooter",
+        "Moped <4kW",
+        "Motorcycle 11-35kW",
+        "Motorcycle 4-11kW",
+        "Motorcycle >35kW",
+        "Scooter 4-11kW",
+        "Scooter <4kW"
+      ],
+      "year": 2025,
+      "name": "glider cost intercept",
+      "unit": "Euro / car",
+      "importance": "",
+      "source": "Hirschberg et al. (2016), Calibration result",
+      "comment": "2025 baseline: linear interpolation of the effective 2020 and 2030 records, before empirical calibration. Triangular modes and bounds are interpolated. Endpoint records: ('968-2020-glider cost intercept', '969-2030-glider cost intercept'). this is the base cost of the car per kg of glider - doesn't include energy storage or powertrain and should be the same for all powertrains",
+      "status": "",
+      "kind": "distribution",
+      "uncertainty_type": 1,
+      "loc": -900.0
+    },
+    "baseline-2025-0148-glider cost intercept": {
+      "amount": -900.0,
+      "category": "Costs",
+      "powertrain": [
+        "ICEV-p"
+      ],
+      "sizes": [
+        "Bicycle <25",
+        "Bicycle <45",
+        "Bicycle cargo",
+        "Kick-scooter",
+        "Moped <4kW",
+        "Motorcycle 11-35kW",
+        "Motorcycle 4-11kW",
+        "Motorcycle >35kW",
+        "Scooter 4-11kW",
+        "Scooter <4kW"
+      ],
+      "year": 2025,
+      "name": "glider cost intercept",
+      "unit": "Euro / car",
+      "importance": "",
+      "source": "Hirschberg et al. (2016), Calibration result",
+      "comment": "2025 baseline: linear interpolation of the effective 2020 and 2030 records, before empirical calibration. Triangular modes and bounds are interpolated. Endpoint records: ('974-2020-glider cost intercept', '975-2030-glider cost intercept'). this is the base cost of the car per kg of glider - doesn't include energy storage or powertrain and should be the same for all powertrains",
+      "status": "",
+      "kind": "distribution",
+      "uncertainty_type": 1,
+      "loc": -900.0
+    },
+    "baseline-2025-0149-glider cost slope": {
+      "amount": 16.0,
+      "category": "Costs",
+      "powertrain": [
+        "BEV"
+      ],
+      "sizes": [
+        "Kick-scooter",
+        "Moped <4kW",
+        "Motorcycle 11-35kW",
+        "Motorcycle 4-11kW",
+        "Motorcycle >35kW",
+        "Scooter 4-11kW",
+        "Scooter <4kW"
+      ],
+      "year": 2025,
+      "name": "glider cost slope",
+      "unit": "Euro/ kg",
+      "importance": "",
+      "source": "Hirschberg et al. (2016), Calibration result",
+      "comment": "2025 baseline: linear interpolation of the effective 2020 and 2030 records, before empirical calibration. Triangular modes and bounds are interpolated. Endpoint records: ('980-2020-glider cost slope', '981-2030-glider cost slope'). this is the base cost of the car per kg of glider - doesn't include energy storage or powertrain and should be the same for all powertrains",
+      "status": "",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 16.0,
+      "minimum": 10.9,
+      "maximum": 18.6
+    },
+    "baseline-2025-0150-glider cost slope": {
+      "amount": 16.0,
+      "category": "Costs",
+      "powertrain": [
+        "ICEV-p"
+      ],
+      "sizes": [
+        "Bicycle <25",
+        "Bicycle <45",
+        "Bicycle cargo",
+        "Kick-scooter",
+        "Moped <4kW",
+        "Motorcycle 11-35kW",
+        "Motorcycle 4-11kW",
+        "Motorcycle >35kW",
+        "Scooter 4-11kW",
+        "Scooter <4kW"
+      ],
+      "year": 2025,
+      "name": "glider cost slope",
+      "unit": "Euro/ kg",
+      "importance": "",
+      "source": "Hirschberg et al. (2016), Calibration result",
+      "comment": "2025 baseline: linear interpolation of the effective 2020 and 2030 records, before empirical calibration. Triangular modes and bounds are interpolated. Endpoint records: ('986-2020-glider cost slope', '987-2030-glider cost slope'). this is the base cost of the car per kg of glider - doesn't include energy storage or powertrain and should be the same for all powertrains",
+      "status": "",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 16.0,
+      "minimum": 10.9,
+      "maximum": 18.6
+    }
+  },
+  "added_record_keys": [
+    "small-vehicle-cost-kick-bev-2000-glider cost intercept",
+    "small-vehicle-cost-scooter-bev-2000-glider cost intercept",
+    "small-vehicle-cost-kick-bev-2010-glider cost intercept",
+    "small-vehicle-cost-scooter-bev-2010-glider cost intercept",
+    "small-vehicle-cost-kick-bev-2020-glider cost intercept",
+    "small-vehicle-cost-scooter-bev-2020-glider cost intercept",
+    "small-vehicle-cost-kick-bev-2030-glider cost intercept",
+    "small-vehicle-cost-scooter-bev-2030-glider cost intercept",
+    "small-vehicle-cost-kick-bev-2040-glider cost intercept",
+    "small-vehicle-cost-scooter-bev-2040-glider cost intercept",
+    "small-vehicle-cost-kick-bev-2050-glider cost intercept",
+    "small-vehicle-cost-scooter-bev-2050-glider cost intercept",
+    "small-vehicle-cost-moped-petrol-2000-glider cost intercept",
+    "small-vehicle-cost-scooter-petrol-2000-glider cost intercept",
+    "small-vehicle-cost-moped-petrol-2010-glider cost intercept",
+    "small-vehicle-cost-scooter-petrol-2010-glider cost intercept",
+    "small-vehicle-cost-moped-petrol-2020-glider cost intercept",
+    "small-vehicle-cost-scooter-petrol-2020-glider cost intercept",
+    "small-vehicle-cost-moped-petrol-2030-glider cost intercept",
+    "small-vehicle-cost-scooter-petrol-2030-glider cost intercept",
+    "small-vehicle-cost-moped-petrol-2040-glider cost intercept",
+    "small-vehicle-cost-scooter-petrol-2040-glider cost intercept",
+    "small-vehicle-cost-moped-petrol-2050-glider cost intercept",
+    "small-vehicle-cost-scooter-petrol-2050-glider cost intercept",
+    "small-vehicle-cost-kick-bev-2000-glider cost slope",
+    "small-vehicle-cost-scooter-bev-2000-glider cost slope",
+    "small-vehicle-cost-kick-bev-2010-glider cost slope",
+    "small-vehicle-cost-scooter-bev-2010-glider cost slope",
+    "small-vehicle-cost-kick-bev-2020-glider cost slope",
+    "small-vehicle-cost-scooter-bev-2020-glider cost slope",
+    "small-vehicle-cost-kick-bev-2030-glider cost slope",
+    "small-vehicle-cost-scooter-bev-2030-glider cost slope",
+    "small-vehicle-cost-kick-bev-2040-glider cost slope",
+    "small-vehicle-cost-scooter-bev-2040-glider cost slope",
+    "small-vehicle-cost-kick-bev-2050-glider cost slope",
+    "small-vehicle-cost-scooter-bev-2050-glider cost slope",
+    "small-vehicle-cost-moped-petrol-2000-glider cost slope",
+    "small-vehicle-cost-scooter-petrol-2000-glider cost slope",
+    "small-vehicle-cost-moped-petrol-2010-glider cost slope",
+    "small-vehicle-cost-scooter-petrol-2010-glider cost slope",
+    "small-vehicle-cost-moped-petrol-2020-glider cost slope",
+    "small-vehicle-cost-scooter-petrol-2020-glider cost slope",
+    "small-vehicle-cost-moped-petrol-2030-glider cost slope",
+    "small-vehicle-cost-scooter-petrol-2030-glider cost slope",
+    "small-vehicle-cost-moped-petrol-2040-glider cost slope",
+    "small-vehicle-cost-scooter-petrol-2040-glider cost slope",
+    "small-vehicle-cost-moped-petrol-2050-glider cost slope",
+    "small-vehicle-cost-scooter-petrol-2050-glider cost slope",
+    "small-vehicle-cost-kick-bev-2025-glider cost intercept",
+    "small-vehicle-cost-scooter-bev-2025-glider cost intercept",
+    "small-vehicle-cost-moped-petrol-2025-glider cost intercept",
+    "small-vehicle-cost-scooter-petrol-2025-glider cost intercept",
+    "small-vehicle-cost-kick-bev-2025-glider cost slope",
+    "small-vehicle-cost-scooter-bev-2025-glider cost slope",
+    "small-vehicle-cost-moped-petrol-2025-glider cost slope",
+    "small-vehicle-cost-scooter-petrol-2025-glider cost slope"
+  ]
+}

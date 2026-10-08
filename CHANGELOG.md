@@ -42,9 +42,16 @@ it has not yet been published. Older entries, where present, retain their origin
 - Correct the default 2025 `Bicycle <25` purchase cost from −EUR 188.98 to EUR 1,250.49 and total cost from −EUR 0.01499/km to EUR 0.09621/km. The original strict expected failure now passes as a normal regression, with additional uncertainty and discounted-cash-flow checks.
 - Verify unchanged mass, energy and LCIA results in completed before/after runs. Record the remaining roughly 51% difference from the German average complete e-bike price; this is not a whole-vehicle market calibration.
 
+### Small-vehicle cost correction (2026-10-08)
+
+- Replace negative glider fits for BEV kick-scooters, petrol mopeds and both small-scooter powertrains with positive scoped priors. Use an Oxelo mechanical-scooter mass/price proxy and frozen reference residuals based on Mash, NIU and Piaggio prices; document source dates, excluded fees and unmatched vehicle specifications.
+- Keep battery/motor costs separate, preserve relative slope uncertainty and carry the coefficients consistently across native years. These are provisional assumptions, not independent validation of ownership costs.
+- Verify positive costs, discounted cash flows and component-price sensitivity. Complete 24 before/after inventory/LCIA cases and 104 annual cases; physical outputs, inventory matrices and LCIA remain unchanged.
+- Keep the unexplained BEV heat-pump charge visible and exclude it from residual calibration pending a separate correction. See [small-vehicle costs](docs/small_vehicle_costs.rst).
+
 ### Known limitations
 
-- Kick-scooter, moped and small-scooter glider costs can still be negative; human-only bicycle cost inputs are incomplete. Complete e-bike component costs and currency-year consistency still require review. See [bicycle costs](docs/bicycle_costs.rst).
+- Negative glider costs in the repaired bicycle and small-vehicle scopes are resolved, but the inherited BEV heat-pump and charger charges, human-only bicycle inputs, complete e-bike costs and currency-year consistency still require review. See [bicycle costs](docs/bicycle_costs.rst) and [small-vehicle costs](docs/small_vehicle_costs.rst).
 - Manufacturer comparisons do not establish new empirical two-wheeler calibration.
 - Custom string sample labels can fail alignment in the shared energy calculation; normal numeric sample labels are covered by the petrol regressions.
 - The coupled target-range repair was validated for passenger cars; two-wheeler target-range overrides have not received equivalent qualification.
