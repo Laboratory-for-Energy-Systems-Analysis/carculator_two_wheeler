@@ -73,6 +73,7 @@ User's Guide
    petrol_efficiency
    bicycle_costs
    small_vehicle_costs
+   heat_pump_costs
 
 API Reference
 -------------

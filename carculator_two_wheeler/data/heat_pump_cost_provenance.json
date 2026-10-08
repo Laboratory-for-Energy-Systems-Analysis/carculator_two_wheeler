@@ -1,0 +1,275 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-08",
+  "implementation_commit_before_fix": "7c29272",
+  "scope": {
+    "parameter": "heat pump cost",
+    "powertrain": "BEV",
+    "years": [
+      2000,
+      2010,
+      2020,
+      2025,
+      2030,
+      2040,
+      2050
+    ],
+    "sizes": [
+      "Kick-scooter",
+      "Bicycle <25",
+      "Bicycle cargo",
+      "Bicycle <45",
+      "Moped <4kW",
+      "Scooter <4kW",
+      "Scooter 4-11kW",
+      "Motorcycle 4-11kW",
+      "Motorcycle 11-35kW",
+      "Motorcycle >35kW"
+    ]
+  },
+  "rationale": "Remove the cabin-heating cost inherited from passenger-car assumptions. The default two-wheeler energy and mass model contains no corresponding cabin heat pump.",
+  "evidence": [
+    {
+      "path": "carculator_two_wheeler/model.py",
+      "functions": [
+        "calculate_ttw_energy",
+        "set_vehicle_masses",
+        "set_costs"
+      ],
+      "finding": "No cabin HVAC arguments are passed to the shared energy calculation and no heat-pump equipment is added in the mass model. set_costs sums the shared purchase components."
+    },
+    {
+      "path": "../carculator_utils/carculator_utils/data/purchase_cost_params.yaml",
+      "finding": "heat pump cost is included in purchase but not markup, so its static EUR 300 value enters purchase once, without markup."
+    }
+  ],
+  "method": "Set all seven scoped defaults to deterministic zero (amount and loc zero, uncertainty_type 1, remove obsolete nonzero bounds). Keep the parameter and shared cost equation so caller-supplied values are preserved.",
+  "qualifications": [
+    "This is a correction of model equipment scope, not a market-price calibration or a universal claim about every real electric two-wheeler.",
+    "A custom heat-pump cost is a monetary scenario input only; it does not introduce heating physics, equipment mass or an inventory exchange.",
+    "Battery thermal-management assumptions and charger costs are not changed.",
+    "Earlier glider priors are not refitted; their previous residual calibration deliberately excluded the heat-pump charge.",
+    "Previous cost audit files and provenance remain historical; their hashes and reference prices identify the defaults they describe."
+  ],
+  "original_defaults_sha256": "a8218e081e629d3d9b4c701ee5179cb9504f8637754e91c7a99004e8f901774d",
+  "corrected_defaults_sha256": "1796d28280f7a5b22d96671ebf0cf812b63ad04be91e21e1875b1c765fb7ad46",
+  "original_records": {
+    "1002-2000-heat pump cost": {
+      "amount": 300,
+      "category": "Costs",
+      "powertrain": [
+        "BEV"
+      ],
+      "sizes": [
+        "Kick-scooter",
+        "Bicycle <25",
+        "Bicycle cargo",
+        "Bicycle <45",
+        "Moped <4kW",
+        "Scooter <4kW",
+        "Scooter 4-11kW",
+        "Motorcycle 4-11kW",
+        "Motorcycle 11-35kW",
+        "Motorcycle >35kW"
+      ],
+      "year": 2000,
+      "name": "heat pump cost",
+      "unit": "Euro / car",
+      "importance": "",
+      "source": "Hirschberg et al. (2016), Own assumption",
+      "comment": "only for pure BEV - this is for heating only. Cooling system included in glider cost",
+      "status": "",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 300,
+      "minimum": 200,
+      "maximum": 450
+    },
+    "1003-2010-heat pump cost": {
+      "amount": 300,
+      "category": "Costs",
+      "powertrain": [
+        "BEV"
+      ],
+      "sizes": [
+        "Kick-scooter",
+        "Bicycle <25",
+        "Bicycle cargo",
+        "Bicycle <45",
+        "Moped <4kW",
+        "Scooter <4kW",
+        "Scooter 4-11kW",
+        "Motorcycle 4-11kW",
+        "Motorcycle 11-35kW",
+        "Motorcycle >35kW"
+      ],
+      "year": 2010,
+      "name": "heat pump cost",
+      "unit": "Euro / car",
+      "importance": "",
+      "source": "Hirschberg et al. (2016), Own assumption",
+      "comment": "only for pure BEV - this is for heating only. Cooling system included in glider cost",
+      "status": "",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 300,
+      "minimum": 200,
+      "maximum": 450
+    },
+    "1004-2020-heat pump cost": {
+      "amount": 300,
+      "category": "Costs",
+      "powertrain": [
+        "BEV"
+      ],
+      "sizes": [
+        "Kick-scooter",
+        "Bicycle <25",
+        "Bicycle cargo",
+        "Bicycle <45",
+        "Moped <4kW",
+        "Scooter <4kW",
+        "Scooter 4-11kW",
+        "Motorcycle 4-11kW",
+        "Motorcycle 11-35kW",
+        "Motorcycle >35kW"
+      ],
+      "year": 2020,
+      "name": "heat pump cost",
+      "unit": "Euro / car",
+      "importance": "",
+      "source": "Hirschberg et al. (2016), Own assumption",
+      "comment": "only for pure BEV - this is for heating only. Cooling system included in glider cost",
+      "status": "",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 300,
+      "minimum": 200,
+      "maximum": 450
+    },
+    "1005-2030-heat pump cost": {
+      "amount": 300,
+      "category": "Costs",
+      "powertrain": [
+        "BEV"
+      ],
+      "sizes": [
+        "Kick-scooter",
+        "Bicycle <25",
+        "Bicycle cargo",
+        "Bicycle <45",
+        "Moped <4kW",
+        "Scooter <4kW",
+        "Scooter 4-11kW",
+        "Motorcycle 4-11kW",
+        "Motorcycle 11-35kW",
+        "Motorcycle >35kW"
+      ],
+      "year": 2030,
+      "name": "heat pump cost",
+      "unit": "Euro / car",
+      "importance": "",
+      "source": "Hirschberg et al. (2016), Own assumption",
+      "comment": "only for pure BEV - this is for heating only. Cooling system included in glider cost",
+      "status": "",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 300,
+      "minimum": 240,
+      "maximum": 360
+    },
+    "1006-2040-heat pump cost": {
+      "amount": 300,
+      "category": "Costs",
+      "powertrain": [
+        "BEV"
+      ],
+      "sizes": [
+        "Kick-scooter",
+        "Bicycle <25",
+        "Bicycle cargo",
+        "Bicycle <45",
+        "Moped <4kW",
+        "Scooter <4kW",
+        "Scooter 4-11kW",
+        "Motorcycle 4-11kW",
+        "Motorcycle 11-35kW",
+        "Motorcycle >35kW"
+      ],
+      "year": 2040,
+      "name": "heat pump cost",
+      "unit": "Euro / car",
+      "importance": "",
+      "source": "Hirschberg et al. (2016), Own assumption",
+      "comment": "only for pure BEV - this is for heating only. Cooling system included in glider cost",
+      "status": "",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 300,
+      "minimum": 200,
+      "maximum": 450
+    },
+    "1007-2050-heat pump cost": {
+      "amount": 300,
+      "category": "Costs",
+      "powertrain": [
+        "BEV"
+      ],
+      "sizes": [
+        "Kick-scooter",
+        "Bicycle <25",
+        "Bicycle cargo",
+        "Bicycle <45",
+        "Moped <4kW",
+        "Scooter <4kW",
+        "Scooter 4-11kW",
+        "Motorcycle 4-11kW",
+        "Motorcycle 11-35kW",
+        "Motorcycle >35kW"
+      ],
+      "year": 2050,
+      "name": "heat pump cost",
+      "unit": "Euro / car",
+      "importance": "",
+      "source": "Hirschberg et al. (2016), Own assumption",
+      "comment": "only for pure BEV - this is for heating only. Cooling system included in glider cost",
+      "status": "",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 300,
+      "minimum": 200,
+      "maximum": 450
+    },
+    "baseline-2025-0153-heat pump cost": {
+      "amount": 300.0,
+      "category": "Costs",
+      "powertrain": [
+        "BEV"
+      ],
+      "sizes": [
+        "Bicycle <25",
+        "Bicycle <45",
+        "Bicycle cargo",
+        "Kick-scooter",
+        "Moped <4kW",
+        "Motorcycle 11-35kW",
+        "Motorcycle 4-11kW",
+        "Motorcycle >35kW",
+        "Scooter 4-11kW",
+        "Scooter <4kW"
+      ],
+      "year": 2025,
+      "name": "heat pump cost",
+      "unit": "Euro / car",
+      "importance": "",
+      "source": "Hirschberg et al. (2016), Own assumption",
+      "comment": "2025 baseline: linear interpolation of the effective 2020 and 2030 records, before empirical calibration. Triangular modes and bounds are interpolated. Endpoint records: ('1004-2020-heat pump cost', '1005-2030-heat pump cost'). only for pure BEV - this is for heating only. Cooling system included in glider cost",
+      "status": "",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 300.0,
+      "minimum": 220.0,
+      "maximum": 405.0
+    }
+  }
+}

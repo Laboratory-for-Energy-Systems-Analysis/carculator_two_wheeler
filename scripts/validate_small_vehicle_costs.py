@@ -137,7 +137,7 @@ def main():
         "defaults_sha256": hashlib.sha256(
             (DATA / "default_parameters.json").read_bytes()
         ).hexdigest(),
-        "qualification": "Provisional cost priors; residual calibration is not independent validation. Heat-pump costs remain a separate defect.",
+        "qualification": "Provisional cost priors; residual calibration is not independent validation. See the reported component breakdown and current cost documentation for remaining limitations.",
         "units": {
             "purchase_components": "EUR; source dates and boundaries in packaged provenance, legacy components have mixed price bases",
             "per_km_costs": "EUR/vkm",

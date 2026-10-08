@@ -126,6 +126,9 @@ See :doc:`small_vehicle_costs` for the scoped scooter/moped repair and
 its market-price proxy, accounting regressions and remaining component-price
 gaps. Energy/LCIA validation does not establish the accuracy of ownership costs.
 
+The subsequent :doc:`heat_pump_costs` correction removes the cabin heat-pump
+charge from default BEV purchase costs while preserving explicit monetary overrides.
+
 Target-range overrides
 ----------------------
 

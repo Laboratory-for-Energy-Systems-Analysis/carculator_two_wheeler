@@ -24684,7 +24684,7 @@
         "maximum": 9
     },
     "1002-2000-heat pump cost": {
-        "amount": 300,
+        "amount": 0,
         "category": "Costs",
         "powertrain": [
             "BEV"
@@ -24703,19 +24703,17 @@
         ],
         "year": 2000,
         "name": "heat pump cost",
-        "unit": "Euro / car",
+        "unit": "EUR/vehicle",
         "importance": "",
-        "source": "Hirschberg et al. (2016), Own assumption",
-        "comment": "only for pure BEV - this is for heating only. Cooling system included in glider cost",
-        "status": "",
+        "source": "Two-wheeler equipment-scope correction (2026-10-08); see heat_pump_cost_provenance.json",
+        "comment": "No cabin heat pump is included in the default two-wheeler model. Deterministic zero across all native years; explicit user cost overrides remain supported. This cost parameter does not add thermal equipment or energy demand.",
+        "status": "Not applicable to default vehicle equipment",
         "kind": "distribution",
-        "uncertainty_type": 5,
-        "loc": 300,
-        "minimum": 200,
-        "maximum": 450
+        "uncertainty_type": 1,
+        "loc": 0
     },
     "1003-2010-heat pump cost": {
-        "amount": 300,
+        "amount": 0,
         "category": "Costs",
         "powertrain": [
             "BEV"
@@ -24734,19 +24732,17 @@
         ],
         "year": 2010,
         "name": "heat pump cost",
-        "unit": "Euro / car",
+        "unit": "EUR/vehicle",
         "importance": "",
-        "source": "Hirschberg et al. (2016), Own assumption",
-        "comment": "only for pure BEV - this is for heating only. Cooling system included in glider cost",
-        "status": "",
+        "source": "Two-wheeler equipment-scope correction (2026-10-08); see heat_pump_cost_provenance.json",
+        "comment": "No cabin heat pump is included in the default two-wheeler model. Deterministic zero across all native years; explicit user cost overrides remain supported. This cost parameter does not add thermal equipment or energy demand.",
+        "status": "Not applicable to default vehicle equipment",
         "kind": "distribution",
-        "uncertainty_type": 5,
-        "loc": 300,
-        "minimum": 200,
-        "maximum": 450
+        "uncertainty_type": 1,
+        "loc": 0
     },
     "1004-2020-heat pump cost": {
-        "amount": 300,
+        "amount": 0,
         "category": "Costs",
         "powertrain": [
             "BEV"
@@ -24765,19 +24761,17 @@
         ],
         "year": 2020,
         "name": "heat pump cost",
-        "unit": "Euro / car",
+        "unit": "EUR/vehicle",
         "importance": "",
-        "source": "Hirschberg et al. (2016), Own assumption",
-        "comment": "only for pure BEV - this is for heating only. Cooling system included in glider cost",
-        "status": "",
+        "source": "Two-wheeler equipment-scope correction (2026-10-08); see heat_pump_cost_provenance.json",
+        "comment": "No cabin heat pump is included in the default two-wheeler model. Deterministic zero across all native years; explicit user cost overrides remain supported. This cost parameter does not add thermal equipment or energy demand.",
+        "status": "Not applicable to default vehicle equipment",
         "kind": "distribution",
-        "uncertainty_type": 5,
-        "loc": 300,
-        "minimum": 200,
-        "maximum": 450
+        "uncertainty_type": 1,
+        "loc": 0
     },
     "1005-2030-heat pump cost": {
-        "amount": 300,
+        "amount": 0,
         "category": "Costs",
         "powertrain": [
             "BEV"
@@ -24796,19 +24790,17 @@
         ],
         "year": 2030,
         "name": "heat pump cost",
-        "unit": "Euro / car",
+        "unit": "EUR/vehicle",
         "importance": "",
-        "source": "Hirschberg et al. (2016), Own assumption",
-        "comment": "only for pure BEV - this is for heating only. Cooling system included in glider cost",
-        "status": "",
+        "source": "Two-wheeler equipment-scope correction (2026-10-08); see heat_pump_cost_provenance.json",
+        "comment": "No cabin heat pump is included in the default two-wheeler model. Deterministic zero across all native years; explicit user cost overrides remain supported. This cost parameter does not add thermal equipment or energy demand.",
+        "status": "Not applicable to default vehicle equipment",
         "kind": "distribution",
-        "uncertainty_type": 5,
-        "loc": 300,
-        "minimum": 240,
-        "maximum": 360
+        "uncertainty_type": 1,
+        "loc": 0
     },
     "1006-2040-heat pump cost": {
-        "amount": 300,
+        "amount": 0,
         "category": "Costs",
         "powertrain": [
             "BEV"
@@ -24827,19 +24819,17 @@
         ],
         "year": 2040,
         "name": "heat pump cost",
-        "unit": "Euro / car",
+        "unit": "EUR/vehicle",
         "importance": "",
-        "source": "Hirschberg et al. (2016), Own assumption",
-        "comment": "only for pure BEV - this is for heating only. Cooling system included in glider cost",
-        "status": "",
+        "source": "Two-wheeler equipment-scope correction (2026-10-08); see heat_pump_cost_provenance.json",
+        "comment": "No cabin heat pump is included in the default two-wheeler model. Deterministic zero across all native years; explicit user cost overrides remain supported. This cost parameter does not add thermal equipment or energy demand.",
+        "status": "Not applicable to default vehicle equipment",
         "kind": "distribution",
-        "uncertainty_type": 5,
-        "loc": 300,
-        "minimum": 200,
-        "maximum": 450
+        "uncertainty_type": 1,
+        "loc": 0
     },
     "1007-2050-heat pump cost": {
-        "amount": 300,
+        "amount": 0,
         "category": "Costs",
         "powertrain": [
             "BEV"
@@ -24858,16 +24848,14 @@
         ],
         "year": 2050,
         "name": "heat pump cost",
-        "unit": "Euro / car",
+        "unit": "EUR/vehicle",
         "importance": "",
-        "source": "Hirschberg et al. (2016), Own assumption",
-        "comment": "only for pure BEV - this is for heating only. Cooling system included in glider cost",
-        "status": "",
+        "source": "Two-wheeler equipment-scope correction (2026-10-08); see heat_pump_cost_provenance.json",
+        "comment": "No cabin heat pump is included in the default two-wheeler model. Deterministic zero across all native years; explicit user cost overrides remain supported. This cost parameter does not add thermal equipment or energy demand.",
+        "status": "Not applicable to default vehicle equipment",
         "kind": "distribution",
-        "uncertainty_type": 5,
-        "loc": 300,
-        "minimum": 200,
-        "maximum": 450
+        "uncertainty_type": 1,
+        "loc": 0
     },
     "1008-2000-maintenance cost per glider cost": {
         "amount": 0.025,
@@ -38553,7 +38541,7 @@
         "maximum": 6.860869565217391
     },
     "baseline-2025-0153-heat pump cost": {
-        "amount": 300.0,
+        "amount": 0,
         "category": "Costs",
         "powertrain": [
             "BEV"
@@ -38572,16 +38560,14 @@
         ],
         "year": 2025,
         "name": "heat pump cost",
-        "unit": "Euro / car",
+        "unit": "EUR/vehicle",
         "importance": "",
-        "source": "Hirschberg et al. (2016), Own assumption",
-        "comment": "2025 baseline: linear interpolation of the effective 2020 and 2030 records, before empirical calibration. Triangular modes and bounds are interpolated. Endpoint records: ('1004-2020-heat pump cost', '1005-2030-heat pump cost'). only for pure BEV - this is for heating only. Cooling system included in glider cost",
-        "status": "",
+        "source": "Two-wheeler equipment-scope correction (2026-10-08); see heat_pump_cost_provenance.json",
+        "comment": "No cabin heat pump is included in the default two-wheeler model. Deterministic zero across all native years; explicit user cost overrides remain supported. This cost parameter does not add thermal equipment or energy demand.",
+        "status": "Not applicable to default vehicle equipment",
         "kind": "distribution",
-        "uncertainty_type": 5,
-        "loc": 300.0,
-        "minimum": 220.0,
-        "maximum": 405.0
+        "uncertainty_type": 1,
+        "loc": 0
     },
     "baseline-2025-0154-interest rate": {
         "amount": 0.05,

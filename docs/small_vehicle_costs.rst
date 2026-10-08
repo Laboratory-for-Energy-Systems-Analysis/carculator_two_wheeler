@@ -50,12 +50,12 @@ twice to a retail anchor; VAT and dealer margins are not separately estimated.
 The coefficients are frozen input data. Changing component costs subsequently
 changes the purchase total; no runtime refitting absorbs those changes.
 
-The unexplained **EUR 300 heat-pump charge** is deliberately excluded from the
-calibration residual. It remains in the runtime purchase total pending its own
-review. Consequently the electric scooter's total is EUR 2,299 rather than
-EUR 1,999. The positive kick-scooter glider likewise leaves the inherited
-EUR 300 heat pump and roughly EUR 164 charger visible. Complete electric prices
-still require correction and qualification. Matching the petrol price anchors
+The inherited **EUR 300 heat-pump charge** was deliberately excluded from the
+calibration residual and has since been removed by :doc:`heat_pump_costs`.
+Without refitting the glider, the default electric scooter purchase total is
+now EUR 1,999 and the kick-scooter total is EUR 374.26. The roughly EUR 164
+charger charge remains unchanged. Complete electric prices still require
+qualification. Matching the petrol price anchors
 by construction is a calibration result, not independent validation.
 
 Time and uncertainty
@@ -77,7 +77,9 @@ qualification of all cost inputs or all possible user overrides.
 Completed-run results
 ---------------------
 
-Default 2025 values (EUR per vehicle and EUR per vehicle-kilometre):
+Recorded 2025 values immediately after the glider correction (EUR per vehicle
+and EUR per vehicle-kilometre). This table predates :doc:`heat_pump_costs`,
+which reduces BEV purchase totals by another EUR 300:
 
 .. list-table::
    :header-rows: 1
@@ -137,8 +139,10 @@ bicycle and temporal provenance remains a historical record. Run::
 The offline audit reconstructs the previous inputs from the packaged provenance.
 Its :download:`recorded results <_static/small_vehicle_cost_audit.json>` include
 complete purchase breakdowns, annual costs and unchanged inventory/LCIA checks.
+Those recorded totals predate the heat-pump correction. Rerunning this audit
+isolates the glider change against the currently installed defaults.
 
-Heat-pump and charger costs, complete e-bike costs, human-only bicycle inputs
+Charger costs, complete e-bike costs, human-only bicycle inputs
 and a common currency-year basis remain open. Battery-override and sample-label
 limitations in :doc:`validity` and :doc:`petrol_efficiency` are unaffected. These
 cost changes do not constitute new fuel-consumption or physical calibration.

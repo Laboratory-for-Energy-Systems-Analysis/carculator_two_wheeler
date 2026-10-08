@@ -46,8 +46,9 @@ these class-specific component costs independently.
 Completed runs
 --------------
 
-Default 2025 outputs, with the existing motor, battery, charging, financing and
-maintenance assumptions:
+Recorded 2025 outputs immediately after the bicycle-glider correction. These
+figures predate :doc:`heat_pump_costs`, which reduces each BEV purchase total
+by another EUR 300 without changing the glider or maintenance assumptions:
 
 .. list-table:: Effect of the correction
    :header-rows: 1
@@ -93,8 +94,10 @@ No special 2025 coefficient jump is introduced.
 Remaining evidence gaps
 -----------------------
 
-ZIV reports **EUR 2,550** for the average complete e-bike in 2025. The generic
-``Bicycle <25`` purchase result is still about **51% lower**. This comparison
+ZIV reports **EUR 2,550** for the average complete e-bike in 2025. At the time of the
+bicycle-glider repair, the generic ``Bicycle <25`` purchase result was about
+**51% lower**. The subsequent :doc:`heat_pump_costs` correction reduces its
+default purchase cost to EUR 950.49, about **63% lower**. This comparison
 has unmatched quality, product mix and cost boundaries; it is recorded as
 screening evidence, not an acceptance test. The repair establishes positive,
 traceable mechanical-bicycle costs, not a calibrated complete e-bike price.
@@ -103,7 +106,8 @@ separate review before claiming representative ownership costs.
 
 A subsequent :doc:`small_vehicle_costs` repair addresses negative glider and
 maintenance costs in kick-scooters, mopeds and small scooters. The inherited
-BEV heat-pump and charger charges still need review. Human-only bicycle cost
+BEV heat-pump charge has since been removed (:doc:`heat_pump_costs`); charger
+costs still need review. Human-only bicycle cost
 inputs also remain incomplete. Battery coupling and sample-label limitations documented
 in :doc:`validity` and :doc:`petrol_efficiency` are unaffected.
 
@@ -124,6 +128,8 @@ With matching source packages installed, run from this repository::
 The audit works offline and reconstructs the previous data from the packaged
 provenance. Its :download:`recorded results <_static/bicycle_cost_audit.json>`
 include before/after costs, annual results, market screening and LCIA checks.
+These recorded totals predate the heat-pump correction. Rerunning this audit
+isolates the bicycle-glider change against the currently installed defaults.
 
 Software checks
 ---------------

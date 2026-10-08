@@ -3,10 +3,12 @@
 Status: release candidate prepared; publication remains pending maintainer review.
 The implausible petrol-efficiency inputs have been corrected with a provisional
 historical prior, documented in `docs/petrol_efficiency.rst`. Review the remaining
-consumption evidence gaps, inherited heat-pump/charger charges and
+consumption evidence gaps, inherited charger costs and
 battery-override qualification before publication. Negative bicycle and small-vehicle
 glider costs have been repaired with provisional priors; see `docs/bicycle_costs.rst`
-and `docs/small_vehicle_costs.rst`. Use Python 3.12 and review the matching family set:
+and `docs/small_vehicle_costs.rst`. The cabin heat-pump default is now zero;
+`docs/heat_pump_costs.rst` records the equipment-scope correction and override checks.
+Use Python 3.12 and review the matching family set:
 
 | Package | Prepared version |
 | --- | --- |

@@ -49,9 +49,15 @@ it has not yet been published. Older entries, where present, retain their origin
 - Verify positive costs, discounted cash flows and component-price sensitivity. Complete 24 before/after inventory/LCIA cases and 104 annual cases; physical outputs, inventory matrices and LCIA remain unchanged.
 - Keep the unexplained BEV heat-pump charge visible and exclude it from residual calibration pending a separate correction. See [small-vehicle costs](docs/small_vehicle_costs.rst).
 
+### Heat-pump default correction (2026-10-08)
+
+- Remove the inherited EUR 300 cabin heat-pump charge from every BEV two-wheeler default across all native years. Use deterministic zero, including stochastic input sampling; keep explicit user values in the existing purchase-cost calculation.
+- Verify a EUR 300 purchase reduction without markup, correct annualization, and unchanged remaining model outputs, inventory matrices and LCIA in 54 completed before/after cases across all nine available BEV sizes and 2020/2025/2030.
+- Preserve glider priors and charger assumptions. Default 2025 purchase costs now include EUR 374.26 for the kick-scooter, EUR 950.49 for Bicycle <25 and EUR 1,999.00 for Scooter <4kW. Earlier audit tables remain historical; see [heat-pump costs](docs/heat_pump_costs.rst).
+
 ### Known limitations
 
-- Negative glider costs in the repaired bicycle and small-vehicle scopes are resolved, but the inherited BEV heat-pump and charger charges, human-only bicycle inputs, complete e-bike costs and currency-year consistency still require review. See [bicycle costs](docs/bicycle_costs.rst) and [small-vehicle costs](docs/small_vehicle_costs.rst).
+- Negative glider costs in the repaired bicycle and small-vehicle scopes are resolved, but inherited charger costs, human-only bicycle inputs, complete e-bike costs and currency-year consistency still require review. See [bicycle costs](docs/bicycle_costs.rst) and [small-vehicle costs](docs/small_vehicle_costs.rst).
 - Manufacturer comparisons do not establish new empirical two-wheeler calibration.
 - Custom string sample labels can fail alignment in the shared energy calculation; normal numeric sample labels are covered by the petrol regressions.
 - The coupled target-range repair was validated for passenger cars; two-wheeler target-range overrides have not received equivalent qualification.

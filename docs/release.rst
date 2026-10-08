@@ -20,3 +20,7 @@ See :doc:`validity` for calibration evidence and the scope of model validation.
 Petrol-efficiency defaults and negative small-vehicle glider costs have been
 corrected. See :doc:`petrol_efficiency`, :doc:`bicycle_costs` and
 :doc:`small_vehicle_costs` for the affected configurations and evidence.
+
+Default BEV purchase costs also drop by EUR 300 after removing an inherited
+cabin heat-pump charge. Explicit monetary overrides remain supported; see
+:doc:`heat_pump_costs`.
