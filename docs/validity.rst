@@ -134,5 +134,9 @@ only for BEV kick-scooters, with a sourced provisional assumption and scoped tes
 Target-range overrides
 ----------------------
 
-The coupled target-range repair was validated for passenger cars; two-wheeler
-target-range overrides have not received equivalent qualification.
+Two-wheeler target-range sizing now converges battery capacity, vehicle mass
+and cycle energy together. Completed runs cover four chemistries, multiple
+years and samples, all available BEV sizes, and battery/electricity inventory
+coefficients. Capacity and pack-mass changes also propagate through consumption
+and range. See :doc:`bev_sizing` for the method, override contracts and numerical
+checks. This establishes software consistency, not new empirical calibration.

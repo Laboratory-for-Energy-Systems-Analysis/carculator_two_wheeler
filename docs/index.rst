@@ -70,6 +70,7 @@ User's Guide
    modeling
    structure
    validity
+   bev_sizing
    petrol_efficiency
    bicycle_costs
    small_vehicle_costs

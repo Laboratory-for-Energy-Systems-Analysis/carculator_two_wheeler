@@ -54,6 +54,9 @@ use ``(powertrain, size, year)`` keys; consult the model API for exceptions.
 Repeated ``set_all()`` calls on an already completed model are not the supported
 way to compare independent scenarios.
 
+See :doc:`bev_sizing` for range-, capacity- and mass-driven battery scenarios,
+override precedence and chemistry-dependent energy demand.
+
 Energy and results
 ------------------
 

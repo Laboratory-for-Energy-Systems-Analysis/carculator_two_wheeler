@@ -5,7 +5,6 @@ import numexpr as ne
 import numpy as np
 import xarray as xr
 import yaml
-
 from carculator_utils.energy_consumption import EnergyConsumptionModel
 from carculator_utils.model import VehicleModel
 from carculator_utils.numerical import capital_recovery_factor
@@ -14,18 +13,14 @@ from carculator_utils.numerical import capital_recovery_factor
 class TwoWheelerModel(VehicleModel):
     def set_all(self):
         """
-        This method runs a series of other methods to obtain the tank-to-wheel energy requirement, efficiency
-        of the car, costs, etc.
+        Complete vehicle sizing, cycle energy, costs and emissions.
 
-        :meth:`set_component_masses()`, :meth:`set_car_masses()` and :meth:`set_power_parameters()` are interdependent.
-        `powertrain_mass` depends on `power`, `curb_mass` is affected by changes in `powertrain_mass`,
-        `combustion engine mass` and `electric engine mass`, and `power` is a function of `curb_mass`.
-        The current solution is to loop through the methods until the increment in driving mass is
-        inferior to 0.1%.
+        With a BEV target range, iterate battery capacity, component/vehicle
+        masses and energy demand together. Convergence is checked per vehicle
+        and sample at a relative tolerance of 1e-5, bounded by max_iterations.
+        Explicit consumption and curb-mass overrides remain fixed constraints.
 
-
-        :returns: Does not return anything. Modifies ``self.array`` in place.
-
+        :returns: None. Updates ``self.array`` in place.
         """
 
         print("Building two-wheelers...")
@@ -39,12 +34,16 @@ class TwoWheelerModel(VehicleModel):
             country=self.country,
         )
 
-        for _ in self.iterate_sizing("driving mass", rtol=0.001):
-
-            if self.target_mass:
-                self.override_vehicle_mass()
-            else:
-                self.set_vehicle_masses()
+        size_for_range = any(
+            key[0] == "BEV" and target is not None
+            for key, target in (self.target_range or {}).items()
+        )
+        sizing_state = ["driving mass", "energy battery mass"]
+        if self.target_mass:
+            # A fixed curb mass can hide an unconverged glider/component split.
+            sizing_state.append("glider base mass")
+        for _ in self.iterate_sizing(sizing_state, rtol=1e-5):
+            self.set_vehicle_masses()
 
             self.set_power_parameters()
             self.set_component_masses()
@@ -58,16 +57,16 @@ class TwoWheelerModel(VehicleModel):
             if "capacity" in self.energy_storage:
                 self.override_battery_capacity()
 
-        if self.energy_consumption:
-            self.override_ttw_energy()
-        else:
+            if size_for_range:
+                self.calculate_ttw_energy()
+                # A range target takes precedence over capacity for the same
+                # BEV; capacities of other vehicles remain fixed.
+                self.override_range()
+
+        if not size_for_range:
             self.calculate_ttw_energy()
         self.set_ttw_efficiency()
         self.set_range()
-
-        if self.target_range:
-            self.override_range()
-            self.set_energy_stored_properties()
 
         self.set_share_recuperated_energy()
         self.set_battery_fuel_cell_replacements()
@@ -199,8 +198,12 @@ class TwoWheelerModel(VehicleModel):
                 "powertrain": self.array.powertrain,
                 "year": self.array.year,
                 "size": self.array.coords["size"],
+                "value": self.array.value,
             }
         )
+
+        if self.energy_consumption:
+            self.override_ttw_energy()
 
         distance = self.energy.sel(parameter="velocity").sum(dim="second") / 1000
 
@@ -236,7 +239,7 @@ class TwoWheelerModel(VehicleModel):
             * ``driving mass`` is the ``curb mass`` plus ``total cargo mass``.
 
         .. note::
-            driving mass = total cargo mass + driving mass
+            driving mass = curb mass + total cargo mass
 
         """
 
@@ -260,6 +263,8 @@ class TwoWheelerModel(VehicleModel):
             "fuel tank mass",
         ]
         self["curb mass"] += self[curb_mass_includes].sum(axis=2)
+        if self.target_mass:
+            self.override_vehicle_mass()
 
         self["total cargo mass"] = (
             self["average passengers"] * self["average passenger mass"]

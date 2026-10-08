@@ -61,11 +61,15 @@ it has not yet been published. Older entries, where present, retain their origin
 - Carry the same prior across native years, preserve explicit overrides and leave glider priors, other vehicle classes and physical charger/inventory assumptions unchanged.
 - Reduce the 2025 kick-scooter purchase result from EUR 374.26 to EUR 279.91. Verify completed costs at uncertainty endpoints, cost annualization, 24 before/after inventory/LCIA cases with three control classes, and 26 annual runs. See [charger evidence and limitations](docs/kick_scooter_charger_costs.rst).
 
+### BEV sizing correction (2026-10-08)
+
+- Converge range-driven battery capacity, vehicle mass and energy demand together, with bounded per-cell checks. The 2025 small scooter now needs 5.594 kWh for a 200 km target, instead of the inconsistent 5.373 kWh result.
+- Preserve range/capacity/mass precedence and scoped overrides. Apply consumption overrides after building the energy trace, propagate fixed curb mass through component sizing, and align labelled samples.
+- Test four chemistries, 2020/2025/2030 and all available BEV sizes, including independent mass/energy balances, fresh capacity-constrained runs and completed battery/electricity inventory coefficients. Default outputs remain unchanged across all size/powertrain combinations in those three years. See [battery sizing](docs/bev_sizing.rst); this is a physical-consistency repair, not empirical recalibration.
+
 ### Known limitations
 
 - Negative glider costs in the repaired bicycle and small-vehicle scopes are resolved, but charger costs for other classes, human-only bicycle inputs, complete e-bike costs and currency-year consistency still require review. See [bicycle costs](docs/bicycle_costs.rst) and [small-vehicle costs](docs/small_vehicle_costs.rst).
 - Manufacturer comparisons do not establish new empirical two-wheeler calibration.
-- Custom string sample labels can fail alignment in the shared energy calculation; normal numeric sample labels are covered by the petrol regressions.
-- The coupled target-range repair was validated for passenger cars; two-wheeler target-range overrides have not received equivalent qualification.
 
 See [validation](docs/validity.rst) and [release preparation](RELEASING.md) for scope and verification instructions.

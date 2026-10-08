@@ -85,6 +85,10 @@ they are not independent measurements for every vehicle configuration.
 boundary before comparing energy outputs. Availability-masked zeroes do not
 represent physically zero consumption.
 
+BEV range targets now converge battery capacity, vehicle mass and cycle energy
+together. Fixed-capacity and pack-mass scenarios also propagate through range,
+consumption and inventories; see [battery sizing and override examples](docs/bev_sizing.rst).
+
 Supported background scenarios are `SSP2-NPi`, `SSP2-PkBudg1000`,
 `SSP2-PkBudg650`, and `static`. ReCiPe supports midpoint/endpoint and EF midpoint.
 Use fresh model instances for independent cases. `inputs.stochastic(n, seed=...)`

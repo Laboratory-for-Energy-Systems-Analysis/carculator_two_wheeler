@@ -27,3 +27,8 @@ cabin heat-pump charge. Explicit monetary overrides remain supported; see
 
 The electric kick-scooter charger now uses a provisional EUR 70 default, reducing
 its 2025 purchase result to EUR 279.91; see :doc:`kick_scooter_charger_costs`.
+
+BEV target-range runs now converge battery size, vehicle mass and consumption
+together. Recalculate saved range-constrained scenarios; explicit capacity,
+pack-mass, curb-mass and consumption constraints are covered by the checks in
+:doc:`bev_sizing`.
