@@ -3,11 +3,13 @@
 Status: release candidate prepared; publication remains pending maintainer review.
 The implausible petrol-efficiency inputs have been corrected with a provisional
 historical prior, documented in `docs/petrol_efficiency.rst`. Review the remaining
-consumption evidence gaps, inherited charger costs and
+consumption evidence gaps, charger assumptions for other vehicle classes and
 battery-override qualification before publication. Negative bicycle and small-vehicle
 glider costs have been repaired with provisional priors; see `docs/bicycle_costs.rst`
 and `docs/small_vehicle_costs.rst`. The cabin heat-pump default is now zero;
 `docs/heat_pump_costs.rst` records the equipment-scope correction and override checks.
+The kick-scooter charger now uses a provisional EUR 70 prior; see
+`docs/kick_scooter_charger_costs.rst` for uncertainty and price-date limits.
 Use Python 3.12 and review the matching family set:
 
 | Package | Prepared version |

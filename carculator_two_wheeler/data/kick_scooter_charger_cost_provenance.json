@@ -1,0 +1,290 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-08",
+  "implementation_commit_before_fix": "a9da43c",
+  "scope": {
+    "parameter": "battery onboard charging infrastructure cost",
+    "size": "Kick-scooter",
+    "powertrain": "BEV",
+    "years": [
+      2000,
+      2010,
+      2020,
+      2025,
+      2030,
+      2040,
+      2050
+    ]
+  },
+  "status": "Provisional source-informed charger cost; not an OEM quotation or independent whole-vehicle price validation",
+  "source": {
+    "publisher": "NIU EU official store",
+    "url": "https://shopeu.niu.com/collections/spare-parts",
+    "retrieved": "2026-10-08",
+    "price_year": null,
+    "price_boundary": "Displayed euro-denominated replacement retail prices, not identified OEM equipment costs. No separate VAT or shipping adjustment has been made.",
+    "observations": [
+      {
+        "product": "KQi 100 Series Charger",
+        "price_EUR": 39.99,
+        "listed_availability": "sold out"
+      },
+      {
+        "product": "KQi2 Pro & KQi 200 Charger",
+        "price_EUR": 69.99,
+        "listed_availability": "add to cart"
+      },
+      {
+        "product": "KQi Super Charger",
+        "price_EUR": 79.99,
+        "listed_availability": "sold out"
+      }
+    ]
+  },
+  "prior": {
+    "distribution": "triangular",
+    "uncertainty_type": 5,
+    "minimum_EUR": 40,
+    "mode_EUR": 70,
+    "maximum_EUR": 100,
+    "basis": "Mode rounds the EUR 69.99 listing. The lower bound rounds the lowest listed price. The EUR 100 upper bound is an engineering allowance above the observed EUR 79.99 maximum, not a statistical confidence bound."
+  },
+  "assumptions": [
+    "Current undated prices observed in 2026 proxy the 2025 model; no evidence establishes these exact prices in 2025 and no inflation adjustment is applied.",
+    "The same mode and bounds apply across 2000-2050 as a constant scenario assumption, not reconstructed historical or forecast nominal prices. Availability masking is unchanged.",
+    "The generic model is not matched to a particular NIU voltage, output power or charger; cross-brand transfer and the uncertainty range are engineering assumptions.",
+    "Keep the legacy parameter label battery onboard charging infrastructure cost for API compatibility. For this scoped prior it represents a replacement-retail proxy for the vehicle charger, including no new equipment or physical changes.",
+    "The shared purchase list includes this component without markup, so enter the retail proxy directly, without a second markup or division by markup.",
+    "Other vehicle classes, glider priors, charger mass and efficiency, inventory exchanges, batteries and motor costs remain unchanged. Explicit input overrides remain supported."
+  ],
+  "original_defaults_sha256": "1796d28280f7a5b22d96671ebf0cf812b63ad04be91e21e1875b1c765fb7ad46",
+  "corrected_defaults_sha256": "69160a10a5671c5836b4679e2bad28d43a1832831981e8aa94b6fe0f4a5d92a9",
+  "original_records": {
+    "912-2000-battery onboard charging infrastructure cost": {
+      "amount": 180,
+      "category": "Costs",
+      "powertrain": [
+        "BEV"
+      ],
+      "sizes": [
+        "Kick-scooter",
+        "Bicycle <25",
+        "Bicycle cargo",
+        "Bicycle <45",
+        "Moped <4kW",
+        "Scooter <4kW",
+        "Scooter 4-11kW",
+        "Motorcycle 4-11kW",
+        "Motorcycle 11-35kW",
+        "Motorcycle >35kW"
+      ],
+      "year": 2000,
+      "name": "battery onboard charging infrastructure cost",
+      "unit": "Euro / car",
+      "importance": "",
+      "source": "Own assumption",
+      "comment": "considers onboard system",
+      "status": "",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 180,
+      "minimum": 90,
+      "maximum": 270
+    },
+    "913-2010-battery onboard charging infrastructure cost": {
+      "amount": 180,
+      "category": "Costs",
+      "powertrain": [
+        "BEV"
+      ],
+      "sizes": [
+        "Kick-scooter",
+        "Bicycle <25",
+        "Bicycle cargo",
+        "Bicycle <45",
+        "Moped <4kW",
+        "Scooter <4kW",
+        "Scooter 4-11kW",
+        "Motorcycle 4-11kW",
+        "Motorcycle 11-35kW",
+        "Motorcycle >35kW"
+      ],
+      "year": 2010,
+      "name": "battery onboard charging infrastructure cost",
+      "unit": "Euro / car",
+      "importance": "",
+      "source": "Own assumption",
+      "comment": "considers onboard system",
+      "status": "",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 180,
+      "minimum": 90,
+      "maximum": 270
+    },
+    "914-2020-battery onboard charging infrastructure cost": {
+      "amount": 174.1304347826087,
+      "category": "Costs",
+      "powertrain": [
+        "BEV"
+      ],
+      "sizes": [
+        "Kick-scooter",
+        "Bicycle <25",
+        "Bicycle cargo",
+        "Bicycle <45",
+        "Moped <4kW",
+        "Scooter <4kW",
+        "Scooter 4-11kW",
+        "Motorcycle 4-11kW",
+        "Motorcycle 11-35kW",
+        "Motorcycle >35kW"
+      ],
+      "year": 2020,
+      "name": "battery onboard charging infrastructure cost",
+      "unit": "Euro / car",
+      "importance": "",
+      "source": "Own assumption",
+      "comment": "considers onboard system",
+      "status": "",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 174.1304347826087,
+      "minimum": 90,
+      "maximum": 270
+    },
+    "915-2030-battery onboard charging infrastructure cost": {
+      "amount": 154.56521739130434,
+      "category": "Costs",
+      "powertrain": [
+        "BEV"
+      ],
+      "sizes": [
+        "Kick-scooter",
+        "Bicycle <25",
+        "Bicycle cargo",
+        "Bicycle <45",
+        "Moped <4kW",
+        "Scooter <4kW",
+        "Scooter 4-11kW",
+        "Motorcycle 4-11kW",
+        "Motorcycle 11-35kW",
+        "Motorcycle >35kW"
+      ],
+      "year": 2030,
+      "name": "battery onboard charging infrastructure cost",
+      "unit": "Euro / car",
+      "importance": "",
+      "source": "Own assumption",
+      "comment": "considers onboard system",
+      "status": "",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 154.56521739130434,
+      "minimum": 123.65217391304348,
+      "maximum": 185.47826086956522
+    },
+    "916-2040-battery onboard charging infrastructure cost": {
+      "amount": 135,
+      "category": "Costs",
+      "powertrain": [
+        "BEV"
+      ],
+      "sizes": [
+        "Kick-scooter",
+        "Bicycle <25",
+        "Bicycle cargo",
+        "Bicycle <45",
+        "Moped <4kW",
+        "Scooter <4kW",
+        "Scooter 4-11kW",
+        "Motorcycle 4-11kW",
+        "Motorcycle 11-35kW",
+        "Motorcycle >35kW"
+      ],
+      "year": 2040,
+      "name": "battery onboard charging infrastructure cost",
+      "unit": "Euro / car",
+      "importance": "",
+      "source": "Own assumption",
+      "comment": "considers onboard system",
+      "status": "",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 135,
+      "minimum": 90,
+      "maximum": 180
+    },
+    "917-2050-battery onboard charging infrastructure cost": {
+      "amount": 135,
+      "category": "Costs",
+      "powertrain": [
+        "BEV"
+      ],
+      "sizes": [
+        "Kick-scooter",
+        "Bicycle <25",
+        "Bicycle cargo",
+        "Bicycle <45",
+        "Moped <4kW",
+        "Scooter <4kW",
+        "Scooter 4-11kW",
+        "Motorcycle 4-11kW",
+        "Motorcycle 11-35kW",
+        "Motorcycle >35kW"
+      ],
+      "year": 2050,
+      "name": "battery onboard charging infrastructure cost",
+      "unit": "Euro / car",
+      "importance": "",
+      "source": "Own assumption",
+      "comment": "considers onboard system",
+      "status": "",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 135,
+      "minimum": 90,
+      "maximum": 180
+    },
+    "baseline-2025-0066-battery onboard charging infrastructure cost": {
+      "amount": 164.3478260869565,
+      "category": "Costs",
+      "powertrain": [
+        "BEV"
+      ],
+      "sizes": [
+        "Bicycle <25",
+        "Bicycle <45",
+        "Bicycle cargo",
+        "Kick-scooter",
+        "Moped <4kW",
+        "Motorcycle 11-35kW",
+        "Motorcycle 4-11kW",
+        "Motorcycle >35kW",
+        "Scooter 4-11kW",
+        "Scooter <4kW"
+      ],
+      "year": 2025,
+      "name": "battery onboard charging infrastructure cost",
+      "unit": "Euro / car",
+      "importance": "",
+      "source": "Own assumption",
+      "comment": "2025 baseline: linear interpolation of the effective 2020 and 2030 records, before empirical calibration. Triangular modes and bounds are interpolated. Endpoint records: ('914-2020-battery onboard charging infrastructure cost', '915-2030-battery onboard charging infrastructure cost'). considers onboard system",
+      "status": "",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 164.3478260869565,
+      "minimum": 106.82608695652175,
+      "maximum": 227.73913043478262
+    }
+  },
+  "added_record_keys": [
+    "kick-scooter-charger-2000",
+    "kick-scooter-charger-2010",
+    "kick-scooter-charger-2020",
+    "kick-scooter-charger-2030",
+    "kick-scooter-charger-2040",
+    "kick-scooter-charger-2050",
+    "kick-scooter-charger-2025"
+  ]
+}

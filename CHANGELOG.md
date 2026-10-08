@@ -55,9 +55,15 @@ it has not yet been published. Older entries, where present, retain their origin
 - Verify a EUR 300 purchase reduction without markup, correct annualization, and unchanged remaining model outputs, inventory matrices and LCIA in 54 completed before/after cases across all nine available BEV sizes and 2020/2025/2030.
 - Preserve glider priors and charger assumptions. Default 2025 purchase costs now include EUR 374.26 for the kick-scooter, EUR 950.49 for Bicycle <25 and EUR 1,999.00 for Scooter <4kW. Earlier audit tables remain historical; see [heat-pump costs](docs/heat_pump_costs.rst).
 
+### Kick-scooter charger cost correction (2026-10-08)
+
+- Replace the shared BEV charger price only for the electric kick-scooter with a EUR 70 mode and EUR 40-100 triangular engineering range, informed by NIU replacement-retail listings. Document the undated/current-price proxy, unmatched equipment and distinction from OEM costs.
+- Carry the same prior across native years, preserve explicit overrides and leave glider priors, other vehicle classes and physical charger/inventory assumptions unchanged.
+- Reduce the 2025 kick-scooter purchase result from EUR 374.26 to EUR 279.91. Verify completed costs at uncertainty endpoints, cost annualization, 24 before/after inventory/LCIA cases with three control classes, and 26 annual runs. See [charger evidence and limitations](docs/kick_scooter_charger_costs.rst).
+
 ### Known limitations
 
-- Negative glider costs in the repaired bicycle and small-vehicle scopes are resolved, but inherited charger costs, human-only bicycle inputs, complete e-bike costs and currency-year consistency still require review. See [bicycle costs](docs/bicycle_costs.rst) and [small-vehicle costs](docs/small_vehicle_costs.rst).
+- Negative glider costs in the repaired bicycle and small-vehicle scopes are resolved, but charger costs for other classes, human-only bicycle inputs, complete e-bike costs and currency-year consistency still require review. See [bicycle costs](docs/bicycle_costs.rst) and [small-vehicle costs](docs/small_vehicle_costs.rst).
 - Manufacturer comparisons do not establish new empirical two-wheeler calibration.
 - Custom string sample labels can fail alignment in the shared energy calculation; normal numeric sample labels are covered by the petrol regressions.
 - The coupled target-range repair was validated for passenger cars; two-wheeler target-range overrides have not received equivalent qualification.

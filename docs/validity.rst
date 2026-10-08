@@ -128,6 +128,8 @@ gaps. Energy/LCIA validation does not establish the accuracy of ownership costs.
 
 The subsequent :doc:`heat_pump_costs` correction removes the cabin heat-pump
 charge from default BEV purchase costs while preserving explicit monetary overrides.
+The :doc:`kick_scooter_charger_costs` correction replaces the generic charger price
+only for BEV kick-scooters, with a sourced provisional assumption and scoped tests.
 
 Target-range overrides
 ----------------------

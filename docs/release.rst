@@ -24,3 +24,6 @@ corrected. See :doc:`petrol_efficiency`, :doc:`bicycle_costs` and
 Default BEV purchase costs also drop by EUR 300 after removing an inherited
 cabin heat-pump charge. Explicit monetary overrides remain supported; see
 :doc:`heat_pump_costs`.
+
+The electric kick-scooter charger now uses a provisional EUR 70 default, reducing
+its 2025 purchase result to EUR 279.91; see :doc:`kick_scooter_charger_costs`.

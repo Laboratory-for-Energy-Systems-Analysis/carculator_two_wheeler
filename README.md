@@ -97,10 +97,12 @@ Electric-bicycle glider and maintenance costs now use a positive mechanical-bicy
 prior supported by published market data. Complete e-bike prices remain
 uncalibrated. Kick-scooter, moped and small-scooter negative glider costs now
 use source-based provisional priors as well. The inherited BEV cabin heat-pump
-charge is now zero by default; explicit cost overrides remain supported. Charger
-costs still need review. See the [bicycle correction](docs/bicycle_costs.rst),
-[small-vehicle costs](docs/small_vehicle_costs.rst) and
-[heat-pump default correction](docs/heat_pump_costs.rst).
+charge is now zero by default; explicit cost overrides remain supported. The
+electric kick-scooter charger uses a provisional EUR 70 retail-price proxy;
+charger assumptions for other classes still need review. See the
+[bicycle correction](docs/bicycle_costs.rst), [small-vehicle costs](docs/small_vehicle_costs.rst),
+[heat-pump correction](docs/heat_pump_costs.rst) and
+[kick-scooter charger evidence](docs/kick_scooter_charger_costs.rst).
 
 ## Development and release
 

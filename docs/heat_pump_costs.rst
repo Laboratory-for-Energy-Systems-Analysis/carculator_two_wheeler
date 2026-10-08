@@ -34,7 +34,10 @@ charge and is not refitted to absorb its removal.
 Default 2025 results
 --------------------
 
-All rows are BEV, with purchase in EUR per vehicle and total cost in EUR/vkm.
+Recorded results immediately after the heat-pump correction. All rows are BEV,
+with purchase in EUR per vehicle and total cost in EUR/vkm. The subsequent
+:doc:`kick_scooter_charger_costs` correction reduces the 2025 kick-scooter purchase
+from EUR 374.26 to EUR 279.91; the other rows are unaffected by that correction.
 
 .. list-table::
    :header-rows: 1
@@ -83,7 +86,7 @@ All rows are BEV, with purchase in EUR per vehicle and total cost in EUR/vkm.
 
 These prices retain the existing battery, motor, charger and other cost
 assumptions. They are not a claim of representative complete retail prices.
-The remaining charger assumptions, human-only bicycle inputs and common
+Charger assumptions for other vehicle classes, human-only bicycle inputs and the common
 currency-year basis still need review. The short default kick-scooter lifetime
 of 1,785 km continues to explain much of its high cost per kilometre.
 

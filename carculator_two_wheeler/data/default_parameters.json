@@ -22008,7 +22008,6 @@
             "BEV"
         ],
         "sizes": [
-            "Kick-scooter",
             "Bicycle <25",
             "Bicycle cargo",
             "Bicycle <45",
@@ -22039,7 +22038,6 @@
             "BEV"
         ],
         "sizes": [
-            "Kick-scooter",
             "Bicycle <25",
             "Bicycle cargo",
             "Bicycle <45",
@@ -22070,7 +22068,6 @@
             "BEV"
         ],
         "sizes": [
-            "Kick-scooter",
             "Bicycle <25",
             "Bicycle cargo",
             "Bicycle <45",
@@ -22101,7 +22098,6 @@
             "BEV"
         ],
         "sizes": [
-            "Kick-scooter",
             "Bicycle <25",
             "Bicycle cargo",
             "Bicycle <45",
@@ -22132,7 +22128,6 @@
             "BEV"
         ],
         "sizes": [
-            "Kick-scooter",
             "Bicycle <25",
             "Bicycle cargo",
             "Bicycle <45",
@@ -22163,7 +22158,6 @@
             "BEV"
         ],
         "sizes": [
-            "Kick-scooter",
             "Bicycle <25",
             "Bicycle cargo",
             "Bicycle <45",
@@ -36405,7 +36399,6 @@
             "Bicycle <25",
             "Bicycle <45",
             "Bicycle cargo",
-            "Kick-scooter",
             "Moped <4kW",
             "Motorcycle 11-35kW",
             "Motorcycle 4-11kW",
@@ -42558,5 +42551,159 @@
         "loc": 26.62684980428444,
         "minimum": 18.139541429168776,
         "maximum": 30.953712897480663
+    },
+    "kick-scooter-charger-2000": {
+        "amount": 70,
+        "category": "Costs",
+        "powertrain": [
+            "BEV"
+        ],
+        "sizes": [
+            "Kick-scooter"
+        ],
+        "year": 2000,
+        "name": "battery onboard charging infrastructure cost",
+        "unit": "EUR/vehicle",
+        "importance": "",
+        "source": "NIU EU replacement-charger listings, retrieved 2026-10-08; see kick_scooter_charger_cost_provenance.json",
+        "comment": "Kick-scooter charger: EUR 70 mode, engineering triangular range EUR 40-100. Current replacement retail prices used as an undated proxy for the 2025 model, without inflation adjustment. Constant across native years, not historical or forecast nominal prices. Retain legacy parameter name for compatibility; applied once without markup. No refitting of glider cost or changes to charger mass, efficiency or inventory.",
+        "status": "Provisional retail-price proxy",
+        "kind": "distribution",
+        "uncertainty_type": 5,
+        "loc": 70,
+        "minimum": 40,
+        "maximum": 100
+    },
+    "kick-scooter-charger-2010": {
+        "amount": 70,
+        "category": "Costs",
+        "powertrain": [
+            "BEV"
+        ],
+        "sizes": [
+            "Kick-scooter"
+        ],
+        "year": 2010,
+        "name": "battery onboard charging infrastructure cost",
+        "unit": "EUR/vehicle",
+        "importance": "",
+        "source": "NIU EU replacement-charger listings, retrieved 2026-10-08; see kick_scooter_charger_cost_provenance.json",
+        "comment": "Kick-scooter charger: EUR 70 mode, engineering triangular range EUR 40-100. Current replacement retail prices used as an undated proxy for the 2025 model, without inflation adjustment. Constant across native years, not historical or forecast nominal prices. Retain legacy parameter name for compatibility; applied once without markup. No refitting of glider cost or changes to charger mass, efficiency or inventory.",
+        "status": "Provisional retail-price proxy",
+        "kind": "distribution",
+        "uncertainty_type": 5,
+        "loc": 70,
+        "minimum": 40,
+        "maximum": 100
+    },
+    "kick-scooter-charger-2020": {
+        "amount": 70,
+        "category": "Costs",
+        "powertrain": [
+            "BEV"
+        ],
+        "sizes": [
+            "Kick-scooter"
+        ],
+        "year": 2020,
+        "name": "battery onboard charging infrastructure cost",
+        "unit": "EUR/vehicle",
+        "importance": "",
+        "source": "NIU EU replacement-charger listings, retrieved 2026-10-08; see kick_scooter_charger_cost_provenance.json",
+        "comment": "Kick-scooter charger: EUR 70 mode, engineering triangular range EUR 40-100. Current replacement retail prices used as an undated proxy for the 2025 model, without inflation adjustment. Constant across native years, not historical or forecast nominal prices. Retain legacy parameter name for compatibility; applied once without markup. No refitting of glider cost or changes to charger mass, efficiency or inventory.",
+        "status": "Provisional retail-price proxy",
+        "kind": "distribution",
+        "uncertainty_type": 5,
+        "loc": 70,
+        "minimum": 40,
+        "maximum": 100
+    },
+    "kick-scooter-charger-2030": {
+        "amount": 70,
+        "category": "Costs",
+        "powertrain": [
+            "BEV"
+        ],
+        "sizes": [
+            "Kick-scooter"
+        ],
+        "year": 2030,
+        "name": "battery onboard charging infrastructure cost",
+        "unit": "EUR/vehicle",
+        "importance": "",
+        "source": "NIU EU replacement-charger listings, retrieved 2026-10-08; see kick_scooter_charger_cost_provenance.json",
+        "comment": "Kick-scooter charger: EUR 70 mode, engineering triangular range EUR 40-100. Current replacement retail prices used as an undated proxy for the 2025 model, without inflation adjustment. Constant across native years, not historical or forecast nominal prices. Retain legacy parameter name for compatibility; applied once without markup. No refitting of glider cost or changes to charger mass, efficiency or inventory.",
+        "status": "Provisional retail-price proxy",
+        "kind": "distribution",
+        "uncertainty_type": 5,
+        "loc": 70,
+        "minimum": 40,
+        "maximum": 100
+    },
+    "kick-scooter-charger-2040": {
+        "amount": 70,
+        "category": "Costs",
+        "powertrain": [
+            "BEV"
+        ],
+        "sizes": [
+            "Kick-scooter"
+        ],
+        "year": 2040,
+        "name": "battery onboard charging infrastructure cost",
+        "unit": "EUR/vehicle",
+        "importance": "",
+        "source": "NIU EU replacement-charger listings, retrieved 2026-10-08; see kick_scooter_charger_cost_provenance.json",
+        "comment": "Kick-scooter charger: EUR 70 mode, engineering triangular range EUR 40-100. Current replacement retail prices used as an undated proxy for the 2025 model, without inflation adjustment. Constant across native years, not historical or forecast nominal prices. Retain legacy parameter name for compatibility; applied once without markup. No refitting of glider cost or changes to charger mass, efficiency or inventory.",
+        "status": "Provisional retail-price proxy",
+        "kind": "distribution",
+        "uncertainty_type": 5,
+        "loc": 70,
+        "minimum": 40,
+        "maximum": 100
+    },
+    "kick-scooter-charger-2050": {
+        "amount": 70,
+        "category": "Costs",
+        "powertrain": [
+            "BEV"
+        ],
+        "sizes": [
+            "Kick-scooter"
+        ],
+        "year": 2050,
+        "name": "battery onboard charging infrastructure cost",
+        "unit": "EUR/vehicle",
+        "importance": "",
+        "source": "NIU EU replacement-charger listings, retrieved 2026-10-08; see kick_scooter_charger_cost_provenance.json",
+        "comment": "Kick-scooter charger: EUR 70 mode, engineering triangular range EUR 40-100. Current replacement retail prices used as an undated proxy for the 2025 model, without inflation adjustment. Constant across native years, not historical or forecast nominal prices. Retain legacy parameter name for compatibility; applied once without markup. No refitting of glider cost or changes to charger mass, efficiency or inventory.",
+        "status": "Provisional retail-price proxy",
+        "kind": "distribution",
+        "uncertainty_type": 5,
+        "loc": 70,
+        "minimum": 40,
+        "maximum": 100
+    },
+    "kick-scooter-charger-2025": {
+        "amount": 70,
+        "category": "Costs",
+        "powertrain": [
+            "BEV"
+        ],
+        "sizes": [
+            "Kick-scooter"
+        ],
+        "year": 2025,
+        "name": "battery onboard charging infrastructure cost",
+        "unit": "EUR/vehicle",
+        "importance": "",
+        "source": "NIU EU replacement-charger listings, retrieved 2026-10-08; see kick_scooter_charger_cost_provenance.json",
+        "comment": "Kick-scooter charger: EUR 70 mode, engineering triangular range EUR 40-100. Current replacement retail prices used as an undated proxy for the 2025 model, without inflation adjustment. Constant across native years, not historical or forecast nominal prices. Retain legacy parameter name for compatibility; applied once without markup. No refitting of glider cost or changes to charger mass, efficiency or inventory.",
+        "status": "Provisional retail-price proxy",
+        "kind": "distribution",
+        "uncertainty_type": 5,
+        "loc": 70,
+        "minimum": 40,
+        "maximum": 100
     }
 }

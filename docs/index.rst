@@ -74,6 +74,7 @@ User's Guide
    bicycle_costs
    small_vehicle_costs
    heat_pump_costs
+   kick_scooter_charger_costs
 
 API Reference
 -------------

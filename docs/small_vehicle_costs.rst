@@ -53,9 +53,10 @@ changes the purchase total; no runtime refitting absorbs those changes.
 The inherited **EUR 300 heat-pump charge** was deliberately excluded from the
 calibration residual and has since been removed by :doc:`heat_pump_costs`.
 Without refitting the glider, the default electric scooter purchase total is
-now EUR 1,999 and the kick-scooter total is EUR 374.26. The roughly EUR 164
-charger charge remains unchanged. Complete electric prices still require
-qualification. Matching the petrol price anchors
+now EUR 1,999. The subsequent :doc:`kick_scooter_charger_costs` correction sets
+the kick-scooter charger to EUR 70 and its purchase total to EUR 279.91. The
+other classes retain their charger assumptions. Complete electric prices still
+require qualification. Matching the petrol price anchors
 by construction is a calibration result, not independent validation.
 
 Time and uncertainty
@@ -142,7 +143,7 @@ complete purchase breakdowns, annual costs and unchanged inventory/LCIA checks.
 Those recorded totals predate the heat-pump correction. Rerunning this audit
 isolates the glider change against the currently installed defaults.
 
-Charger costs, complete e-bike costs, human-only bicycle inputs
+Charger costs for other classes, complete e-bike costs, human-only bicycle inputs
 and a common currency-year basis remain open. Battery-override and sample-label
 limitations in :doc:`validity` and :doc:`petrol_efficiency` are unaffected. These
 cost changes do not constitute new fuel-consumption or physical calibration.
