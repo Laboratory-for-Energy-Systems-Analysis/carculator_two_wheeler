@@ -71,6 +71,7 @@ User's Guide
    structure
    validity
    bev_sizing
+   battery_replacements
    petrol_efficiency
    bicycle_costs
    small_vehicle_costs

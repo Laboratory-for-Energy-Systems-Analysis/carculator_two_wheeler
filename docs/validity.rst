@@ -140,3 +140,13 @@ years and samples, all available BEV sizes, and battery/electricity inventory
 coefficients. Capacity and pack-mass changes also propagate through consumption
 and range. See :doc:`bev_sizing` for the method, override contracts and numerical
 checks. This establishes software consistency, not new empirical calibration.
+
+Battery replacement policy
+--------------------------
+
+The former mandatory extra battery has been removed for two-wheelers.
+Replacement factors now allow zero when lifetime throughput is within the
+configured cycle life. Production, disposal and replacement costs use the same
+factor. See :doc:`battery_replacements` for completed inventory checks and the
+retained fractional-allocation, upper-cap and calendar-ageing limitations.
+This correction does not change consumption calibration or prove battery durability.

@@ -294,21 +294,15 @@ class TwoWheelerModel(VehicleModel):
         )
 
     def set_battery_fuel_cell_replacements(self):
+        """Calculate fractional replacement packs from lifetime energy throughput.
+
+        Cycling demand within the first pack's life requires no replacement.
+        Preserve the existing continuous allocation and upper bound of three
+        replacements; this is not a rounded count of physical replacement events.
+        Cycle life uses equivalent full cycles of nominal capacity, without a
+        separate DoD or calendar-age correction. Only vehicles with a charger
+        receive energy-battery replacements.
         """
-        This methods calculates the number of replacement batteries needed
-        to match the vehicle lifetime. Given the chemistry used,
-        the cycle life is known. Given the lifetime kilometers and
-        the kilometers per charge, the number of charge cycles can be inferred.
-
-        If the battery lifetime surpasses the vehicle lifetime,
-        100% of the burden of the battery production is allocated to the vehicle.
-        Also, the number of replacement is rounded up.
-        This means that the entirety of the battery replacement is allocated
-        to the vehicle (and not to its potential second life).
-
-        """
-        # Number of replacement of battery is rounded *up*
-
         _ = lambda array: np.where(array == 0, 1, array)
 
         self["battery lifetime replacements"] = np.clip(
@@ -318,7 +312,7 @@ class TwoWheelerModel(VehicleModel):
                 / _(self["battery cycle life"])
                 - 1
             ),
-            1,
+            0,
             3,
         ) * (self["charger mass"] > 0)
 

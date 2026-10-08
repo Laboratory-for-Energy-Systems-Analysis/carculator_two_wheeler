@@ -89,6 +89,10 @@ BEV range targets now converge battery capacity, vehicle mass and cycle energy
 together. Fixed-capacity and pack-mass scenarios also propagate through range,
 consumption and inventories; see [battery sizing and override examples](docs/bev_sizing.rst).
 
+Two-wheelers no longer force a replacement battery: replacement fractions follow
+lifetime energy throughput and can be zero. Initial battery supply is retained;
+see [replacement accounting and limits](docs/battery_replacements.rst).
+
 Supported background scenarios are `SSP2-NPi`, `SSP2-PkBudg1000`,
 `SSP2-PkBudg650`, and `static`. ReCiPe supports midpoint/endpoint and EF midpoint.
 Use fresh model instances for independent cases. `inputs.stochastic(n, seed=...)`

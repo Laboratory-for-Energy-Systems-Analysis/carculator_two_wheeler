@@ -27,7 +27,9 @@ year and sample, with relative tolerance ``1e-5`` and the shared bounded
 A fixed curb mass also requires convergence of the glider mass: otherwise the
 fixed total can conceal an inconsistent component sum. Replacements, costs,
 emissions and inventories are calculated from the completed sizing result.
-The replacement policy and component-efficiency assumptions are unchanged.
+The sizing repair itself did not change replacement or component-efficiency
+assumptions. The subsequent :doc:`battery_replacements` correction removes the
+mandatory extra pack for two-wheelers.
 
 Selecting the input constraint
 ------------------------------

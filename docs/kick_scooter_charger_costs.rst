@@ -54,7 +54,10 @@ validate those physical parameters. Explicit user cost overrides remain valid.
 Completed-run results
 ---------------------
 
-Default kick-scooter results, in EUR per vehicle and EUR per vehicle-kilometre:
+Recorded kick-scooter results immediately after the charger correction, in
+EUR per vehicle and EUR per vehicle-kilometre. The later
+:doc:`battery_replacements` correction further reduces total costs; purchase
+costs in this table are unchanged:
 
 .. list-table::
    :header-rows: 1

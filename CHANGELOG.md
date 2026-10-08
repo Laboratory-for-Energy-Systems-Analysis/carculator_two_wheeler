@@ -67,6 +67,13 @@ it has not yet been published. Older entries, where present, retain their origin
 - Preserve range/capacity/mass precedence and scoped overrides. Apply consumption overrides after building the energy trace, propagate fixed curb mass through component sizing, and align labelled samples.
 - Test four chemistries, 2020/2025/2030 and all available BEV sizes, including independent mass/energy balances, fresh capacity-constrained runs and completed battery/electricity inventory coefficients. Default outputs remain unchanged across all size/powertrain combinations in those three years. See [battery sizing](docs/bev_sizing.rst); this is a physical-consistency repair, not empirical recalibration.
 
+### Battery replacement correction (2026-10-08)
+
+- Remove the mandatory one-replacement minimum for two-wheelers. Allow zero when lifetime throughput fits within the first battery life; retain fractional allocation and the existing cap of three replacements.
+- Preserve the initial battery, sizing, energy use and purchase costs. Propagate the corrected factor through replacement costs, battery supply, disposal and LCIA. All nine available BEV sizes have zero replacements with default 2020/2025/2030 inputs.
+- Verify 27 paired before/after default cases and completed zero/fractional/multiple/capped replacement scenarios. The 2025 kick-scooter battery supply falls from 3.2 to 1.6 kg and total modelled cost from EUR 0.20450 to EUR 0.17331/vkm. Earlier audit tables retain their historical results. See [replacement accounting](docs/battery_replacements.rst).
+- Keep the deliberate minimum-one-replacement bus assumption unchanged and documented in `carculator_bus`.
+
 ### Known limitations
 
 - Negative glider costs in the repaired bicycle and small-vehicle scopes are resolved, but charger costs for other classes, human-only bicycle inputs, complete e-bike costs and currency-year consistency still require review. See [bicycle costs](docs/bicycle_costs.rst) and [small-vehicle costs](docs/small_vehicle_costs.rst).

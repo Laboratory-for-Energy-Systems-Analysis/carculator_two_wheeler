@@ -38,6 +38,8 @@ Recorded results immediately after the heat-pump correction. All rows are BEV,
 with purchase in EUR per vehicle and total cost in EUR/vkm. The subsequent
 :doc:`kick_scooter_charger_costs` correction reduces the 2025 kick-scooter purchase
 from EUR 374.26 to EUR 279.91; the other rows are unaffected by that correction.
+The later :doc:`battery_replacements` correction further reduces total costs
+without changing purchase costs.
 
 .. list-table::
    :header-rows: 1

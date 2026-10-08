@@ -11,6 +11,9 @@ and `docs/small_vehicle_costs.rst`. The cabin heat-pump default is now zero;
 `docs/heat_pump_costs.rst` records the equipment-scope correction and override checks.
 The kick-scooter charger now uses a provisional EUR 70 prior; see
 `docs/kick_scooter_charger_costs.rst` for uncertainty and price-date limits.
+Two-wheelers now allow zero cycle-derived battery replacements; recalculate
+ownership costs and LCIA for saved scenarios. See `docs/battery_replacements.rst`
+for the retained fractional-allocation assumptions and verification.
 Use Python 3.12 and review the matching family set:
 
 | Package | Prepared version |

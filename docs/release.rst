@@ -32,3 +32,7 @@ BEV target-range runs now converge battery size, vehicle mass and consumption
 together. Recalculate saved range-constrained scenarios; explicit capacity,
 pack-mass, curb-mass and consumption constraints are covered by the checks in
 :doc:`bev_sizing`.
+
+Two-wheelers no longer force one replacement battery. Recalculate battery
+production/disposal impacts and ownership costs; the initial battery remains
+included. See :doc:`battery_replacements` for the cycle-based rule and limits.

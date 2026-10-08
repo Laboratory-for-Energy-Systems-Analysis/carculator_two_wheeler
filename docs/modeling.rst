@@ -9,7 +9,9 @@ Modeling
    The inventory and owner-reported energy sources below describe the original
    model assumptions. For current 2025 priors, temporal consistency and the
    absence of a new independent two-wheeler consumption calibration, see
-   :doc:`validity`.
+   :doc:`validity`. Current battery replacement factors are calculated from
+   lifetime throughput, allowing zero; see :doc:`battery_replacements`. The
+   fixed counts in the historical tables below are not current model inputs.
 
 This document describes the ``carculator_two_wheeler`` model, assumptions
 and inventories as exhaustively as possible.
@@ -319,6 +321,11 @@ The disposal of the bicycle is specified separately.
 Specifications (i.e., curb mass, motor power, battery capacity, and range autonomy) for
 commercially available electric bicycles in :ref:`Annex A <annex-a>`. Specifications for electric bicycles
 considered in this study are presented in :ref:`Table 5 <table-5>`.
+
+The battery replacement row in the following historical table records the
+original one-replacement assumption. The current model instead uses the
+throughput rule in :doc:`battery_replacements`; all three bicycle classes
+have zero replacements under the 2020/2025/2030 default inputs.
 
 .. _table-5:
 
