@@ -3,8 +3,8 @@
 Status: release candidate prepared; publication remains pending maintainer review.
 The implausible petrol-efficiency inputs have been corrected with a provisional
 historical prior, documented in `docs/petrol_efficiency.rst`. Review the remaining
-consumption evidence gaps, negative bicycle cost and battery-override qualification
-before publication. Use Python 3.12 and review the matching family set:
+consumption evidence gaps, remaining light-vehicle cost defects and
+battery-override qualification before publication. Use Python 3.12 and review the matching family set:
 
 | Package | Prepared version |
 | --- | --- |

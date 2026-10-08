@@ -23683,9 +23683,6 @@
         ],
         "sizes": [
             "Kick-scooter",
-            "Bicycle <25",
-            "Bicycle cargo",
-            "Bicycle <45",
             "Moped <4kW",
             "Scooter <4kW",
             "Scooter 4-11kW",
@@ -23712,9 +23709,6 @@
         ],
         "sizes": [
             "Kick-scooter",
-            "Bicycle <25",
-            "Bicycle cargo",
-            "Bicycle <45",
             "Moped <4kW",
             "Scooter <4kW",
             "Scooter 4-11kW",
@@ -23741,9 +23735,6 @@
         ],
         "sizes": [
             "Kick-scooter",
-            "Bicycle <25",
-            "Bicycle cargo",
-            "Bicycle <45",
             "Moped <4kW",
             "Scooter <4kW",
             "Scooter 4-11kW",
@@ -23770,9 +23761,6 @@
         ],
         "sizes": [
             "Kick-scooter",
-            "Bicycle <25",
-            "Bicycle cargo",
-            "Bicycle <45",
             "Moped <4kW",
             "Scooter <4kW",
             "Scooter 4-11kW",
@@ -23799,9 +23787,6 @@
         ],
         "sizes": [
             "Kick-scooter",
-            "Bicycle <25",
-            "Bicycle cargo",
-            "Bicycle <45",
             "Moped <4kW",
             "Scooter <4kW",
             "Scooter 4-11kW",
@@ -23828,9 +23813,6 @@
         ],
         "sizes": [
             "Kick-scooter",
-            "Bicycle <25",
-            "Bicycle cargo",
-            "Bicycle <45",
             "Moped <4kW",
             "Scooter <4kW",
             "Scooter 4-11kW",
@@ -24031,9 +24013,6 @@
         ],
         "sizes": [
             "Kick-scooter",
-            "Bicycle <25",
-            "Bicycle cargo",
-            "Bicycle <45",
             "Moped <4kW",
             "Scooter <4kW",
             "Scooter 4-11kW",
@@ -24062,9 +24041,6 @@
         ],
         "sizes": [
             "Kick-scooter",
-            "Bicycle <25",
-            "Bicycle cargo",
-            "Bicycle <45",
             "Moped <4kW",
             "Scooter <4kW",
             "Scooter 4-11kW",
@@ -24093,9 +24069,6 @@
         ],
         "sizes": [
             "Kick-scooter",
-            "Bicycle <25",
-            "Bicycle cargo",
-            "Bicycle <45",
             "Moped <4kW",
             "Scooter <4kW",
             "Scooter 4-11kW",
@@ -24124,9 +24097,6 @@
         ],
         "sizes": [
             "Kick-scooter",
-            "Bicycle <25",
-            "Bicycle cargo",
-            "Bicycle <45",
             "Moped <4kW",
             "Scooter <4kW",
             "Scooter 4-11kW",
@@ -24155,9 +24125,6 @@
         ],
         "sizes": [
             "Kick-scooter",
-            "Bicycle <25",
-            "Bicycle cargo",
-            "Bicycle <45",
             "Moped <4kW",
             "Scooter <4kW",
             "Scooter 4-11kW",
@@ -24186,9 +24153,6 @@
         ],
         "sizes": [
             "Kick-scooter",
-            "Bicycle <25",
-            "Bicycle cargo",
-            "Bicycle <45",
             "Moped <4kW",
             "Scooter <4kW",
             "Scooter 4-11kW",
@@ -38475,9 +38439,6 @@
             "BEV"
         ],
         "sizes": [
-            "Bicycle <25",
-            "Bicycle <45",
-            "Bicycle cargo",
             "Kick-scooter",
             "Moped <4kW",
             "Motorcycle 11-35kW",
@@ -38533,9 +38494,6 @@
             "BEV"
         ],
         "sizes": [
-            "Bicycle <25",
-            "Bicycle <45",
-            "Bicycle cargo",
             "Kick-scooter",
             "Moped <4kW",
             "Motorcycle 11-35kW",
@@ -41172,5 +41130,327 @@
             "Human",
             "ICEV-p"
         ]
+    },
+    "bicycle-cost-2000-glider cost intercept": {
+        "amount": 0,
+        "category": "Costs",
+        "powertrain": [
+            "BEV"
+        ],
+        "sizes": [
+            "Bicycle <25",
+            "Bicycle <45",
+            "Bicycle cargo"
+        ],
+        "year": 2000,
+        "name": "glider cost intercept",
+        "unit": "Euro / vehicle",
+        "importance": "",
+        "source": "ZIV, 2025 Market Data for the Bicycle Industry (11 March 2026), slide 18: non-electric bicycle gross average sales price EUR 500. https://www.ziv-zweirad.de/wp-content/uploads/2026/03/Market-Data-Bicycle-Industry-2025.pdf",
+        "comment": "2026-10-08 bicycle-only repair: replace the negative-intercept vehicle fit with a positive proportional mechanical-bicycle prior. Slope = 500 EUR / (12 kg reference non-electric bicycle glider * 1.2 reference markup); intercept = 0. The 12 kg mass and 1.2 markup are model assumptions, not measured by ZIV. The EUR 500 retail price is a proxy for the mechanical bicycle only; motor and battery remain separate. Constant real-2025-EUR prior across native years; relative slope uncertainty retained. Transfer to electric/speed/cargo bicycle gliders and mass scaling are provisional, not empirically calibrated. See bicycle_cost_provenance.json and docs/bicycle_costs.rst.",
+        "status": "Provisional engineering prior",
+        "kind": "distribution",
+        "uncertainty_type": 1,
+        "loc": 0
+    },
+    "bicycle-cost-2010-glider cost intercept": {
+        "amount": 0,
+        "category": "Costs",
+        "powertrain": [
+            "BEV"
+        ],
+        "sizes": [
+            "Bicycle <25",
+            "Bicycle <45",
+            "Bicycle cargo"
+        ],
+        "year": 2010,
+        "name": "glider cost intercept",
+        "unit": "Euro / vehicle",
+        "importance": "",
+        "source": "ZIV, 2025 Market Data for the Bicycle Industry (11 March 2026), slide 18: non-electric bicycle gross average sales price EUR 500. https://www.ziv-zweirad.de/wp-content/uploads/2026/03/Market-Data-Bicycle-Industry-2025.pdf",
+        "comment": "2026-10-08 bicycle-only repair: replace the negative-intercept vehicle fit with a positive proportional mechanical-bicycle prior. Slope = 500 EUR / (12 kg reference non-electric bicycle glider * 1.2 reference markup); intercept = 0. The 12 kg mass and 1.2 markup are model assumptions, not measured by ZIV. The EUR 500 retail price is a proxy for the mechanical bicycle only; motor and battery remain separate. Constant real-2025-EUR prior across native years; relative slope uncertainty retained. Transfer to electric/speed/cargo bicycle gliders and mass scaling are provisional, not empirically calibrated. See bicycle_cost_provenance.json and docs/bicycle_costs.rst.",
+        "status": "Provisional engineering prior",
+        "kind": "distribution",
+        "uncertainty_type": 1,
+        "loc": 0
+    },
+    "bicycle-cost-2020-glider cost intercept": {
+        "amount": 0,
+        "category": "Costs",
+        "powertrain": [
+            "BEV"
+        ],
+        "sizes": [
+            "Bicycle <25",
+            "Bicycle <45",
+            "Bicycle cargo"
+        ],
+        "year": 2020,
+        "name": "glider cost intercept",
+        "unit": "Euro / vehicle",
+        "importance": "",
+        "source": "ZIV, 2025 Market Data for the Bicycle Industry (11 March 2026), slide 18: non-electric bicycle gross average sales price EUR 500. https://www.ziv-zweirad.de/wp-content/uploads/2026/03/Market-Data-Bicycle-Industry-2025.pdf",
+        "comment": "2026-10-08 bicycle-only repair: replace the negative-intercept vehicle fit with a positive proportional mechanical-bicycle prior. Slope = 500 EUR / (12 kg reference non-electric bicycle glider * 1.2 reference markup); intercept = 0. The 12 kg mass and 1.2 markup are model assumptions, not measured by ZIV. The EUR 500 retail price is a proxy for the mechanical bicycle only; motor and battery remain separate. Constant real-2025-EUR prior across native years; relative slope uncertainty retained. Transfer to electric/speed/cargo bicycle gliders and mass scaling are provisional, not empirically calibrated. See bicycle_cost_provenance.json and docs/bicycle_costs.rst.",
+        "status": "Provisional engineering prior",
+        "kind": "distribution",
+        "uncertainty_type": 1,
+        "loc": 0
+    },
+    "bicycle-cost-2030-glider cost intercept": {
+        "amount": 0,
+        "category": "Costs",
+        "powertrain": [
+            "BEV"
+        ],
+        "sizes": [
+            "Bicycle <25",
+            "Bicycle <45",
+            "Bicycle cargo"
+        ],
+        "year": 2030,
+        "name": "glider cost intercept",
+        "unit": "Euro / vehicle",
+        "importance": "",
+        "source": "ZIV, 2025 Market Data for the Bicycle Industry (11 March 2026), slide 18: non-electric bicycle gross average sales price EUR 500. https://www.ziv-zweirad.de/wp-content/uploads/2026/03/Market-Data-Bicycle-Industry-2025.pdf",
+        "comment": "2026-10-08 bicycle-only repair: replace the negative-intercept vehicle fit with a positive proportional mechanical-bicycle prior. Slope = 500 EUR / (12 kg reference non-electric bicycle glider * 1.2 reference markup); intercept = 0. The 12 kg mass and 1.2 markup are model assumptions, not measured by ZIV. The EUR 500 retail price is a proxy for the mechanical bicycle only; motor and battery remain separate. Constant real-2025-EUR prior across native years; relative slope uncertainty retained. Transfer to electric/speed/cargo bicycle gliders and mass scaling are provisional, not empirically calibrated. See bicycle_cost_provenance.json and docs/bicycle_costs.rst.",
+        "status": "Provisional engineering prior",
+        "kind": "distribution",
+        "uncertainty_type": 1,
+        "loc": 0
+    },
+    "bicycle-cost-2040-glider cost intercept": {
+        "amount": 0,
+        "category": "Costs",
+        "powertrain": [
+            "BEV"
+        ],
+        "sizes": [
+            "Bicycle <25",
+            "Bicycle <45",
+            "Bicycle cargo"
+        ],
+        "year": 2040,
+        "name": "glider cost intercept",
+        "unit": "Euro / vehicle",
+        "importance": "",
+        "source": "ZIV, 2025 Market Data for the Bicycle Industry (11 March 2026), slide 18: non-electric bicycle gross average sales price EUR 500. https://www.ziv-zweirad.de/wp-content/uploads/2026/03/Market-Data-Bicycle-Industry-2025.pdf",
+        "comment": "2026-10-08 bicycle-only repair: replace the negative-intercept vehicle fit with a positive proportional mechanical-bicycle prior. Slope = 500 EUR / (12 kg reference non-electric bicycle glider * 1.2 reference markup); intercept = 0. The 12 kg mass and 1.2 markup are model assumptions, not measured by ZIV. The EUR 500 retail price is a proxy for the mechanical bicycle only; motor and battery remain separate. Constant real-2025-EUR prior across native years; relative slope uncertainty retained. Transfer to electric/speed/cargo bicycle gliders and mass scaling are provisional, not empirically calibrated. See bicycle_cost_provenance.json and docs/bicycle_costs.rst.",
+        "status": "Provisional engineering prior",
+        "kind": "distribution",
+        "uncertainty_type": 1,
+        "loc": 0
+    },
+    "bicycle-cost-2050-glider cost intercept": {
+        "amount": 0,
+        "category": "Costs",
+        "powertrain": [
+            "BEV"
+        ],
+        "sizes": [
+            "Bicycle <25",
+            "Bicycle <45",
+            "Bicycle cargo"
+        ],
+        "year": 2050,
+        "name": "glider cost intercept",
+        "unit": "Euro / vehicle",
+        "importance": "",
+        "source": "ZIV, 2025 Market Data for the Bicycle Industry (11 March 2026), slide 18: non-electric bicycle gross average sales price EUR 500. https://www.ziv-zweirad.de/wp-content/uploads/2026/03/Market-Data-Bicycle-Industry-2025.pdf",
+        "comment": "2026-10-08 bicycle-only repair: replace the negative-intercept vehicle fit with a positive proportional mechanical-bicycle prior. Slope = 500 EUR / (12 kg reference non-electric bicycle glider * 1.2 reference markup); intercept = 0. The 12 kg mass and 1.2 markup are model assumptions, not measured by ZIV. The EUR 500 retail price is a proxy for the mechanical bicycle only; motor and battery remain separate. Constant real-2025-EUR prior across native years; relative slope uncertainty retained. Transfer to electric/speed/cargo bicycle gliders and mass scaling are provisional, not empirically calibrated. See bicycle_cost_provenance.json and docs/bicycle_costs.rst.",
+        "status": "Provisional engineering prior",
+        "kind": "distribution",
+        "uncertainty_type": 1,
+        "loc": 0
+    },
+    "bicycle-cost-2000-glider cost slope": {
+        "amount": 34.72222222222223,
+        "category": "Costs",
+        "powertrain": [
+            "BEV"
+        ],
+        "sizes": [
+            "Bicycle <25",
+            "Bicycle <45",
+            "Bicycle cargo"
+        ],
+        "year": 2000,
+        "name": "glider cost slope",
+        "unit": "Euro / kg",
+        "importance": "",
+        "source": "ZIV, 2025 Market Data for the Bicycle Industry (11 March 2026), slide 18: non-electric bicycle gross average sales price EUR 500. https://www.ziv-zweirad.de/wp-content/uploads/2026/03/Market-Data-Bicycle-Industry-2025.pdf",
+        "comment": "2026-10-08 bicycle-only repair: replace the negative-intercept vehicle fit with a positive proportional mechanical-bicycle prior. Slope = 500 EUR / (12 kg reference non-electric bicycle glider * 1.2 reference markup); intercept = 0. The 12 kg mass and 1.2 markup are model assumptions, not measured by ZIV. The EUR 500 retail price is a proxy for the mechanical bicycle only; motor and battery remain separate. Constant real-2025-EUR prior across native years; relative slope uncertainty retained. Transfer to electric/speed/cargo bicycle gliders and mass scaling are provisional, not empirically calibrated. See bicycle_cost_provenance.json and docs/bicycle_costs.rst.",
+        "status": "Provisional engineering prior",
+        "kind": "distribution",
+        "uncertainty_type": 5,
+        "loc": 34.72222222222223,
+        "minimum": 19.531250000000004,
+        "maximum": 39.06250000000001
+    },
+    "bicycle-cost-2010-glider cost slope": {
+        "amount": 34.72222222222223,
+        "category": "Costs",
+        "powertrain": [
+            "BEV"
+        ],
+        "sizes": [
+            "Bicycle <25",
+            "Bicycle <45",
+            "Bicycle cargo"
+        ],
+        "year": 2010,
+        "name": "glider cost slope",
+        "unit": "Euro / kg",
+        "importance": "",
+        "source": "ZIV, 2025 Market Data for the Bicycle Industry (11 March 2026), slide 18: non-electric bicycle gross average sales price EUR 500. https://www.ziv-zweirad.de/wp-content/uploads/2026/03/Market-Data-Bicycle-Industry-2025.pdf",
+        "comment": "2026-10-08 bicycle-only repair: replace the negative-intercept vehicle fit with a positive proportional mechanical-bicycle prior. Slope = 500 EUR / (12 kg reference non-electric bicycle glider * 1.2 reference markup); intercept = 0. The 12 kg mass and 1.2 markup are model assumptions, not measured by ZIV. The EUR 500 retail price is a proxy for the mechanical bicycle only; motor and battery remain separate. Constant real-2025-EUR prior across native years; relative slope uncertainty retained. Transfer to electric/speed/cargo bicycle gliders and mass scaling are provisional, not empirically calibrated. See bicycle_cost_provenance.json and docs/bicycle_costs.rst.",
+        "status": "Provisional engineering prior",
+        "kind": "distribution",
+        "uncertainty_type": 5,
+        "loc": 34.72222222222223,
+        "minimum": 19.531250000000004,
+        "maximum": 39.06250000000001
+    },
+    "bicycle-cost-2020-glider cost slope": {
+        "amount": 34.72222222222223,
+        "category": "Costs",
+        "powertrain": [
+            "BEV"
+        ],
+        "sizes": [
+            "Bicycle <25",
+            "Bicycle <45",
+            "Bicycle cargo"
+        ],
+        "year": 2020,
+        "name": "glider cost slope",
+        "unit": "Euro / kg",
+        "importance": "",
+        "source": "ZIV, 2025 Market Data for the Bicycle Industry (11 March 2026), slide 18: non-electric bicycle gross average sales price EUR 500. https://www.ziv-zweirad.de/wp-content/uploads/2026/03/Market-Data-Bicycle-Industry-2025.pdf",
+        "comment": "2026-10-08 bicycle-only repair: replace the negative-intercept vehicle fit with a positive proportional mechanical-bicycle prior. Slope = 500 EUR / (12 kg reference non-electric bicycle glider * 1.2 reference markup); intercept = 0. The 12 kg mass and 1.2 markup are model assumptions, not measured by ZIV. The EUR 500 retail price is a proxy for the mechanical bicycle only; motor and battery remain separate. Constant real-2025-EUR prior across native years; relative slope uncertainty retained. Transfer to electric/speed/cargo bicycle gliders and mass scaling are provisional, not empirically calibrated. See bicycle_cost_provenance.json and docs/bicycle_costs.rst.",
+        "status": "Provisional engineering prior",
+        "kind": "distribution",
+        "uncertainty_type": 5,
+        "loc": 34.72222222222223,
+        "minimum": 19.531250000000004,
+        "maximum": 39.06250000000001
+    },
+    "bicycle-cost-2030-glider cost slope": {
+        "amount": 34.72222222222223,
+        "category": "Costs",
+        "powertrain": [
+            "BEV"
+        ],
+        "sizes": [
+            "Bicycle <25",
+            "Bicycle <45",
+            "Bicycle cargo"
+        ],
+        "year": 2030,
+        "name": "glider cost slope",
+        "unit": "Euro / kg",
+        "importance": "",
+        "source": "ZIV, 2025 Market Data for the Bicycle Industry (11 March 2026), slide 18: non-electric bicycle gross average sales price EUR 500. https://www.ziv-zweirad.de/wp-content/uploads/2026/03/Market-Data-Bicycle-Industry-2025.pdf",
+        "comment": "2026-10-08 bicycle-only repair: replace the negative-intercept vehicle fit with a positive proportional mechanical-bicycle prior. Slope = 500 EUR / (12 kg reference non-electric bicycle glider * 1.2 reference markup); intercept = 0. The 12 kg mass and 1.2 markup are model assumptions, not measured by ZIV. The EUR 500 retail price is a proxy for the mechanical bicycle only; motor and battery remain separate. Constant real-2025-EUR prior across native years; relative slope uncertainty retained. Transfer to electric/speed/cargo bicycle gliders and mass scaling are provisional, not empirically calibrated. See bicycle_cost_provenance.json and docs/bicycle_costs.rst.",
+        "status": "Provisional engineering prior",
+        "kind": "distribution",
+        "uncertainty_type": 5,
+        "loc": 34.72222222222223,
+        "minimum": 27.777777777777786,
+        "maximum": 41.66666666666667
+    },
+    "bicycle-cost-2040-glider cost slope": {
+        "amount": 34.72222222222223,
+        "category": "Costs",
+        "powertrain": [
+            "BEV"
+        ],
+        "sizes": [
+            "Bicycle <25",
+            "Bicycle <45",
+            "Bicycle cargo"
+        ],
+        "year": 2040,
+        "name": "glider cost slope",
+        "unit": "Euro / kg",
+        "importance": "",
+        "source": "ZIV, 2025 Market Data for the Bicycle Industry (11 March 2026), slide 18: non-electric bicycle gross average sales price EUR 500. https://www.ziv-zweirad.de/wp-content/uploads/2026/03/Market-Data-Bicycle-Industry-2025.pdf",
+        "comment": "2026-10-08 bicycle-only repair: replace the negative-intercept vehicle fit with a positive proportional mechanical-bicycle prior. Slope = 500 EUR / (12 kg reference non-electric bicycle glider * 1.2 reference markup); intercept = 0. The 12 kg mass and 1.2 markup are model assumptions, not measured by ZIV. The EUR 500 retail price is a proxy for the mechanical bicycle only; motor and battery remain separate. Constant real-2025-EUR prior across native years; relative slope uncertainty retained. Transfer to electric/speed/cargo bicycle gliders and mass scaling are provisional, not empirically calibrated. See bicycle_cost_provenance.json and docs/bicycle_costs.rst.",
+        "status": "Provisional engineering prior",
+        "kind": "distribution",
+        "uncertainty_type": 5,
+        "loc": 34.72222222222223,
+        "minimum": 23.871527777777782,
+        "maximum": 39.06250000000001
+    },
+    "bicycle-cost-2050-glider cost slope": {
+        "amount": 34.72222222222223,
+        "category": "Costs",
+        "powertrain": [
+            "BEV"
+        ],
+        "sizes": [
+            "Bicycle <25",
+            "Bicycle <45",
+            "Bicycle cargo"
+        ],
+        "year": 2050,
+        "name": "glider cost slope",
+        "unit": "Euro / kg",
+        "importance": "",
+        "source": "ZIV, 2025 Market Data for the Bicycle Industry (11 March 2026), slide 18: non-electric bicycle gross average sales price EUR 500. https://www.ziv-zweirad.de/wp-content/uploads/2026/03/Market-Data-Bicycle-Industry-2025.pdf",
+        "comment": "2026-10-08 bicycle-only repair: replace the negative-intercept vehicle fit with a positive proportional mechanical-bicycle prior. Slope = 500 EUR / (12 kg reference non-electric bicycle glider * 1.2 reference markup); intercept = 0. The 12 kg mass and 1.2 markup are model assumptions, not measured by ZIV. The EUR 500 retail price is a proxy for the mechanical bicycle only; motor and battery remain separate. Constant real-2025-EUR prior across native years; relative slope uncertainty retained. Transfer to electric/speed/cargo bicycle gliders and mass scaling are provisional, not empirically calibrated. See bicycle_cost_provenance.json and docs/bicycle_costs.rst.",
+        "status": "Provisional engineering prior",
+        "kind": "distribution",
+        "uncertainty_type": 5,
+        "loc": 34.72222222222223,
+        "minimum": 23.871527777777782,
+        "maximum": 39.06250000000001
+    },
+    "bicycle-cost-2025-glider cost intercept": {
+        "amount": 0,
+        "category": "Costs",
+        "powertrain": [
+            "BEV"
+        ],
+        "sizes": [
+            "Bicycle <25",
+            "Bicycle <45",
+            "Bicycle cargo"
+        ],
+        "year": 2025,
+        "name": "glider cost intercept",
+        "unit": "Euro / vehicle",
+        "importance": "",
+        "source": "ZIV, 2025 Market Data for the Bicycle Industry (11 March 2026), slide 18: non-electric bicycle gross average sales price EUR 500. https://www.ziv-zweirad.de/wp-content/uploads/2026/03/Market-Data-Bicycle-Industry-2025.pdf",
+        "comment": "2026-10-08 bicycle-only repair: replace the negative-intercept vehicle fit with a positive proportional mechanical-bicycle prior. Slope = 500 EUR / (12 kg reference non-electric bicycle glider * 1.2 reference markup); intercept = 0. The 12 kg mass and 1.2 markup are model assumptions, not measured by ZIV. The EUR 500 retail price is a proxy for the mechanical bicycle only; motor and battery remain separate. Constant real-2025-EUR prior across native years; relative slope uncertainty retained. Transfer to electric/speed/cargo bicycle gliders and mass scaling are provisional, not empirically calibrated. See bicycle_cost_provenance.json and docs/bicycle_costs.rst.",
+        "status": "Provisional engineering prior",
+        "kind": "distribution",
+        "uncertainty_type": 1,
+        "loc": 0
+    },
+    "bicycle-cost-2025-glider cost slope": {
+        "amount": 34.72222222222223,
+        "category": "Costs",
+        "powertrain": [
+            "BEV"
+        ],
+        "sizes": [
+            "Bicycle <25",
+            "Bicycle <45",
+            "Bicycle cargo"
+        ],
+        "year": 2025,
+        "name": "glider cost slope",
+        "unit": "Euro / kg",
+        "importance": "",
+        "source": "ZIV, 2025 Market Data for the Bicycle Industry (11 March 2026), slide 18: non-electric bicycle gross average sales price EUR 500. https://www.ziv-zweirad.de/wp-content/uploads/2026/03/Market-Data-Bicycle-Industry-2025.pdf",
+        "comment": "2026-10-08 bicycle-only repair: replace the negative-intercept vehicle fit with a positive proportional mechanical-bicycle prior. Slope = 500 EUR / (12 kg reference non-electric bicycle glider * 1.2 reference markup); intercept = 0. The 12 kg mass and 1.2 markup are model assumptions, not measured by ZIV. The EUR 500 retail price is a proxy for the mechanical bicycle only; motor and battery remain separate. Constant real-2025-EUR prior across native years; relative slope uncertainty retained. Transfer to electric/speed/cargo bicycle gliders and mass scaling are provisional, not empirically calibrated. See bicycle_cost_provenance.json and docs/bicycle_costs.rst.",
+        "status": "Provisional engineering prior",
+        "kind": "distribution",
+        "uncertainty_type": 5,
+        "loc": 34.72222222222223,
+        "minimum": 23.654513888888893,
+        "maximum": 40.36458333333334
     }
 }

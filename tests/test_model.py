@@ -2,6 +2,7 @@ from copy import deepcopy
 
 import numpy as np
 import pytest
+
 from carculator_two_wheeler import (
     InventoryTwoWheeler,
     TwoWheelerInputParameters,
@@ -47,10 +48,6 @@ def test_lcia(model):
     assert "climate change" in results.impact_category
 
 
-@pytest.mark.xfail(
-    strict=True,
-    reason="Known data/cost defect: electric bicycle glider cost is negative; requires scientific review",
-)
 def test_electric_bicycle_cost_is_nonnegative(model):
     assert (
         model.array.sel(

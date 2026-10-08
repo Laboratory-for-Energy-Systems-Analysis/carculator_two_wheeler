@@ -121,3 +121,11 @@ See :doc:`petrol_efficiency` for provenance, before/after inventory checks and
 manufacturer screening comparisons. Several unmatched consumption residuals
 remain large; this correction is not a claim of completed empirical calibration.
 Publication remains pending maintainer review of the remaining known issues.
+
+Cost validation
+---------------
+
+See :doc:`bicycle_costs` for the scoped repair of negative electric-bicycle costs,
+its market-price proxy, accounting regressions and remaining component-price
+gaps. Energy/LCIA validation does not establish the accuracy of ownership costs.
+The earlier expected-failure counts on this page predate that repair.

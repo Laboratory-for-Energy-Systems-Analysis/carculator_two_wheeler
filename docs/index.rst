@@ -72,6 +72,7 @@ User's Guide
    structure
    validity
    petrol_efficiency
+   bicycle_costs
 
 API Reference
 -------------

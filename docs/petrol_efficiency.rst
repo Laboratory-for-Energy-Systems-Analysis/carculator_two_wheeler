@@ -171,8 +171,9 @@ with three efficiency samples and fuel blends ranging from fossil petrol to
 bioethanol. Their broad consumption envelope is a regression guard, not a
 calibration acceptance criterion.
 
-The negative electric-bicycle cost and battery range/capacity/mass qualification
-remain separate open issues. Custom string labels on the sample coordinate also
+The electric-bicycle cost defect was subsequently addressed in :doc:`bicycle_costs`;
+battery range/capacity/mass qualification remains a separate open issue.
+Custom string labels on the sample coordinate also
 failed a completed two-wheeler run during this review; the shared energy output
 uses positional sample coordinates. These tests use the normal numeric sample
 coordinates. No unrelated model or cost repair is included here.

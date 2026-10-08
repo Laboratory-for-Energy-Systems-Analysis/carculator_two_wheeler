@@ -93,7 +93,10 @@ seeds parameter sampling, not every downstream cost adjustment.
 See [validation and limitations](https://github.com/Laboratory-for-Energy-Systems-Analysis/carculator_two_wheeler/blob/main/docs/validity.rst), [migration notes](https://github.com/Laboratory-for-Energy-Systems-Analysis/carculator_two_wheeler/blob/main/docs/release.rst)
 and the [documentation](https://carculator-two-wheeler.readthedocs.io/en/latest/).
 
-The electric-bicycle cost model retains a known negative-cost case, documented by a strict expected-failure test. See the [changelog](https://github.com/Laboratory-for-Energy-Systems-Analysis/carculator_two_wheeler/blob/main/CHANGELOG.md).
+Electric-bicycle glider and maintenance costs now use a positive mechanical-bicycle
+prior supported by published market data. Complete e-bike prices remain
+uncalibrated, and other light-vehicle cost defects remain. See the
+[bicycle cost correction and limitations](docs/bicycle_costs.rst).
 
 ## Development and release
 

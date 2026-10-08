@@ -46,7 +46,7 @@ matrices and export target versions are separate choices.
 Known limits
 ------------
 
-* Electric-bicycle glider-cost inputs can still produce a negative total cost; the strict expected-failure test remains in place.
+* Electric-bicycle negative costs have been corrected with a provisional mechanical-bicycle prior; complete purchase costs and other light-vehicle cost defects remain unqualified. See :doc:`bicycle_costs`.
 * Manufacturer screening still leaves substantial unmatched consumption residuals; see :doc:`petrol_efficiency`.
 * The coupled target-range repair was validated for passenger cars; two-wheeler target-range overrides have not received equivalent qualification.
 
@@ -76,3 +76,6 @@ See :doc:`petrol_efficiency` for provenance, before/after inventory checks and
 manufacturer screening comparisons. Several unmatched consumption residuals
 remain large; this correction is not a claim of completed empirical calibration.
 Publication remains pending maintainer review of the remaining known issues.
+
+The subsequent :doc:`bicycle_costs` correction removes the bicycle cost expected
+failure. The older verification record above describes the pre-correction artifacts.
