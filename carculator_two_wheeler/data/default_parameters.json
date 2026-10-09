@@ -13841,192 +13841,6 @@
         "minimum": 0.1,
         "maximum": 0.9
     },
-    "600-2000-battery cell production energy electricity share": {
-        "amount": 0.5,
-        "category": "Energy Storage",
-        "powertrain": [
-            "BEV"
-        ],
-        "sizes": [
-            "Kick-scooter",
-            "Bicycle <25",
-            "Bicycle cargo",
-            "Bicycle <45",
-            "Moped <4kW",
-            "Scooter <4kW",
-            "Scooter 4-11kW",
-            "Motorcycle 4-11kW",
-            "Motorcycle 11-35kW",
-            "Motorcycle >35kW"
-        ],
-        "year": 2000,
-        "name": "battery cell production energy electricity share",
-        "unit": "unitless",
-        "importance": "Critical",
-        "source": "Sacchi et al. 2021. Life cycle inventories for on-road vehicles.",
-        "comment": "Same as for passenger vehicles.",
-        "status": "Acceptable",
-        "kind": "distribution",
-        "uncertainty_type": 5,
-        "loc": 0.5,
-        "minimum": 0.1,
-        "maximum": 0.9
-    },
-    "601-2010-battery cell production energy electricity share": {
-        "amount": 0.5,
-        "category": "Energy Storage",
-        "powertrain": [
-            "BEV"
-        ],
-        "sizes": [
-            "Kick-scooter",
-            "Bicycle <25",
-            "Bicycle cargo",
-            "Bicycle <45",
-            "Moped <4kW",
-            "Scooter <4kW",
-            "Scooter 4-11kW",
-            "Motorcycle 4-11kW",
-            "Motorcycle 11-35kW",
-            "Motorcycle >35kW"
-        ],
-        "year": 2010,
-        "name": "battery cell production energy electricity share",
-        "unit": "unitless",
-        "importance": "Critical",
-        "source": "Sacchi et al. 2021. Life cycle inventories for on-road vehicles.",
-        "comment": "Same as for passenger vehicles.",
-        "status": "Acceptable",
-        "kind": "distribution",
-        "uncertainty_type": 5,
-        "loc": 0.5,
-        "minimum": 0.1,
-        "maximum": 0.9
-    },
-    "602-2020-battery cell production energy electricity share": {
-        "amount": 0.5,
-        "category": "Energy Storage",
-        "powertrain": [
-            "BEV"
-        ],
-        "sizes": [
-            "Kick-scooter",
-            "Bicycle <25",
-            "Bicycle cargo",
-            "Bicycle <45",
-            "Moped <4kW",
-            "Scooter <4kW",
-            "Scooter 4-11kW",
-            "Motorcycle 4-11kW",
-            "Motorcycle 11-35kW",
-            "Motorcycle >35kW"
-        ],
-        "year": 2020,
-        "name": "battery cell production energy electricity share",
-        "unit": "unitless",
-        "importance": "Critical",
-        "source": "Sacchi et al. 2021. Life cycle inventories for on-road vehicles.",
-        "comment": "Same as for passenger vehicles.",
-        "status": "Acceptable",
-        "kind": "distribution",
-        "uncertainty_type": 5,
-        "loc": 0.5,
-        "minimum": 0.1,
-        "maximum": 0.9
-    },
-    "603-2030-battery cell production energy electricity share": {
-        "amount": 0.5,
-        "category": "Energy Storage",
-        "powertrain": [
-            "BEV"
-        ],
-        "sizes": [
-            "Kick-scooter",
-            "Bicycle <25",
-            "Bicycle cargo",
-            "Bicycle <45",
-            "Moped <4kW",
-            "Scooter <4kW",
-            "Scooter 4-11kW",
-            "Motorcycle 4-11kW",
-            "Motorcycle 11-35kW",
-            "Motorcycle >35kW"
-        ],
-        "year": 2030,
-        "name": "battery cell production energy electricity share",
-        "unit": "unitless",
-        "importance": "Critical",
-        "source": "Sacchi et al. 2021. Life cycle inventories for on-road vehicles.",
-        "comment": "Same as for passenger vehicles.",
-        "status": "Acceptable",
-        "kind": "distribution",
-        "uncertainty_type": 5,
-        "loc": 0.5,
-        "minimum": 0.1,
-        "maximum": 0.9
-    },
-    "604-2040-battery cell production energy electricity share": {
-        "amount": 0.5,
-        "category": "Energy Storage",
-        "powertrain": [
-            "BEV"
-        ],
-        "sizes": [
-            "Kick-scooter",
-            "Bicycle <25",
-            "Bicycle cargo",
-            "Bicycle <45",
-            "Moped <4kW",
-            "Scooter <4kW",
-            "Scooter 4-11kW",
-            "Motorcycle 4-11kW",
-            "Motorcycle 11-35kW",
-            "Motorcycle >35kW"
-        ],
-        "year": 2040,
-        "name": "battery cell production energy electricity share",
-        "unit": "unitless",
-        "importance": "Critical",
-        "source": "Sacchi et al. 2021. Life cycle inventories for on-road vehicles.",
-        "comment": "Same as for passenger vehicles.",
-        "status": "Acceptable",
-        "kind": "distribution",
-        "uncertainty_type": 5,
-        "loc": 0.5,
-        "minimum": 0.1,
-        "maximum": 0.9
-    },
-    "605-2050-battery cell production energy electricity share": {
-        "amount": 0.5,
-        "category": "Energy Storage",
-        "powertrain": [
-            "BEV"
-        ],
-        "sizes": [
-            "Kick-scooter",
-            "Bicycle <25",
-            "Bicycle cargo",
-            "Bicycle <45",
-            "Moped <4kW",
-            "Scooter <4kW",
-            "Scooter 4-11kW",
-            "Motorcycle 4-11kW",
-            "Motorcycle 11-35kW",
-            "Motorcycle >35kW"
-        ],
-        "year": 2050,
-        "name": "battery cell production energy electricity share",
-        "unit": "unitless",
-        "importance": "Critical",
-        "source": "Sacchi et al. 2021. Life cycle inventories for on-road vehicles.",
-        "comment": "Same as for passenger vehicles.",
-        "status": "Acceptable",
-        "kind": "distribution",
-        "uncertainty_type": 5,
-        "loc": 0.5,
-        "minimum": 0.1,
-        "maximum": 0.9
-    },
     "606-2000-battery cell production energy": {
         "amount": 32,
         "category": "Energy Storage",
@@ -14183,192 +13997,6 @@
         "maximum": 12
     },
     "611-2050-battery cell production energy": {
-        "amount": 6,
-        "category": "Energy Storage",
-        "powertrain": [
-            "BEV"
-        ],
-        "sizes": [
-            "Kick-scooter",
-            "Bicycle <25",
-            "Bicycle cargo",
-            "Bicycle <45",
-            "Moped <4kW",
-            "Scooter <4kW",
-            "Scooter 4-11kW",
-            "Motorcycle 4-11kW",
-            "Motorcycle 11-35kW",
-            "Motorcycle >35kW"
-        ],
-        "year": 2050,
-        "name": "battery cell production energy",
-        "unit": "kWh/kg",
-        "importance": "Critical",
-        "source": "Sacchi et al. 2021. Life cycle inventories for on-road vehicles.",
-        "comment": "Same as for passenger vehicles.",
-        "status": "Acceptable",
-        "kind": "distribution",
-        "uncertainty_type": 5,
-        "loc": 6,
-        "minimum": 4,
-        "maximum": 10
-    },
-    "612-2000-battery cell production energy": {
-        "amount": 32,
-        "category": "Energy Storage",
-        "powertrain": [
-            "BEV"
-        ],
-        "sizes": [
-            "Kick-scooter",
-            "Bicycle <25",
-            "Bicycle cargo",
-            "Bicycle <45",
-            "Moped <4kW",
-            "Scooter <4kW",
-            "Scooter 4-11kW",
-            "Motorcycle 4-11kW",
-            "Motorcycle 11-35kW",
-            "Motorcycle >35kW"
-        ],
-        "year": 2000,
-        "name": "battery cell production energy",
-        "unit": "kWh/kg",
-        "importance": "Critical",
-        "source": "Sacchi et al. 2021. Life cycle inventories for on-road vehicles.",
-        "comment": "Same as for passenger vehicles.",
-        "status": "Acceptable",
-        "kind": "distribution",
-        "uncertainty_type": 5,
-        "loc": 32,
-        "minimum": 16,
-        "maximum": 48
-    },
-    "613-2010-battery cell production energy": {
-        "amount": 16,
-        "category": "Energy Storage",
-        "powertrain": [
-            "BEV"
-        ],
-        "sizes": [
-            "Kick-scooter",
-            "Bicycle <25",
-            "Bicycle cargo",
-            "Bicycle <45",
-            "Moped <4kW",
-            "Scooter <4kW",
-            "Scooter 4-11kW",
-            "Motorcycle 4-11kW",
-            "Motorcycle 11-35kW",
-            "Motorcycle >35kW"
-        ],
-        "year": 2010,
-        "name": "battery cell production energy",
-        "unit": "kWh/kg",
-        "importance": "Critical",
-        "source": "Sacchi et al. 2021. Life cycle inventories for on-road vehicles.",
-        "comment": "Same as for passenger vehicles.",
-        "status": "Acceptable",
-        "kind": "distribution",
-        "uncertainty_type": 5,
-        "loc": 16,
-        "minimum": 8,
-        "maximum": 24
-    },
-    "614-2020-battery cell production energy": {
-        "amount": 8,
-        "category": "Energy Storage",
-        "powertrain": [
-            "BEV"
-        ],
-        "sizes": [
-            "Kick-scooter",
-            "Bicycle <25",
-            "Bicycle cargo",
-            "Bicycle <45",
-            "Moped <4kW",
-            "Scooter <4kW",
-            "Scooter 4-11kW",
-            "Motorcycle 4-11kW",
-            "Motorcycle 11-35kW",
-            "Motorcycle >35kW"
-        ],
-        "year": 2020,
-        "name": "battery cell production energy",
-        "unit": "kWh/kg",
-        "importance": "Critical",
-        "source": "Sacchi et al. 2021. Life cycle inventories for on-road vehicles.",
-        "comment": "Same as for passenger vehicles.",
-        "status": "Acceptable",
-        "kind": "distribution",
-        "uncertainty_type": 5,
-        "loc": 8,
-        "minimum": 4,
-        "maximum": 20
-    },
-    "615-2030-battery cell production energy": {
-        "amount": 8,
-        "category": "Energy Storage",
-        "powertrain": [
-            "BEV"
-        ],
-        "sizes": [
-            "Kick-scooter",
-            "Bicycle <25",
-            "Bicycle cargo",
-            "Bicycle <45",
-            "Moped <4kW",
-            "Scooter <4kW",
-            "Scooter 4-11kW",
-            "Motorcycle 4-11kW",
-            "Motorcycle 11-35kW",
-            "Motorcycle >35kW"
-        ],
-        "year": 2030,
-        "name": "battery cell production energy",
-        "unit": "kWh/kg",
-        "importance": "Critical",
-        "source": "Sacchi et al. 2021. Life cycle inventories for on-road vehicles.",
-        "comment": "Same as for passenger vehicles.",
-        "status": "Acceptable",
-        "kind": "distribution",
-        "uncertainty_type": 5,
-        "loc": 8,
-        "minimum": 4,
-        "maximum": 16
-    },
-    "616-2040-battery cell production energy": {
-        "amount": 8,
-        "category": "Energy Storage",
-        "powertrain": [
-            "BEV"
-        ],
-        "sizes": [
-            "Kick-scooter",
-            "Bicycle <25",
-            "Bicycle cargo",
-            "Bicycle <45",
-            "Moped <4kW",
-            "Scooter <4kW",
-            "Scooter 4-11kW",
-            "Motorcycle 4-11kW",
-            "Motorcycle 11-35kW",
-            "Motorcycle >35kW"
-        ],
-        "year": 2040,
-        "name": "battery cell production energy",
-        "unit": "kWh/kg",
-        "importance": "Critical",
-        "source": "Sacchi et al. 2021. Life cycle inventories for on-road vehicles.",
-        "comment": "Same as for passenger vehicles.",
-        "status": "Acceptable",
-        "kind": "distribution",
-        "uncertainty_type": 5,
-        "loc": 8,
-        "minimum": 4,
-        "maximum": 12
-    },
-    "617-2050-battery cell production energy": {
         "amount": 6,
         "category": "Energy Storage",
         "powertrain": [
@@ -28510,8 +28138,7 @@
         "category": "Energy Storage",
         "powertrain": [
             "Human",
-            "ICEV-p",
-            "BEV"
+            "ICEV-p"
         ],
         "sizes": [
             "Kick-scooter",
@@ -28543,8 +28170,7 @@
         "category": "Energy Storage",
         "powertrain": [
             "Human",
-            "ICEV-p",
-            "BEV"
+            "ICEV-p"
         ],
         "sizes": [
             "Kick-scooter",
@@ -28576,8 +28202,7 @@
         "category": "Energy Storage",
         "powertrain": [
             "Human",
-            "ICEV-p",
-            "BEV"
+            "ICEV-p"
         ],
         "sizes": [
             "Kick-scooter",
@@ -28609,8 +28234,7 @@
         "category": "Energy Storage",
         "powertrain": [
             "Human",
-            "ICEV-p",
-            "BEV"
+            "ICEV-p"
         ],
         "sizes": [
             "Kick-scooter",
@@ -28642,8 +28266,7 @@
         "category": "Energy Storage",
         "powertrain": [
             "Human",
-            "ICEV-p",
-            "BEV"
+            "ICEV-p"
         ],
         "sizes": [
             "Kick-scooter",
@@ -28675,8 +28298,7 @@
         "category": "Energy Storage",
         "powertrain": [
             "Human",
-            "ICEV-p",
-            "BEV"
+            "ICEV-p"
         ],
         "sizes": [
             "Kick-scooter",
@@ -28708,8 +28330,7 @@
         "category": "Energy Storage",
         "powertrain": [
             "Human",
-            "ICEV-p",
-            "BEV"
+            "ICEV-p"
         ],
         "sizes": [
             "Kick-scooter",
@@ -28741,8 +28362,7 @@
         "category": "Energy Storage",
         "powertrain": [
             "Human",
-            "ICEV-p",
-            "BEV"
+            "ICEV-p"
         ],
         "sizes": [
             "Kick-scooter",
@@ -28774,8 +28394,7 @@
         "category": "Energy Storage",
         "powertrain": [
             "Human",
-            "ICEV-p",
-            "BEV"
+            "ICEV-p"
         ],
         "sizes": [
             "Kick-scooter",
@@ -28807,8 +28426,7 @@
         "category": "Energy Storage",
         "powertrain": [
             "Human",
-            "ICEV-p",
-            "BEV"
+            "ICEV-p"
         ],
         "sizes": [
             "Kick-scooter",
@@ -28840,8 +28458,7 @@
         "category": "Energy Storage",
         "powertrain": [
             "Human",
-            "ICEV-p",
-            "BEV"
+            "ICEV-p"
         ],
         "sizes": [
             "Kick-scooter",
@@ -28873,8 +28490,7 @@
         "category": "Energy Storage",
         "powertrain": [
             "Human",
-            "ICEV-p",
-            "BEV"
+            "ICEV-p"
         ],
         "sizes": [
             "Kick-scooter",
@@ -29500,8 +29116,7 @@
         "category": "Energy Storage",
         "powertrain": [
             "Human",
-            "ICEV-p",
-            "BEV"
+            "ICEV-p"
         ],
         "sizes": [
             "Kick-scooter",
@@ -29533,8 +29148,7 @@
         "category": "Energy Storage",
         "powertrain": [
             "Human",
-            "ICEV-p",
-            "BEV"
+            "ICEV-p"
         ],
         "sizes": [
             "Kick-scooter",
@@ -29566,8 +29180,7 @@
         "category": "Energy Storage",
         "powertrain": [
             "Human",
-            "ICEV-p",
-            "BEV"
+            "ICEV-p"
         ],
         "sizes": [
             "Kick-scooter",
@@ -29599,8 +29212,7 @@
         "category": "Energy Storage",
         "powertrain": [
             "Human",
-            "ICEV-p",
-            "BEV"
+            "ICEV-p"
         ],
         "sizes": [
             "Kick-scooter",
@@ -29632,8 +29244,7 @@
         "category": "Energy Storage",
         "powertrain": [
             "Human",
-            "ICEV-p",
-            "BEV"
+            "ICEV-p"
         ],
         "sizes": [
             "Kick-scooter",
@@ -29665,8 +29276,7 @@
         "category": "Energy Storage",
         "powertrain": [
             "Human",
-            "ICEV-p",
-            "BEV"
+            "ICEV-p"
         ],
         "sizes": [
             "Kick-scooter",
@@ -29698,8 +29308,7 @@
         "category": "Energy Storage",
         "powertrain": [
             "Human",
-            "ICEV-p",
-            "BEV"
+            "ICEV-p"
         ],
         "sizes": [
             "Kick-scooter",
@@ -29731,8 +29340,7 @@
         "category": "Energy Storage",
         "powertrain": [
             "Human",
-            "ICEV-p",
-            "BEV"
+            "ICEV-p"
         ],
         "sizes": [
             "Kick-scooter",
@@ -29764,8 +29372,7 @@
         "category": "Energy Storage",
         "powertrain": [
             "Human",
-            "ICEV-p",
-            "BEV"
+            "ICEV-p"
         ],
         "sizes": [
             "Kick-scooter",
@@ -29797,8 +29404,7 @@
         "category": "Energy Storage",
         "powertrain": [
             "Human",
-            "ICEV-p",
-            "BEV"
+            "ICEV-p"
         ],
         "sizes": [
             "Kick-scooter",
@@ -29830,8 +29436,7 @@
         "category": "Energy Storage",
         "powertrain": [
             "Human",
-            "ICEV-p",
-            "BEV"
+            "ICEV-p"
         ],
         "sizes": [
             "Kick-scooter",
@@ -29863,8 +29468,7 @@
         "category": "Energy Storage",
         "powertrain": [
             "Human",
-            "ICEV-p",
-            "BEV"
+            "ICEV-p"
         ],
         "sizes": [
             "Kick-scooter",
@@ -31480,8 +31084,7 @@
         "category": "Energy Storage",
         "powertrain": [
             "Human",
-            "ICEV-p",
-            "BEV"
+            "ICEV-p"
         ],
         "sizes": [
             "Kick-scooter",
@@ -31513,8 +31116,7 @@
         "category": "Energy Storage",
         "powertrain": [
             "Human",
-            "ICEV-p",
-            "BEV"
+            "ICEV-p"
         ],
         "sizes": [
             "Kick-scooter",
@@ -31546,8 +31148,7 @@
         "category": "Energy Storage",
         "powertrain": [
             "Human",
-            "ICEV-p",
-            "BEV"
+            "ICEV-p"
         ],
         "sizes": [
             "Kick-scooter",
@@ -31579,8 +31180,7 @@
         "category": "Energy Storage",
         "powertrain": [
             "Human",
-            "ICEV-p",
-            "BEV"
+            "ICEV-p"
         ],
         "sizes": [
             "Kick-scooter",
@@ -31612,8 +31212,7 @@
         "category": "Energy Storage",
         "powertrain": [
             "Human",
-            "ICEV-p",
-            "BEV"
+            "ICEV-p"
         ],
         "sizes": [
             "Kick-scooter",
@@ -31645,8 +31244,7 @@
         "category": "Energy Storage",
         "powertrain": [
             "Human",
-            "ICEV-p",
-            "BEV"
+            "ICEV-p"
         ],
         "sizes": [
             "Kick-scooter",
@@ -31678,8 +31276,7 @@
         "category": "Energy Storage",
         "powertrain": [
             "Human",
-            "ICEV-p",
-            "BEV"
+            "ICEV-p"
         ],
         "sizes": [
             "Kick-scooter",
@@ -31711,8 +31308,7 @@
         "category": "Energy Storage",
         "powertrain": [
             "Human",
-            "ICEV-p",
-            "BEV"
+            "ICEV-p"
         ],
         "sizes": [
             "Kick-scooter",
@@ -31744,8 +31340,7 @@
         "category": "Energy Storage",
         "powertrain": [
             "Human",
-            "ICEV-p",
-            "BEV"
+            "ICEV-p"
         ],
         "sizes": [
             "Kick-scooter",
@@ -31777,8 +31372,7 @@
         "category": "Energy Storage",
         "powertrain": [
             "Human",
-            "ICEV-p",
-            "BEV"
+            "ICEV-p"
         ],
         "sizes": [
             "Kick-scooter",
@@ -31810,8 +31404,7 @@
         "category": "Energy Storage",
         "powertrain": [
             "Human",
-            "ICEV-p",
-            "BEV"
+            "ICEV-p"
         ],
         "sizes": [
             "Kick-scooter",
@@ -31843,8 +31436,7 @@
         "category": "Energy Storage",
         "powertrain": [
             "Human",
-            "ICEV-p",
-            "BEV"
+            "ICEV-p"
         ],
         "sizes": [
             "Kick-scooter",
@@ -31876,8 +31468,7 @@
         "category": "Energy Storage",
         "powertrain": [
             "Human",
-            "ICEV-p",
-            "BEV"
+            "ICEV-p"
         ],
         "sizes": [
             "Kick-scooter",
@@ -31909,8 +31500,7 @@
         "category": "Energy Storage",
         "powertrain": [
             "Human",
-            "ICEV-p",
-            "BEV"
+            "ICEV-p"
         ],
         "sizes": [
             "Kick-scooter",
@@ -31942,8 +31532,7 @@
         "category": "Energy Storage",
         "powertrain": [
             "Human",
-            "ICEV-p",
-            "BEV"
+            "ICEV-p"
         ],
         "sizes": [
             "Kick-scooter",
@@ -31975,8 +31564,7 @@
         "category": "Energy Storage",
         "powertrain": [
             "Human",
-            "ICEV-p",
-            "BEV"
+            "ICEV-p"
         ],
         "sizes": [
             "Kick-scooter",
@@ -32008,8 +31596,7 @@
         "category": "Energy Storage",
         "powertrain": [
             "Human",
-            "ICEV-p",
-            "BEV"
+            "ICEV-p"
         ],
         "sizes": [
             "Kick-scooter",
@@ -32041,8 +31628,7 @@
         "category": "Energy Storage",
         "powertrain": [
             "Human",
-            "ICEV-p",
-            "BEV"
+            "ICEV-p"
         ],
         "sizes": [
             "Kick-scooter",
@@ -32074,8 +31660,7 @@
         "category": "Energy Storage",
         "powertrain": [
             "Human",
-            "ICEV-p",
-            "BEV"
+            "ICEV-p"
         ],
         "sizes": [
             "Kick-scooter",
@@ -32107,8 +31692,7 @@
         "category": "Energy Storage",
         "powertrain": [
             "Human",
-            "ICEV-p",
-            "BEV"
+            "ICEV-p"
         ],
         "sizes": [
             "Kick-scooter",
@@ -32140,8 +31724,7 @@
         "category": "Energy Storage",
         "powertrain": [
             "Human",
-            "ICEV-p",
-            "BEV"
+            "ICEV-p"
         ],
         "sizes": [
             "Kick-scooter",
@@ -32173,8 +31756,7 @@
         "category": "Energy Storage",
         "powertrain": [
             "Human",
-            "ICEV-p",
-            "BEV"
+            "ICEV-p"
         ],
         "sizes": [
             "Kick-scooter",
@@ -32206,8 +31788,7 @@
         "category": "Energy Storage",
         "powertrain": [
             "Human",
-            "ICEV-p",
-            "BEV"
+            "ICEV-p"
         ],
         "sizes": [
             "Kick-scooter",
@@ -32239,8 +31820,7 @@
         "category": "Energy Storage",
         "powertrain": [
             "Human",
-            "ICEV-p",
-            "BEV"
+            "ICEV-p"
         ],
         "sizes": [
             "Kick-scooter",

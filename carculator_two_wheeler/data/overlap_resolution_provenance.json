@@ -1,0 +1,2122 @@
+{
+  "issue": 4,
+  "policy": "Preserve the first existing definition of every cell, including its distribution and source. Regenerate old stochastic samples after record changes; split scopes share uncertainty groups.",
+  "original_records": {
+    "600-2000-battery cell production energy electricity share": {
+      "amount": 0.5,
+      "category": "Energy Storage",
+      "powertrain": [
+        "BEV"
+      ],
+      "sizes": [
+        "Kick-scooter",
+        "Bicycle <25",
+        "Bicycle cargo",
+        "Bicycle <45",
+        "Moped <4kW",
+        "Scooter <4kW",
+        "Scooter 4-11kW",
+        "Motorcycle 4-11kW",
+        "Motorcycle 11-35kW",
+        "Motorcycle >35kW"
+      ],
+      "year": 2000,
+      "name": "battery cell production energy electricity share",
+      "unit": "unitless",
+      "importance": "Critical",
+      "source": "Sacchi et al. 2021. Life cycle inventories for on-road vehicles.",
+      "comment": "Same as for passenger vehicles.",
+      "status": "Acceptable",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 0.5,
+      "minimum": 0.1,
+      "maximum": 0.9
+    },
+    "601-2010-battery cell production energy electricity share": {
+      "amount": 0.5,
+      "category": "Energy Storage",
+      "powertrain": [
+        "BEV"
+      ],
+      "sizes": [
+        "Kick-scooter",
+        "Bicycle <25",
+        "Bicycle cargo",
+        "Bicycle <45",
+        "Moped <4kW",
+        "Scooter <4kW",
+        "Scooter 4-11kW",
+        "Motorcycle 4-11kW",
+        "Motorcycle 11-35kW",
+        "Motorcycle >35kW"
+      ],
+      "year": 2010,
+      "name": "battery cell production energy electricity share",
+      "unit": "unitless",
+      "importance": "Critical",
+      "source": "Sacchi et al. 2021. Life cycle inventories for on-road vehicles.",
+      "comment": "Same as for passenger vehicles.",
+      "status": "Acceptable",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 0.5,
+      "minimum": 0.1,
+      "maximum": 0.9
+    },
+    "602-2020-battery cell production energy electricity share": {
+      "amount": 0.5,
+      "category": "Energy Storage",
+      "powertrain": [
+        "BEV"
+      ],
+      "sizes": [
+        "Kick-scooter",
+        "Bicycle <25",
+        "Bicycle cargo",
+        "Bicycle <45",
+        "Moped <4kW",
+        "Scooter <4kW",
+        "Scooter 4-11kW",
+        "Motorcycle 4-11kW",
+        "Motorcycle 11-35kW",
+        "Motorcycle >35kW"
+      ],
+      "year": 2020,
+      "name": "battery cell production energy electricity share",
+      "unit": "unitless",
+      "importance": "Critical",
+      "source": "Sacchi et al. 2021. Life cycle inventories for on-road vehicles.",
+      "comment": "Same as for passenger vehicles.",
+      "status": "Acceptable",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 0.5,
+      "minimum": 0.1,
+      "maximum": 0.9
+    },
+    "603-2030-battery cell production energy electricity share": {
+      "amount": 0.5,
+      "category": "Energy Storage",
+      "powertrain": [
+        "BEV"
+      ],
+      "sizes": [
+        "Kick-scooter",
+        "Bicycle <25",
+        "Bicycle cargo",
+        "Bicycle <45",
+        "Moped <4kW",
+        "Scooter <4kW",
+        "Scooter 4-11kW",
+        "Motorcycle 4-11kW",
+        "Motorcycle 11-35kW",
+        "Motorcycle >35kW"
+      ],
+      "year": 2030,
+      "name": "battery cell production energy electricity share",
+      "unit": "unitless",
+      "importance": "Critical",
+      "source": "Sacchi et al. 2021. Life cycle inventories for on-road vehicles.",
+      "comment": "Same as for passenger vehicles.",
+      "status": "Acceptable",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 0.5,
+      "minimum": 0.1,
+      "maximum": 0.9
+    },
+    "604-2040-battery cell production energy electricity share": {
+      "amount": 0.5,
+      "category": "Energy Storage",
+      "powertrain": [
+        "BEV"
+      ],
+      "sizes": [
+        "Kick-scooter",
+        "Bicycle <25",
+        "Bicycle cargo",
+        "Bicycle <45",
+        "Moped <4kW",
+        "Scooter <4kW",
+        "Scooter 4-11kW",
+        "Motorcycle 4-11kW",
+        "Motorcycle 11-35kW",
+        "Motorcycle >35kW"
+      ],
+      "year": 2040,
+      "name": "battery cell production energy electricity share",
+      "unit": "unitless",
+      "importance": "Critical",
+      "source": "Sacchi et al. 2021. Life cycle inventories for on-road vehicles.",
+      "comment": "Same as for passenger vehicles.",
+      "status": "Acceptable",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 0.5,
+      "minimum": 0.1,
+      "maximum": 0.9
+    },
+    "605-2050-battery cell production energy electricity share": {
+      "amount": 0.5,
+      "category": "Energy Storage",
+      "powertrain": [
+        "BEV"
+      ],
+      "sizes": [
+        "Kick-scooter",
+        "Bicycle <25",
+        "Bicycle cargo",
+        "Bicycle <45",
+        "Moped <4kW",
+        "Scooter <4kW",
+        "Scooter 4-11kW",
+        "Motorcycle 4-11kW",
+        "Motorcycle 11-35kW",
+        "Motorcycle >35kW"
+      ],
+      "year": 2050,
+      "name": "battery cell production energy electricity share",
+      "unit": "unitless",
+      "importance": "Critical",
+      "source": "Sacchi et al. 2021. Life cycle inventories for on-road vehicles.",
+      "comment": "Same as for passenger vehicles.",
+      "status": "Acceptable",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 0.5,
+      "minimum": 0.1,
+      "maximum": 0.9
+    },
+    "612-2000-battery cell production energy": {
+      "amount": 32,
+      "category": "Energy Storage",
+      "powertrain": [
+        "BEV"
+      ],
+      "sizes": [
+        "Kick-scooter",
+        "Bicycle <25",
+        "Bicycle cargo",
+        "Bicycle <45",
+        "Moped <4kW",
+        "Scooter <4kW",
+        "Scooter 4-11kW",
+        "Motorcycle 4-11kW",
+        "Motorcycle 11-35kW",
+        "Motorcycle >35kW"
+      ],
+      "year": 2000,
+      "name": "battery cell production energy",
+      "unit": "kWh/kg",
+      "importance": "Critical",
+      "source": "Sacchi et al. 2021. Life cycle inventories for on-road vehicles.",
+      "comment": "Same as for passenger vehicles.",
+      "status": "Acceptable",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 32,
+      "minimum": 16,
+      "maximum": 48
+    },
+    "613-2010-battery cell production energy": {
+      "amount": 16,
+      "category": "Energy Storage",
+      "powertrain": [
+        "BEV"
+      ],
+      "sizes": [
+        "Kick-scooter",
+        "Bicycle <25",
+        "Bicycle cargo",
+        "Bicycle <45",
+        "Moped <4kW",
+        "Scooter <4kW",
+        "Scooter 4-11kW",
+        "Motorcycle 4-11kW",
+        "Motorcycle 11-35kW",
+        "Motorcycle >35kW"
+      ],
+      "year": 2010,
+      "name": "battery cell production energy",
+      "unit": "kWh/kg",
+      "importance": "Critical",
+      "source": "Sacchi et al. 2021. Life cycle inventories for on-road vehicles.",
+      "comment": "Same as for passenger vehicles.",
+      "status": "Acceptable",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 16,
+      "minimum": 8,
+      "maximum": 24
+    },
+    "614-2020-battery cell production energy": {
+      "amount": 8,
+      "category": "Energy Storage",
+      "powertrain": [
+        "BEV"
+      ],
+      "sizes": [
+        "Kick-scooter",
+        "Bicycle <25",
+        "Bicycle cargo",
+        "Bicycle <45",
+        "Moped <4kW",
+        "Scooter <4kW",
+        "Scooter 4-11kW",
+        "Motorcycle 4-11kW",
+        "Motorcycle 11-35kW",
+        "Motorcycle >35kW"
+      ],
+      "year": 2020,
+      "name": "battery cell production energy",
+      "unit": "kWh/kg",
+      "importance": "Critical",
+      "source": "Sacchi et al. 2021. Life cycle inventories for on-road vehicles.",
+      "comment": "Same as for passenger vehicles.",
+      "status": "Acceptable",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 8,
+      "minimum": 4,
+      "maximum": 20
+    },
+    "615-2030-battery cell production energy": {
+      "amount": 8,
+      "category": "Energy Storage",
+      "powertrain": [
+        "BEV"
+      ],
+      "sizes": [
+        "Kick-scooter",
+        "Bicycle <25",
+        "Bicycle cargo",
+        "Bicycle <45",
+        "Moped <4kW",
+        "Scooter <4kW",
+        "Scooter 4-11kW",
+        "Motorcycle 4-11kW",
+        "Motorcycle 11-35kW",
+        "Motorcycle >35kW"
+      ],
+      "year": 2030,
+      "name": "battery cell production energy",
+      "unit": "kWh/kg",
+      "importance": "Critical",
+      "source": "Sacchi et al. 2021. Life cycle inventories for on-road vehicles.",
+      "comment": "Same as for passenger vehicles.",
+      "status": "Acceptable",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 8,
+      "minimum": 4,
+      "maximum": 16
+    },
+    "616-2040-battery cell production energy": {
+      "amount": 8,
+      "category": "Energy Storage",
+      "powertrain": [
+        "BEV"
+      ],
+      "sizes": [
+        "Kick-scooter",
+        "Bicycle <25",
+        "Bicycle cargo",
+        "Bicycle <45",
+        "Moped <4kW",
+        "Scooter <4kW",
+        "Scooter 4-11kW",
+        "Motorcycle 4-11kW",
+        "Motorcycle 11-35kW",
+        "Motorcycle >35kW"
+      ],
+      "year": 2040,
+      "name": "battery cell production energy",
+      "unit": "kWh/kg",
+      "importance": "Critical",
+      "source": "Sacchi et al. 2021. Life cycle inventories for on-road vehicles.",
+      "comment": "Same as for passenger vehicles.",
+      "status": "Acceptable",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 8,
+      "minimum": 4,
+      "maximum": 12
+    },
+    "617-2050-battery cell production energy": {
+      "amount": 6,
+      "category": "Energy Storage",
+      "powertrain": [
+        "BEV"
+      ],
+      "sizes": [
+        "Kick-scooter",
+        "Bicycle <25",
+        "Bicycle cargo",
+        "Bicycle <45",
+        "Moped <4kW",
+        "Scooter <4kW",
+        "Scooter 4-11kW",
+        "Motorcycle 4-11kW",
+        "Motorcycle 11-35kW",
+        "Motorcycle >35kW"
+      ],
+      "year": 2050,
+      "name": "battery cell production energy",
+      "unit": "kWh/kg",
+      "importance": "Critical",
+      "source": "Sacchi et al. 2021. Life cycle inventories for on-road vehicles.",
+      "comment": "Same as for passenger vehicles.",
+      "status": "Acceptable",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 6,
+      "minimum": 4,
+      "maximum": 10
+    },
+    "1140-2000-battery cell energy density, NCA": {
+      "amount": 0.05,
+      "category": "Energy Storage",
+      "powertrain": [
+        "Human",
+        "ICEV-p",
+        "BEV"
+      ],
+      "sizes": [
+        "Kick-scooter",
+        "Bicycle <25",
+        "Bicycle cargo",
+        "Bicycle <45",
+        "Moped <4kW",
+        "Scooter <4kW",
+        "Scooter 4-11kW",
+        "Motorcycle 4-11kW",
+        "Motorcycle 11-35kW",
+        "Motorcycle >35kW"
+      ],
+      "year": 2000,
+      "name": "battery cell energy density, NCA",
+      "unit": "kWh/kg",
+      "importance": "Critical",
+      "source": "https://pubs.acs.org/doi/pdf/10.1021/acsenergylett.7b00432",
+      "comment": "",
+      "status": "Acceptable",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 0.05,
+      "minimum": 0.045000000000000005,
+      "maximum": 0.05500000000000001
+    },
+    "1141-2010-battery cell energy density, NCA": {
+      "amount": 0.1,
+      "category": "Energy Storage",
+      "powertrain": [
+        "Human",
+        "ICEV-p",
+        "BEV"
+      ],
+      "sizes": [
+        "Kick-scooter",
+        "Bicycle <25",
+        "Bicycle cargo",
+        "Bicycle <45",
+        "Moped <4kW",
+        "Scooter <4kW",
+        "Scooter 4-11kW",
+        "Motorcycle 4-11kW",
+        "Motorcycle 11-35kW",
+        "Motorcycle >35kW"
+      ],
+      "year": 2010,
+      "name": "battery cell energy density, NCA",
+      "unit": "kWh/kg",
+      "importance": "Critical",
+      "source": "https://pubs.acs.org/doi/pdf/10.1021/acsenergylett.7b00432",
+      "comment": "",
+      "status": "Acceptable",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 0.1,
+      "minimum": 0.09000000000000001,
+      "maximum": 0.11000000000000001
+    },
+    "1142-2020-battery cell energy density, NCA": {
+      "amount": 0.28,
+      "category": "Energy Storage",
+      "powertrain": [
+        "Human",
+        "ICEV-p",
+        "BEV"
+      ],
+      "sizes": [
+        "Kick-scooter",
+        "Bicycle <25",
+        "Bicycle cargo",
+        "Bicycle <45",
+        "Moped <4kW",
+        "Scooter <4kW",
+        "Scooter 4-11kW",
+        "Motorcycle 4-11kW",
+        "Motorcycle 11-35kW",
+        "Motorcycle >35kW"
+      ],
+      "year": 2020,
+      "name": "battery cell energy density, NCA",
+      "unit": "kWh/kg",
+      "importance": "Critical",
+      "source": "https://pubs.acs.org/doi/pdf/10.1021/acsenergylett.7b00432",
+      "comment": "",
+      "status": "Acceptable",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 0.28,
+      "minimum": 0.266,
+      "maximum": 0.29400000000000004
+    },
+    "1143-2030-battery cell energy density, NCA": {
+      "amount": 0.3,
+      "category": "Energy Storage",
+      "powertrain": [
+        "Human",
+        "ICEV-p",
+        "BEV"
+      ],
+      "sizes": [
+        "Kick-scooter",
+        "Bicycle <25",
+        "Bicycle cargo",
+        "Bicycle <45",
+        "Moped <4kW",
+        "Scooter <4kW",
+        "Scooter 4-11kW",
+        "Motorcycle 4-11kW",
+        "Motorcycle 11-35kW",
+        "Motorcycle >35kW"
+      ],
+      "year": 2030,
+      "name": "battery cell energy density, NCA",
+      "unit": "kWh/kg",
+      "importance": "Critical",
+      "source": "https://pubs.acs.org/doi/pdf/10.1021/acsenergylett.7b00432",
+      "comment": "",
+      "status": "Acceptable",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 0.3,
+      "minimum": 0.285,
+      "maximum": 0.315
+    },
+    "1144-2040-battery cell energy density, NCA": {
+      "amount": 0.32,
+      "category": "Energy Storage",
+      "powertrain": [
+        "Human",
+        "ICEV-p",
+        "BEV"
+      ],
+      "sizes": [
+        "Kick-scooter",
+        "Bicycle <25",
+        "Bicycle cargo",
+        "Bicycle <45",
+        "Moped <4kW",
+        "Scooter <4kW",
+        "Scooter 4-11kW",
+        "Motorcycle 4-11kW",
+        "Motorcycle 11-35kW",
+        "Motorcycle >35kW"
+      ],
+      "year": 2040,
+      "name": "battery cell energy density, NCA",
+      "unit": "kWh/kg",
+      "importance": "Critical",
+      "source": "https://pubs.acs.org/doi/pdf/10.1021/acsenergylett.7b00432",
+      "comment": "",
+      "status": "Acceptable",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 0.32,
+      "minimum": 0.304,
+      "maximum": 0.336
+    },
+    "1145-2050-battery cell energy density, NCA": {
+      "amount": 0.34,
+      "category": "Energy Storage",
+      "powertrain": [
+        "Human",
+        "ICEV-p",
+        "BEV"
+      ],
+      "sizes": [
+        "Kick-scooter",
+        "Bicycle <25",
+        "Bicycle cargo",
+        "Bicycle <45",
+        "Moped <4kW",
+        "Scooter <4kW",
+        "Scooter 4-11kW",
+        "Motorcycle 4-11kW",
+        "Motorcycle 11-35kW",
+        "Motorcycle >35kW"
+      ],
+      "year": 2050,
+      "name": "battery cell energy density, NCA",
+      "unit": "kWh/kg",
+      "importance": "Critical",
+      "source": "https://pubs.acs.org/doi/pdf/10.1021/acsenergylett.7b00432",
+      "comment": "",
+      "status": "Acceptable",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 0.34,
+      "minimum": 0.323,
+      "maximum": 0.35700000000000004
+    },
+    "1146-2000-battery cell energy density, LFP": {
+      "amount": 0.05,
+      "category": "Energy Storage",
+      "powertrain": [
+        "Human",
+        "ICEV-p",
+        "BEV"
+      ],
+      "sizes": [
+        "Kick-scooter",
+        "Bicycle <25",
+        "Bicycle cargo",
+        "Bicycle <45",
+        "Moped <4kW",
+        "Scooter <4kW",
+        "Scooter 4-11kW",
+        "Motorcycle 4-11kW",
+        "Motorcycle 11-35kW",
+        "Motorcycle >35kW"
+      ],
+      "year": 2000,
+      "name": "battery cell energy density, LFP",
+      "unit": "kWh/kg",
+      "importance": "Critical",
+      "source": "https://pubs.acs.org/doi/pdf/10.1021/acsenergylett.7b00432",
+      "comment": "",
+      "status": "Acceptable",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 0.05,
+      "minimum": 0.045000000000000005,
+      "maximum": 0.05500000000000001
+    },
+    "1147-2010-battery cell energy density, LFP": {
+      "amount": 0.075,
+      "category": "Energy Storage",
+      "powertrain": [
+        "Human",
+        "ICEV-p",
+        "BEV"
+      ],
+      "sizes": [
+        "Kick-scooter",
+        "Bicycle <25",
+        "Bicycle cargo",
+        "Bicycle <45",
+        "Moped <4kW",
+        "Scooter <4kW",
+        "Scooter 4-11kW",
+        "Motorcycle 4-11kW",
+        "Motorcycle 11-35kW",
+        "Motorcycle >35kW"
+      ],
+      "year": 2010,
+      "name": "battery cell energy density, LFP",
+      "unit": "kWh/kg",
+      "importance": "Critical",
+      "source": "https://pubs.acs.org/doi/pdf/10.1021/acsenergylett.7b00432",
+      "comment": "",
+      "status": "Acceptable",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 0.075,
+      "minimum": 0.0675,
+      "maximum": 0.0825
+    },
+    "1148-2020-battery cell energy density, LFP": {
+      "amount": 0.16,
+      "category": "Energy Storage",
+      "powertrain": [
+        "Human",
+        "ICEV-p",
+        "BEV"
+      ],
+      "sizes": [
+        "Kick-scooter",
+        "Bicycle <25",
+        "Bicycle cargo",
+        "Bicycle <45",
+        "Moped <4kW",
+        "Scooter <4kW",
+        "Scooter 4-11kW",
+        "Motorcycle 4-11kW",
+        "Motorcycle 11-35kW",
+        "Motorcycle >35kW"
+      ],
+      "year": 2020,
+      "name": "battery cell energy density, LFP",
+      "unit": "kWh/kg",
+      "importance": "Critical",
+      "source": "https://pubs.acs.org/doi/pdf/10.1021/acsenergylett.7b00432",
+      "comment": "",
+      "status": "Acceptable",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 0.16,
+      "minimum": 0.152,
+      "maximum": 0.168
+    },
+    "1149-2030-battery cell energy density, LFP": {
+      "amount": 0.18,
+      "category": "Energy Storage",
+      "powertrain": [
+        "Human",
+        "ICEV-p",
+        "BEV"
+      ],
+      "sizes": [
+        "Kick-scooter",
+        "Bicycle <25",
+        "Bicycle cargo",
+        "Bicycle <45",
+        "Moped <4kW",
+        "Scooter <4kW",
+        "Scooter 4-11kW",
+        "Motorcycle 4-11kW",
+        "Motorcycle 11-35kW",
+        "Motorcycle >35kW"
+      ],
+      "year": 2030,
+      "name": "battery cell energy density, LFP",
+      "unit": "kWh/kg",
+      "importance": "Critical",
+      "source": "https://pubs.acs.org/doi/pdf/10.1021/acsenergylett.7b00432",
+      "comment": "",
+      "status": "Acceptable",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 0.18,
+      "minimum": 0.17099999999999999,
+      "maximum": 0.189
+    },
+    "1150-2040-battery cell energy density, LFP": {
+      "amount": 0.2,
+      "category": "Energy Storage",
+      "powertrain": [
+        "Human",
+        "ICEV-p",
+        "BEV"
+      ],
+      "sizes": [
+        "Kick-scooter",
+        "Bicycle <25",
+        "Bicycle cargo",
+        "Bicycle <45",
+        "Moped <4kW",
+        "Scooter <4kW",
+        "Scooter 4-11kW",
+        "Motorcycle 4-11kW",
+        "Motorcycle 11-35kW",
+        "Motorcycle >35kW"
+      ],
+      "year": 2040,
+      "name": "battery cell energy density, LFP",
+      "unit": "kWh/kg",
+      "importance": "Critical",
+      "source": "https://pubs.acs.org/doi/pdf/10.1021/acsenergylett.7b00432",
+      "comment": "",
+      "status": "Acceptable",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 0.2,
+      "minimum": 0.19,
+      "maximum": 0.21000000000000002
+    },
+    "1151-2050-battery cell energy density, LFP": {
+      "amount": 0.22,
+      "category": "Energy Storage",
+      "powertrain": [
+        "Human",
+        "ICEV-p",
+        "BEV"
+      ],
+      "sizes": [
+        "Kick-scooter",
+        "Bicycle <25",
+        "Bicycle cargo",
+        "Bicycle <45",
+        "Moped <4kW",
+        "Scooter <4kW",
+        "Scooter 4-11kW",
+        "Motorcycle 4-11kW",
+        "Motorcycle 11-35kW",
+        "Motorcycle >35kW"
+      ],
+      "year": 2050,
+      "name": "battery cell energy density, LFP",
+      "unit": "kWh/kg",
+      "importance": "Critical",
+      "source": "https://pubs.acs.org/doi/pdf/10.1021/acsenergylett.7b00432",
+      "comment": "",
+      "status": "Acceptable",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 0.22,
+      "minimum": 0.209,
+      "maximum": 0.231
+    },
+    "1170-2000-battery cell mass share, LFP": {
+      "amount": 0.6,
+      "category": "Energy Storage",
+      "powertrain": [
+        "Human",
+        "ICEV-p",
+        "BEV"
+      ],
+      "sizes": [
+        "Kick-scooter",
+        "Bicycle <25",
+        "Bicycle cargo",
+        "Bicycle <45",
+        "Moped <4kW",
+        "Scooter <4kW",
+        "Scooter 4-11kW",
+        "Motorcycle 4-11kW",
+        "Motorcycle 11-35kW",
+        "Motorcycle >35kW"
+      ],
+      "year": 2000,
+      "name": "battery cell mass share, LFP",
+      "unit": "unitless",
+      "importance": "",
+      "source": "Yang, X.-G., Liu, T., & Wang, C.-Y. (2021). Thermally modulated lithium iron phosphate batteries for mass-market electric vehicles. Nature Energy 2021 6:2, 6(2), 176\u2013185. https://doi.org/10.1038/s41560-020-00757-7",
+      "comment": "",
+      "status": "",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 0.6,
+      "minimum": 0.55,
+      "maximum": 0.75
+    },
+    "1171-2010-battery cell mass share, LFP": {
+      "amount": 0.6,
+      "category": "Energy Storage",
+      "powertrain": [
+        "Human",
+        "ICEV-p",
+        "BEV"
+      ],
+      "sizes": [
+        "Kick-scooter",
+        "Bicycle <25",
+        "Bicycle cargo",
+        "Bicycle <45",
+        "Moped <4kW",
+        "Scooter <4kW",
+        "Scooter 4-11kW",
+        "Motorcycle 4-11kW",
+        "Motorcycle 11-35kW",
+        "Motorcycle >35kW"
+      ],
+      "year": 2010,
+      "name": "battery cell mass share, LFP",
+      "unit": "unitless",
+      "importance": "",
+      "source": "Yang, X.-G., Liu, T., & Wang, C.-Y. (2021). Thermally modulated lithium iron phosphate batteries for mass-market electric vehicles. Nature Energy 2021 6:2, 6(2), 176\u2013185. https://doi.org/10.1038/s41560-020-00757-7",
+      "comment": "",
+      "status": "",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 0.6,
+      "minimum": 0.55,
+      "maximum": 0.75
+    },
+    "1172-2020-battery cell mass share, LFP": {
+      "amount": 0.8,
+      "category": "Energy Storage",
+      "powertrain": [
+        "Human",
+        "ICEV-p",
+        "BEV"
+      ],
+      "sizes": [
+        "Kick-scooter",
+        "Bicycle <25",
+        "Bicycle cargo",
+        "Bicycle <45",
+        "Moped <4kW",
+        "Scooter <4kW",
+        "Scooter 4-11kW",
+        "Motorcycle 4-11kW",
+        "Motorcycle 11-35kW",
+        "Motorcycle >35kW"
+      ],
+      "year": 2020,
+      "name": "battery cell mass share, LFP",
+      "unit": "unitless",
+      "importance": "",
+      "source": "Yang, X.-G., Liu, T., & Wang, C.-Y. (2021). Thermally modulated lithium iron phosphate batteries for mass-market electric vehicles. Nature Energy 2021 6:2, 6(2), 176\u2013185. https://doi.org/10.1038/s41560-020-00757-7",
+      "comment": "",
+      "status": "",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 0.8,
+      "minimum": 0.75,
+      "maximum": 0.85
+    },
+    "1173-2030-battery cell mass share, LFP": {
+      "amount": 0.8500000000000001,
+      "category": "Energy Storage",
+      "powertrain": [
+        "Human",
+        "ICEV-p",
+        "BEV"
+      ],
+      "sizes": [
+        "Kick-scooter",
+        "Bicycle <25",
+        "Bicycle cargo",
+        "Bicycle <45",
+        "Moped <4kW",
+        "Scooter <4kW",
+        "Scooter 4-11kW",
+        "Motorcycle 4-11kW",
+        "Motorcycle 11-35kW",
+        "Motorcycle >35kW"
+      ],
+      "year": 2030,
+      "name": "battery cell mass share, LFP",
+      "unit": "unitless",
+      "importance": "",
+      "source": "Yang, X.-G., Liu, T., & Wang, C.-Y. (2021). Thermally modulated lithium iron phosphate batteries for mass-market electric vehicles. Nature Energy 2021 6:2, 6(2), 176\u2013185. https://doi.org/10.1038/s41560-020-00757-7",
+      "comment": "",
+      "status": "",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 0.8500000000000001,
+      "minimum": 0.8,
+      "maximum": 0.8999999999999999
+    },
+    "1174-2040-battery cell mass share, LFP": {
+      "amount": 0.9,
+      "category": "Energy Storage",
+      "powertrain": [
+        "Human",
+        "ICEV-p",
+        "BEV"
+      ],
+      "sizes": [
+        "Kick-scooter",
+        "Bicycle <25",
+        "Bicycle cargo",
+        "Bicycle <45",
+        "Moped <4kW",
+        "Scooter <4kW",
+        "Scooter 4-11kW",
+        "Motorcycle 4-11kW",
+        "Motorcycle 11-35kW",
+        "Motorcycle >35kW"
+      ],
+      "year": 2040,
+      "name": "battery cell mass share, LFP",
+      "unit": "unitless",
+      "importance": "",
+      "source": "Yang, X.-G., Liu, T., & Wang, C.-Y. (2021). Thermally modulated lithium iron phosphate batteries for mass-market electric vehicles. Nature Energy 2021 6:2, 6(2), 176\u2013185. https://doi.org/10.1038/s41560-020-00757-7",
+      "comment": "",
+      "status": "",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 0.9,
+      "minimum": 0.85,
+      "maximum": 0.95
+    },
+    "1175-2050-battery cell mass share, LFP": {
+      "amount": 0.9,
+      "category": "Energy Storage",
+      "powertrain": [
+        "Human",
+        "ICEV-p",
+        "BEV"
+      ],
+      "sizes": [
+        "Kick-scooter",
+        "Bicycle <25",
+        "Bicycle cargo",
+        "Bicycle <45",
+        "Moped <4kW",
+        "Scooter <4kW",
+        "Scooter 4-11kW",
+        "Motorcycle 4-11kW",
+        "Motorcycle 11-35kW",
+        "Motorcycle >35kW"
+      ],
+      "year": 2050,
+      "name": "battery cell mass share, LFP",
+      "unit": "unitless",
+      "importance": "",
+      "source": "Yang, X.-G., Liu, T., & Wang, C.-Y. (2021). Thermally modulated lithium iron phosphate batteries for mass-market electric vehicles. Nature Energy 2021 6:2, 6(2), 176\u2013185. https://doi.org/10.1038/s41560-020-00757-7",
+      "comment": "",
+      "status": "",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 0.9,
+      "minimum": 0.85,
+      "maximum": 0.95
+    },
+    "1176-2000-battery cell mass share, NCA": {
+      "amount": 0.6,
+      "category": "Energy Storage",
+      "powertrain": [
+        "Human",
+        "ICEV-p",
+        "BEV"
+      ],
+      "sizes": [
+        "Kick-scooter",
+        "Bicycle <25",
+        "Bicycle cargo",
+        "Bicycle <45",
+        "Moped <4kW",
+        "Scooter <4kW",
+        "Scooter 4-11kW",
+        "Motorcycle 4-11kW",
+        "Motorcycle 11-35kW",
+        "Motorcycle >35kW"
+      ],
+      "year": 2000,
+      "name": "battery cell mass share, NCA",
+      "unit": "unitless",
+      "importance": "",
+      "source": "For LFP :Yang, X.-G., Liu, T., & Wang, C.-Y. (2021). Thermally modulated lithium iron phosphate batteries for mass-market electric vehicles. Nature Energy 2021 6:2, 6(2), 176\u2013185. https://doi.org/10.1038/s41560-020-00757-7\nFor NMC/NCA: Towards more flexibility and transparency in life cycle inventories for Lithium-ion batteries. EleonorCrenna, Marcel Gauch, Rolf Widmer, Patrick W\u00e4ger, Roland Hischier",
+      "comment": "",
+      "status": "",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 0.6,
+      "minimum": 0.55,
+      "maximum": 0.75
+    },
+    "1177-2010-battery cell mass share, NCA": {
+      "amount": 0.65,
+      "category": "Energy Storage",
+      "powertrain": [
+        "Human",
+        "ICEV-p",
+        "BEV"
+      ],
+      "sizes": [
+        "Kick-scooter",
+        "Bicycle <25",
+        "Bicycle cargo",
+        "Bicycle <45",
+        "Moped <4kW",
+        "Scooter <4kW",
+        "Scooter 4-11kW",
+        "Motorcycle 4-11kW",
+        "Motorcycle 11-35kW",
+        "Motorcycle >35kW"
+      ],
+      "year": 2010,
+      "name": "battery cell mass share, NCA",
+      "unit": "unitless",
+      "importance": "",
+      "source": "For LFP :Yang, X.-G., Liu, T., & Wang, C.-Y. (2021). Thermally modulated lithium iron phosphate batteries for mass-market electric vehicles. Nature Energy 2021 6:2, 6(2), 176\u2013185. https://doi.org/10.1038/s41560-020-00757-7\nFor NMC/NCA: Towards more flexibility and transparency in life cycle inventories for Lithium-ion batteries. EleonorCrenna, Marcel Gauch, Rolf Widmer, Patrick W\u00e4ger, Roland Hischier",
+      "comment": "",
+      "status": "",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 0.65,
+      "minimum": 0.6,
+      "maximum": 0.7
+    },
+    "1178-2020-battery cell mass share, NCA": {
+      "amount": 0.7,
+      "category": "Energy Storage",
+      "powertrain": [
+        "Human",
+        "ICEV-p",
+        "BEV"
+      ],
+      "sizes": [
+        "Kick-scooter",
+        "Bicycle <25",
+        "Bicycle cargo",
+        "Bicycle <45",
+        "Moped <4kW",
+        "Scooter <4kW",
+        "Scooter 4-11kW",
+        "Motorcycle 4-11kW",
+        "Motorcycle 11-35kW",
+        "Motorcycle >35kW"
+      ],
+      "year": 2020,
+      "name": "battery cell mass share, NCA",
+      "unit": "unitless",
+      "importance": "",
+      "source": "For LFP :Yang, X.-G., Liu, T., & Wang, C.-Y. (2021). Thermally modulated lithium iron phosphate batteries for mass-market electric vehicles. Nature Energy 2021 6:2, 6(2), 176\u2013185. https://doi.org/10.1038/s41560-020-00757-7\nFor NMC/NCA: Towards more flexibility and transparency in life cycle inventories for Lithium-ion batteries. EleonorCrenna, Marcel Gauch, Rolf Widmer, Patrick W\u00e4ger, Roland Hischier",
+      "comment": "",
+      "status": "",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 0.7,
+      "minimum": 0.65,
+      "maximum": 0.73
+    },
+    "1179-2030-battery cell mass share, NCA": {
+      "amount": 0.75,
+      "category": "Energy Storage",
+      "powertrain": [
+        "Human",
+        "ICEV-p",
+        "BEV"
+      ],
+      "sizes": [
+        "Kick-scooter",
+        "Bicycle <25",
+        "Bicycle cargo",
+        "Bicycle <45",
+        "Moped <4kW",
+        "Scooter <4kW",
+        "Scooter 4-11kW",
+        "Motorcycle 4-11kW",
+        "Motorcycle 11-35kW",
+        "Motorcycle >35kW"
+      ],
+      "year": 2030,
+      "name": "battery cell mass share, NCA",
+      "unit": "unitless",
+      "importance": "",
+      "source": "For LFP :Yang, X.-G., Liu, T., & Wang, C.-Y. (2021). Thermally modulated lithium iron phosphate batteries for mass-market electric vehicles. Nature Energy 2021 6:2, 6(2), 176\u2013185. https://doi.org/10.1038/s41560-020-00757-7\nFor NMC/NCA: Towards more flexibility and transparency in life cycle inventories for Lithium-ion batteries. EleonorCrenna, Marcel Gauch, Rolf Widmer, Patrick W\u00e4ger, Roland Hischier",
+      "comment": "",
+      "status": "",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 0.75,
+      "minimum": 0.7,
+      "maximum": 0.77
+    },
+    "1180-2040-battery cell mass share, NCA": {
+      "amount": 0.77,
+      "category": "Energy Storage",
+      "powertrain": [
+        "Human",
+        "ICEV-p",
+        "BEV"
+      ],
+      "sizes": [
+        "Kick-scooter",
+        "Bicycle <25",
+        "Bicycle cargo",
+        "Bicycle <45",
+        "Moped <4kW",
+        "Scooter <4kW",
+        "Scooter 4-11kW",
+        "Motorcycle 4-11kW",
+        "Motorcycle 11-35kW",
+        "Motorcycle >35kW"
+      ],
+      "year": 2040,
+      "name": "battery cell mass share, NCA",
+      "unit": "unitless",
+      "importance": "",
+      "source": "For LFP :Yang, X.-G., Liu, T., & Wang, C.-Y. (2021). Thermally modulated lithium iron phosphate batteries for mass-market electric vehicles. Nature Energy 2021 6:2, 6(2), 176\u2013185. https://doi.org/10.1038/s41560-020-00757-7\nFor NMC/NCA: Towards more flexibility and transparency in life cycle inventories for Lithium-ion batteries. EleonorCrenna, Marcel Gauch, Rolf Widmer, Patrick W\u00e4ger, Roland Hischier",
+      "comment": "",
+      "status": "",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 0.77,
+      "minimum": 0.75,
+      "maximum": 0.8
+    },
+    "1181-2050-battery cell mass share, NCA": {
+      "amount": 0.8,
+      "category": "Energy Storage",
+      "powertrain": [
+        "Human",
+        "ICEV-p",
+        "BEV"
+      ],
+      "sizes": [
+        "Kick-scooter",
+        "Bicycle <25",
+        "Bicycle cargo",
+        "Bicycle <45",
+        "Moped <4kW",
+        "Scooter <4kW",
+        "Scooter 4-11kW",
+        "Motorcycle 4-11kW",
+        "Motorcycle 11-35kW",
+        "Motorcycle >35kW"
+      ],
+      "year": 2050,
+      "name": "battery cell mass share, NCA",
+      "unit": "unitless",
+      "importance": "",
+      "source": "For LFP :Yang, X.-G., Liu, T., & Wang, C.-Y. (2021). Thermally modulated lithium iron phosphate batteries for mass-market electric vehicles. Nature Energy 2021 6:2, 6(2), 176\u2013185. https://doi.org/10.1038/s41560-020-00757-7\nFor NMC/NCA: Towards more flexibility and transparency in life cycle inventories for Lithium-ion batteries. EleonorCrenna, Marcel Gauch, Rolf Widmer, Patrick W\u00e4ger, Roland Hischier",
+      "comment": "",
+      "status": "",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 0.8,
+      "minimum": 0.77,
+      "maximum": 0.85
+    },
+    "1230-2000-battery cycle life, NMC": {
+      "amount": 3000,
+      "category": "Energy Storage",
+      "powertrain": [
+        "Human",
+        "ICEV-p",
+        "BEV"
+      ],
+      "sizes": [
+        "Kick-scooter",
+        "Bicycle <25",
+        "Bicycle cargo",
+        "Bicycle <45",
+        "Moped <4kW",
+        "Scooter <4kW",
+        "Scooter 4-11kW",
+        "Motorcycle 4-11kW",
+        "Motorcycle 11-35kW",
+        "Motorcycle >35kW"
+      ],
+      "year": 2000,
+      "name": "battery cycle life, NMC",
+      "unit": "unit",
+      "importance": "Critical",
+      "source": "Yuliya Preger et al 2020 J. Electrochem. Soc. 167 120532",
+      "comment": "Cycle life, used to calculate battery lifetime.",
+      "status": "",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 3000,
+      "minimum": 2250,
+      "maximum": 3750
+    },
+    "1231-2010-battery cycle life, NMC": {
+      "amount": 3000,
+      "category": "Energy Storage",
+      "powertrain": [
+        "Human",
+        "ICEV-p",
+        "BEV"
+      ],
+      "sizes": [
+        "Kick-scooter",
+        "Bicycle <25",
+        "Bicycle cargo",
+        "Bicycle <45",
+        "Moped <4kW",
+        "Scooter <4kW",
+        "Scooter 4-11kW",
+        "Motorcycle 4-11kW",
+        "Motorcycle 11-35kW",
+        "Motorcycle >35kW"
+      ],
+      "year": 2010,
+      "name": "battery cycle life, NMC",
+      "unit": "unit",
+      "importance": "Critical",
+      "source": "Yuliya Preger et al 2020 J. Electrochem. Soc. 167 120532",
+      "comment": "Cycle life, used to calculate battery lifetime.",
+      "status": "",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 3000,
+      "minimum": 2250,
+      "maximum": 3750
+    },
+    "1232-2020-battery cycle life, NMC": {
+      "amount": 3000,
+      "category": "Energy Storage",
+      "powertrain": [
+        "Human",
+        "ICEV-p",
+        "BEV"
+      ],
+      "sizes": [
+        "Kick-scooter",
+        "Bicycle <25",
+        "Bicycle cargo",
+        "Bicycle <45",
+        "Moped <4kW",
+        "Scooter <4kW",
+        "Scooter 4-11kW",
+        "Motorcycle 4-11kW",
+        "Motorcycle 11-35kW",
+        "Motorcycle >35kW"
+      ],
+      "year": 2020,
+      "name": "battery cycle life, NMC",
+      "unit": "unit",
+      "importance": "Critical",
+      "source": "Yuliya Preger et al 2020 J. Electrochem. Soc. 167 120532",
+      "comment": "Cycle life, used to calculate battery lifetime.",
+      "status": "",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 3000,
+      "minimum": 2250,
+      "maximum": 3750
+    },
+    "1233-2030-battery cycle life, NMC": {
+      "amount": 4000,
+      "category": "Energy Storage",
+      "powertrain": [
+        "Human",
+        "ICEV-p",
+        "BEV"
+      ],
+      "sizes": [
+        "Kick-scooter",
+        "Bicycle <25",
+        "Bicycle cargo",
+        "Bicycle <45",
+        "Moped <4kW",
+        "Scooter <4kW",
+        "Scooter 4-11kW",
+        "Motorcycle 4-11kW",
+        "Motorcycle 11-35kW",
+        "Motorcycle >35kW"
+      ],
+      "year": 2030,
+      "name": "battery cycle life, NMC",
+      "unit": "unit",
+      "importance": "Critical",
+      "source": "Yuliya Preger et al 2020 J. Electrochem. Soc. 167 120532",
+      "comment": "Cycle life, used to calculate battery lifetime.",
+      "status": "",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 4000,
+      "minimum": 3000,
+      "maximum": 5000
+    },
+    "1234-2040-battery cycle life, NMC": {
+      "amount": 4000,
+      "category": "Energy Storage",
+      "powertrain": [
+        "Human",
+        "ICEV-p",
+        "BEV"
+      ],
+      "sizes": [
+        "Kick-scooter",
+        "Bicycle <25",
+        "Bicycle cargo",
+        "Bicycle <45",
+        "Moped <4kW",
+        "Scooter <4kW",
+        "Scooter 4-11kW",
+        "Motorcycle 4-11kW",
+        "Motorcycle 11-35kW",
+        "Motorcycle >35kW"
+      ],
+      "year": 2040,
+      "name": "battery cycle life, NMC",
+      "unit": "unit",
+      "importance": "Critical",
+      "source": "Yuliya Preger et al 2020 J. Electrochem. Soc. 167 120532",
+      "comment": "Cycle life, used to calculate battery lifetime.",
+      "status": "",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 4000,
+      "minimum": 3000,
+      "maximum": 5000
+    },
+    "1235-2050-battery cycle life, NMC": {
+      "amount": 4000,
+      "category": "Energy Storage",
+      "powertrain": [
+        "Human",
+        "ICEV-p",
+        "BEV"
+      ],
+      "sizes": [
+        "Kick-scooter",
+        "Bicycle <25",
+        "Bicycle cargo",
+        "Bicycle <45",
+        "Moped <4kW",
+        "Scooter <4kW",
+        "Scooter 4-11kW",
+        "Motorcycle 4-11kW",
+        "Motorcycle 11-35kW",
+        "Motorcycle >35kW"
+      ],
+      "year": 2050,
+      "name": "battery cycle life, NMC",
+      "unit": "unit",
+      "importance": "Critical",
+      "source": "Yuliya Preger et al 2020 J. Electrochem. Soc. 167 120532",
+      "comment": "Cycle life, used to calculate battery lifetime.",
+      "status": "",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 4000,
+      "minimum": 3000,
+      "maximum": 5000
+    },
+    "1236-2000-battery cycle life, NCA": {
+      "amount": 1500,
+      "category": "Energy Storage",
+      "powertrain": [
+        "Human",
+        "ICEV-p",
+        "BEV"
+      ],
+      "sizes": [
+        "Kick-scooter",
+        "Bicycle <25",
+        "Bicycle cargo",
+        "Bicycle <45",
+        "Moped <4kW",
+        "Scooter <4kW",
+        "Scooter 4-11kW",
+        "Motorcycle 4-11kW",
+        "Motorcycle 11-35kW",
+        "Motorcycle >35kW"
+      ],
+      "year": 2000,
+      "name": "battery cycle life, NCA",
+      "unit": "unit",
+      "importance": "Critical",
+      "source": "Yuliya Preger et al 2020 J. Electrochem. Soc. 167 120532",
+      "comment": "Cycle life, used to calculate battery lifetime.",
+      "status": "",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 1500,
+      "minimum": 1125,
+      "maximum": 1875
+    },
+    "1237-2010-battery cycle life, NCA": {
+      "amount": 1500,
+      "category": "Energy Storage",
+      "powertrain": [
+        "Human",
+        "ICEV-p",
+        "BEV"
+      ],
+      "sizes": [
+        "Kick-scooter",
+        "Bicycle <25",
+        "Bicycle cargo",
+        "Bicycle <45",
+        "Moped <4kW",
+        "Scooter <4kW",
+        "Scooter 4-11kW",
+        "Motorcycle 4-11kW",
+        "Motorcycle 11-35kW",
+        "Motorcycle >35kW"
+      ],
+      "year": 2010,
+      "name": "battery cycle life, NCA",
+      "unit": "unit",
+      "importance": "Critical",
+      "source": "Yuliya Preger et al 2020 J. Electrochem. Soc. 167 120532",
+      "comment": "Cycle life, used to calculate battery lifetime.",
+      "status": "",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 1500,
+      "minimum": 1125,
+      "maximum": 1875
+    },
+    "1238-2020-battery cycle life, NCA": {
+      "amount": 1500,
+      "category": "Energy Storage",
+      "powertrain": [
+        "Human",
+        "ICEV-p",
+        "BEV"
+      ],
+      "sizes": [
+        "Kick-scooter",
+        "Bicycle <25",
+        "Bicycle cargo",
+        "Bicycle <45",
+        "Moped <4kW",
+        "Scooter <4kW",
+        "Scooter 4-11kW",
+        "Motorcycle 4-11kW",
+        "Motorcycle 11-35kW",
+        "Motorcycle >35kW"
+      ],
+      "year": 2020,
+      "name": "battery cycle life, NCA",
+      "unit": "unit",
+      "importance": "Critical",
+      "source": "Yuliya Preger et al 2020 J. Electrochem. Soc. 167 120532",
+      "comment": "Cycle life, used to calculate battery lifetime.",
+      "status": "",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 1500,
+      "minimum": 1125,
+      "maximum": 1875
+    },
+    "1239-2030-battery cycle life, NCA": {
+      "amount": 2000,
+      "category": "Energy Storage",
+      "powertrain": [
+        "Human",
+        "ICEV-p",
+        "BEV"
+      ],
+      "sizes": [
+        "Kick-scooter",
+        "Bicycle <25",
+        "Bicycle cargo",
+        "Bicycle <45",
+        "Moped <4kW",
+        "Scooter <4kW",
+        "Scooter 4-11kW",
+        "Motorcycle 4-11kW",
+        "Motorcycle 11-35kW",
+        "Motorcycle >35kW"
+      ],
+      "year": 2030,
+      "name": "battery cycle life, NCA",
+      "unit": "unit",
+      "importance": "Critical",
+      "source": "Yuliya Preger et al 2020 J. Electrochem. Soc. 167 120532",
+      "comment": "Cycle life, used to calculate battery lifetime.",
+      "status": "",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 2000,
+      "minimum": 1500,
+      "maximum": 2500
+    },
+    "1240-2040-battery cycle life, NCA": {
+      "amount": 2000,
+      "category": "Energy Storage",
+      "powertrain": [
+        "Human",
+        "ICEV-p",
+        "BEV"
+      ],
+      "sizes": [
+        "Kick-scooter",
+        "Bicycle <25",
+        "Bicycle cargo",
+        "Bicycle <45",
+        "Moped <4kW",
+        "Scooter <4kW",
+        "Scooter 4-11kW",
+        "Motorcycle 4-11kW",
+        "Motorcycle 11-35kW",
+        "Motorcycle >35kW"
+      ],
+      "year": 2040,
+      "name": "battery cycle life, NCA",
+      "unit": "unit",
+      "importance": "Critical",
+      "source": "Yuliya Preger et al 2020 J. Electrochem. Soc. 167 120532",
+      "comment": "Cycle life, used to calculate battery lifetime.",
+      "status": "",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 2000,
+      "minimum": 1500,
+      "maximum": 2500
+    },
+    "1241-2050-battery cycle life, NCA": {
+      "amount": 2000,
+      "category": "Energy Storage",
+      "powertrain": [
+        "Human",
+        "ICEV-p",
+        "BEV"
+      ],
+      "sizes": [
+        "Kick-scooter",
+        "Bicycle <25",
+        "Bicycle cargo",
+        "Bicycle <45",
+        "Moped <4kW",
+        "Scooter <4kW",
+        "Scooter 4-11kW",
+        "Motorcycle 4-11kW",
+        "Motorcycle 11-35kW",
+        "Motorcycle >35kW"
+      ],
+      "year": 2050,
+      "name": "battery cycle life, NCA",
+      "unit": "unit",
+      "importance": "Critical",
+      "source": "Yuliya Preger et al 2020 J. Electrochem. Soc. 167 120532",
+      "comment": "Cycle life, used to calculate battery lifetime.",
+      "status": "",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 2000,
+      "minimum": 1500,
+      "maximum": 2500
+    },
+    "1242-2000-battery cycle life, LFP": {
+      "amount": 7000,
+      "category": "Energy Storage",
+      "powertrain": [
+        "Human",
+        "ICEV-p",
+        "BEV"
+      ],
+      "sizes": [
+        "Kick-scooter",
+        "Bicycle <25",
+        "Bicycle cargo",
+        "Bicycle <45",
+        "Moped <4kW",
+        "Scooter <4kW",
+        "Scooter 4-11kW",
+        "Motorcycle 4-11kW",
+        "Motorcycle 11-35kW",
+        "Motorcycle >35kW"
+      ],
+      "year": 2000,
+      "name": "battery cycle life, LFP",
+      "unit": "unit",
+      "importance": "Critical",
+      "source": "Yuliya Preger et al 2020 J. Electrochem. Soc. 167 120532",
+      "comment": "Cycle life, used to calculate battery lifetime.",
+      "status": "",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 7000,
+      "minimum": 5250,
+      "maximum": 8750
+    },
+    "1243-2010-battery cycle life, LFP": {
+      "amount": 7000,
+      "category": "Energy Storage",
+      "powertrain": [
+        "Human",
+        "ICEV-p",
+        "BEV"
+      ],
+      "sizes": [
+        "Kick-scooter",
+        "Bicycle <25",
+        "Bicycle cargo",
+        "Bicycle <45",
+        "Moped <4kW",
+        "Scooter <4kW",
+        "Scooter 4-11kW",
+        "Motorcycle 4-11kW",
+        "Motorcycle 11-35kW",
+        "Motorcycle >35kW"
+      ],
+      "year": 2010,
+      "name": "battery cycle life, LFP",
+      "unit": "unit",
+      "importance": "Critical",
+      "source": "Yuliya Preger et al 2020 J. Electrochem. Soc. 167 120532",
+      "comment": "Cycle life, used to calculate battery lifetime.",
+      "status": "",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 7000,
+      "minimum": 5250,
+      "maximum": 8750
+    },
+    "1244-2020-battery cycle life, LFP": {
+      "amount": 7000,
+      "category": "Energy Storage",
+      "powertrain": [
+        "Human",
+        "ICEV-p",
+        "BEV"
+      ],
+      "sizes": [
+        "Kick-scooter",
+        "Bicycle <25",
+        "Bicycle cargo",
+        "Bicycle <45",
+        "Moped <4kW",
+        "Scooter <4kW",
+        "Scooter 4-11kW",
+        "Motorcycle 4-11kW",
+        "Motorcycle 11-35kW",
+        "Motorcycle >35kW"
+      ],
+      "year": 2020,
+      "name": "battery cycle life, LFP",
+      "unit": "unit",
+      "importance": "Critical",
+      "source": "Yuliya Preger et al 2020 J. Electrochem. Soc. 167 120532",
+      "comment": "Cycle life, used to calculate battery lifetime.",
+      "status": "",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 7000,
+      "minimum": 5250,
+      "maximum": 8750
+    },
+    "1245-2030-battery cycle life, LFP": {
+      "amount": 7700.000000000001,
+      "category": "Energy Storage",
+      "powertrain": [
+        "Human",
+        "ICEV-p",
+        "BEV"
+      ],
+      "sizes": [
+        "Kick-scooter",
+        "Bicycle <25",
+        "Bicycle cargo",
+        "Bicycle <45",
+        "Moped <4kW",
+        "Scooter <4kW",
+        "Scooter 4-11kW",
+        "Motorcycle 4-11kW",
+        "Motorcycle 11-35kW",
+        "Motorcycle >35kW"
+      ],
+      "year": 2030,
+      "name": "battery cycle life, LFP",
+      "unit": "unit",
+      "importance": "Critical",
+      "source": "Yuliya Preger et al 2020 J. Electrochem. Soc. 167 120532",
+      "comment": "Cycle life, used to calculate battery lifetime.",
+      "status": "",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 7700.000000000001,
+      "minimum": 5775.000000000001,
+      "maximum": 9625.000000000002
+    },
+    "1246-2040-battery cycle life, LFP": {
+      "amount": 8470.000000000002,
+      "category": "Energy Storage",
+      "powertrain": [
+        "Human",
+        "ICEV-p",
+        "BEV"
+      ],
+      "sizes": [
+        "Kick-scooter",
+        "Bicycle <25",
+        "Bicycle cargo",
+        "Bicycle <45",
+        "Moped <4kW",
+        "Scooter <4kW",
+        "Scooter 4-11kW",
+        "Motorcycle 4-11kW",
+        "Motorcycle 11-35kW",
+        "Motorcycle >35kW"
+      ],
+      "year": 2040,
+      "name": "battery cycle life, LFP",
+      "unit": "unit",
+      "importance": "Critical",
+      "source": "Yuliya Preger et al 2020 J. Electrochem. Soc. 167 120532",
+      "comment": "Cycle life, used to calculate battery lifetime.",
+      "status": "",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 8470.000000000002,
+      "minimum": 6352.500000000002,
+      "maximum": 10587.500000000002
+    },
+    "1247-2050-battery cycle life, LFP": {
+      "amount": 9317.000000000004,
+      "category": "Energy Storage",
+      "powertrain": [
+        "Human",
+        "ICEV-p",
+        "BEV"
+      ],
+      "sizes": [
+        "Kick-scooter",
+        "Bicycle <25",
+        "Bicycle cargo",
+        "Bicycle <45",
+        "Moped <4kW",
+        "Scooter <4kW",
+        "Scooter 4-11kW",
+        "Motorcycle 4-11kW",
+        "Motorcycle 11-35kW",
+        "Motorcycle >35kW"
+      ],
+      "year": 2050,
+      "name": "battery cycle life, LFP",
+      "unit": "unit",
+      "importance": "Critical",
+      "source": "Yuliya Preger et al 2020 J. Electrochem. Soc. 167 120532",
+      "comment": "Cycle life, used to calculate battery lifetime.",
+      "status": "",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 9317.000000000004,
+      "minimum": 6987.750000000003,
+      "maximum": 11646.250000000004
+    },
+    "1248-2000-battery cycle life, LTO": {
+      "amount": 7000,
+      "category": "Energy Storage",
+      "powertrain": [
+        "Human",
+        "ICEV-p",
+        "BEV"
+      ],
+      "sizes": [
+        "Kick-scooter",
+        "Bicycle <25",
+        "Bicycle cargo",
+        "Bicycle <45",
+        "Moped <4kW",
+        "Scooter <4kW",
+        "Scooter 4-11kW",
+        "Motorcycle 4-11kW",
+        "Motorcycle 11-35kW",
+        "Motorcycle >35kW"
+      ],
+      "year": 2000,
+      "name": "battery cycle life, LTO",
+      "unit": "unit",
+      "importance": "Critical",
+      "source": "Yuliya Preger et al 2020 J. Electrochem. Soc. 167 120532",
+      "comment": "Cycle life, used to calculate battery lifetime.",
+      "status": "",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 7000,
+      "minimum": 5250,
+      "maximum": 8750
+    },
+    "1249-2010-battery cycle life, LTO": {
+      "amount": 7000,
+      "category": "Energy Storage",
+      "powertrain": [
+        "Human",
+        "ICEV-p",
+        "BEV"
+      ],
+      "sizes": [
+        "Kick-scooter",
+        "Bicycle <25",
+        "Bicycle cargo",
+        "Bicycle <45",
+        "Moped <4kW",
+        "Scooter <4kW",
+        "Scooter 4-11kW",
+        "Motorcycle 4-11kW",
+        "Motorcycle 11-35kW",
+        "Motorcycle >35kW"
+      ],
+      "year": 2010,
+      "name": "battery cycle life, LTO",
+      "unit": "unit",
+      "importance": "Critical",
+      "source": "Yuliya Preger et al 2020 J. Electrochem. Soc. 167 120532",
+      "comment": "Cycle life, used to calculate battery lifetime.",
+      "status": "",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 7000,
+      "minimum": 5250,
+      "maximum": 8750
+    },
+    "1250-2020-battery cycle life, LTO": {
+      "amount": 7000,
+      "category": "Energy Storage",
+      "powertrain": [
+        "Human",
+        "ICEV-p",
+        "BEV"
+      ],
+      "sizes": [
+        "Kick-scooter",
+        "Bicycle <25",
+        "Bicycle cargo",
+        "Bicycle <45",
+        "Moped <4kW",
+        "Scooter <4kW",
+        "Scooter 4-11kW",
+        "Motorcycle 4-11kW",
+        "Motorcycle 11-35kW",
+        "Motorcycle >35kW"
+      ],
+      "year": 2020,
+      "name": "battery cycle life, LTO",
+      "unit": "unit",
+      "importance": "Critical",
+      "source": "Yuliya Preger et al 2020 J. Electrochem. Soc. 167 120532",
+      "comment": "Cycle life, used to calculate battery lifetime.",
+      "status": "",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 7000,
+      "minimum": 5250,
+      "maximum": 8750
+    },
+    "1251-2030-battery cycle life, LTO": {
+      "amount": 7700.000000000001,
+      "category": "Energy Storage",
+      "powertrain": [
+        "Human",
+        "ICEV-p",
+        "BEV"
+      ],
+      "sizes": [
+        "Kick-scooter",
+        "Bicycle <25",
+        "Bicycle cargo",
+        "Bicycle <45",
+        "Moped <4kW",
+        "Scooter <4kW",
+        "Scooter 4-11kW",
+        "Motorcycle 4-11kW",
+        "Motorcycle 11-35kW",
+        "Motorcycle >35kW"
+      ],
+      "year": 2030,
+      "name": "battery cycle life, LTO",
+      "unit": "unit",
+      "importance": "Critical",
+      "source": "Yuliya Preger et al 2020 J. Electrochem. Soc. 167 120532",
+      "comment": "Cycle life, used to calculate battery lifetime.",
+      "status": "",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 7700.000000000001,
+      "minimum": 5775.000000000001,
+      "maximum": 9625.000000000002
+    },
+    "1252-2040-battery cycle life, LTO": {
+      "amount": 8470.000000000002,
+      "category": "Energy Storage",
+      "powertrain": [
+        "Human",
+        "ICEV-p",
+        "BEV"
+      ],
+      "sizes": [
+        "Kick-scooter",
+        "Bicycle <25",
+        "Bicycle cargo",
+        "Bicycle <45",
+        "Moped <4kW",
+        "Scooter <4kW",
+        "Scooter 4-11kW",
+        "Motorcycle 4-11kW",
+        "Motorcycle 11-35kW",
+        "Motorcycle >35kW"
+      ],
+      "year": 2040,
+      "name": "battery cycle life, LTO",
+      "unit": "unit",
+      "importance": "Critical",
+      "source": "Yuliya Preger et al 2020 J. Electrochem. Soc. 167 120532",
+      "comment": "Cycle life, used to calculate battery lifetime.",
+      "status": "",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 8470.000000000002,
+      "minimum": 6352.500000000002,
+      "maximum": 10587.500000000002
+    },
+    "1253-2050-battery cycle life, LTO": {
+      "amount": 9317.000000000004,
+      "category": "Energy Storage",
+      "powertrain": [
+        "Human",
+        "ICEV-p",
+        "BEV"
+      ],
+      "sizes": [
+        "Kick-scooter",
+        "Bicycle <25",
+        "Bicycle cargo",
+        "Bicycle <45",
+        "Moped <4kW",
+        "Scooter <4kW",
+        "Scooter 4-11kW",
+        "Motorcycle 4-11kW",
+        "Motorcycle 11-35kW",
+        "Motorcycle >35kW"
+      ],
+      "year": 2050,
+      "name": "battery cycle life, LTO",
+      "unit": "unit",
+      "importance": "Critical",
+      "source": "Yuliya Preger et al 2020 J. Electrochem. Soc. 167 120532",
+      "comment": "Cycle life, used to calculate battery lifetime.",
+      "status": "",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 9317.000000000004,
+      "minimum": 6987.750000000003,
+      "maximum": 11646.250000000004
+    }
+  },
+  "replacement_record_ids": {
+    "600-2000-battery cell production energy electricity share": [],
+    "601-2010-battery cell production energy electricity share": [],
+    "602-2020-battery cell production energy electricity share": [],
+    "603-2030-battery cell production energy electricity share": [],
+    "604-2040-battery cell production energy electricity share": [],
+    "605-2050-battery cell production energy electricity share": [],
+    "612-2000-battery cell production energy": [],
+    "613-2010-battery cell production energy": [],
+    "614-2020-battery cell production energy": [],
+    "615-2030-battery cell production energy": [],
+    "616-2040-battery cell production energy": [],
+    "617-2050-battery cell production energy": [],
+    "1140-2000-battery cell energy density, NCA": [
+      "1140-2000-battery cell energy density, NCA"
+    ],
+    "1141-2010-battery cell energy density, NCA": [
+      "1141-2010-battery cell energy density, NCA"
+    ],
+    "1142-2020-battery cell energy density, NCA": [
+      "1142-2020-battery cell energy density, NCA"
+    ],
+    "1143-2030-battery cell energy density, NCA": [
+      "1143-2030-battery cell energy density, NCA"
+    ],
+    "1144-2040-battery cell energy density, NCA": [
+      "1144-2040-battery cell energy density, NCA"
+    ],
+    "1145-2050-battery cell energy density, NCA": [
+      "1145-2050-battery cell energy density, NCA"
+    ],
+    "1146-2000-battery cell energy density, LFP": [
+      "1146-2000-battery cell energy density, LFP"
+    ],
+    "1147-2010-battery cell energy density, LFP": [
+      "1147-2010-battery cell energy density, LFP"
+    ],
+    "1148-2020-battery cell energy density, LFP": [
+      "1148-2020-battery cell energy density, LFP"
+    ],
+    "1149-2030-battery cell energy density, LFP": [
+      "1149-2030-battery cell energy density, LFP"
+    ],
+    "1150-2040-battery cell energy density, LFP": [
+      "1150-2040-battery cell energy density, LFP"
+    ],
+    "1151-2050-battery cell energy density, LFP": [
+      "1151-2050-battery cell energy density, LFP"
+    ],
+    "1170-2000-battery cell mass share, LFP": [
+      "1170-2000-battery cell mass share, LFP"
+    ],
+    "1171-2010-battery cell mass share, LFP": [
+      "1171-2010-battery cell mass share, LFP"
+    ],
+    "1172-2020-battery cell mass share, LFP": [
+      "1172-2020-battery cell mass share, LFP"
+    ],
+    "1173-2030-battery cell mass share, LFP": [
+      "1173-2030-battery cell mass share, LFP"
+    ],
+    "1174-2040-battery cell mass share, LFP": [
+      "1174-2040-battery cell mass share, LFP"
+    ],
+    "1175-2050-battery cell mass share, LFP": [
+      "1175-2050-battery cell mass share, LFP"
+    ],
+    "1176-2000-battery cell mass share, NCA": [
+      "1176-2000-battery cell mass share, NCA"
+    ],
+    "1177-2010-battery cell mass share, NCA": [
+      "1177-2010-battery cell mass share, NCA"
+    ],
+    "1178-2020-battery cell mass share, NCA": [
+      "1178-2020-battery cell mass share, NCA"
+    ],
+    "1179-2030-battery cell mass share, NCA": [
+      "1179-2030-battery cell mass share, NCA"
+    ],
+    "1180-2040-battery cell mass share, NCA": [
+      "1180-2040-battery cell mass share, NCA"
+    ],
+    "1181-2050-battery cell mass share, NCA": [
+      "1181-2050-battery cell mass share, NCA"
+    ],
+    "1230-2000-battery cycle life, NMC": [
+      "1230-2000-battery cycle life, NMC"
+    ],
+    "1231-2010-battery cycle life, NMC": [
+      "1231-2010-battery cycle life, NMC"
+    ],
+    "1232-2020-battery cycle life, NMC": [
+      "1232-2020-battery cycle life, NMC"
+    ],
+    "1233-2030-battery cycle life, NMC": [
+      "1233-2030-battery cycle life, NMC"
+    ],
+    "1234-2040-battery cycle life, NMC": [
+      "1234-2040-battery cycle life, NMC"
+    ],
+    "1235-2050-battery cycle life, NMC": [
+      "1235-2050-battery cycle life, NMC"
+    ],
+    "1236-2000-battery cycle life, NCA": [
+      "1236-2000-battery cycle life, NCA"
+    ],
+    "1237-2010-battery cycle life, NCA": [
+      "1237-2010-battery cycle life, NCA"
+    ],
+    "1238-2020-battery cycle life, NCA": [
+      "1238-2020-battery cycle life, NCA"
+    ],
+    "1239-2030-battery cycle life, NCA": [
+      "1239-2030-battery cycle life, NCA"
+    ],
+    "1240-2040-battery cycle life, NCA": [
+      "1240-2040-battery cycle life, NCA"
+    ],
+    "1241-2050-battery cycle life, NCA": [
+      "1241-2050-battery cycle life, NCA"
+    ],
+    "1242-2000-battery cycle life, LFP": [
+      "1242-2000-battery cycle life, LFP"
+    ],
+    "1243-2010-battery cycle life, LFP": [
+      "1243-2010-battery cycle life, LFP"
+    ],
+    "1244-2020-battery cycle life, LFP": [
+      "1244-2020-battery cycle life, LFP"
+    ],
+    "1245-2030-battery cycle life, LFP": [
+      "1245-2030-battery cycle life, LFP"
+    ],
+    "1246-2040-battery cycle life, LFP": [
+      "1246-2040-battery cycle life, LFP"
+    ],
+    "1247-2050-battery cycle life, LFP": [
+      "1247-2050-battery cycle life, LFP"
+    ],
+    "1248-2000-battery cycle life, LTO": [
+      "1248-2000-battery cycle life, LTO"
+    ],
+    "1249-2010-battery cycle life, LTO": [
+      "1249-2010-battery cycle life, LTO"
+    ],
+    "1250-2020-battery cycle life, LTO": [
+      "1250-2020-battery cycle life, LTO"
+    ],
+    "1251-2030-battery cycle life, LTO": [
+      "1251-2030-battery cycle life, LTO"
+    ],
+    "1252-2040-battery cycle life, LTO": [
+      "1252-2040-battery cycle life, LTO"
+    ],
+    "1253-2050-battery cycle life, LTO": [
+      "1253-2050-battery cycle life, LTO"
+    ]
+  },
+  "effective_cells_sha256": "a052386a388b99ebef56d61d2a14fd54d7b5ca590c22997d27e764b7a2e45cf2",
+  "effective_cell_count": 13237
+}
