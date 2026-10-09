@@ -16,6 +16,7 @@ it has not yet been published. Older entries, where present, retain their origin
 
 ### Model and inventory changes
 
+- Match glider production, petrol maintenance and scooter/motorcycle dismantling to exact vehicle identities. Correct swapped amounts in mixed-size/powertrain inventories and exports; verify equal LCIA across individual, combined and reordered selections, including multiple years and named samples. Preserve physical model outputs and supplier/scaling assumptions; see [inventory alignment](docs/validity.rst#inventory-vehicle-alignment).
 - Bill BEVs from grid electricity consumption, including charger losses. Preserve fuel-mode costs and model-specific cost units; verify costs against completed inventory purchases. See [charging cost accounting](docs/validity.rst#charging-cost-accounting).
 - Make projected costs reproducible with `stochastic(n, seed=...)`, retaining factors across sample/year selections and serialization without using NumPy's global RNG. Keep deterministic static/sensitivity factors and explicit battery prices. `stochastic(1)` now also samples cost factors; regenerate old stochastic cost results.
 - Correct year/sample alignment in automatic component-cost projections. Multi-year sensitivity references now match static prices and costs; sampled factors remain attached to their samples across years. Preserve existing price curves, explicit battery prices and physical/inventory outputs.

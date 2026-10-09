@@ -10,6 +10,67 @@ current model. Passenger-car registration data and car curb-mass plots do not
 validate motorcycles, scooters or bicycles; the former copied claims have
 been removed from this page.
 
+.. _inventory-vehicle-alignment:
+
+Inventory vehicle alignment
+----------------------------
+
+Glider production, petrol maintenance and scooter/motorcycle dismantling
+exchanges are assigned using each vehicle's exact size and powertrain identity.
+The inventory columns and parameter selections share the same order, retaining
+all selected years and samples. Previously, class-grouped column lists could
+swap scooter and motorcycle inputs; unordered deduplication could also assign
+dismantling amounts to the wrong size or powertrain.
+
+For example, a joint 2025 run assigned 80 kg of electric glider to
+``Scooter <4kW`` and 53 kg to ``Motorcycle 11-35kW``. Their modelled glider masses
+were 53 kg and 80 kg, respectively. The corrected inventories use those modelled
+masses. Petrol maintenance uses each vehicle's own lifetime kilometres divided
+by the existing 25,000 km reference service life.
+
+The following completed comparison uses Switzerland, the default
+``Two wheeler cycle``, static background, default 2025 inputs, and both sizes
+and powertrains in the same run. Values are IPCC 2021 GWP100, excluding biogenic
+CO2, in g CO2-eq per vehicle-km from the bundled background factors.
+
+.. list-table:: Climate impacts before and after correcting vehicle assignments
+   :header-rows: 1
+
+   * - Vehicle
+     - Before
+     - Corrected
+   * - Scooter <4kW, BEV
+     - 54.698
+     - 48.361
+   * - Scooter <4kW, petrol
+     - 105.530
+     - 89.898
+   * - Motorcycle 11-35kW, BEV
+     - 51.650
+     - 54.814
+   * - Motorcycle 11-35kW, petrol
+     - 206.901
+     - 214.722
+
+Corrected impacts agree when these vehicles are selected individually or
+together, in either size order. Earlier single-size runs can also change if
+the dismantling inputs were swapped between powertrains. Physical masses,
+energy consumption and lifetime inputs remain unchanged.
+
+``tests/test_inventory_alignment.py`` checks independent glider/maintenance
+amounts and recipient alignment, completed LCIA across individual and combined
+scopes, reordered sizes/powertrains/samples, and 2025/2030 with two named samples
+having different masses and lifetimes. It includes petrol mopeds and
+electric-only/petrol-only selections. Brightway and SimaPro exports are checked
+for both supported ecoinvent targets (3.9 and 3.10), including every selected
+year and unchanged source inventories and impacts.
+
+This is an inventory-assignment correction, not an empirical recalibration.
+Existing supplier choices, normalization factors and dismantling coefficients
+are retained; their scientific suitability is not established by these
+alignment checks.
+
+
 .. _charging-cost-accounting:
 
 Charging cost accounting

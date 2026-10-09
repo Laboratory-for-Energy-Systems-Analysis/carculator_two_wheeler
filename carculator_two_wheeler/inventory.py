@@ -21,6 +21,34 @@ class InventoryTwoWheeler(Inventory):
 
     """
 
+    def _select_vehicles(self, size_prefixes, powertrains):
+        """Select foreground columns and model values in the same vehicle order.
+
+        :param size_prefixes: Size-class prefixes, e.g. ``("Scooter", "Motorcycle")``.
+        :param powertrains: Exact powertrain labels to include.
+        :returns: Inventory column indices and the corresponding labelled array.
+        """
+        vehicles = [
+            (size, powertrain)
+            for size in self.scope["size"]
+            if size.startswith(size_prefixes)
+            for powertrain in self.scope["powertrain"]
+            if powertrain in powertrains
+        ]
+        columns = [
+            self.inputs[
+                (
+                    f"two-wheeler, {powertrain}, {size}",
+                    self.vm.country,
+                    "unit",
+                    "two-wheeler",
+                )
+            ]
+            for size, powertrain in vehicles
+        ]
+        labels = [f"{size} - {powertrain}" for size, powertrain in vehicles]
+        return columns, self.array.sel(combined_dim=labels)
+
     def fill_in_A_matrix(self):
         """
         Fill-in the A matrix. Does not return anything. Modifies in place.
@@ -128,64 +156,19 @@ class InventoryTwoWheeler(Inventory):
             * -1
         )
 
-        idx = self.find_input_indices(
-            contains=("two-wheeler, ", "Moped", "ICEV"), excludes=("transport",)
+        idx, vehicles = self._select_vehicles(
+            ("Moped", "Scooter", "Motorcycle"), ("ICEV-p",)
         )
-        idx.extend(
-            self.find_input_indices(
-                contains=("two-wheeler, ", "Scooter", "ICEV"), excludes=("transport",)
-            )
-        )
-        idx.extend(
-            self.find_input_indices(
-                contains=("two-wheeler, ", "Motorcycle", "ICEV"),
-                excludes=("transport",),
-            )
+        self.A[:, self.find_input_indices(("motor scooter production",)), idx] = (
+            -vehicles.sel(parameter="glider base mass") / 90
         )
 
-        self.A[
-            :,
-            self.find_input_indices(("motor scooter production",)),
-            idx,
-        ] = (
-            self.array.sel(
-                parameter="glider base mass",
-                combined_dim=[
-                    d
-                    for d in self.array.coords["combined_dim"].values
-                    if any(x in d for x in ["Scooter", "Moped", "Motorcycle"])
-                    and "ICEV-p" in d
-                ],
-            )
-            * 1
-            / 90
-            * -1
-        )
-
-        idx = self.find_input_indices(
-            contains=("two-wheeler, ", "Scooter", "BEV"), excludes=("transport",)
-        )
-        idx.extend(
-            self.find_input_indices(
-                contains=("two-wheeler, ", "Motorcycle", "BEV"), excludes=("transport",)
-            )
-        )
-
+        idx, vehicles = self._select_vehicles(("Scooter", "Motorcycle"), ("BEV",))
         self.A[
             :,
             self.find_input_indices(("market for glider, for electric scooter",)),
             idx,
-        ] = (
-            self.array.sel(
-                parameter="glider base mass",
-                combined_dim=[
-                    d
-                    for d in self.array.coords["combined_dim"].values
-                    if any(x in d for x in ["Scooter", "Motorcycle"]) and "BEV" in d
-                ],
-            )
-            * -1
-        )
+        ] = -vehicles.sel(parameter="glider base mass")
 
         self.A[
             :,
@@ -279,27 +262,9 @@ class InventoryTwoWheeler(Inventory):
 
         # Maintenance
 
-        idx = self.find_input_indices(
-            contains=("two-wheeler, ", "Scooter", "ICEV"), excludes=("transport",)
-        )
-        idx.extend(
-            self.find_input_indices(
-                contains=("two-wheeler, ", "Motorcycle", "ICEV"),
-                excludes=("transport",),
-            )
-        )
-
+        idx, vehicles = self._select_vehicles(("Scooter", "Motorcycle"), ("ICEV-p",))
         self.A[:, self.find_input_indices(("maintenance, motor scooter",)), idx] = (
-            self.array.sel(
-                parameter="lifetime kilometers",
-                combined_dim=[
-                    d
-                    for d in self.array.coords["combined_dim"].values
-                    if any(x in d for x in ["Scooter", "Motorcycle"]) and "ICEV-p" in d
-                ],
-            )
-            / 25000
-            * -1
+            -vehicles.sel(parameter="lifetime kilometers") / 25000
         )
 
         idx = self.find_input_indices(
@@ -414,49 +379,14 @@ class InventoryTwoWheeler(Inventory):
             / 24
         )
 
-        idx = self.find_input_indices(
-            contains=("two-wheeler, ", "Scooter", "BEV"), excludes=("transport",)
+        idx, vehicles = self._select_vehicles(
+            ("Scooter", "Motorcycle"), ("BEV", "ICEV-p")
         )
-        idx.extend(
-            self.find_input_indices(
-                contains=("two-wheeler, ", "Scooter", "ICEV"), excludes=("transport",)
-            )
-        )
-        idx.extend(
-            self.find_input_indices(
-                contains=("two-wheeler, ", "Motorcycle", "ICEV"),
-                excludes=("transport",),
-            )
-        )
-        idx.extend(
-            self.find_input_indices(
-                contains=("two-wheeler, ", "Motorcycle", "BEV"), excludes=("transport",)
-            )
-        )
-        idx = list(set(idx))
-
         self.A[
             :,
             self.find_input_indices(("manual dismantling of used electric scooter",)),
             idx,
-        ] = (
-            self.array.sel(
-                parameter="curb mass",
-                combined_dim=[
-                    d
-                    for d in self.array.coords["combined_dim"].values
-                    if any(
-                        x in d
-                        for x in [
-                            "Scooter",
-                            "Motorcycle",
-                        ]
-                    )
-                    and any(x in d for x in ["BEV", "ICEV-p"])
-                ],
-            )
-            * -1
-        )
+        ] = -vehicles.sel(parameter="curb mass")
 
         # Energy storage
         self.add_battery()
