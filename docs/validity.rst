@@ -10,6 +10,31 @@ current model. Passenger-car registration data and car curb-mass plots do not
 validate motorcycles, scooters or bicycles; the former copied claims have
 been removed from this page.
 
+.. _charging-cost-accounting:
+
+Charging cost accounting
+------------------------
+
+Electricity running costs use grid purchases: ``electricity consumption`` in
+kWh/km times the electricity tariff. Grid consumption already includes both
+battery-charge and charger losses; neither efficiency is applied again when
+billing that electricity. Previously the cost formula omitted charger losses.
+At 90% charger efficiency it understated the electricity component by 10%; at
+80% efficiency it understated it by 20%. This correction changes costs, while
+preserving vehicle energy demand, inventory electricity exchanges and LCIA.
+
+BEVs use this grid-based calculation. Other powertrains retain their existing
+fuel-cost convention. Tariffs and charging-efficiency assumptions have not
+been refitted.
+
+Two-wheeler costs remain per vehicle-km. The default Swiss 2025
+``Motorcycle 11-35kW`` BEV costs approximately EUR 1.91/100 km for electricity,
+corrected from EUR 1.72/100 km.
+
+Completed model/inventory checks and the shared billing contract are described
+in the `shared charging-cost validation <https://github.com/Laboratory-for-Energy-Systems-Analysis/carculator_utils/blob/master/docs/validity.rst#charging-cost-accounting>`_.
+
+
 Status of the 2025 review
 -------------------------
 
