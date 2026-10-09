@@ -25,6 +25,7 @@ class TwoWheelerModel(VehicleModel):
         :returns: None. Updates ``self.array`` in place.
         """
 
+        self._purchase_quotes = self["purchase cost"].copy(deep=True)
         print("Building two-wheelers...")
 
         self.ecm = EnergyConsumptionModel(
@@ -302,6 +303,17 @@ class TwoWheelerModel(VehicleModel):
         ) * (self["charger mass"] > 0)
 
     def set_costs(self):
+        # A complete retail quote replaces the component sum; it must not be
+        # added to that sum or absorbed into an invented glider residual.
+        current_purchase = self["purchase cost"]
+        retained = getattr(self, "_purchase_quotes", current_purchase)
+        purchase_quote = retained.sel(
+            {dim: current_purchase[dim] for dim in current_purchase.dims}
+        ).copy(deep=True)
+        if not np.isfinite(purchase_quote).all() or bool((purchase_quote < 0).any()):
+            raise ValueError(
+                "Purchase cost must be finite and nonnegative; zero selects component costing."
+            )
         self["glider cost"] = (
             self["glider base mass"] * self["glider cost slope"]
             + self["glider cost intercept"]
@@ -362,7 +374,10 @@ class TwoWheelerModel(VehicleModel):
             m for m in purchase_cost_list if m in self.array.coords["parameter"].values
         ]
 
-        self["purchase cost"] = self[purchase_cost_list].sum(axis=2)
+        component_total = self[purchase_cost_list].sum(axis=2)
+        self["purchase cost"] = xr.where(
+            purchase_quote > 0, purchase_quote, component_total
+        )
 
         # per km
         self["amortised purchase cost"] = (

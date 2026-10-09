@@ -161,3 +161,45 @@ These Human cost inputs use constant real 2025 EUR at every native year, avoidin
 a new 2025 interpolation discontinuity. Other legacy cost components retain their
 existing currency basis. The packaged ``human_bicycle_cost_provenance.json``
 records the source, assumptions and added records.
+
+Complete retail quotes and currency qualification
+-------------------------------------------------
+
+An explicitly supplied positive ``purchase cost`` now replaces the calculated
+component sum for that cell. It is not added to the components, multiplied by
+markup again, or absorbed into an invented mechanical-bicycle residual. Zero
+selects the usual component calculation; negative or nonfinite values fail.
+Repeated completed runs retain the quote. Other cells retain component costing,
+so changing their battery or motor cost still changes their purchase total.
+
+For a sourced market-price scenario, for example::
+
+    array.loc[dict(
+        parameter="purchase cost", size="Bicycle <25", powertrain="BEV",
+        year=2025,
+    )] = 2550.0
+
+The EUR 2,550 anchor is the ZIV gross German e-bike market average for 2025,
+including an unmatched mix of products and quality levels. This example is an
+explicit market scenario, not a validated price for the generic model bicycle.
+The generic component default remains visible; it has not been increased by
+an arbitrary fitted residual to match that market average. A complete quote
+already includes its original battery, motor and charger. Replacement expenses
+remain separate future costs, while maintenance retains its independently
+editable glider-based assumption; the quote does not validate either.
+
+The packaged ``cost_evidence.json`` distinguishes complete retail prices,
+replacement-part retail prices, provisional component priors, and unsupported
+maintenance assumptions. It records known price years rather than describing
+all legacy inputs as real 2025 EUR. A monetary total combining unrebased inputs
+must be labelled a mixed-basis scenario. For a common-price-year study, supply
+consistent component/replacement/energy/maintenance assumptions and document
+the currency, price index, tax and geographic boundary. No inflation factor is
+invented for undated prices.
+
+Manufacturer charger specifications establish electrical compatibility, not
+OEM component costs. The retrieved Bosch page required JavaScript and supplied
+no verifiable numerical price; the Shimano catalogue specifies chargers but
+does not establish a retail cost. These sources therefore do not justify new
+generic charger defaults. Independent component quotations, repair invoices,
+and a common currency-year basis remain outstanding scientific evidence.

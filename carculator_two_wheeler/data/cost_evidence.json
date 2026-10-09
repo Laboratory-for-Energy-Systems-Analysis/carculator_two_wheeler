@@ -1,0 +1,50 @@
+{
+  "retrieved": "2026-10-09",
+  "default_total_cost_status": "mixed price bases; not a calibrated ownership budget",
+  "complete_retail": [
+    {
+      "scope": "Human Bicycle <25",
+      "amount": 500,
+      "currency": "EUR",
+      "price_year": 2025,
+      "geography": "Germany",
+      "boundary": "gross all-channel complete non-electric bicycle average",
+      "source": "https://www.ziv-zweirad.de/wp-content/uploads/2026/03/Market-Data-Bicycle-Industry-2025.pdf",
+      "source_page": "slide 18",
+      "use": "mechanical bicycle anchor; quality mix not matched"
+    },
+    {
+      "scope": "electric bicycle market",
+      "amount": 2550,
+      "currency": "EUR",
+      "price_year": 2025,
+      "geography": "Germany",
+      "boundary": "gross all-channel complete e-bike average",
+      "source": "https://www.ziv-zweirad.de/wp-content/uploads/2026/03/Market-Data-Bicycle-Industry-2025.pdf",
+      "source_page": "slide 18",
+      "use": "explicit whole-purchase scenario only; no component decomposition inferred"
+    }
+  ],
+  "existing_component_records": [
+    "bicycle_cost_provenance.json",
+    "human_bicycle_cost_provenance.json",
+    "small_vehicle_cost_provenance.json",
+    "kick_scooter_charger_cost_provenance.json"
+  ],
+  "unresolved": [
+    "Matched motor/battery/charger component quotations across classes",
+    "Maintenance invoices, service intervals and annual cost boundaries",
+    "Common currency and price year for legacy monetary inputs",
+    "Independent complete-vehicle prices matched by equipment and model year"
+  ],
+  "excluded_price_candidates": [
+    {
+      "source": "https://shop.bosch-ebike.com/de/EUR/_4_a_standard_charger_eu_(bcs220)/p/2100068",
+      "reason": "Retrieved page requires JavaScript; no verified numerical price."
+    },
+    {
+      "source": "https://si.shimano.com/en/pdfs/sm/2025_E-BIKE_CAT_GB/SM-2025_E-BIKE_CAT-000-ENG-GB.pdf",
+      "reason": "Electrical specifications and compatibility do not provide a retail/OEM cost."
+    }
+  ]
+}

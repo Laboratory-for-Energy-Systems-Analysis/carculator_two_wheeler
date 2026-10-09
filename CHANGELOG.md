@@ -26,6 +26,8 @@ it has not yet been published. Older entries, where present, retain their origin
 
 ### Model and inventory changes
 
+- Honor explicit complete-vehicle purchase quotes without double counting component costs; qualify retail/component evidence and unresolved common-price-year assumptions.
+
 - Make repeated `set_all()` calls rebuild from retained inputs, with stable costs/energy and retained PHEV components. Preserve explicit input edits and selected sample prices; see the shared repeat-run guide.
 
 - Restore omitted combustion-engine production by purchasing engine and remaining mechanical powertrain masses together through the existing kilogram-based proxy. Verify the combined mass budget across all six petrol classes, retain BEV mechanical-component purchases, and check completed LCIA and Brightway/SimaPro exports. Physical model outputs are unchanged; see [engine accounting and proxy limitations](docs/validity.rst#engine-inventory-accounting).
