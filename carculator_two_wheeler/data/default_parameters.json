@@ -42285,5 +42285,383 @@
         "loc": 70,
         "minimum": 40,
         "maximum": 100
+    },
+    "human-bicycle-cost-2000-glider cost slope": {
+        "name": "glider cost slope",
+        "amount": 34.72222222222222,
+        "loc": 34.72222222222222,
+        "uncertainty_type": 1,
+        "kind": "distribution",
+        "sizes": [
+            "Bicycle <25"
+        ],
+        "powertrain": [
+            "Human"
+        ],
+        "year": 2000,
+        "unit": "EUR2025/kg",
+        "category": "Costs",
+        "source": "ZIV, 2025 Market Data for the Bicycle Industry, slide 18 (11 March 2026); https://www.ziv-zweirad.de/wp-content/uploads/2026/03/Market-Data-Bicycle-Industry-2025.pdf",
+        "comment": "Constant real 2025 EUR across native years; 12 kg model reference and markup 1.2. Gross price counted once. No extra food, insurance, accessories or resale costs."
+    },
+    "human-bicycle-cost-2000-glider cost intercept": {
+        "name": "glider cost intercept",
+        "amount": 0,
+        "loc": 0,
+        "uncertainty_type": 1,
+        "kind": "distribution",
+        "sizes": [
+            "Bicycle <25"
+        ],
+        "powertrain": [
+            "Human"
+        ],
+        "year": 2000,
+        "unit": "EUR2025/vehicle",
+        "category": "Costs",
+        "source": "ZIV, 2025 Market Data for the Bicycle Industry, slide 18 (11 March 2026); https://www.ziv-zweirad.de/wp-content/uploads/2026/03/Market-Data-Bicycle-Industry-2025.pdf",
+        "comment": "Constant real 2025 EUR across native years; 12 kg model reference and markup 1.2. Gross price counted once. No extra food, insurance, accessories or resale costs."
+    },
+    "human-bicycle-cost-2000-maintenance cost per glider cost": {
+        "name": "maintenance cost per glider cost",
+        "amount": 0.025,
+        "loc": 0.025,
+        "uncertainty_type": 1,
+        "kind": "distribution",
+        "sizes": [
+            "Bicycle <25"
+        ],
+        "powertrain": [
+            "Human"
+        ],
+        "year": 2000,
+        "unit": "1/year",
+        "category": "Costs",
+        "source": "Engineering assumption transferred from the existing BEV bicycle maintenance ratio; not an empirical maintenance estimate.",
+        "comment": "2.5% of marked-up glider cost annually. Provisional, user-editable; distinguish from the sourced purchase price."
+    },
+    "human-bicycle-cost-2010-glider cost slope": {
+        "name": "glider cost slope",
+        "amount": 34.72222222222222,
+        "loc": 34.72222222222222,
+        "uncertainty_type": 1,
+        "kind": "distribution",
+        "sizes": [
+            "Bicycle <25"
+        ],
+        "powertrain": [
+            "Human"
+        ],
+        "year": 2010,
+        "unit": "EUR2025/kg",
+        "category": "Costs",
+        "source": "ZIV, 2025 Market Data for the Bicycle Industry, slide 18 (11 March 2026); https://www.ziv-zweirad.de/wp-content/uploads/2026/03/Market-Data-Bicycle-Industry-2025.pdf",
+        "comment": "Constant real 2025 EUR across native years; 12 kg model reference and markup 1.2. Gross price counted once. No extra food, insurance, accessories or resale costs."
+    },
+    "human-bicycle-cost-2010-glider cost intercept": {
+        "name": "glider cost intercept",
+        "amount": 0,
+        "loc": 0,
+        "uncertainty_type": 1,
+        "kind": "distribution",
+        "sizes": [
+            "Bicycle <25"
+        ],
+        "powertrain": [
+            "Human"
+        ],
+        "year": 2010,
+        "unit": "EUR2025/vehicle",
+        "category": "Costs",
+        "source": "ZIV, 2025 Market Data for the Bicycle Industry, slide 18 (11 March 2026); https://www.ziv-zweirad.de/wp-content/uploads/2026/03/Market-Data-Bicycle-Industry-2025.pdf",
+        "comment": "Constant real 2025 EUR across native years; 12 kg model reference and markup 1.2. Gross price counted once. No extra food, insurance, accessories or resale costs."
+    },
+    "human-bicycle-cost-2010-maintenance cost per glider cost": {
+        "name": "maintenance cost per glider cost",
+        "amount": 0.025,
+        "loc": 0.025,
+        "uncertainty_type": 1,
+        "kind": "distribution",
+        "sizes": [
+            "Bicycle <25"
+        ],
+        "powertrain": [
+            "Human"
+        ],
+        "year": 2010,
+        "unit": "1/year",
+        "category": "Costs",
+        "source": "Engineering assumption transferred from the existing BEV bicycle maintenance ratio; not an empirical maintenance estimate.",
+        "comment": "2.5% of marked-up glider cost annually. Provisional, user-editable; distinguish from the sourced purchase price."
+    },
+    "human-bicycle-cost-2020-glider cost slope": {
+        "name": "glider cost slope",
+        "amount": 34.72222222222222,
+        "loc": 34.72222222222222,
+        "uncertainty_type": 1,
+        "kind": "distribution",
+        "sizes": [
+            "Bicycle <25"
+        ],
+        "powertrain": [
+            "Human"
+        ],
+        "year": 2020,
+        "unit": "EUR2025/kg",
+        "category": "Costs",
+        "source": "ZIV, 2025 Market Data for the Bicycle Industry, slide 18 (11 March 2026); https://www.ziv-zweirad.de/wp-content/uploads/2026/03/Market-Data-Bicycle-Industry-2025.pdf",
+        "comment": "Constant real 2025 EUR across native years; 12 kg model reference and markup 1.2. Gross price counted once. No extra food, insurance, accessories or resale costs."
+    },
+    "human-bicycle-cost-2020-glider cost intercept": {
+        "name": "glider cost intercept",
+        "amount": 0,
+        "loc": 0,
+        "uncertainty_type": 1,
+        "kind": "distribution",
+        "sizes": [
+            "Bicycle <25"
+        ],
+        "powertrain": [
+            "Human"
+        ],
+        "year": 2020,
+        "unit": "EUR2025/vehicle",
+        "category": "Costs",
+        "source": "ZIV, 2025 Market Data for the Bicycle Industry, slide 18 (11 March 2026); https://www.ziv-zweirad.de/wp-content/uploads/2026/03/Market-Data-Bicycle-Industry-2025.pdf",
+        "comment": "Constant real 2025 EUR across native years; 12 kg model reference and markup 1.2. Gross price counted once. No extra food, insurance, accessories or resale costs."
+    },
+    "human-bicycle-cost-2020-maintenance cost per glider cost": {
+        "name": "maintenance cost per glider cost",
+        "amount": 0.025,
+        "loc": 0.025,
+        "uncertainty_type": 1,
+        "kind": "distribution",
+        "sizes": [
+            "Bicycle <25"
+        ],
+        "powertrain": [
+            "Human"
+        ],
+        "year": 2020,
+        "unit": "1/year",
+        "category": "Costs",
+        "source": "Engineering assumption transferred from the existing BEV bicycle maintenance ratio; not an empirical maintenance estimate.",
+        "comment": "2.5% of marked-up glider cost annually. Provisional, user-editable; distinguish from the sourced purchase price."
+    },
+    "human-bicycle-cost-2025-glider cost slope": {
+        "name": "glider cost slope",
+        "amount": 34.72222222222222,
+        "loc": 34.72222222222222,
+        "uncertainty_type": 1,
+        "kind": "distribution",
+        "sizes": [
+            "Bicycle <25"
+        ],
+        "powertrain": [
+            "Human"
+        ],
+        "year": 2025,
+        "unit": "EUR2025/kg",
+        "category": "Costs",
+        "source": "ZIV, 2025 Market Data for the Bicycle Industry, slide 18 (11 March 2026); https://www.ziv-zweirad.de/wp-content/uploads/2026/03/Market-Data-Bicycle-Industry-2025.pdf",
+        "comment": "Constant real 2025 EUR across native years; 12 kg model reference and markup 1.2. Gross price counted once. No extra food, insurance, accessories or resale costs."
+    },
+    "human-bicycle-cost-2025-glider cost intercept": {
+        "name": "glider cost intercept",
+        "amount": 0,
+        "loc": 0,
+        "uncertainty_type": 1,
+        "kind": "distribution",
+        "sizes": [
+            "Bicycle <25"
+        ],
+        "powertrain": [
+            "Human"
+        ],
+        "year": 2025,
+        "unit": "EUR2025/vehicle",
+        "category": "Costs",
+        "source": "ZIV, 2025 Market Data for the Bicycle Industry, slide 18 (11 March 2026); https://www.ziv-zweirad.de/wp-content/uploads/2026/03/Market-Data-Bicycle-Industry-2025.pdf",
+        "comment": "Constant real 2025 EUR across native years; 12 kg model reference and markup 1.2. Gross price counted once. No extra food, insurance, accessories or resale costs."
+    },
+    "human-bicycle-cost-2025-maintenance cost per glider cost": {
+        "name": "maintenance cost per glider cost",
+        "amount": 0.025,
+        "loc": 0.025,
+        "uncertainty_type": 1,
+        "kind": "distribution",
+        "sizes": [
+            "Bicycle <25"
+        ],
+        "powertrain": [
+            "Human"
+        ],
+        "year": 2025,
+        "unit": "1/year",
+        "category": "Costs",
+        "source": "Engineering assumption transferred from the existing BEV bicycle maintenance ratio; not an empirical maintenance estimate.",
+        "comment": "2.5% of marked-up glider cost annually. Provisional, user-editable; distinguish from the sourced purchase price."
+    },
+    "human-bicycle-cost-2030-glider cost slope": {
+        "name": "glider cost slope",
+        "amount": 34.72222222222222,
+        "loc": 34.72222222222222,
+        "uncertainty_type": 1,
+        "kind": "distribution",
+        "sizes": [
+            "Bicycle <25"
+        ],
+        "powertrain": [
+            "Human"
+        ],
+        "year": 2030,
+        "unit": "EUR2025/kg",
+        "category": "Costs",
+        "source": "ZIV, 2025 Market Data for the Bicycle Industry, slide 18 (11 March 2026); https://www.ziv-zweirad.de/wp-content/uploads/2026/03/Market-Data-Bicycle-Industry-2025.pdf",
+        "comment": "Constant real 2025 EUR across native years; 12 kg model reference and markup 1.2. Gross price counted once. No extra food, insurance, accessories or resale costs."
+    },
+    "human-bicycle-cost-2030-glider cost intercept": {
+        "name": "glider cost intercept",
+        "amount": 0,
+        "loc": 0,
+        "uncertainty_type": 1,
+        "kind": "distribution",
+        "sizes": [
+            "Bicycle <25"
+        ],
+        "powertrain": [
+            "Human"
+        ],
+        "year": 2030,
+        "unit": "EUR2025/vehicle",
+        "category": "Costs",
+        "source": "ZIV, 2025 Market Data for the Bicycle Industry, slide 18 (11 March 2026); https://www.ziv-zweirad.de/wp-content/uploads/2026/03/Market-Data-Bicycle-Industry-2025.pdf",
+        "comment": "Constant real 2025 EUR across native years; 12 kg model reference and markup 1.2. Gross price counted once. No extra food, insurance, accessories or resale costs."
+    },
+    "human-bicycle-cost-2030-maintenance cost per glider cost": {
+        "name": "maintenance cost per glider cost",
+        "amount": 0.025,
+        "loc": 0.025,
+        "uncertainty_type": 1,
+        "kind": "distribution",
+        "sizes": [
+            "Bicycle <25"
+        ],
+        "powertrain": [
+            "Human"
+        ],
+        "year": 2030,
+        "unit": "1/year",
+        "category": "Costs",
+        "source": "Engineering assumption transferred from the existing BEV bicycle maintenance ratio; not an empirical maintenance estimate.",
+        "comment": "2.5% of marked-up glider cost annually. Provisional, user-editable; distinguish from the sourced purchase price."
+    },
+    "human-bicycle-cost-2040-glider cost slope": {
+        "name": "glider cost slope",
+        "amount": 34.72222222222222,
+        "loc": 34.72222222222222,
+        "uncertainty_type": 1,
+        "kind": "distribution",
+        "sizes": [
+            "Bicycle <25"
+        ],
+        "powertrain": [
+            "Human"
+        ],
+        "year": 2040,
+        "unit": "EUR2025/kg",
+        "category": "Costs",
+        "source": "ZIV, 2025 Market Data for the Bicycle Industry, slide 18 (11 March 2026); https://www.ziv-zweirad.de/wp-content/uploads/2026/03/Market-Data-Bicycle-Industry-2025.pdf",
+        "comment": "Constant real 2025 EUR across native years; 12 kg model reference and markup 1.2. Gross price counted once. No extra food, insurance, accessories or resale costs."
+    },
+    "human-bicycle-cost-2040-glider cost intercept": {
+        "name": "glider cost intercept",
+        "amount": 0,
+        "loc": 0,
+        "uncertainty_type": 1,
+        "kind": "distribution",
+        "sizes": [
+            "Bicycle <25"
+        ],
+        "powertrain": [
+            "Human"
+        ],
+        "year": 2040,
+        "unit": "EUR2025/vehicle",
+        "category": "Costs",
+        "source": "ZIV, 2025 Market Data for the Bicycle Industry, slide 18 (11 March 2026); https://www.ziv-zweirad.de/wp-content/uploads/2026/03/Market-Data-Bicycle-Industry-2025.pdf",
+        "comment": "Constant real 2025 EUR across native years; 12 kg model reference and markup 1.2. Gross price counted once. No extra food, insurance, accessories or resale costs."
+    },
+    "human-bicycle-cost-2040-maintenance cost per glider cost": {
+        "name": "maintenance cost per glider cost",
+        "amount": 0.025,
+        "loc": 0.025,
+        "uncertainty_type": 1,
+        "kind": "distribution",
+        "sizes": [
+            "Bicycle <25"
+        ],
+        "powertrain": [
+            "Human"
+        ],
+        "year": 2040,
+        "unit": "1/year",
+        "category": "Costs",
+        "source": "Engineering assumption transferred from the existing BEV bicycle maintenance ratio; not an empirical maintenance estimate.",
+        "comment": "2.5% of marked-up glider cost annually. Provisional, user-editable; distinguish from the sourced purchase price."
+    },
+    "human-bicycle-cost-2050-glider cost slope": {
+        "name": "glider cost slope",
+        "amount": 34.72222222222222,
+        "loc": 34.72222222222222,
+        "uncertainty_type": 1,
+        "kind": "distribution",
+        "sizes": [
+            "Bicycle <25"
+        ],
+        "powertrain": [
+            "Human"
+        ],
+        "year": 2050,
+        "unit": "EUR2025/kg",
+        "category": "Costs",
+        "source": "ZIV, 2025 Market Data for the Bicycle Industry, slide 18 (11 March 2026); https://www.ziv-zweirad.de/wp-content/uploads/2026/03/Market-Data-Bicycle-Industry-2025.pdf",
+        "comment": "Constant real 2025 EUR across native years; 12 kg model reference and markup 1.2. Gross price counted once. No extra food, insurance, accessories or resale costs."
+    },
+    "human-bicycle-cost-2050-glider cost intercept": {
+        "name": "glider cost intercept",
+        "amount": 0,
+        "loc": 0,
+        "uncertainty_type": 1,
+        "kind": "distribution",
+        "sizes": [
+            "Bicycle <25"
+        ],
+        "powertrain": [
+            "Human"
+        ],
+        "year": 2050,
+        "unit": "EUR2025/vehicle",
+        "category": "Costs",
+        "source": "ZIV, 2025 Market Data for the Bicycle Industry, slide 18 (11 March 2026); https://www.ziv-zweirad.de/wp-content/uploads/2026/03/Market-Data-Bicycle-Industry-2025.pdf",
+        "comment": "Constant real 2025 EUR across native years; 12 kg model reference and markup 1.2. Gross price counted once. No extra food, insurance, accessories or resale costs."
+    },
+    "human-bicycle-cost-2050-maintenance cost per glider cost": {
+        "name": "maintenance cost per glider cost",
+        "amount": 0.025,
+        "loc": 0.025,
+        "uncertainty_type": 1,
+        "kind": "distribution",
+        "sizes": [
+            "Bicycle <25"
+        ],
+        "powertrain": [
+            "Human"
+        ],
+        "year": 2050,
+        "unit": "1/year",
+        "category": "Costs",
+        "source": "Engineering assumption transferred from the existing BEV bicycle maintenance ratio; not an empirical maintenance estimate.",
+        "comment": "2.5% of marked-up glider cost annually. Provisional, user-editable; distinguish from the sourced purchase price."
     }
 }

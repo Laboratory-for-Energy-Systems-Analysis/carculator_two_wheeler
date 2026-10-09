@@ -142,3 +142,22 @@ were not installed. Wheel/sdist resource checks, dependency checks and offline
 core-only model/LCIA runs passed. These local macOS/Python 3.12 checks do not
 certify hosted CI or conda builds; historical reports in :download:`maintainer release record <../RELEASING.md>` and :doc:`petrol_efficiency`
 predate this cost correction.
+
+Human bicycle costs
+--------------------
+
+The human-powered ``Bicycle <25`` now uses the same ZIV 2025 non-electric
+purchase-price anchor: EUR 500 gross at the model's 12 kg reference mass and
+1.2 markup. Its slope is ``500 / 12 / 1.2`` EUR2025/kg and intercept is zero,
+so markup is applied once. Previously missing inputs produced zero purchase,
+maintenance and total ownership costs.
+
+Annual maintenance uses a transparent **provisional 2.5% of purchase/glider
+cost**, transferred from the electric-bicycle assumption: EUR 12.50/year for
+the reference case. ZIV does not provide this maintenance estimate. Both inputs
+are editable; this does not establish a representative national ownership budget.
+Food expenditure, insurance, accessories, theft and resale value are excluded.
+These Human cost inputs use constant real 2025 EUR at every native year, avoiding
+a new 2025 interpolation discontinuity. Other legacy cost components retain their
+existing currency basis. The packaged ``human_bicycle_cost_provenance.json``
+records the source, assumptions and added records.

@@ -11,6 +11,8 @@ it has not yet been published. Older entries, where present, retain their origin
 
 - Use a single dry-mass-scaled complete petrol scooter production proxy, including engine, tank, delivery and disposal. Remove duplicate component and delivery exchanges; retain electric pathways and physical vehicle sizing.
 
+- Populate Human bicycle purchase costs from the ZIV EUR 500 gross 2025 market anchor and document a provisional 2.5% annual maintenance assumption. Keep a constant real-2025-EUR basis across native years.
+
 ### Compatibility and installation
 
 - Require Python 3.12 (`>=3.12,<3.13`); older Python environments must be recreated.
