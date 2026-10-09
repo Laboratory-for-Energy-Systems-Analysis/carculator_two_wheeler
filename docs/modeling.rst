@@ -430,10 +430,14 @@ mopeds/scooters. The values calculated are presented in :ref:`Table 6 <table-6>`
    | **Scooter, gasoline, 4-11 kW**       | 16                                | 30’000                               |
    +--------------------------------------+-----------------------------------+--------------------------------------+
 
-The glider and the mechanical powertrain of the scooter are modeled using the
-:cite:`ct-1047` dataset “motor scooter production” and scaled to mass accordingly,
-as the original dataset is meant to represent a 90 kg heavy scooter. The fuel tank is modeled
-separately, using an input of injection-molded high-density polyethylene.
+The current inventory uses the :cite:`ct-1047` dataset “motor scooter production”
+as a glider proxy, scaled by ``glider base mass`` divided by the reference scooter
+mass of 90 kg. Engine and remaining mechanical powertrain masses are purchased
+separately through the existing “market for internal combustion engine, passenger
+car” proxy, in kilograms. Their masses are summed once; see
+:ref:`engine-inventory-accounting` for the correction and the limitations of these
+manufacturing proxies. The fuel tank is modeled separately, using an input of
+injection-molded high-density polyethylene.
 
 Market development indicates a preference for 2-stroke engines for engines with a small
 displacement volume (which allows extracting more power out of an otherwise small engine).
@@ -582,9 +586,11 @@ volume: “up to 125 cm3”, “126-749 cm3”, and “750-999 cm3” are used t
 
 A dataset specific to motorbike production with the characteristics listed in :ref:`Table 10 <table-10>` could
 not be obtained. Hence, the dataset from :cite:`ct-1047` “motor scooter production”
-is used instead to approximate the energy and material requirements for manufacturing the
-glider and the mechanical part of the powertrain. The dataset initially refers to a 90 kg heavy
-scooter. The same approach is adopted for vehicle maintenance, where the dataset for scooter maintenance is used.
+is used instead as a glider proxy, scaled by ``glider base mass`` divided by the
+reference scooter mass of 90 kg. Engine and remaining mechanical powertrain
+masses use the same separate kilogram-based passenger-car-engine proxy described
+for scooters; see :ref:`engine-inventory-accounting`. The same approach is adopted
+for vehicle maintenance, where the dataset for scooter maintenance is used.
 
 The disposal of the vehicle is already included in the “motor scooter production” dataset.
 

@@ -31,7 +31,10 @@ by the existing 25,000 km reference service life.
 The following completed comparison uses Switzerland, the default
 ``Two wheeler cycle``, static background, default 2025 inputs, and both sizes
 and powertrains in the same run. Values are IPCC 2021 GWP100, excluding biogenic
-CO2, in g CO2-eq per vehicle-km from the bundled background factors.
+CO2, in g CO2-eq per vehicle-km from the bundled background factors. This table
+records the alignment correction before the subsequent
+:ref:`engine inventory correction <engine-inventory-accounting>`; its petrol
+values are historical intermediate results.
 
 .. list-table:: Climate impacts before and after correcting vehicle assignments
    :header-rows: 1
@@ -69,6 +72,69 @@ This is an inventory-assignment correction, not an empirical recalibration.
 Existing supplier choices, normalization factors and dismantling coefficients
 are retained; their scientific suitability is not established by these
 alignment checks.
+
+
+.. _engine-inventory-accounting:
+
+Engine and mechanical powertrain accounting
+---------------------------------------------
+
+``mechanical powertrain mass`` is the remaining drivetrain mass after subtracting
+``combustion engine mass`` from the mechanical component budget. The inventory
+now sums these two masses once when purchasing the existing ``market for internal
+combustion engine, passenger car`` proxy (GLO, kilogram). Previously, two
+assignments to the same supplier exchange left only the remaining drivetrain
+mass and omitted the engine-production contribution. For an active vehicle, the
+combined purchase equals ``mechanical powertrain mass share`` times ``glider
+base mass``.
+
+For example, the default 2025 petrol ``Motorcycle >35kW`` has a 63.389 kg engine
+and 65.311 kg of remaining mechanical powertrain. The corrected exchange is
+128.700 kg, instead of 65.311 kg. Under the Swiss, default-cycle, static-background
+conditions above, its climate result changes from 181.446 to 186.935 g CO2-eq/vkm.
+Across all six petrol classes:
+
+.. list-table:: Climate impacts before and after restoring engine production
+   :header-rows: 1
+
+   * - Petrol vehicle
+     - Before (g CO2-eq/vkm)
+     - Corrected (g CO2-eq/vkm)
+   * - Moped <4kW
+     - 65.765
+     - 66.372
+   * - Scooter <4kW
+     - 89.898
+     - 90.563
+   * - Scooter 4-11kW
+     - 137.392
+     - 139.187
+   * - Motorcycle 4-11kW
+     - 154.405
+     - 156.561
+   * - Motorcycle 11-35kW
+     - 214.722
+     - 217.136
+   * - Motorcycle >35kW
+     - 181.446
+     - 186.935
+
+All five available BEV scooter/motorcycle controls retain their existing
+mechanical-component purchases and climate impacts: they have zero combustion
+engine mass, but nonzero mechanical powertrain mass. Vehicle mass, fuel and
+electricity consumption, and sizing inputs are unchanged.
+
+``tests/test_inventory_alignment.py`` derives the expected combined purchase
+from the mass-share input and glider mass independently of the inventory sum.
+It covers all six petrol classes and the five available BEV controls, 2025/2030,
+two named samples with distinct masses and mass shares, reordered coordinates,
+and individual/combined scopes. Brightway and SimaPro exports retain those
+amounts for ecoinvent 3.9 and 3.10 without mutating the source inventory or LCIA.
+
+This repairs component accounting while retaining the existing manufacturing
+proxies and glider scaling. It does not validate the passenger-car-engine proxy
+for two-wheelers or resolve possible overlap with the complete-scooter glider
+proxy. No manufacturing data or consumption parameters were recalibrated.
 
 
 .. _charging-cost-accounting:

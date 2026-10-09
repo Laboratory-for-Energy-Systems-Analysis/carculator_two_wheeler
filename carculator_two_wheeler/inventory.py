@@ -191,14 +191,18 @@ class InventoryTwoWheeler(Inventory):
             self.array.sel(parameter="electric engine mass") * -1
         )
 
+        # Mechanical powertrain mass excludes the engine. Map both masses once
+        # to the retained passenger-car-engine manufacturing proxy (kg).
         self.A[
             :,
             self.find_input_indices(
                 contains=("market for internal combustion engine, passenger car",)
             ),
             [j for i, j in self.inputs.items() if i[0].startswith("two-wheeler, ")],
-        ] = (
-            self.array.sel(parameter="combustion engine mass") * -1
+        ] = -self.array.sel(
+            parameter=["combustion engine mass", "mechanical powertrain mass"]
+        ).sum(
+            dim="parameter"
         )
 
         self.A[
@@ -209,16 +213,6 @@ class InventoryTwoWheeler(Inventory):
             [j for i, j in self.inputs.items() if i[0].startswith("two-wheeler, ")],
         ] = (
             self.array.sel(parameter="electrical powertrain mass") * -1
-        )
-
-        self.A[
-            :,
-            self.find_input_indices(
-                contains=("market for internal combustion engine, passenger car",)
-            ),
-            [j for i, j in self.inputs.items() if i[0].startswith("two-wheeler, ")],
-        ] = (
-            self.array.sel(parameter="mechanical powertrain mass") * -1
         )
 
         # Powertrain components

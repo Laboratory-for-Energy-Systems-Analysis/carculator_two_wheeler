@@ -16,8 +16,21 @@ from carculator_two_wheeler import (
     fill_xarray_from_input_parameters,
 )
 
-SIZES = ["Moped <4kW", "Scooter <4kW", "Motorcycle 11-35kW"]
+SIZES = [
+    "Moped <4kW",
+    "Scooter <4kW",
+    "Scooter 4-11kW",
+    "Motorcycle 4-11kW",
+    "Motorcycle 11-35kW",
+    "Motorcycle >35kW",
+]
 SUPPLIERS = {
+    "engine_and_mechanical_powertrain": (
+        "market for internal combustion engine, passenger car",
+        "GLO",
+        "kilogram",
+        "internal combustion engine, passenger car",
+    ),
     "electric_glider": (
         "market for glider, for electric scooter",
         "GLO",
@@ -51,6 +64,11 @@ def expected_amounts(cell, size, powertrain):
     life = cell.sel(parameter="lifetime kilometers")
     curb = cell.sel(parameter="curb mass")
     amounts = {key: xr.zeros_like(glider) for key in SUPPLIERS}
+    # The mechanical mass budget includes the engine. Derive the total from
+    # inputs, independently of the inventory's sum of derived component masses.
+    amounts["engine_and_mechanical_powertrain"] = (
+        cell.sel(parameter="mechanical powertrain mass share") * glider
+    )
     if powertrain == "ICEV-p":
         amounts["petrol_glider"] = glider / 90
         if size != "Moped <4kW":
@@ -75,6 +93,10 @@ def completed():
     array = array.sel(size=SIZES[::-1], year=[2030, 2025]).isel(value=[0, 0])
     array = array.assign_coords(value=["heavier", "reference"])
     array.loc[dict(parameter="glider base mass", value="heavier")] *= 1.2
+    array.loc[
+        dict(parameter="mechanical powertrain mass share", value="heavier")
+    ] *= 1.1
+    array.loc[dict(parameter="mechanical powertrain mass share", year=2030)] *= 1.05
     array.loc[dict(parameter="lifetime kilometers", value="heavier")] *= 1.4
     array.loc[dict(parameter="lifetime kilometers", year=2030)] *= 1.1
     original = array.copy(deep=True)
