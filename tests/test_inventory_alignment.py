@@ -180,7 +180,7 @@ def test_reordering_sizes_powertrains_and_samples_preserves_impacts(completed):
     )
 
 
-@pytest.mark.parametrize("version", ["3.9", "3.10"])
+@pytest.mark.parametrize("version", ["3.12"])
 def test_exports_keep_vehicle_specific_amounts_and_source_inventory(completed, version):
     pytest.importorskip("bw2io")
     model, _, _ = completed

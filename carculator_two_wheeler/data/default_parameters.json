@@ -27341,7 +27341,7 @@
         "minimum": 0.19,
         "maximum": 0.21000000000000002
     },
-    "1116-2000-battery cell energy density, NMC-523": {
+    "1116-2000-battery cell energy density, NMC-532": {
         "amount": 0.05,
         "category": "Energy Storage",
         "powertrain": [
@@ -27362,7 +27362,7 @@
             "Motorcycle >35kW"
         ],
         "year": 2000,
-        "name": "battery cell energy density, NMC-523",
+        "name": "battery cell energy density, NMC-532",
         "unit": "kWh/kg",
         "importance": "Critical",
         "source": "https://pubs.acs.org/doi/pdf/10.1021/acsenergylett.7b00432",
@@ -27374,7 +27374,7 @@
         "minimum": 0.045000000000000005,
         "maximum": 0.05500000000000001
     },
-    "1117-2010-battery cell energy density, NMC-523": {
+    "1117-2010-battery cell energy density, NMC-532": {
         "amount": 0.1,
         "category": "Energy Storage",
         "powertrain": [
@@ -27395,7 +27395,7 @@
             "Motorcycle >35kW"
         ],
         "year": 2010,
-        "name": "battery cell energy density, NMC-523",
+        "name": "battery cell energy density, NMC-532",
         "unit": "kWh/kg",
         "importance": "Critical",
         "source": "https://pubs.acs.org/doi/pdf/10.1021/acsenergylett.7b00432",
@@ -27407,7 +27407,7 @@
         "minimum": 0.09000000000000001,
         "maximum": 0.11000000000000001
     },
-    "1118-2020-battery cell energy density, NMC-523": {
+    "1118-2020-battery cell energy density, NMC-532": {
         "amount": 0.2,
         "category": "Energy Storage",
         "powertrain": [
@@ -27428,7 +27428,7 @@
             "Motorcycle >35kW"
         ],
         "year": 2020,
-        "name": "battery cell energy density, NMC-523",
+        "name": "battery cell energy density, NMC-532",
         "unit": "kWh/kg",
         "importance": "Critical",
         "source": "https://pubs.acs.org/doi/pdf/10.1021/acsenergylett.7b00432",
@@ -27440,7 +27440,7 @@
         "minimum": 0.19,
         "maximum": 0.21000000000000002
     },
-    "1119-2030-battery cell energy density, NMC-523": {
+    "1119-2030-battery cell energy density, NMC-532": {
         "amount": 0.2,
         "category": "Energy Storage",
         "powertrain": [
@@ -27461,7 +27461,7 @@
             "Motorcycle >35kW"
         ],
         "year": 2030,
-        "name": "battery cell energy density, NMC-523",
+        "name": "battery cell energy density, NMC-532",
         "unit": "kWh/kg",
         "importance": "Critical",
         "source": "https://pubs.acs.org/doi/pdf/10.1021/acsenergylett.7b00432",
@@ -27473,7 +27473,7 @@
         "minimum": 0.19,
         "maximum": 0.21000000000000002
     },
-    "1120-2040-battery cell energy density, NMC-523": {
+    "1120-2040-battery cell energy density, NMC-532": {
         "amount": 0.21,
         "category": "Energy Storage",
         "powertrain": [
@@ -27494,7 +27494,7 @@
             "Motorcycle >35kW"
         ],
         "year": 2040,
-        "name": "battery cell energy density, NMC-523",
+        "name": "battery cell energy density, NMC-532",
         "unit": "kWh/kg",
         "importance": "Critical",
         "source": "https://pubs.acs.org/doi/pdf/10.1021/acsenergylett.7b00432",
@@ -27506,7 +27506,7 @@
         "minimum": 0.19949999999999998,
         "maximum": 0.2205
     },
-    "1121-2050-battery cell energy density, NMC-523": {
+    "1121-2050-battery cell energy density, NMC-532": {
         "amount": 0.22,
         "category": "Energy Storage",
         "powertrain": [
@@ -27527,7 +27527,7 @@
             "Motorcycle >35kW"
         ],
         "year": 2050,
-        "name": "battery cell energy density, NMC-523",
+        "name": "battery cell energy density, NMC-532",
         "unit": "kWh/kg",
         "importance": "Critical",
         "source": "https://pubs.acs.org/doi/pdf/10.1021/acsenergylett.7b00432",
@@ -29693,7 +29693,7 @@
         "minimum": 0.77,
         "maximum": 0.85
     },
-    "1188-2000-battery cell mass share, NMC-523": {
+    "1188-2000-battery cell mass share, NMC-532": {
         "amount": 0.6,
         "category": "Energy Storage",
         "powertrain": [
@@ -29714,7 +29714,7 @@
             "Motorcycle >35kW"
         ],
         "year": 2000,
-        "name": "battery cell mass share, NMC-523",
+        "name": "battery cell mass share, NMC-532",
         "unit": "unitless",
         "importance": "",
         "source": "For LFP :Yang, X.-G., Liu, T., & Wang, C.-Y. (2021). Thermally modulated lithium iron phosphate batteries for mass-market electric vehicles. Nature Energy 2021 6:2, 6(2), 176\u2013185. https://doi.org/10.1038/s41560-020-00757-7\nFor NMC/NCA: Towards more flexibility and transparency in life cycle inventories for Lithium-ion batteries. EleonorCrenna, Marcel Gauch, Rolf Widmer, Patrick W\u00e4ger, Roland Hischier",
@@ -29726,7 +29726,7 @@
         "minimum": 0.55,
         "maximum": 0.75
     },
-    "1189-2010-battery cell mass share, NMC-523": {
+    "1189-2010-battery cell mass share, NMC-532": {
         "amount": 0.65,
         "category": "Energy Storage",
         "powertrain": [
@@ -29747,7 +29747,7 @@
             "Motorcycle >35kW"
         ],
         "year": 2010,
-        "name": "battery cell mass share, NMC-523",
+        "name": "battery cell mass share, NMC-532",
         "unit": "unitless",
         "importance": "",
         "source": "For LFP :Yang, X.-G., Liu, T., & Wang, C.-Y. (2021). Thermally modulated lithium iron phosphate batteries for mass-market electric vehicles. Nature Energy 2021 6:2, 6(2), 176\u2013185. https://doi.org/10.1038/s41560-020-00757-7\nFor NMC/NCA: Towards more flexibility and transparency in life cycle inventories for Lithium-ion batteries. EleonorCrenna, Marcel Gauch, Rolf Widmer, Patrick W\u00e4ger, Roland Hischier",
@@ -29759,7 +29759,7 @@
         "minimum": 0.6,
         "maximum": 0.7
     },
-    "1190-2020-battery cell mass share, NMC-523": {
+    "1190-2020-battery cell mass share, NMC-532": {
         "amount": 0.7,
         "category": "Energy Storage",
         "powertrain": [
@@ -29780,7 +29780,7 @@
             "Motorcycle >35kW"
         ],
         "year": 2020,
-        "name": "battery cell mass share, NMC-523",
+        "name": "battery cell mass share, NMC-532",
         "unit": "unitless",
         "importance": "",
         "source": "For LFP :Yang, X.-G., Liu, T., & Wang, C.-Y. (2021). Thermally modulated lithium iron phosphate batteries for mass-market electric vehicles. Nature Energy 2021 6:2, 6(2), 176\u2013185. https://doi.org/10.1038/s41560-020-00757-7\nFor NMC/NCA: Towards more flexibility and transparency in life cycle inventories for Lithium-ion batteries. EleonorCrenna, Marcel Gauch, Rolf Widmer, Patrick W\u00e4ger, Roland Hischier",
@@ -29792,7 +29792,7 @@
         "minimum": 0.65,
         "maximum": 0.73
     },
-    "1191-2030-battery cell mass share, NMC-523": {
+    "1191-2030-battery cell mass share, NMC-532": {
         "amount": 0.75,
         "category": "Energy Storage",
         "powertrain": [
@@ -29813,7 +29813,7 @@
             "Motorcycle >35kW"
         ],
         "year": 2030,
-        "name": "battery cell mass share, NMC-523",
+        "name": "battery cell mass share, NMC-532",
         "unit": "unitless",
         "importance": "",
         "source": "For LFP :Yang, X.-G., Liu, T., & Wang, C.-Y. (2021). Thermally modulated lithium iron phosphate batteries for mass-market electric vehicles. Nature Energy 2021 6:2, 6(2), 176\u2013185. https://doi.org/10.1038/s41560-020-00757-7\nFor NMC/NCA: Towards more flexibility and transparency in life cycle inventories for Lithium-ion batteries. EleonorCrenna, Marcel Gauch, Rolf Widmer, Patrick W\u00e4ger, Roland Hischier",
@@ -29825,7 +29825,7 @@
         "minimum": 0.7,
         "maximum": 0.77
     },
-    "1192-2040-battery cell mass share, NMC-523": {
+    "1192-2040-battery cell mass share, NMC-532": {
         "amount": 0.77,
         "category": "Energy Storage",
         "powertrain": [
@@ -29846,7 +29846,7 @@
             "Motorcycle >35kW"
         ],
         "year": 2040,
-        "name": "battery cell mass share, NMC-523",
+        "name": "battery cell mass share, NMC-532",
         "unit": "unitless",
         "importance": "",
         "source": "For LFP :Yang, X.-G., Liu, T., & Wang, C.-Y. (2021). Thermally modulated lithium iron phosphate batteries for mass-market electric vehicles. Nature Energy 2021 6:2, 6(2), 176\u2013185. https://doi.org/10.1038/s41560-020-00757-7\nFor NMC/NCA: Towards more flexibility and transparency in life cycle inventories for Lithium-ion batteries. EleonorCrenna, Marcel Gauch, Rolf Widmer, Patrick W\u00e4ger, Roland Hischier",
@@ -29858,7 +29858,7 @@
         "minimum": 0.75,
         "maximum": 0.8
     },
-    "1193-2050-battery cell mass share, NMC-523": {
+    "1193-2050-battery cell mass share, NMC-532": {
         "amount": 0.8,
         "category": "Energy Storage",
         "powertrain": [
@@ -29879,7 +29879,7 @@
             "Motorcycle >35kW"
         ],
         "year": 2050,
-        "name": "battery cell mass share, NMC-523",
+        "name": "battery cell mass share, NMC-532",
         "unit": "unitless",
         "importance": "",
         "source": "For LFP :Yang, X.-G., Liu, T., & Wang, C.-Y. (2021). Thermally modulated lithium iron phosphate batteries for mass-market electric vehicles. Nature Energy 2021 6:2, 6(2), 176\u2013185. https://doi.org/10.1038/s41560-020-00757-7\nFor NMC/NCA: Towards more flexibility and transparency in life cycle inventories for Lithium-ion batteries. EleonorCrenna, Marcel Gauch, Rolf Widmer, Patrick W\u00e4ger, Roland Hischier",
@@ -32045,7 +32045,7 @@
         "minimum": 3000,
         "maximum": 5000
     },
-    "1260-2000-battery cycle life, NMC-523": {
+    "1260-2000-battery cycle life, NMC-532": {
         "amount": 3000,
         "category": "Energy Storage",
         "powertrain": [
@@ -32066,7 +32066,7 @@
             "Motorcycle >35kW"
         ],
         "year": 2000,
-        "name": "battery cycle life, NMC-523",
+        "name": "battery cycle life, NMC-532",
         "unit": "unit",
         "importance": "Critical",
         "source": "Yuliya Preger et al 2020 J. Electrochem. Soc. 167 120532",
@@ -32078,7 +32078,7 @@
         "minimum": 2250,
         "maximum": 3750
     },
-    "1261-2010-battery cycle life, NMC-523": {
+    "1261-2010-battery cycle life, NMC-532": {
         "amount": 3000,
         "category": "Energy Storage",
         "powertrain": [
@@ -32099,7 +32099,7 @@
             "Motorcycle >35kW"
         ],
         "year": 2010,
-        "name": "battery cycle life, NMC-523",
+        "name": "battery cycle life, NMC-532",
         "unit": "unit",
         "importance": "Critical",
         "source": "Yuliya Preger et al 2020 J. Electrochem. Soc. 167 120532",
@@ -32111,7 +32111,7 @@
         "minimum": 2250,
         "maximum": 3750
     },
-    "1262-2020-battery cycle life, NMC-523": {
+    "1262-2020-battery cycle life, NMC-532": {
         "amount": 3000,
         "category": "Energy Storage",
         "powertrain": [
@@ -32132,7 +32132,7 @@
             "Motorcycle >35kW"
         ],
         "year": 2020,
-        "name": "battery cycle life, NMC-523",
+        "name": "battery cycle life, NMC-532",
         "unit": "unit",
         "importance": "Critical",
         "source": "Yuliya Preger et al 2020 J. Electrochem. Soc. 167 120532",
@@ -32144,7 +32144,7 @@
         "minimum": 2250,
         "maximum": 3750
     },
-    "1263-2030-battery cycle life, NMC-523": {
+    "1263-2030-battery cycle life, NMC-532": {
         "amount": 4000,
         "category": "Energy Storage",
         "powertrain": [
@@ -32165,7 +32165,7 @@
             "Motorcycle >35kW"
         ],
         "year": 2030,
-        "name": "battery cycle life, NMC-523",
+        "name": "battery cycle life, NMC-532",
         "unit": "unit",
         "importance": "Critical",
         "source": "Yuliya Preger et al 2020 J. Electrochem. Soc. 167 120532",
@@ -32177,7 +32177,7 @@
         "minimum": 3000,
         "maximum": 5000
     },
-    "1264-2040-battery cycle life, NMC-523": {
+    "1264-2040-battery cycle life, NMC-532": {
         "amount": 4000,
         "category": "Energy Storage",
         "powertrain": [
@@ -32198,7 +32198,7 @@
             "Motorcycle >35kW"
         ],
         "year": 2040,
-        "name": "battery cycle life, NMC-523",
+        "name": "battery cycle life, NMC-532",
         "unit": "unit",
         "importance": "Critical",
         "source": "Yuliya Preger et al 2020 J. Electrochem. Soc. 167 120532",
@@ -32210,7 +32210,7 @@
         "minimum": 3000,
         "maximum": 5000
     },
-    "1265-2050-battery cycle life, NMC-523": {
+    "1265-2050-battery cycle life, NMC-532": {
         "amount": 4000,
         "category": "Energy Storage",
         "powertrain": [
@@ -32231,7 +32231,7 @@
             "Motorcycle >35kW"
         ],
         "year": 2050,
-        "name": "battery cycle life, NMC-523",
+        "name": "battery cycle life, NMC-532",
         "unit": "unit",
         "importance": "Critical",
         "source": "Yuliya Preger et al 2020 J. Electrochem. Soc. 167 120532",
@@ -34655,7 +34655,7 @@
         "minimum": 0.17099999999999999,
         "maximum": 0.189
     },
-    "baseline-2025-0025-battery cell energy density, NMC-523": {
+    "baseline-2025-0025-battery cell energy density, NMC-532": {
         "amount": 0.2,
         "category": "Energy Storage",
         "powertrain": [
@@ -34676,11 +34676,11 @@
             "Scooter <4kW"
         ],
         "year": 2025,
-        "name": "battery cell energy density, NMC-523",
+        "name": "battery cell energy density, NMC-532",
         "unit": "kWh/kg",
         "importance": "Critical",
         "source": "https://pubs.acs.org/doi/pdf/10.1021/acsenergylett.7b00432",
-        "comment": "2025 baseline: linear interpolation of the effective 2020 and 2030 records, before empirical calibration. Triangular modes and bounds are interpolated. Endpoint records: ('1118-2020-battery cell energy density, NMC-523', '1119-2030-battery cell energy density, NMC-523'). ",
+        "comment": "2025 baseline: linear interpolation of the effective 2020 and 2030 records, before empirical calibration. Triangular modes and bounds are interpolated. Endpoint records: ('1118-2020-battery cell energy density, NMC-532', '1119-2030-battery cell energy density, NMC-532'). ",
         "status": "Acceptable",
         "kind": "distribution",
         "uncertainty_type": 5,
@@ -35107,7 +35107,7 @@
         "minimum": 0.675,
         "maximum": 0.75
     },
-    "baseline-2025-0039-battery cell mass share, NMC-523": {
+    "baseline-2025-0039-battery cell mass share, NMC-532": {
         "amount": 0.725,
         "category": "Energy Storage",
         "powertrain": [
@@ -35128,11 +35128,11 @@
             "Scooter <4kW"
         ],
         "year": 2025,
-        "name": "battery cell mass share, NMC-523",
+        "name": "battery cell mass share, NMC-532",
         "unit": "unitless",
         "importance": "",
         "source": "For LFP :Yang, X.-G., Liu, T., & Wang, C.-Y. (2021). Thermally modulated lithium iron phosphate batteries for mass-market electric vehicles. Nature Energy 2021 6:2, 6(2), 176\u2013185. https://doi.org/10.1038/s41560-020-00757-7\nFor NMC/NCA: Towards more flexibility and transparency in life cycle inventories for Lithium-ion batteries. EleonorCrenna, Marcel Gauch, Rolf Widmer, Patrick W\u00e4ger, Roland Hischier",
-        "comment": "2025 baseline: linear interpolation of the effective 2020 and 2030 records, before empirical calibration. Triangular modes and bounds are interpolated. Endpoint records: ('1190-2020-battery cell mass share, NMC-523', '1191-2030-battery cell mass share, NMC-523'). ",
+        "comment": "2025 baseline: linear interpolation of the effective 2020 and 2030 records, before empirical calibration. Triangular modes and bounds are interpolated. Endpoint records: ('1190-2020-battery cell mass share, NMC-532', '1191-2030-battery cell mass share, NMC-532'). ",
         "status": "",
         "kind": "distribution",
         "uncertainty_type": 5,
@@ -35745,7 +35745,7 @@
         "minimum": 2625.0,
         "maximum": 4375.0
     },
-    "baseline-2025-0059-battery cycle life, NMC-523": {
+    "baseline-2025-0059-battery cycle life, NMC-532": {
         "amount": 3500.0,
         "category": "Energy Storage",
         "powertrain": [
@@ -35766,11 +35766,11 @@
             "Scooter <4kW"
         ],
         "year": 2025,
-        "name": "battery cycle life, NMC-523",
+        "name": "battery cycle life, NMC-532",
         "unit": "unit",
         "importance": "Critical",
         "source": "Yuliya Preger et al 2020 J. Electrochem. Soc. 167 120532",
-        "comment": "2025 baseline: linear interpolation of the effective 2020 and 2030 records, before empirical calibration. Triangular modes and bounds are interpolated. Endpoint records: ('1262-2020-battery cycle life, NMC-523', '1263-2030-battery cycle life, NMC-523'). Cycle life, used to calculate battery lifetime.",
+        "comment": "2025 baseline: linear interpolation of the effective 2020 and 2030 records, before empirical calibration. Triangular modes and bounds are interpolated. Endpoint records: ('1262-2020-battery cycle life, NMC-532', '1263-2030-battery cycle life, NMC-532'). Cycle life, used to calculate battery lifetime.",
         "status": "",
         "kind": "distribution",
         "uncertainty_type": 5,
