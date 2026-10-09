@@ -9,6 +9,8 @@ it has not yet been published. Older entries, where present, retain their origin
 
 - Remove duplicated separate dismantling from petrol scooters and motorcycles; their exact production supplier already includes disposal. Retain mass-scaled electric dismantling and verify exports.
 
+- Use a single dry-mass-scaled complete petrol scooter production proxy, including engine, tank, delivery and disposal. Remove duplicate component and delivery exchanges; retain electric pathways and physical vehicle sizing.
+
 ### Compatibility and installation
 
 - Require Python 3.12 (`>=3.12,<3.13`); older Python environments must be recreated.

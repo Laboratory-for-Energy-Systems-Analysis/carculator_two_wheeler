@@ -70,7 +70,8 @@ def expected_amounts(cell, size, powertrain):
         cell.sel(parameter="mechanical powertrain mass share") * glider
     )
     if powertrain == "ICEV-p":
-        amounts["petrol_glider"] = glider / 90
+        amounts["petrol_glider"] = (curb - cell.sel(parameter="fuel mass")) / 90
+        amounts["engine_and_mechanical_powertrain"] = xr.zeros_like(glider)
         if size != "Moped <4kW":
             amounts["maintenance"] = life / 25000
     elif size != "Moped <4kW":
@@ -276,3 +277,29 @@ def test_exports_keep_vehicle_specific_amounts_and_source_inventory(completed, v
     assert inventory.inputs == indices
     xr.testing.assert_identical(model.array, original)
     xr.testing.assert_identical(inventory.calculate_impacts(), impacts)
+
+
+def test_complete_petrol_proxy_excludes_duplicate_components_and_delivery(completed):
+    model, inventory, _ = completed
+    for size in SIZES:
+        column = inventory.inputs[
+            (f"two-wheeler, ICEV-p, {size}", "CH", "unit", "two-wheeler")
+        ]
+        for supplier in (
+            "market for internal combustion engine, passenger car",
+            "polyethylene production, high density, granulate",
+            "market for transport, freight, sea, container ship",
+            "market group for transport, freight, lorry, unspecified",
+        ):
+            (row,) = inventory.find_input_indices((supplier,))
+            np.testing.assert_array_equal(inventory.A[:, row, column, :], 0)
+        # The 90 kg complete-vehicle proxy represents dry mass once, with fuel
+        # burned during operation procured independently in the transport process.
+        cell = model.array.sel(size=size, powertrain="ICEV-p")
+        dry_mass = cell.sel(parameter="curb mass") - cell.sel(parameter="fuel mass")
+        row = inventory.inputs[SUPPLIERS["petrol_glider"]]
+        np.testing.assert_allclose(
+            -inventory.A[:, row, column, :] * 90,
+            dry_mass.transpose("value", "year"),
+            rtol=2e-6,
+        )

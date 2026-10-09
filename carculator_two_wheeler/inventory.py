@@ -160,7 +160,8 @@ class InventoryTwoWheeler(Inventory):
             ("Moped", "Scooter", "Motorcycle"), ("ICEV-p",)
         )
         self.A[:, self.find_input_indices(("motor scooter production",)), idx] = (
-            -vehicles.sel(parameter="glider base mass") / 90
+            -(vehicles.sel(parameter="curb mass") - vehicles.sel(parameter="fuel mass"))
+            / 90
         )
 
         idx, vehicles = self._select_vehicles(("Scooter", "Motorcycle"), ("BEV",))
@@ -472,5 +473,18 @@ class InventoryTwoWheeler(Inventory):
             ),
             [j for i, j in self.inputs.items() if i[0].startswith("two-wheeler, ")],
         ] = (self.array.sel(parameter="curb mass") / 1000 * 1000) * -1
+
+        # The exact petrol scooter supplier represents a complete dry vehicle,
+        # including its ICE, tank, delivery to regional storage and disposal.
+        # Its mass-scaled proxy replaces separate original-vehicle components.
+        # Keep incremental lightweighting and use-phase maintenance independent.
+        idx, _ = self._select_vehicles(("Moped", "Scooter", "Motorcycle"), ("ICEV-p",))
+        for supplier in (
+            "market for internal combustion engine, passenger car",
+            "polyethylene production, high density, granulate",
+            "market for transport, freight, sea, container ship",
+            "market group for transport, freight, lorry, unspecified",
+        ):
+            self.A[:, self.find_input_indices((supplier,)), idx] = 0
 
         print("*********************************************************************")

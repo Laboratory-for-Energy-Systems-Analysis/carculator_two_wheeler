@@ -26,3 +26,29 @@ controls, 2025/2030, different samples and reordered scopes. Brightway and SimaP
 export checks require absent petrol dismantling exchanges and retained electric
 amounts. Vehicle energy and mass calculations are unchanged. These checks do not
 constitute a fresh validation of every downstream waste-treatment inventory.
+
+Manufacturing and delivery
+--------------------------
+
+The same exact RER production supplier's metadata states that it includes the
+complete scooter, an internal-combustion motor, delivery to regional storage and
+disposal. Treating it as an engine-free glider and adding a passenger-car engine
+proxy therefore mixes incompatible boundaries. Petrol mopeds, scooters and
+motorcycles now purchase one complete-vehicle proxy scaled by
+``(curb mass - fuel mass) / 90 kg``. Fuel is excluded from manufactured mass and
+procured in the operation inventory. Separate engine/mechanical-powertrain, tank
+polyethylene and the additional sea/road delivery exchanges are removed from
+these petrol vehicle columns. Maintenance and incremental lightweighting remain
+separate; electric and human vehicle pathways retain their component inventories.
+
+This supersedes the earlier engine-sum bookkeeping correction documented in
+:ref:`engine-inventory-accounting`. Physical engine mass still affects sizing and
+consumption; its manufacturing is now represented within the complete proxy.
+
+The 90 kg reference comes from PSI 2023, printed pages 38 and 44. Scaling that
+complete 50 cc scooter to larger motorcycles is a transparent mass-based proxy,
+not a new motorcycle bill of materials or a validation of material composition.
+The separate tank and delivery assumptions in the older report are superseded
+here by the verified complete-supplier boundary. A dedicated motorcycle inventory
+would improve representativeness; component data must replace the complete proxy
+as a whole before adding original-vehicle components separately.

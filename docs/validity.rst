@@ -79,6 +79,12 @@ alignment checks.
 Engine and mechanical powertrain accounting
 ---------------------------------------------
 
+The numerical results in this section are a **historical bookkeeping audit**.
+The subsequent :doc:`scooter_boundaries` correction verified that petrol production
+already includes its engine, tank, delivery and disposal. Petrol vehicles now use
+one dry-mass-scaled complete proxy without separate engine purchases. The
+following figures predate that boundary correction.
+
 ``mechanical powertrain mass`` is the remaining drivetrain mass after subtracting
 ``combustion engine mass`` from the mechanical component budget. The inventory
 now sums these two masses once when purchasing the existing ``market for internal
