@@ -78,6 +78,7 @@ User's Guide
    modeling
    structure
    validity
+   scooter_boundaries
    bev_sizing
    battery_replacements
    petrol_efficiency

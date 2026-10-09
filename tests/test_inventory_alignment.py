@@ -75,9 +75,9 @@ def expected_amounts(cell, size, powertrain):
             amounts["maintenance"] = life / 25000
     elif size != "Moped <4kW":
         amounts["electric_glider"] = glider
-    if size != "Moped <4kW":
-        # Retain the existing mass-scaled coefficient; this tests its recipient,
-        # not the scientific validity of the dismantling dataset's scaling.
+    if size != "Moped <4kW" and powertrain == "BEV":
+        # The electric dismantling supplier documents a per-kg service despite
+        # its legacy unit label. Petrol production already contains disposal.
         amounts["dismantling"] = curb
     return amounts
 

@@ -7,6 +7,8 @@ it has not yet been published. Older entries, where present, retain their origin
 
 - Resolve overlapping bundled parameter records into disjoint scopes while preserving every effective static value and uncertainty distribution. Archive original records in `data/overlap_resolution_provenance.json`; regenerate old seeded arrays after this record cleanup.
 
+- Remove duplicated separate dismantling from petrol scooters and motorcycles; their exact production supplier already includes disposal. Retain mass-scaled electric dismantling and verify exports.
+
 ### Compatibility and installation
 
 - Require Python 3.12 (`>=3.12,<3.13`); older Python environments must be recreated.

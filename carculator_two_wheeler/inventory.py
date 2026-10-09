@@ -373,9 +373,9 @@ class InventoryTwoWheeler(Inventory):
             / 24
         )
 
-        idx, vehicles = self._select_vehicles(
-            ("Scooter", "Motorcycle"), ("BEV", "ICEV-p")
-        )
+        # Petrol production already includes disposal (PSI 2023, pp. 39, 44;
+        # confirmed in the exact ecoinvent 3.12 RER supplier metadata).
+        idx, vehicles = self._select_vehicles(("Scooter", "Motorcycle"), ("BEV",))
         self.A[
             :,
             self.find_input_indices(("manual dismantling of used electric scooter",)),
