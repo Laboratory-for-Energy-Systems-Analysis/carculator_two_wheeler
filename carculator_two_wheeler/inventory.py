@@ -2,14 +2,10 @@
 inventory.py contains Inventory which provides all methods to solve inventories.
 """
 
-import warnings
-
 import numpy as np
 from carculator_utils.inventory import Inventory
 
 from . import DATA_DIR
-
-warnings.filterwarnings("ignore", category=np.VisibleDeprecationWarning)
 
 IAM_FILES_DIR = DATA_DIR / "IAM"
 
@@ -54,7 +50,6 @@ class InventoryTwoWheeler(Inventory):
         Fill-in the A matrix. Does not return anything. Modifies in place.
         Shape of the A matrix (values, products, activities).
 
-        :param array: :attr:`array` from :class:`CarModel` class
         """
 
         # Glider/Frame

@@ -107,9 +107,9 @@ separate review before claiming representative ownership costs.
 A subsequent :doc:`small_vehicle_costs` repair addresses negative glider and
 maintenance costs in kick-scooters, mopeds and small scooters. The inherited
 BEV heat-pump charge has since been removed (:doc:`heat_pump_costs`); charger
-costs still need review. Human-only bicycle cost
-inputs also remain incomplete. Battery coupling and sample-label limitations documented
-in :doc:`validity` and :doc:`petrol_efficiency` are unaffected.
+costs for other classes still need review. Human bicycle inputs are now populated
+as described below. Battery coupling and named sample handling have since been
+repaired (:doc:`bev_sizing`, :doc:`validity`).
 
 Reproduction
 ------------

@@ -13,6 +13,8 @@ it has not yet been published. Older entries, where present, retain their origin
 
 - Populate Human bicycle purchase costs from the ZIV EUR 500 gross 2025 market anchor and document a provisional 2.5% annual maintenance assumption. Keep a constant real-2025-EUR basis across native years.
 
+- Remove import-time global warning suppression and refresh API/documentation contracts; shared sulfur-table reductions use explicit pandas axis arguments.
+
 ### Compatibility and installation
 
 - Require Python 3.12 (`>=3.12,<3.13`); older Python environments must be recreated.

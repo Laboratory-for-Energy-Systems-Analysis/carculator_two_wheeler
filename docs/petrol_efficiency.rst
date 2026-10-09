@@ -172,11 +172,10 @@ bioethanol. Their broad consumption envelope is a regression guard, not a
 calibration acceptance criterion.
 
 The electric-bicycle cost defect was subsequently addressed in :doc:`bicycle_costs`;
-battery range/capacity/mass qualification remains a separate open issue.
-Custom string labels on the sample coordinate also
-failed a completed two-wheeler run during this review; the shared energy output
-uses positional sample coordinates. These tests use the normal numeric sample
-coordinates. No unrelated model or cost repair is included here.
+battery range/capacity/mass coupling has since been repaired and qualified in
+:doc:`bev_sizing`. Named sample labels now survive completed runs and exports;
+see :doc:`validity`. The numerical results and software counts below describe
+the earlier petrol correction, not the current aggregate test suite.
 
 Software verification for this correction
 -----------------------------------------

@@ -143,7 +143,8 @@ complete purchase breakdowns, annual costs and unchanged inventory/LCIA checks.
 Those recorded totals predate the heat-pump correction. Rerunning this audit
 isolates the glider change against the currently installed defaults.
 
-Charger costs for other classes, complete e-bike costs, human-only bicycle inputs
-and a common currency-year basis remain open. Battery-override and sample-label
-limitations in :doc:`validity` and :doc:`petrol_efficiency` are unaffected. These
-cost changes do not constitute new fuel-consumption or physical calibration.
+Charger costs for other classes, complete e-bike costs and a common currency-year
+basis remain evidence gaps. Human bicycle inputs have since been populated
+(:doc:`bicycle_costs`); battery coupling and named samples have been repaired
+(:doc:`bev_sizing`, :doc:`validity`). Historical results above isolate this earlier
+cost change and do not constitute new fuel-consumption calibration.
