@@ -7,10 +7,12 @@ import xarray as xr
 import yaml
 from carculator_utils.energy_consumption import EnergyConsumptionModel
 from carculator_utils.model import VehicleModel
+from carculator_utils.model_run import repeatable_run
 from carculator_utils.numerical import capital_recovery_factor
 
 
 class TwoWheelerModel(VehicleModel):
+    @repeatable_run
     def set_all(self):
         """
         Complete vehicle sizing, cycle energy, costs and emissions.

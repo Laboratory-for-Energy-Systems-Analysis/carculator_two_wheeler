@@ -16,6 +16,8 @@ it has not yet been published. Older entries, where present, retain their origin
 
 ### Model and inventory changes
 
+- Make repeated `set_all()` calls rebuild from retained inputs, with stable costs/energy and retained PHEV components. Preserve explicit input edits and selected sample prices; see the shared repeat-run guide.
+
 - Restore omitted combustion-engine production by purchasing engine and remaining mechanical powertrain masses together through the existing kilogram-based proxy. Verify the combined mass budget across all six petrol classes, retain BEV mechanical-component purchases, and check completed LCIA and Brightway/SimaPro exports. Physical model outputs are unchanged; see [engine accounting and proxy limitations](docs/validity.rst#engine-inventory-accounting).
 - Match glider production, petrol maintenance and scooter/motorcycle dismantling to exact vehicle identities. Correct swapped amounts in mixed-size/powertrain inventories and exports; verify equal LCIA across individual, combined and reordered selections, including multiple years and named samples. Preserve physical model outputs and supplier/scaling assumptions; see [inventory alignment](docs/validity.rst#inventory-vehicle-alignment).
 - Bill BEVs from grid electricity consumption, including charger losses. Preserve fuel-mode costs and model-specific cost units; verify costs against completed inventory purchases. See [charging cost accounting](docs/validity.rst#charging-cost-accounting).
