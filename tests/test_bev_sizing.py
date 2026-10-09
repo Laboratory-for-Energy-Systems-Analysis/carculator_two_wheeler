@@ -93,7 +93,7 @@ def assert_inventory_consistent(model, chemistry):
     inventory = InventoryTwoWheeler(model, scenario="static", functional_unit="vkm")
     impacts = inventory.calculate_impacts()
     assert np.isfinite(impacts).all()
-    (electricity_row,) = inventory.find_input_indices(
+    electricity_rows = inventory.find_input_indices(
         ("electricity supply for electric vehicles",)
     )
     (battery_row,) = inventory.find_input_indices(
@@ -102,6 +102,9 @@ def assert_inventory_consistent(model, chemistry):
     for size in model.array.coords["size"].values:
         (transport_col,) = inventory.find_input_indices(
             ("transport, two-wheeler,", "BEV", size)
+        )
+        (electricity_row,) = inventory.get_vehicle_supply_indices(
+            "electricity supply for electric vehicles", [transport_col]
         )
         (vehicle_col,) = inventory.find_input_indices(
             ("two-wheeler,", "BEV", size), excludes=("transport",)
@@ -127,6 +130,11 @@ def assert_inventory_consistent(model, chemistry):
         )
         np.testing.assert_allclose(
             -inventory.A[:, electricity_row, transport_col, :], expected_grid, rtol=1e-6
+        )
+        np.testing.assert_allclose(
+            -inventory.A[:, electricity_rows, transport_col, :].sum(axis=1),
+            expected_grid,
+            rtol=1e-6,
         )
         np.testing.assert_allclose(
             -inventory.A[:, battery_row, vehicle_col, :], expected_pack, rtol=1e-6

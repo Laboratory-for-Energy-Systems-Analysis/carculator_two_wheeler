@@ -26,7 +26,7 @@ def check_inventory(model, expected_replacements):
     impacts = inventory.calculate_impacts()
     assert np.isfinite(impacts).all()
     (disposal_row,) = inventory.find_input_indices(("market for used Li-ion battery",))
-    (electricity_row,) = inventory.find_input_indices(
+    electricity_rows = inventory.find_input_indices(
         ("electricity supply for electric vehicles",)
     )
     for size in model.array.coords["size"].values:
@@ -35,6 +35,9 @@ def check_inventory(model, expected_replacements):
         )
         (transport_col,) = inventory.find_input_indices(
             ("transport, two-wheeler,", "BEV", size)
+        )
+        (electricity_row,) = inventory.get_vehicle_supply_indices(
+            "electricity supply for electric vehicles", [transport_col]
         )
         for year_index, year in enumerate(model.array.year.values):
             selection = dict(size=size, powertrain="BEV", year=year)
@@ -62,6 +65,13 @@ def check_inventory(model, expected_replacements):
             )
             np.testing.assert_allclose(
                 -inventory.A[:, electricity_row, transport_col, year_index],
+                grid.sel(**selection).values.ravel(),
+                rtol=2e-6,
+            )
+            np.testing.assert_allclose(
+                -inventory.A[:, electricity_rows, transport_col, year_index].sum(
+                    axis=1
+                ),
                 grid.sel(**selection).values.ravel(),
                 rtol=2e-6,
             )

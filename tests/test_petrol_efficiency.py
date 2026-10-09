@@ -112,19 +112,24 @@ def test_corrected_fuel_reaches_suppliers_and_tailpipe_carbon(completed_petrol_m
     assert np.isfinite(impacts).all()
     specs = BackgroundSystemModel().fuel_specs
     blend = model.fuel_blend["petrol"]
-    (market,) = inventory.find_input_indices(("fuel supply for petrol vehicles",))
+    markets = inventory.find_input_indices(("fuel supply for petrol vehicles",))
     lhv = sum(c["share"] * specs[c["type"]]["lhv"] for c in blend.values())
-    for component in blend.values():
-        supplier = inventory.inputs[tuple(specs[component["type"]]["name"])]
-        np.testing.assert_allclose(
-            -inventory.A[:, supplier, market, :],
-            np.broadcast_to(component["share"], (3, 3)),
-            atol=1e-8,
-        )
     for size in SIZES:
         (column,) = inventory.find_input_indices(
             (f"transport, {model.vehicle_type}, ", ", ICEV-p,", size)
         )
+        (market,) = inventory.get_vehicle_supply_indices(
+            "fuel supply for petrol vehicles", [column]
+        )
+        mapping = inventory.electricity_supply_indices.get(column, {})
+        for component in blend.values():
+            original = inventory.inputs[tuple(specs[component["type"]]["name"])]
+            supplier = mapping.get(original, original)
+            np.testing.assert_allclose(
+                -inventory.A[:, supplier, market, :],
+                np.broadcast_to(component["share"], (3, 3)),
+                atol=1e-8,
+            )
         energy = (
             model["TtW energy"]
             .sel(size=size, powertrain="ICEV-p")
@@ -134,6 +139,11 @@ def test_corrected_fuel_reaches_suppliers_and_tailpipe_carbon(completed_petrol_m
         expected_mass = energy / (lhv * 1000)  # kJ/km / (MJ/kg * 1000)
         np.testing.assert_allclose(
             -inventory.A[:, market, column, :],
+            expected_mass,
+            rtol=2e-5,
+        )
+        np.testing.assert_allclose(
+            -inventory.A[:, markets, column, :].sum(axis=1),
             expected_mass,
             rtol=2e-5,
         )
