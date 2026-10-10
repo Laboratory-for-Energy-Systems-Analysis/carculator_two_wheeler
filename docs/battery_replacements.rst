@@ -35,7 +35,7 @@ replacement factor through this calculation.
 No separate calendar-ageing or minimum-replacement rule is imposed on
 two-wheelers. Zero here means the configured cycling calculation requires no
 replacement; it does not establish measured battery survival over the vehicle's
-calendar lifetime. Cycle-life priors, fractional allocation and the cap remain
+calendar lifetime. Cycle-life assumptions, fractional allocation and the cap remain
 modelling assumptions. A measured cycle life at a particular DoD needs a
 compatible throughput interpretation before being used as ``N``.
 

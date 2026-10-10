@@ -7,7 +7,7 @@ Modeling
 .. note::
 
    The inventory and owner-reported energy sources below describe the original
-   model assumptions. For current 2025 priors, temporal consistency and the
+   model assumptions. For current 2025 assumptions, temporal consistency and the
    absence of a new independent two-wheeler consumption calibration, see
    :doc:`validity`. Current battery replacement factors are calculated from
    lifetime throughput, allowing zero; see :doc:`battery_replacements`. The
@@ -70,7 +70,7 @@ between 4 and 11 kW, between 11 and 35 kW, and above 35 kW, respectively.
 Modeling considerations applicable to all two-wheelers
 ------------------------------------------------------
 
-* For all vehicles, the passenger mass is 75 kilograms.
+* The default passenger mass is 75 kg; it is an editable input.
 * For all vehicles, the vehicle datasets use one vehicle unit as a functional unit, and the corresponding transport activity uses one vehicle-kilometer as a functional unit.
 
 Modeling considerations applicable to internal combustion engine vehicles
@@ -116,9 +116,11 @@ Illustrations of available models of electric kick-scooters considered in this s
 
 Specifications (i.e., curb mass, motor power, battery capacity) for commercially available
 electric kick-scooters are available in :ref:`Annex B <annex-b>`. Specifications used to represent an average
-kick-scooter are detailed in :ref:`Table 3 <table-3>`. Kick-scooter energy consumption values are not
-modeled but extracted from :cite:`ct-1092`, where kick-scooter users have reported their
-electricity consumption.
+kick-scooter are detailed in :ref:`Table 3 <table-3>`. The historical table used owner-reported electricity consumption from
+:cite:`ct-1092`. Current consumption is calculated from the selected speed and
+gradient cycle, driving mass, resistances, and drivetrain efficiencies. It is
+not copied from that table. See :doc:`interpretation` for battery and charging
+energy boundaries.
 
 The :cite:`ct-1047` v.3 datasets for manufacturing a 17 kg heavy bicycle
 :cite:`ct-1048` is used as a proxy for the supply of the glider. The
@@ -284,19 +286,16 @@ speed <45 km/h) and electric cargo bicycles respectively, against 1’000 km in 
 from :cite:`ct-1048`.
 In addition, electric bicycles are generally designed to have a longer kilometric lifetime
 comparatively to conventional bicycles, with an overall heavier chassis and reinforced tires.
-But the onboard electronics and battery management system cannot possibly last 15 years
-on average – as previously assumed in :cite:`ct-1048` – given such
-annual mileage. Hence, the calendar lifetime is reduced to 10 years to obtain a kilometric
-lifetime of 20’000 km, 30’000 km, and 20’000 km for the slow, fast, and cargo electric
+The original study assumed a 10-year service life instead of the 15 years in
+:cite:`ct-1048`. This is a study assumption, not a physical upper bound on
+electronics or battery life. With the stated annual distances it gives a lifetime of 20’000 km, 30’000 km, and 20’000 km for the slow, fast, and cargo electric
 bicycles, respectively.
 
-The frame and mechanical powertrain are modeled using an input from the
-:cite:`ct-1047` dataset for electric bicycle production, from which the inputs for the
-electric motor and battery have been removed to size them separately. The input required
-from the electric bicycle production dataset is scaled on the driving mass minus the mass of
-the electric motor and battery, as this mass differs from what is initially considered in the
-dataset: 24 kg, against 23, 27, and 46 kg considered here for the slow, fast and cargo
-electric bicycles, respectively.
+The current inventory uses bicycle glider suppliers, with the electric motor and
+battery supplied separately. Non-cargo bicycle production is scaled by
+``glider base mass / 17 kg``; cargo bicycle production uses
+``glider base mass / 50 kg``. Rider mass is excluded from this manufacturing
+calculation. It is included in driving mass for energy use and wear emissions.
 
 The transport of the vehicle from the assembly plant to the intended market is included:
 15’900 km by ship and 1’000 km by truck. Abrasion emissions are scaled on the driving
@@ -430,14 +429,13 @@ mopeds/scooters. The values calculated are presented in :ref:`Table 6 <table-6>`
    | **Scooter, gasoline, 4-11 kW**       | 16                                | 30’000                               |
    +--------------------------------------+-----------------------------------+--------------------------------------+
 
-The current inventory uses the :cite:`ct-1047` dataset “motor scooter production”
-as a glider proxy, scaled by ``glider base mass`` divided by the reference scooter
-mass of 90 kg. Engine and remaining mechanical powertrain masses are purchased
-separately through the existing “market for internal combustion engine, passenger
-car” proxy, in kilograms. Their masses are summed once; see
-:ref:`engine-inventory-accounting` for the correction and the limitations of these
-manufacturing proxies. The fuel tank is modeled separately, using an input of
-injection-molded high-density polyethylene.
+The current petrol-scooter inventory uses the complete :cite:`ct-1047`
+``motor scooter production`` dataset, scaled by
+``(curb mass - fuel mass) / 90 kg``. This supplier already contains engine, tank,
+delivery and disposal. The model does not also purchase a passenger-car engine,
+a separate fuel tank, or another delivery chain for these petrol vehicles.
+This is a complete-vehicle proxy, not a detailed manufacturing model for each
+scooter. See :doc:`validity` for the accounting checks and remaining limitations.
 
 Market development indicates a preference for 2-stroke engines for engines with a small
 displacement volume (which allows extracting more power out of an otherwise small engine).
@@ -452,8 +450,9 @@ additional distinction between 2-stroke and 4-stroke engines (see :ref:`Table 2 
 Accordingly, 2-stroke engine vehicles are supplied with fuel from the dataset “petrol blending for two-stroke
 engines” which contains a certain amount of lubricating motor oil.
 
-The transport of the vehicle from the assembly plant to the intended market is included:
-15’900 km by transoceanic container ship and 1’000 km by a fleet-average truck.
+Delivery is already represented within the complete scooter supplier. The
+separate ship and truck deliveries used for some electric and human-powered
+vehicles are not added to this petrol-vehicle inventory.
 
 Abrasion emissions are scaled on the driving mass, but the dataset for abrasion emissions
 of passenger cars in :cite:`ct-1047` is used to approximate their composition.
@@ -584,15 +583,12 @@ volume: “up to 125 cm3”, “126-749 cm3”, and “750-999 cm3” are used t
    by :cite:`ct-1014`. Cox and Mutel considered a lifetime of 28-69’000 and 145’000 km for small (i.e., 4 and 11 kW)
    and large (50 kW) motorbikes, respectively, against 25’000 and 40’500 km in this study.
 
-A dataset specific to motorbike production with the characteristics listed in :ref:`Table 10 <table-10>` could
-not be obtained. Hence, the dataset from :cite:`ct-1047` “motor scooter production”
-is used instead as a glider proxy, scaled by ``glider base mass`` divided by the
-reference scooter mass of 90 kg. Engine and remaining mechanical powertrain
-masses use the same separate kilogram-based passenger-car-engine proxy described
-for scooters; see :ref:`engine-inventory-accounting`. The same approach is adopted
-for vehicle maintenance, where the dataset for scooter maintenance is used.
-
-The disposal of the vehicle is already included in the “motor scooter production” dataset.
+A manufacturing dataset specific to each petrol motorbike class was unavailable.
+The current model therefore scales the same complete ``motor scooter production``
+proxy by ``(curb mass - fuel mass) / 90 kg``. Engine, tank, delivery and disposal
+remain inside that supplier; no separate passenger-car engine is added. Scooter
+maintenance is also used as a proxy. These substitutions are a source of
+uncertainty, especially for larger motorcycles.
 
 Vehicle specifications used in this study for gasoline motorbikes
 are presented in :ref:`Table 11 <table-11>` - :ref:`Table 13 <table-13>`.
@@ -695,7 +691,10 @@ used instead to approximate the energy and material requirements for manufacturi
 glider and the mechanical part of the powertrain. In addition, the dataset “electric powertrain
 production, for electric scooter” is used to approximate the manufacture of the electric part of
 the powertrain (incl. the electric motor) – the battery is modeled separately from the
-powertrain. The energy consumption values are based on reported values from users on :cite:`ct-1092`.
+powertrain. The original study used owner-reported energy values from :cite:`ct-1092`.
+Current energy use is calculated over the selected driving cycle using the
+vehicle mass, resistances and drivetrain inputs; see :doc:`validation_examples`
+for the limits of the available consumption evidence.
 
 The disposal of the vehicle is specified separately.
 

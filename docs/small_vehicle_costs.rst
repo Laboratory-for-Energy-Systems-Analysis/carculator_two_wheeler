@@ -11,7 +11,7 @@ not clip cost outputs or change the cost equations, energy model or inventory.
 Evidence and assumptions
 ------------------------
 
-These are **provisional cost priors**, not measured component bills or an
+These are **provisional cost assumptions**, not measured component bills or an
 independently validated ownership-cost model. Prices were retrieved on
 2026-10-08. Only the Piaggio source has a documented 2025 price date; the other
 undated listings are proxies for the 2025 model with no inflation adjustment.
@@ -62,14 +62,14 @@ by construction is a calibration result, not independent validation.
 Time and uncertainty
 --------------------
 
-Each new slope and zero intercept is carried unchanged over all native years
+Each new slope and zero intercept is carried unchanged over all tabulated years
 (2000, 2010, 2020, 2025, 2030, 2040 and 2050), so this repair introduces no
 isolated 2025 coefficient step. This is a constant scenario assumption, not
 historical or forecast nominal pricing. The other cost components retain their
 legacy price bases and trajectories. Their common currency year still needs
 review; the complete purchase series can therefore vary with year.
 
-Each native year's original relative triangular slope bounds is preserved.
+Each tabulated year's original relative triangular slope bounds is preserved.
 These bounds represent engineering uncertainty, not a confidence interval
 inferred from four manufacturer observations. Completed static models test the
 lower bound, mode and upper bound separately. This is not a full stochastic

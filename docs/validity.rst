@@ -3,6 +3,10 @@
 Two-wheeler calibration and validation
 ======================================
 
+Start with :doc:`validation_examples` for bar charts and an explanation of the
+evidence. This page records detailed checks and limitations; dated test totals
+and before/after results refer to their stated software snapshots.
+
 The two-wheeler model uses component inventories, engineering assumptions and
 legacy owner-reported fuel/electricity inputs described in :doc:`modeling`.
 Those input sources are not a held-out, cycle-matched validation set for the
@@ -13,7 +17,7 @@ been removed from this page.
 .. _inventory-vehicle-alignment:
 
 Inventory vehicle alignment
-----------------------------
+---------------------------
 
 Glider production, petrol maintenance and scooter/motorcycle dismantling
 exchanges are assigned using each vehicle's exact size and powertrain identity.
@@ -65,7 +69,7 @@ amounts and recipient alignment, completed LCIA across individual and combined
 scopes, reordered sizes/powertrains/samples, and 2025/2030 with two named samples
 having different masses and lifetimes. It includes petrol mopeds and
 electric-only/petrol-only selections. Brightway and SimaPro exports are checked
-for both supported ecoinvent targets (3.9 and 3.10), including every selected
+for the default ecoinvent 3.12 target, including every selected
 year and unchanged source inventories and impacts.
 
 This is an inventory-assignment correction, not an empirical recalibration.
@@ -77,7 +81,7 @@ alignment checks.
 .. _engine-inventory-accounting:
 
 Engine and mechanical powertrain accounting
----------------------------------------------
+-------------------------------------------
 
 The numerical results in this section are a **historical bookkeeping audit**.
 The subsequent :doc:`scooter_boundaries` correction verified that petrol production
@@ -135,7 +139,7 @@ from the mass-share input and glider mass independently of the inventory sum.
 It covers all six petrol classes and the five available BEV controls, 2025/2030,
 two named samples with distinct masses and mass shares, reordered coordinates,
 and individual/combined scopes. Brightway and SimaPro exports retain those
-amounts for ecoinvent 3.9 and 3.10 without mutating the source inventory or LCIA.
+amounts for ecoinvent 3.12 without mutating the source inventory or LCIA.
 
 This repairs component accounting while retaining the existing manufacturing
 proxies and glider scaling. It does not validate the passenger-car-engine proxy
@@ -164,7 +168,7 @@ Two-wheeler costs remain per vehicle-km. The default Swiss 2025
 ``Motorcycle 11-35kW`` BEV costs approximately EUR 1.91/100 km for electricity,
 corrected from EUR 1.72/100 km.
 
-Completed model/inventory checks and the shared billing contract are described
+Completed model/inventory checks and the shared billing calculation are described
 in the `shared charging-cost validation <https://github.com/Laboratory-for-Energy-Systems-Analysis/carculator_utils/blob/master/docs/validity.rst#charging-cost-accounting>`_.
 
 
@@ -230,13 +234,13 @@ by 100 gives kWh/100 km. A meter boundary must be identified before comparing
 these outputs. Regeneration and battery/charger losses must not be counted twice.
 
 The 2025 motor/inverter (0.90), electric transmission (0.97), charger (0.90)
-and symmetric battery one-way (sqrt(0.97)) values are component priors in their
+and symmetric battery one-way (sqrt(0.97)) values are component assumptions in their
 documented scopes, not universally measured efficiencies. For relevant hybrid
 scopes, the independent motor peak/system-power ratio is 0.65. The earlier temporal
 update preserved all then-current 2025 scalar values and uncertainty distributions;
 the later petrol correction is documented in :doc:`petrol_efficiency`. Storage
 and charger trends preserve relative legacy losses; newly explicit component
-priors are extended across native years to avoid interpolating from missing
+assumptions are extended across tabulated years to avoid interpolating from missing
 zero values. Historical estimates and future projections therefore change.
 
 The earlier family audit completed 546 annual cases (21 configurations, 2015–2040),
@@ -296,7 +300,7 @@ Two-wheeler target-range sizing now converges battery capacity, vehicle mass
 and cycle energy together. Completed runs cover four chemistries, multiple
 years and samples, all available BEV sizes, and battery/electricity inventory
 coefficients. Capacity and pack-mass changes also propagate through consumption
-and range. See :doc:`bev_sizing` for the method, override contracts and numerical
+and range. See :doc:`bev_sizing` for the method, override rules and numerical
 checks. This establishes software consistency, not new empirical calibration.
 
 Battery replacement policy

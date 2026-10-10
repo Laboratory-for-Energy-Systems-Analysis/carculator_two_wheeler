@@ -34,7 +34,7 @@ has been made. The packaged provenance records the observations and assumptions.
 Time, accounting and scope
 --------------------------
 
-The same EUR 70 mode and EUR 40-100 bounds apply at all native years from 2000
+The same EUR 70 mode and EUR 40-100 bounds apply at all tabulated years from 2000
 to 2050. This constant scenario assumption prevents an isolated 2025 change;
 it is not a historical price reconstruction or a nominal-price forecast.
 Availability masking is unchanged. Other cost components retain their existing
@@ -96,7 +96,7 @@ The audit completed **24 before/after model, inventory and LCIA cases** in
 charger, purchase, amortised purchase and total cost outputs change. All other
 model parameters, all control vehicles, inventory matrices and LCIA results
 are identical. Another **26 annual kick-scooter runs** from 2015 through 2040
-check the constant charger prior and positive costs.
+check the constant charger assumption and positive costs.
 
 Regression tests cover the lower bound, mode and upper bound in completed
 models, independent ten-year discounted repayment sums, seeded input sampling,
@@ -127,4 +127,4 @@ record, set ``amount`` and ``loc``, use ``uncertainty_type=1`` and omit triangul
 bounds. Historical reports in :doc:`small_vehicle_costs` and :doc:`heat_pump_costs`
 retain their earlier kick-scooter totals. Their scripts isolate their respective
 changes against currently installed inputs, so a rerun also reflects this new
-charger prior. Charger assumptions for other classes remain open.
+charger assumption. Charger assumptions for other classes remain open.

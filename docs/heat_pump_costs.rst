@@ -2,7 +2,7 @@ Heat-pump cost correction
 =========================
 
 The 2026-10-08 correction removes the inherited **EUR 300 cabin heat-pump
-charge** from default BEV two-wheelers. All seven native-year records
+charge** from default BEV two-wheelers. All seven tabulated-year records
 (2000, 2010, 2020, 2025, 2030, 2040 and 2050) now use deterministic zero,
 including the formerly triangular sampling distributions. Interpolation
 therefore introduces no special 2025 step or residual sampled heat-pump cost.
@@ -26,7 +26,7 @@ replacement and energy costs do not change.
 
 The parameter remains in the input data and shared cost accounting. Only the
 two-wheeler defaults change; no runtime rule forces a user's value to zero.
-Battery thermal-management assumptions, charger prices, glider priors and
+Battery thermal-management assumptions, charger prices, glider assumptions and
 other vehicle packages are outside this correction. In particular, the
 :doc:`small_vehicle_costs` glider residual deliberately excluded the heat-pump
 charge and is not refitted to absorb its removal.
@@ -88,8 +88,9 @@ without changing purchase costs.
 
 These prices retain the existing battery, motor, charger and other cost
 assumptions. They are not a claim of representative complete retail prices.
-Charger assumptions for other vehicle classes, human-only bicycle inputs and the common
-currency-year basis still need review. The short default kick-scooter lifetime
+Charger assumptions for other vehicle classes and a common currency-year basis
+still need review. Human bicycle cost inputs were subsequently populated; see
+:doc:`bicycle_costs`. The short default kick-scooter lifetime
 of 1,785 km continues to explain much of its high cost per kilometre.
 
 Explicit scenarios

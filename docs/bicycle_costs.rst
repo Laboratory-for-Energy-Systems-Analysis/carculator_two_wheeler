@@ -31,11 +31,11 @@ coefficients are:
 The existing calculation remains ``(a * glider base mass + b) * markup factor``.
 Dividing by the reference markup avoids counting it twice. This decomposition
 does not identify factory production cost, dealer margins or VAT separately.
-The slope's triangular relative bounds are preserved at each native year; the
+The slope's triangular relative bounds are preserved at each tabulated year; the
 intercept is deterministic zero. These bounds remain engineering uncertainty,
 not a confidence interval for market prices.
 
-The same coefficients apply at every native year from 2000 to 2050, including
+The same coefficients apply at every tabulated year from 2000 to 2050, including
 2025. This is a constant-real-2025-EUR assumption for this component, not a
 historical nominal-price reconstruction or a future price forecast. Other
 legacy cost components have not been converted to a common price year.
@@ -144,7 +144,7 @@ certify hosted CI or conda builds; historical reports in :download:`maintainer r
 predate this cost correction.
 
 Human bicycle costs
---------------------
+-------------------
 
 The human-powered ``Bicycle <25`` now uses the same ZIV 2025 non-electric
 purchase-price anchor: EUR 500 gross at the model's 12 kg reference mass and
@@ -157,7 +157,7 @@ cost**, transferred from the electric-bicycle assumption: EUR 12.50/year for
 the reference case. ZIV does not provide this maintenance estimate. Both inputs
 are editable; this does not establish a representative national ownership budget.
 Food expenditure, insurance, accessories, theft and resale value are excluded.
-These Human cost inputs use constant real 2025 EUR at every native year, avoiding
+These Human cost inputs use constant real 2025 EUR at every tabulated year, avoiding
 a new 2025 interpolation discontinuity. Other legacy cost components retain their
 existing currency basis. The packaged ``human_bicycle_cost_provenance.json``
 records the source, assumptions and added records.
@@ -189,7 +189,7 @@ remain separate future costs, while maintenance retains its independently
 editable glider-based assumption; the quote does not validate either.
 
 The packaged ``cost_evidence.json`` distinguishes complete retail prices,
-replacement-part retail prices, provisional component priors, and unsupported
+replacement-part retail prices, provisional component assumptions, and unsupported
 maintenance assumptions. It records known price years rather than describing
 all legacy inputs as real 2025 EUR. A monetary total combining unrebased inputs
 must be labelled a mixed-basis scenario. For a common-price-year study, supply
