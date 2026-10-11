@@ -131,3 +131,12 @@ cost corrections documented in `docs/petrol_efficiency.rst`,
 Pushes and pull requests limited to `docs/`, root Markdown files, or
 `examples/` skip CI. Code, test, packaging and workflow changes still run
 verification. Release and manual publishing triggers are unaffected.
+
+### Conda channel configuration
+
+Use `conda-forge`, `romainsacchi`, and `cmutel` in that order. The existing
+`klausen` dependency is distributed only through its maintainer's `cmutel`
+channel; omitting it prevents the conda test environment from resolving.
+The publishing workflow includes all three channels. For already-created
+release tags, dispatch the current workflow with `release_tag` to build the
+unchanged tagged sources using the corrected channel configuration.
