@@ -6,7 +6,7 @@ Prospective environmental and economic life cycle assessment of bicycles, scoote
 [![PyPI](https://img.shields.io/pypi/v/carculator_two_wheeler)](https://pypi.org/project/carculator_two_wheeler/)
 
 Developed at the [Paul Scherrer Institute](https://www.psi.ch/en).
-This checkout prepares **0.1.1**; see [CHANGELOG.md](https://github.com/Laboratory-for-Energy-Systems-Analysis/carculator_two_wheeler/blob/main/CHANGELOG.md) for release status and changes.
+This checkout prepares the unpublished release **0.1.1**; see [CHANGELOG.md](https://github.com/Laboratory-for-Energy-Systems-Analysis/carculator_two_wheeler/blob/main/CHANGELOG.md) for release status and changes.
 
 ## Installation
 
@@ -155,7 +155,7 @@ charger assumptions for other classes still need review. See the
 
 ## Development and release
 
-Use matching sibling checkouts, especially `carculator_utils` **1.3.6 or newer**:
+Use matching sibling checkouts, especially `carculator_utils` **1.3.7 or newer**:
 
 ```bash
 python -m pip install -e "../carculator_utils[test,excel,brightway]" -e ".[test,docs,excel,brightway]"

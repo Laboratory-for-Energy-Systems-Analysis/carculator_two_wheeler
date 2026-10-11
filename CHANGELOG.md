@@ -5,6 +5,16 @@ it has not yet been published. Older entries, where present, retain their origin
 
 ## [0.1.1] - Unreleased
 
+### Migration to ecoinvent 3.12
+
+- Use the coordinated `carculator_utils 1.3.7` background with premise 2.5.4 and ecoinvent 3.12 cutoff. The foreground matrix, activity index and all 57 LCIA coefficient matrices were rebuilt together. Recalculate saved LCA results; results from the previous background are not directly interchangeable.
+- Rename explicit battery chemistry selections and chemistry-specific custom parameter names from `NMC-523` to `NMC-532`. The new inventory uses the actual 5:3:2 Ni:Mn:Co chemistry. Existing engineering and price assumptions carry forward; this is not an alias for the former inventory.
+- Inventory exports now default to ecoinvent 3.12. Match exported suppliers against the documented compatible background. Ecoinvent 3.9/3.10 remain explicit legacy targets, but suppliers without verified older links raise an error; requesting an older version does not convert the new background automatically.
+- Brightpath supplies Brightway Excel, SimaPro CSV and foreground openLCA JSON-LD exports. Select one sample before export; all selected years are retained. Brightway requires background matching, and openLCA requires provider and elementary-flow mapping before calculation. SimaPro uses Latin-1 and retains unsupported noise quantities in audit comments.
+- Python support remains `>=3.12,<3.13` with NumPy `>=1.26.4,<2`. Install matching family versions and rebuild saved models/arrays when applying the corrected inputs, costs or inventory accounting described below.
+
+### Other changes
+
 - Review the documentation against current code, explain units and assumptions
   in plain English, and add validation bar charts with sources and explicit
   limits. Correct outdated descriptions of exports, repeated runs and scientific
@@ -25,7 +35,7 @@ it has not yet been published. Older entries, where present, retain their origin
 
 - Require Python 3.12 (`>=3.12,<3.13`); older Python environments must be recreated.
 - Use NumPy `>=1.26.4,<2` through the shared runtime.
-- Require the stable `carculator_utils>=1.3.6` release, including its Brightpath runtime dependency.
+- Require the stable `carculator_utils>=1.3.7` release, including its Brightpath runtime dependency.
 - Build wheels and source distributions from centralized `pyproject.toml` metadata.
 - Keep core model/LCIA calculations independent of Brightway projects and imports. Export writers now come through Brightpath; `excel` remains a compatibility alias and `brightway` selects the legacy stack (`bw2io<0.9`, `bw2data<4`, `bw2calc<2`).
 - Align documentation versions with the package version and provide complete documentation-build dependencies.
@@ -55,7 +65,7 @@ it has not yet been published. Older entries, where present, retain their origin
 ### Inventory export
 
 - Inherit Brightpath (`>=1.0.0a6,<1.1`, v1 alpha API) writers for Brightway Excel, SimaPro CSV and foreground-only openLCA JSON-LD from `carculator_utils`; document examples and return values in the [export guide](docs/inventory_export.rst).
-- Retain exact ecoinvent 3.9/3.10 cut-off targets, one selected sample per export, every selected year and unchanged source inventories/impacts. Brightway importers still require background matching and writing.
+- Default to ecoinvent 3.12 cut-off; older 3.9/3.10 targets reject suppliers without verified links. Retain one selected sample per export, every selected year and unchanged source inventories/impacts. Brightway importers still require background matching and writing.
 - Document the SimaPro Latin-1 layout and identifier changes, warnings for omitted custom noise flows, and openLCA provider/elementary-flow mapping required before calculation. Remove obsolete presamples and uncertainty-export claims.
 
 ### Documentation and verification
