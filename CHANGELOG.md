@@ -3,6 +3,12 @@
 Notable user-facing changes to `carculator_two_wheeler`. The entry below is prepared for release;
 it has not yet been published. Older entries, where present, retain their original record.
 
+## [Unreleased]
+
+- Document optional calendar-year lifecycle schedules and impacts, including
+  annual bicycle/motorcycle maintenance, two-year electric-scooter maintenance,
+  battery timing, charger boundaries and family-specific disposal treatment.
+
 ## [0.1.1] - 2026-10-11
 
 ### Migration to ecoinvent 3.12
